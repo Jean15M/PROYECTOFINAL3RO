@@ -5,12 +5,14 @@
  */
 package zHotel;
 
+import modelo.Conexion;
+
 /**
  *
  * @author KEVIN SANCHEZ
  */
 public class zHotel {
     public static void main(String[] args) {
-        
+        Conexion nueva=new Conexion();
     }
 }
