@@ -16,11 +16,11 @@ public class Autos {
 
     public Autos() {
     }
-
+    
     public Autos(String placa, String modelo, String marca) {
         this.placa = placa;
         this.modelo = modelo;
-        this.marca = marca;
+        this.marca =  marca;
     }
 
     public String getPlaca() {

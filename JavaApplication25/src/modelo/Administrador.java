@@ -18,13 +18,14 @@ public class Administrador extends Personas {
     public Administrador() {
     }
 
-    public Administrador(String id_Admin, String usuarioAdmin, String contraAdmin, String cedulaAdmin, String cedulaPersona, String nombrePersona, String apellidoPersona, String generoPersona, String telefonoPersona, String direccionPersona, int edadPersona, String cod_canton) {
-        super(cedulaPersona, nombrePersona, apellidoPersona, generoPersona, telefonoPersona, direccionPersona, edadPersona, cod_canton);
+    public Administrador(String id_Admin, String usuarioAdmin, String contraAdmin, String cedulaAdmin, String cedulaPersona, String nombrePersona, String nombrePersona1, String apellidoPersona, String apellidoPersona1, String generoPersona, String telefonoPersona, String direccionPersona, int edadPersona, String cod_canton, String correoPersona) {
+        super(cedulaPersona, nombrePersona, nombrePersona1, apellidoPersona, apellidoPersona1, generoPersona, telefonoPersona, direccionPersona, edadPersona, cod_canton, correoPersona);
         this.id_Admin = id_Admin;
         this.usuarioAdmin = usuarioAdmin;
         this.contraAdmin = contraAdmin;
         this.cedulaAdmin = cedulaAdmin;
     }
+
 
     public String getId_Admin() {
         return id_Admin;

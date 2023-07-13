@@ -19,14 +19,16 @@ public class Recepcionista extends Personas {
     public Recepcionista() {
     }
 
-    public Recepcionista(String id_Recep, double sueldo_Recep, String usuario_Recep, String contra_Recep, String cedula_Recep, String cedulaPersona, String nombrePersona, String apellidoPersona, String generoPersona, String telefonoPersona, String direccionPersona, int edadPersona, String cod_canton) {
-        super(cedulaPersona, nombrePersona, apellidoPersona, generoPersona, telefonoPersona, direccionPersona, edadPersona, cod_canton);
+    public Recepcionista(String id_Recep, double sueldo_Recep, String usuario_Recep, String contra_Recep, String cedula_Recep, String cedulaPersona, String nombrePersona, String nombrePersona1, String apellidoPersona, String apellidoPersona1, String generoPersona, String telefonoPersona, String direccionPersona, int edadPersona, String cod_canton, String correoPersona) {
+        super(cedulaPersona, nombrePersona, nombrePersona1, apellidoPersona, apellidoPersona1, generoPersona, telefonoPersona, direccionPersona, edadPersona, cod_canton, correoPersona);
         this.id_Recep = id_Recep;
         this.sueldo_Recep = sueldo_Recep;
         this.usuario_Recep = usuario_Recep;
         this.contra_Recep = contra_Recep;
         this.cedula_Recep = cedula_Recep;
     }
+
+
 
     public String getId_Recep() {
         return id_Recep;

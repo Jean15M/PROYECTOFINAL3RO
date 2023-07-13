@@ -18,13 +18,15 @@ public class Cliente extends Personas {
     public Cliente() {
     }
 
-    public Cliente(String id_Cliente, String usuarioCliente, String contraCliente, String cedulaCliente, String cedulaPersona, String nombrePersona, String apellidoPersona, String generoPersona, String telefonoPersona, String direccionPersona, int edadPersona, String cod_canton) {
-        super(cedulaPersona, nombrePersona, apellidoPersona, generoPersona, telefonoPersona, direccionPersona, edadPersona, cod_canton);
+    public Cliente(String id_Cliente, String usuarioCliente, String contraCliente, String cedulaCliente, String cedulaPersona, String nombrePersona, String nombrePersona1, String apellidoPersona, String apellidoPersona1, String generoPersona, String telefonoPersona, String direccionPersona, int edadPersona, String cod_canton, String correoPersona) {
+        super(cedulaPersona, nombrePersona, nombrePersona1, apellidoPersona, apellidoPersona1, generoPersona, telefonoPersona, direccionPersona, edadPersona, cod_canton, correoPersona);
         this.id_Cliente = id_Cliente;
         this.usuarioCliente = usuarioCliente;
         this.contraCliente = contraCliente;
         this.cedulaCliente = cedulaCliente;
     }
+
+
 
     public String getId_Cliente() {
         return id_Cliente;
