@@ -18,6 +18,7 @@ public class Reservas {
     private Date fecha_salida;
     private double total_Reserva;
     private String id_Habitacion;
+    private String id_pago;
     private String id_Parqueadero;
     private String id_Recepcionista;
     private String cedula_Cliente;
@@ -25,17 +26,20 @@ public class Reservas {
     public Reservas() {
     }
 
-    public Reservas(String id_Reserva, String pago_Reserva, Date fecha_entrada, Date fecha_salida, double total_Reserva, String id_Habitacion, String id_Parqueadero, String id_Recepcionista, String cedula_Cliente) {
+    public Reservas(String id_Reserva, String pago_Reserva, Date fecha_entrada, Date fecha_salida, double total_Reserva, String id_Habitacion, String id_pago, String id_Parqueadero, String id_Recepcionista, String cedula_Cliente) {
         this.id_Reserva = id_Reserva;
         this.pago_Reserva = pago_Reserva;
         this.fecha_entrada = fecha_entrada;
         this.fecha_salida = fecha_salida;
         this.total_Reserva = total_Reserva;
         this.id_Habitacion = id_Habitacion;
+        this.id_pago = id_pago;
         this.id_Parqueadero = id_Parqueadero;
         this.id_Recepcionista = id_Recepcionista;
         this.cedula_Cliente = cedula_Cliente;
     }
+
+
 
     public String getId_Reserva() {
         return id_Reserva;
@@ -107,6 +111,14 @@ public class Reservas {
 
     public void setCedula_Cliente(String cedula_Cliente) {
         this.cedula_Cliente = cedula_Cliente;
+    }
+
+    public String getId_pago() {
+        return id_pago;
+    }
+
+    public void setId_pago(String id_pago) {
+        this.id_pago = id_pago;
     }
 
     @Override
