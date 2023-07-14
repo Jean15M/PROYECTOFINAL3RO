@@ -65,7 +65,7 @@ public class modeloPersona extends Personas {
     }
            public boolean grabarPersona() {
         String sql = "insert into  public.personas(cedula,nombre1,nombre2,apellido1,apellido2,genero,telefono,direccion,edad,cod_canton,correo)";
-        sql += "values('" + super.getCedulaPersona() + "','" + getNombrePersona() + "','" + getNombrePersona1() + "','" + getApellidoPersona() + "','" + getApellidoPersona1() + "','" + getGeneroPersona() + "','" + getTelefonoPersona() + "','" + getDireccionPersona() + "','" + getEdadPersona() + "','" + getCod_canton() + "','" + getCorreoPersona() + "')";
+        sql += "values('" + super.getCedulaPersona() + "','" + getNombrePersona() + "','" + getNombrePersona1() + "','" + getApellidoPersona() + "','" + getApellidoPersona1() + "','" + getGeneroPersona() + "','" + getTelefonoPersona() + "','" + getDireccionPersona() + "'," + getEdadPersona() + ",'" + getCod_canton() + "','" + getCorreoPersona() + "')";
         return cpg.accionBd(sql);
     }
 
@@ -82,7 +82,7 @@ public class modeloPersona extends Personas {
     }
 
     public boolean modificarPersonaBD() {
-        String sql = "UPDATE public.personas SET  nombre1='" + getNombrePersona() + "', nombre2='" + getNombrePersona1() + "', apellido1='" + getApellidoPersona() + "', apellido2='" + getApellidoPersona1() + "', genero='" + getGeneroPersona() + "', telefon='" + getTelefonoPersona() + "', dirreccion='" + getDireccionPersona() + "', edad='" + getEdadPersona() + "', correo='" + getCorreoPersona() + "'";
+        String sql = "UPDATE public.personas SET  nombre1='" + getNombrePersona() + "', nombre2='" + getNombrePersona1() + "', apellido1='" + getApellidoPersona() + "', apellido2='" + getApellidoPersona1() + "', genero='" + getGeneroPersona() + "', telefon='" + getTelefonoPersona() + "', dirreccion='" + getDireccionPersona() + "', edad=" + getEdadPersona() + ", correo='" + getCorreoPersona() + "'";
         sql += "where cedula='" + getCedulaPersona() + "'";
         return cpg.accionBd(sql);
     }

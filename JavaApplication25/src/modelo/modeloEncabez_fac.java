@@ -56,7 +56,7 @@ public class modeloEncabez_fac extends Encabez_fac {
 
     public boolean grabarEncabez_fac() {
         String sql = "insert into  public.encabezado_fac(id_encabezado_fac,cedula_cliente,fecha,total)";
-        sql += "values('" + super.getId_encabez() + "','" + getCedula_cli() + "','" + getFecha_fac() + "','" + getTotal_fac() + "')";
+        sql += "values('" + super.getId_encabez() + "','" + getCedula_cli() + "',to_date('" + getFecha_fac() + "','YYYY-MM-DD')," + getTotal_fac() + ")";
         return cpg.accionBd(sql);
     }
 

@@ -71,7 +71,7 @@ public class modeloRecepcionista extends Recepcionista {
 
     public boolean grabarRecepcionista() {
         String sql = "insert into  public.personas(id_recepcionista, usuario, contraseña,sueldo, cedula_persona)";
-        sql += "values('" + super.getId_Recep()+ "','" + getUsuario_Recep() + "','" + getContra_Recep() + "','" + getSueldo_Recep()+ "','" + getCedula_Recep() + "')";
+        sql += "values('" + super.getId_Recep()+ "','" + getUsuario_Recep() + "','" + getContra_Recep() + "'," + getSueldo_Recep()+ ",'" + getCedula_Recep() + "')";
         return cpg.accionBd(sql);
     }
 
@@ -88,7 +88,7 @@ public class modeloRecepcionista extends Recepcionista {
     }
 
     public boolean modificarRecepcionistaBD() {
-        String sql = "UPDATE public.recepcionista SET usuario='" + getUsuario_Recep() + "', contrasena='" + getContra_Recep() + "', sueldo='" + getSueldo_Recep() + "'";
+        String sql = "UPDATE public.recepcionista SET usuario='" + getUsuario_Recep() + "', contrasena='" + getContra_Recep() + "', sueldo=" + getSueldo_Recep() + "";
         sql += "where id_administrador='" + getUsuario_Recep() + "'";
         return cpg.accionBd(sql);
     }

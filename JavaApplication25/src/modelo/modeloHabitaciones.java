@@ -57,7 +57,7 @@ public class modeloHabitaciones extends Habitaciones {
 
     public boolean grabarHabitaciones() {
         String sql = "insert into  public.habitaciones(id_habitacio,id_categoria,n_habitacion,nro_piso,precio)";
-        sql += "values('" + super.getId_Habitacion() + "','" + getId_Categoria() + "','" + getNro_Habitacion() + "','" + getNro_Piso() + "','" + getPrecio_Habitacion() + "')";
+        sql += "values('" + super.getId_Habitacion() + "','" + getId_Categoria() + "','" + getNro_Habitacion() + "','" + getNro_Piso() + "'," + getPrecio_Habitacion() + ")";
         return cpg.accionBd(sql);
     }
 
@@ -74,7 +74,7 @@ public class modeloHabitaciones extends Habitaciones {
     }
 
     public boolean modificarHabitacionesBD() {
-        String sql = "UPDATE public.habitaciones SET n_Habitacion='" + getNro_Habitacion() + "', nro_piso='" + getNro_Piso() + "', precio='" + getPrecio_Habitacion() + "'";
+        String sql = "UPDATE public.habitaciones SET n_Habitacion='" + getNro_Habitacion() + "', nro_piso='" + getNro_Piso() + "', precio=" + getPrecio_Habitacion() + "";
         sql += "where id_habitacio='" + getId_Habitacion() + "'";
         return cpg.accionBd(sql);
     }
