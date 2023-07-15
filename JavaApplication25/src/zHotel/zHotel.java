@@ -5,7 +5,10 @@
  */
 package zHotel;
 
+import controlador.controladorPrincipal;
 import modelo.Conexion;
+import modelo.modeloAdministrador;
+import vista.vistaPersona;
 
 /**
  *
@@ -13,6 +16,9 @@ import modelo.Conexion;
  */
 public class zHotel {
     public static void main(String[] args) {
-        Conexion nueva=new Conexion();
+        vistaPersona nuevo = new vistaPersona();
+        modeloAdministrador nuevo1 = new modeloAdministrador();
+        controladorPrincipal iniciar= new controladorPrincipal(nuevo,nuevo1);
+        iniciar.iniciarControlador();
     }
 }

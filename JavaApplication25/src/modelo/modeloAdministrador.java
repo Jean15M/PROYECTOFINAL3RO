@@ -23,8 +23,8 @@ public class modeloAdministrador extends Administrador {
 
     public boolean modificar = false;
 
-    public List<Cliente> listarCliente() {
-        List<Cliente> listaPersona = new ArrayList<Cliente>();
+    public List<Administrador> listarAdmin() {
+        List<Administrador> listaAdministrador = new ArrayList<Administrador>();
         String sql1 = "";
         if (modificar == true) {
             sql1 = Consultar();
@@ -35,7 +35,7 @@ public class modeloAdministrador extends Administrador {
 
         try {
             while (rs.next()) {
-                Cliente per = new Cliente();
+                Administrador per = new Administrador();
                 per.setCedulaPersona(rs.getString("cedula"));
                 per.setNombrePersona(rs.getString("nombre1"));
                 per.setNombrePersona1(rs.getString("nombre2"));
@@ -47,20 +47,20 @@ public class modeloAdministrador extends Administrador {
                 per.setEdadPersona(rs.getInt("edad"));
                 per.setCod_canton(rs.getString("cod_canton"));
                 per.setCorreoPersona(rs.getString("correo"));
-                per.setId_Cliente(rs.getString("id_admin"));
-                per.setCedulaCliente(rs.getString("cedula_persona"));
-                per.setUsuarioCliente(rs.getString("usuario"));
-                per.setContraCliente(rs.getString("contrasena"));
-                listaPersona.add(per);
+                per.setId_Admin(rs.getString("id_admin"));
+                per.setCedulaAdmin(rs.getString("cedula_persona"));
+                per.setUsuarioAdmin(rs.getString("usuario"));
+                per.setContraAdmin(rs.getString("contrasena"));
+                listaAdministrador.add(per);
 
             }
-            if (listaPersona.isEmpty()) {
+            if (listaAdministrador.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "NO SE ECONTRO NINGUN RESULTADO");
 
             }
             rs.close();//cerrar consulta
 
-            return listaPersona;
+            return listaAdministrador;
 
         } catch (SQLException ex) {
             Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
