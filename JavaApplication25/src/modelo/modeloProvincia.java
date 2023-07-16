@@ -17,16 +17,16 @@ import javax.swing.JOptionPane;
  *
  * @author KEVIN SANCHEZ
  */
-public class modeloProvincia extends Provincia{
-    
+public class modeloProvincia extends Provincia {
+
     Conexion cpg = new Conexion();
 
     public boolean modificar = false;
 
     public List<Provincia> listarProvincias() {
         List<Provincia> listaProvincia = new ArrayList<Provincia>();
-        String sql1 = "select codigoCanton, codigoProvincia, nombre from provincias";
-        
+        String sql1 = "select id_provincia, nombre from provincias";
+
         ResultSet rs = cpg.resultBD(sql1);
 
         try {
@@ -47,11 +47,29 @@ public class modeloProvincia extends Provincia{
             return null;
         }
     }
-    
-         public boolean grabarProvincia() {
+
+    public boolean grabarProvincia() {
         String sql = "insert into  public.provincias(id_provincia,nombre)";
         sql += "values('" + getId_Provincia() + "','" + getNombre_Provincia() + "')";
         return cpg.accionBd(sql);
     }
-    
+
+    public String ObtenerCodigo() {
+        try {
+            String sql = "select id_provincia from provincias where nombre='" + super.getNombre_Provincia() + "'";
+            ResultSet rs = cpg.resultBD(sql);
+            Provincia c = new Provincia();
+            while (rs.next()) {
+
+                c.setId_Provincia(rs.getString("id_provincia"));
+
+            }
+            rs.close();
+            return c.getId_Provincia();
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCantones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+
 }

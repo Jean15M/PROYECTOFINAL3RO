@@ -17,16 +17,16 @@ import javax.swing.JOptionPane;
  *
  * @author KEVIN SANCHEZ
  */
-public class modeloCantones extends Cantones{
+public class modeloCantones extends Cantones {
 
-        Conexion cpg = new Conexion();
+    Conexion cpg = new Conexion();
 
     public boolean modificar = false;
 
     public List<Cantones> listarCantones() {
         List<Cantones> listaCantones = new ArrayList<Cantones>();
-        String sql1 = "select codigoCanton, codigoProvincia, nombre from cantones";
-        
+        String sql1 = "select codigoCanton, codigoProvincia, nombre from cantones where codigoProvincia='"+getId_Provincia()+"'";
+
         ResultSet rs = cpg.resultBD(sql1);
 
         try {
@@ -48,11 +48,28 @@ public class modeloCantones extends Cantones{
             return null;
         }
     }
-    
-         public boolean grabarCantones() {
+
+    public boolean grabarCantones() {
         String sql = "insert into  public.cantones(codigoCanton,codigoProvincia,nombre)";
         sql += "values('" + getId_Canton() + "','" + getId_Provincia() + "','" + getNombreCan() + "')";
         return cpg.accionBd(sql);
     }
-    
+
+    public String ObtenerCodigo() {
+        try {
+            String sql = "select codigoCanton from cantones where nombre='" + super.getNombreCan() + "'";
+            ResultSet rs = cpg.resultBD(sql);
+            Cantones c = new Cantones();
+            while (rs.next()) {
+                c.setId_Canton(rs.getString("codigoCanton"));
+
+            }
+            rs.close();
+            return c.getId_Canton();
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCantones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+
 }

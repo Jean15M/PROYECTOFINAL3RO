@@ -7,7 +7,9 @@ package controlador;
 
 import javax.swing.table.DefaultTableModel;
 import modelo.modeloAdministrador;
+import vista.Pantalla_Principal;
 import vista.vistaPersona;
+import vista.vistaRegistroAdmin;
 
 /**
  *
@@ -15,30 +17,21 @@ import vista.vistaPersona;
  */
 public class controladorPrincipal {
     DefaultTableModel mTabla;
-    private vistaPersona personavista;
-    private modeloAdministrador admin;
+    private Pantalla_Principal vistaPrincipal;
 
-    public controladorPrincipal(vistaPersona personavista, modeloAdministrador admin) {
-        this.personavista = personavista;
-        this.admin = admin;
-        personavista.setVisible(true);
+    public controladorPrincipal(Pantalla_Principal vistaPrincipal) {
+        this.vistaPrincipal = vistaPrincipal;
+        vistaPrincipal.setVisible(true);
     }
     
     public void iniciarControlador(){
-        lisarPersona();
+       vistaPrincipal.getBtnInicioRe().addActionListener(l->registroAdmin());
     }
     
-    private void lisarPersona(){
-        
-         mTabla = (DefaultTableModel) personavista.getTb_vista().getModel();
-        mTabla.setNumRows(0);
-        admin.listarAdmin().stream().forEach(lista -> {
-            String[] fila = {lista.getId_Admin(), lista.getNombrePersona(), lista.getNombrePersona1(), lista.getApellidoPersona(), lista.getApellidoPersona1(), lista.getDireccionPersona(), lista.getTelefonoPersona()};
-            mTabla.addRow(fila);
-        });
-         personavista.getTb_vista().setModel(mTabla);
-        
-    }
-    
-    
+    private void registroAdmin(){
+        modeloAdministrador nuevo=new modeloAdministrador();
+        vistaRegistroAdmin nuevo1=new vistaRegistroAdmin();
+        controladorRegistroAdmin inicio=new controladorRegistroAdmin(nuevo1,nuevo);
+        inicio.controlador();
+    } 
 }

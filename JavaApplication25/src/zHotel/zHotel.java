@@ -8,7 +8,9 @@ package zHotel;
 import controlador.controladorPrincipal;
 import modelo.Conexion;
 import modelo.modeloAdministrador;
+import vista.Pantalla_Principal;
 import vista.vistaPersona;
+import vista.vistaRegistroAdmin;
 
 /**
  *
@@ -16,9 +18,8 @@ import vista.vistaPersona;
  */
 public class zHotel {
     public static void main(String[] args) {
-        vistaPersona nuevo = new vistaPersona();
-        modeloAdministrador nuevo1 = new modeloAdministrador();
-        controladorPrincipal iniciar= new controladorPrincipal(nuevo,nuevo1);
+        Pantalla_Principal nuevo1 = new Pantalla_Principal();
+        controladorPrincipal iniciar= new controladorPrincipal(nuevo1);
         iniciar.iniciarControlador();
     }
 }

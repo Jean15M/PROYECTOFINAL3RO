@@ -64,7 +64,7 @@ public class modeloPersona extends Personas {
         }
     }
            public boolean grabarPersona() {
-        String sql = "insert into  public.personas(cedula,nombre1,nombre2,apellido1,apellido2,genero,telefono,direccion,edad,cod_canton,correo)";
+        String sql = "insert into  personas(cedula,nombre1,nombre2,apellido1,apellido2,genero,telefono,direccion,edad,cod_canton,correo)";
         sql += "values('" + super.getCedulaPersona() + "','" + getNombrePersona() + "','" + getNombrePersona1() + "','" + getApellidoPersona() + "','" + getApellidoPersona1() + "','" + getGeneroPersona() + "','" + getTelefonoPersona() + "','" + getDireccionPersona() + "'," + getEdadPersona() + ",'" + getCod_canton() + "','" + getCorreoPersona() + "')";
         return cpg.accionBd(sql);
     }
