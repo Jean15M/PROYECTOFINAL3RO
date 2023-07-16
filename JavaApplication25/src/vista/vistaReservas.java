@@ -43,12 +43,15 @@ public class vistaReservas extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        btnReservarVIP = new org.edisoncor.gui.button.ButtonRound();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        btnReservarDel = new org.edisoncor.gui.button.ButtonRound();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        btnReservarEs = new org.edisoncor.gui.button.ButtonRound();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -142,6 +145,8 @@ public class vistaReservas extends javax.swing.JFrame {
 
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        btnReservarVIP.setText("Reservar");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -149,10 +154,14 @@ public class vistaReservas extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnReservarVIP, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -162,7 +171,9 @@ public class vistaReservas extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnReservarVIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel4.setBackground(new java.awt.Color(68, 68, 68));
@@ -176,6 +187,8 @@ public class vistaReservas extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(35, 149, 156));
         jLabel7.setText("HABITACIÓN DELUXE");
 
+        btnReservarDel.setText("Reservar");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -185,11 +198,15 @@ public class vistaReservas extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(14, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel7)
                         .addGap(31, 31, 31))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnReservarDel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,7 +215,9 @@ public class vistaReservas extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnReservarDel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel6.setBackground(new java.awt.Color(68, 68, 68));
@@ -210,6 +229,8 @@ public class vistaReservas extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(35, 149, 156));
         jLabel8.setText("HABITACIÓN STANDARD");
+
+        btnReservarEs.setText("Reservar");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -225,6 +246,10 @@ public class vistaReservas extends javax.swing.JFrame {
                         .addGap(0, 22, Short.MAX_VALUE)
                         .addComponent(jLabel8)
                         .addGap(20, 20, 20))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnReservarEs, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +258,9 @@ public class vistaReservas extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                .addComponent(btnReservarEs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jLabel2.setBackground(new java.awt.Color(35, 149, 156));
@@ -348,7 +375,10 @@ public class vistaReservas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInicioRe;
+    private org.edisoncor.gui.button.ButtonRound btnReservarDel;
+    private org.edisoncor.gui.button.ButtonRound btnReservarEs;
     private javax.swing.JButton btnReservarRe;
+    private org.edisoncor.gui.button.ButtonRound btnReservarVIP;
     private javax.swing.JButton btnServiciosRe;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;

@@ -242,11 +242,17 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="41" max="32767" attributes="0"/>
+                      <EmptySpace pref="42" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel3" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel3" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="btnReservarVIP" min="-2" pref="75" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -258,7 +264,9 @@
                       <Component id="jLabel3" min="-2" pref="116" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="204" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnReservarVIP" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -287,6 +295,11 @@
                 </Property>
               </Properties>
             </Component>
+            <Component class="org.edisoncor.gui.button.ButtonRound" name="btnReservarVIP">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reservar"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel4">
@@ -307,7 +320,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="14" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -315,6 +328,11 @@
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnReservarDel" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -325,7 +343,9 @@
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="202" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnReservarDel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -357,6 +377,11 @@
                 <Property name="text" type="java.lang.String" value="HABITACI&#xd3;N DELUXE"/>
               </Properties>
             </Component>
+            <Component class="org.edisoncor.gui.button.ButtonRound" name="btnReservarDel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reservar"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel6">
@@ -386,6 +411,11 @@
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnReservarEs" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -395,7 +425,9 @@
                       <Component id="jLabel6" min="-2" pref="116" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="201" max="32767" attributes="0"/>
+                      <EmptySpace pref="165" max="32767" attributes="0"/>
+                      <Component id="btnReservarEs" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -422,6 +454,11 @@
                   <Color blue="9c" green="95" red="23" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="HABITACI&#xd3;N STANDARD"/>
+              </Properties>
+            </Component>
+            <Component class="org.edisoncor.gui.button.ButtonRound" name="btnReservarEs">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reservar"/>
               </Properties>
             </Component>
           </SubComponents>

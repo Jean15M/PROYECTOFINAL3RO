@@ -7,8 +7,10 @@ package controlador;
 
 import javax.swing.table.DefaultTableModel;
 import modelo.modeloAdministrador;
+import modelo.modeloCliente;
 import vista.Pantalla_Principal;
 import vista.vistaPersona;
+import vista.vistaRegistro;
 import vista.vistaRegistroAdmin;
 
 /**
@@ -26,6 +28,7 @@ public class controladorPrincipal {
     
     public void iniciarControlador(){
        vistaPrincipal.getBtnInicioRe().addActionListener(l->registroAdmin());
+       //vistaPrincipal.getBtnInicioRe().addActionListener(l->registroUsuario());
     }
     
     private void registroAdmin(){
@@ -33,5 +36,12 @@ public class controladorPrincipal {
         vistaRegistroAdmin nuevo1=new vistaRegistroAdmin();
         controladorRegistroAdmin inicio=new controladorRegistroAdmin(nuevo1,nuevo);
         inicio.controlador();
-    } 
+    }
+    
+    private void registroUsuario(){
+        modeloCliente modeloC = new modeloCliente();
+        vistaRegistro vistaC = new vistaRegistro();
+        controladorRegistroUsuario inicio = new controladorRegistroUsuario(modeloC, vistaC);
+        inicio.iniciarControlador();
+    }
 }
