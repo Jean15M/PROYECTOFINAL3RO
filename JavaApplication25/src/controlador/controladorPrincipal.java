@@ -8,6 +8,7 @@ package controlador;
 import javax.swing.table.DefaultTableModel;
 import modelo.modeloAdministrador;
 import modelo.modeloCliente;
+import modelo.modeloRecepcionista;
 import vista.Pantalla_Principal;
 import vista.vistaRegistro;
 import vista.vistaRegistroAdmin;
@@ -50,7 +51,7 @@ public class controladorPrincipal {
     private void registroRecepcionista() {
         modeloRecepcionista modeloR = new modeloRecepcionista();
         vistaRegistroRecepcionista vistaR = new vistaRegistroRecepcionista();
-        controladorRegistroRecepcionista inicio2 = new controladorRegistroRecepcionista(modeloR, vistaR);
+        controladorRegistroRecepcionista inicio2 = new controladorRegistroRecepcionista(vistaR,modeloR);
         inicio2.iniciarControlador();
     }
 }
