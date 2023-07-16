@@ -9,15 +9,16 @@ import javax.swing.table.DefaultTableModel;
 import modelo.modeloAdministrador;
 import modelo.modeloCliente;
 import vista.Pantalla_Principal;
-import vista.vistaPersona;
 import vista.vistaRegistro;
 import vista.vistaRegistroAdmin;
+import vista.vistaRegistroRecepcionista;
 
 /**
  *
  * @author KEVIN SANCHEZ
  */
 public class controladorPrincipal {
+
     DefaultTableModel mTabla;
     private Pantalla_Principal vistaPrincipal;
 
@@ -25,23 +26,31 @@ public class controladorPrincipal {
         this.vistaPrincipal = vistaPrincipal;
         vistaPrincipal.setVisible(true);
     }
-    
-    public void iniciarControlador(){
-       vistaPrincipal.getBtnInicioRe().addActionListener(l->registroAdmin());
-       //vistaPrincipal.getBtnInicioRe().addActionListener(l->registroUsuario());
+
+    public void iniciarControlador() {
+        vistaPrincipal.getBtnInicioRe().addActionListener(l -> registroAdmin());
+        //vistaPrincipal.getBtnInicioRe().addActionListener(l->registroUsuario());
+        //vistaPrincipal.getBtnInicioRe().addActionListener(l->registroRecepcionista());
     }
-    
-    private void registroAdmin(){
-        modeloAdministrador nuevo=new modeloAdministrador();
-        vistaRegistroAdmin nuevo1=new vistaRegistroAdmin();
-        controladorRegistroAdmin inicio=new controladorRegistroAdmin(nuevo1,nuevo);
+
+    private void registroAdmin() {
+        modeloAdministrador nuevo = new modeloAdministrador();
+        vistaRegistroAdmin nuevo1 = new vistaRegistroAdmin();
+        controladorRegistroAdmin inicio = new controladorRegistroAdmin(nuevo1, nuevo);
         inicio.controlador();
     }
-    
-    private void registroUsuario(){
+
+    private void registroUsuario() {
         modeloCliente modeloC = new modeloCliente();
         vistaRegistro vistaC = new vistaRegistro();
         controladorRegistroUsuario inicio = new controladorRegistroUsuario(modeloC, vistaC);
         inicio.iniciarControlador();
+    }
+
+    private void registroRecepcionista() {
+        modeloRecepcionista modeloR = new modeloRecepcionista();
+        vistaRegistroRecepcionista vistaR = new vistaRegistroRecepcionista();
+        controladorRegistroRecepcionista inicio2 = new controladorRegistroRecepcionista(modeloR, vistaR);
+        inicio2.iniciarControlador();
     }
 }

@@ -26,16 +26,17 @@ public class controladorRegistroRecepcionista {
     private vistaRegistroRecepcionista vistarecepcionista;
     private modeloRecepcionista recepcionista;
     
-    public controladorRegistroRecepcionista(vistaRegistroAdmin vistaAdmin, modeloRecepcionista recepcionista) {
+    public controladorRegistroRecepcionista(vistaRegistroRecepcionista vistarecepcionista, modeloRecepcionista recepcionista) {
         this.vistarecepcionista = vistarecepcionista;
         this.recepcionista = recepcionista;
         vistarecepcionista.setVisible(true);
     }
     
-    public void controlador() {
+    public void iniciarControlador(){
         cargarProvincias();
         vistarecepcionista.getBtnAceptar().addActionListener(l -> RegistrarAdmin());
         vistarecepcionista.getComprovin().addActionListener(l -> cargarCantones());
+        
     }
     
     private void RegistrarAdmin() {
