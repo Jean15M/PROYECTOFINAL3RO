@@ -70,12 +70,16 @@ public class controladorRegistroUsuario {
             if (per1.grabarPersona() == true) {
                 if (modeloUsuario.grabarCliente()) {
                     JOptionPane.showMessageDialog(null, "GUARDADO EXITOSAMENTE");
+                    vistaUsuario.dispose();
                 } else {
-                    JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR EL USUARIO");
+                    per1.eliminarPersona();
+                    modeloUsuario.eliminarCliente();
+                    JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR EL USUARIO");                    
                 }
 
             } else {
                 JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR A LA PERSONA");
+                per1.eliminarPersona();
             }
         }else{
             JOptionPane.showMessageDialog(null, "CÉDULA INGRESADA DE MANERA INCORRECTA");

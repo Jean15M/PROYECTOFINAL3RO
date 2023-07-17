@@ -7,6 +7,7 @@ package vista;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import org.edisoncor.gui.button.ButtonRound;
 
 
 /**
@@ -43,16 +44,16 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        btReportes = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        btReservas = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        btHabitaciones = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        btServicios = new javax.swing.JLabel();
-        btParqueo = new javax.swing.JLabel();
+        btReporte = new org.edisoncor.gui.button.ButtonRound();
+        btReservas = new org.edisoncor.gui.button.ButtonRound();
+        btHabitaciones = new org.edisoncor.gui.button.ButtonRound();
+        btServicios = new org.edisoncor.gui.button.ButtonRound();
+        btParqueo = new org.edisoncor.gui.button.ButtonRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,22 +148,9 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/reporte.png"))); // NOI18N
 
-        btReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/botonnn.png"))); // NOI18N
-        btReportes.setText("Reportes");
-        btReportes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/reservas.png"))); // NOI18N
 
-        btReservas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/botonnn.png"))); // NOI18N
-        btReservas.setText("Reservas");
-        btReservas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/habitaciones.png"))); // NOI18N
-
-        btHabitaciones.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btHabitaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/botonnn.png"))); // NOI18N
-        btHabitaciones.setText("Habitaciones");
-        btHabitaciones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/parqueo.png"))); // NOI18N
 
@@ -173,14 +161,47 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         jLabel16.setForeground(new java.awt.Color(35, 149, 156));
         jLabel16.setText("Servicios");
 
-        btServicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/botonnn.png"))); // NOI18N
-        btServicios.setText("Servicios");
-        btServicios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btReporte.setBackground(new java.awt.Color(0, 102, 255));
+        btReporte.setText("Reportes");
+        btReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btReporteActionPerformed(evt);
+            }
+        });
 
-        btParqueo.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btParqueo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/botonnn.png"))); // NOI18N
+        btReservas.setBackground(new java.awt.Color(0, 102, 255));
+        btReservas.setText("Reservas");
+        btReservas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btReservasActionPerformed(evt);
+            }
+        });
+
+        btHabitaciones.setBackground(new java.awt.Color(0, 102, 255));
+        btHabitaciones.setText("Habitaciones");
+        btHabitaciones.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btHabitaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHabitacionesActionPerformed(evt);
+            }
+        });
+
+        btServicios.setBackground(new java.awt.Color(0, 102, 255));
+        btServicios.setText("Servicios");
+        btServicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btServiciosActionPerformed(evt);
+            }
+        });
+
+        btParqueo.setBackground(new java.awt.Color(0, 102, 255));
         btParqueo.setText("Parqueadero");
-        btParqueo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btParqueo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btParqueo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btParqueoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -196,25 +217,18 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel10))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(btReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(73, 73, 73)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(72, 72, 72)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(btReservas, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btReservas, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(83, 83, 83)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(btHabitaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,15 +236,11 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(btServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(btServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(73, 73, 73)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(btParqueo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btParqueo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -243,31 +253,28 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btReservas, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btReservas, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btParqueo, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btParqueo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -283,6 +290,26 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btReporteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btReporteActionPerformed
+
+    private void btReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btReservasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btReservasActionPerformed
+
+    private void btHabitacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHabitacionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btHabitacionesActionPerformed
+
+    private void btServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btServiciosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btServiciosActionPerformed
+
+    private void btParqueoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btParqueoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btParqueoActionPerformed
 
    
     public JButton getBtnInicioRe() {
@@ -319,46 +346,56 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         this.lblUsuario = lblUsuario;
     }
 
-    public JLabel getBtHabitaciones() {
+    public ButtonRound getBtHabitaciones() {
         return btHabitaciones;
     }
 
-    public void setBtHabitaciones(JLabel btHabitaciones) {
+    public void setBtHabitaciones(ButtonRound btHabitaciones) {
         this.btHabitaciones = btHabitaciones;
     }
 
-    public JLabel getBtParqueo() {
+    public ButtonRound getBtParqueo() {
         return btParqueo;
     }
 
-    public void setBtParqueo(JLabel btParqueo) {
+    public void setBtParqueo(ButtonRound btParqueo) {
         this.btParqueo = btParqueo;
     }
 
-    public JLabel getBtReportes() {
-        return btReportes;
+    public ButtonRound getBtReporte() {
+        return btReporte;
     }
 
-    public void setBtReportes(JLabel btReportes) {
-        this.btReportes = btReportes;
+    public void setBtReporte(ButtonRound btReporte) {
+        this.btReporte = btReporte;
     }
 
-    public JLabel getBtReservas() {
+    public ButtonRound getBtReservas() {
         return btReservas;
     }
 
-    public void setBtReservas(JLabel btReservas) {
+    public void setBtReservas(ButtonRound btReservas) {
         this.btReservas = btReservas;
     }
+
+    public ButtonRound getBtServicios() {
+        return btServicios;
+    }
+
+    public void setBtServicios(ButtonRound btServicios) {
+        this.btServicios = btServicios;
+    }
+
+    
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btHabitaciones;
-    private javax.swing.JLabel btParqueo;
-    private javax.swing.JLabel btReportes;
-    private javax.swing.JLabel btReservas;
-    private javax.swing.JLabel btServicios;
+    private org.edisoncor.gui.button.ButtonRound btHabitaciones;
+    private org.edisoncor.gui.button.ButtonRound btParqueo;
+    private org.edisoncor.gui.button.ButtonRound btReporte;
+    private org.edisoncor.gui.button.ButtonRound btReservas;
+    private org.edisoncor.gui.button.ButtonRound btServicios;
     private javax.swing.JButton btnInicioRe;
     private javax.swing.JButton btnReservarRe;
     private javax.swing.JButton btnServiciosRe;

@@ -56,8 +56,7 @@ public class controladorRegistroAdmin {
         per1.setApellidoPersona1(vistaAdmin.getTxtape2().getText());
         per1.setGeneroPersona(vistaAdmin.getComgenero().getSelectedItem().toString());
         per1.setTelefonoPersona(vistaAdmin.getTxttelefono().getText());
-        per1.setNombrePersona1(vistaAdmin.getTxtcedula().getText());
-        per1.setDireccionPersona(vistaAdmin.getTxtcedula().getText());
+        per1.setDireccionPersona(vistaAdmin.getTxtdireccion().getText());
         per1.setEdadPersona(dias);
         canton.setNombreCan(vistaAdmin.getComcanto().getSelectedItem().toString());
         per1.setCod_canton(canton.ObtenerCodigo());
@@ -67,9 +66,11 @@ public class controladorRegistroAdmin {
         administrador.setContraAdmin(vistaAdmin.getTxtcontrasena().getText());
         administrador.setCedulaAdmin(vistaAdmin.getTxtcedula().getText());
         if (per1.grabarPersona() == true) {
-            if (administrador.grabarAdministrador()) {
+            if (administrador.grabarAdministrador()==true) {
                 JOptionPane.showMessageDialog(null, "GUARDADO EXITOSAMENTE");
-            } else {
+            } else{
+                per1.setCedulaPersona(vistaAdmin.getTxtcedula().getText());
+                per1.eliminarPersona();
                 JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR AL ADMINISTRAR");
             }
             

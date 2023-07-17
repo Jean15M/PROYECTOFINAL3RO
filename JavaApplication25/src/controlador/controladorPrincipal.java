@@ -32,14 +32,15 @@ public class controladorPrincipal {
 
     public void iniciarControlador() {
         vistaPrincipal.getBtnInicioRe().addActionListener(l -> registroAdmin());
-        //vistaPrincipal.getBtnInicioRe().addActionListener(l->registroUsuario());
-        //vistaPrincipal.getBtnInicioRe().addActionListener(l->registroRecepcionista());
+        vistaPrincipal.getBtnReservarRe().addActionListener(l->registroUsuario());
+        vistaPrincipal.getBtnServiciosRe().addActionListener(l->registroRecepcionista());
     }
 
     private void registroAdmin() {
         modeloAdministrador nuevo = new modeloAdministrador();
         vistaRegistroAdmin nuevo1 = new vistaRegistroAdmin();
         controladorRegistroAdmin inicio = new controladorRegistroAdmin(nuevo1, nuevo);
+        vistaPrincipal.dispose();
         inicio.controlador();
     }
 
@@ -54,6 +55,7 @@ public class controladorPrincipal {
         modeloRecepcionista modeloR = new modeloRecepcionista();
         vistaRegistroRecepcionista vistaR = new vistaRegistroRecepcionista();
         controladorRegistroRecepcionista inicio2 = new controladorRegistroRecepcionista(vistaR,modeloR);
+        vistaPrincipal.dispose();
         inicio2.iniciarControlador();
     }
 }
