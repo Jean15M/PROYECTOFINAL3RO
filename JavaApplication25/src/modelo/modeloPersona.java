@@ -88,7 +88,7 @@ public class modeloPersona extends Personas {
     }
 
     public boolean eliminarPersona() {
-        String sql = "DELETE FROM public.personas";
+        String sql = "DELETE FROM personas";
         sql += " WHERE cedula ='" + getCedulaPersona() + "'";
         return cpg.accionBd(sql);
 
