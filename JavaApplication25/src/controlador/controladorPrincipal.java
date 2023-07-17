@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import modelo.modeloAdministrador;
 import modelo.modeloCliente;
@@ -25,6 +26,7 @@ public class controladorPrincipal {
 
     public controladorPrincipal(Pantalla_Principal vistaPrincipal) {
         this.vistaPrincipal = vistaPrincipal;
+        vistaPrincipal.setExtendedState(JFrame.MAXIMIZED_BOTH);
         vistaPrincipal.setVisible(true);
     }
 
