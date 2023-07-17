@@ -48,6 +48,7 @@ public class controladorPrincipal {
         modeloCliente modeloC = new modeloCliente();
         vistaRegistro vistaC = new vistaRegistro();
         controladorRegistroUsuario inicio = new controladorRegistroUsuario(modeloC, vistaC);
+        vistaPrincipal.dispose();
         inicio.iniciarControlador();
     }
 
