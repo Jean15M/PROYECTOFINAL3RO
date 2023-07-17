@@ -38,6 +38,7 @@ public class controladorPrincipal {
         modeloAdministrador nuevo = new modeloAdministrador();
         vistaRegistroAdmin nuevo1 = new vistaRegistroAdmin();
         controladorRegistroAdmin inicio = new controladorRegistroAdmin(nuevo1, nuevo);
+        vistaPrincipal.dispose();
         inicio.controlador();
     }
 
