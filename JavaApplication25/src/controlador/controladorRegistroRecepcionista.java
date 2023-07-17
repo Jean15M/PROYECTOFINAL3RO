@@ -15,7 +15,6 @@ import modelo.modeloCantones;
 import modelo.modeloPersona;
 import modelo.modeloProvincia;
 import modelo.modeloRecepcionista;
-import vista.vistaRegistroAdmin;
 import vista.vistaRegistroRecepcionista;
 
 /**
@@ -34,7 +33,7 @@ public class controladorRegistroRecepcionista {
     
     public void iniciarControlador(){
         cargarProvincias();
-        vistarecepcionista.getBtnAceptar().addActionListener(l -> RegistrarAdmin());
+        vistarecepcionista.getBtnregistro().addActionListener(l -> RegistrarAdmin());
         vistarecepcionista.getComprovin().addActionListener(l -> cargarCantones());
         
     }
@@ -63,10 +62,10 @@ public class controladorRegistroRecepcionista {
         per1.setCod_canton(canton.ObtenerCodigo());
         per1.setCorreoPersona(vistarecepcionista.getTxtcorreo().getText());
         recepcionista.setId_Recep(vistarecepcionista.getTxtIdUsuario().getText());
-        recepcionista.setUsuario_Recep(vistarecepcionista.getTxtcorreo().getText());
+        recepcionista.setUsuario_Recep(vistarecepcionista.getTxtUsuario().getText());
         recepcionista.setContra_Recep(vistarecepcionista.getTxtcontrasena().getText());
         recepcionista.setCedula_Recep(vistarecepcionista.getTxtcedula().getText());
-        recepcionista.setSueldo_Recep(Float.parseFloat(vistarecepcionista.getTxtsalario().getText()));
+        recepcionista.setSueldo_Recep(Double.parseDouble(vistarecepcionista.getTxtsalario().getText()));
         if (per1.grabarPersona() == true) {
             if (recepcionista.grabarRecepcionista()) {
                 JOptionPane.showMessageDialog(null, "GUARDADO EXITOSAMENTE");
