@@ -53,6 +53,7 @@ public class controladorPrincipal {
         modeloRecepcionista modeloR = new modeloRecepcionista();
         vistaRegistroRecepcionista vistaR = new vistaRegistroRecepcionista();
         controladorRegistroRecepcionista inicio2 = new controladorRegistroRecepcionista(vistaR,modeloR);
+        vistaPrincipal.dispose();
         inicio2.iniciarControlador();
     }
 }

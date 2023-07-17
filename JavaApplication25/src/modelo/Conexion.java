@@ -26,8 +26,8 @@ public class Conexion {
 
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            String myDB = "jdbc:oracle:thin:@localhost:1521:XE";
-//            String myDB = "jdbc:oracle:thin:@192.168.137.49:1521:XE";
+            //String myDB = "jdbc:oracle:thin:@localhost:1521:XE";
+            String myDB = "jdbc:oracle:thin:@192.168.137.190:1521:XE";
             con = DriverManager.getConnection(myDB, usuario, password);
             System.out.println("coneccion positiva");
         } catch (ClassNotFoundException ex) {

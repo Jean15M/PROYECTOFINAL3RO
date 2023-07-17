@@ -74,8 +74,7 @@ public class controladorRegistroUsuario {
                 } else {
                     per1.eliminarPersona();
                     modeloUsuario.eliminarCliente();
-                    JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR EL USUARIO");
-                    
+                    JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR EL USUARIO");                    
                 }
 
             } else {

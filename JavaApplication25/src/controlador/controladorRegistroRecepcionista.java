@@ -15,6 +15,7 @@ import modelo.modeloCantones;
 import modelo.modeloPersona;
 import modelo.modeloProvincia;
 import modelo.modeloRecepcionista;
+import vista.Pantalla_Principal;
 import vista.vistaRegistroRecepcionista;
 
 /**
@@ -22,22 +23,23 @@ import vista.vistaRegistroRecepcionista;
  * @author Edisson Leon
  */
 public class controladorRegistroRecepcionista {
+
     private vistaRegistroRecepcionista vistarecepcionista;
     private modeloRecepcionista recepcionista;
-    
+
     public controladorRegistroRecepcionista(vistaRegistroRecepcionista vistarecepcionista, modeloRecepcionista recepcionista) {
         this.vistarecepcionista = vistarecepcionista;
         this.recepcionista = recepcionista;
         vistarecepcionista.setVisible(true);
     }
-    
-    public void iniciarControlador(){
+
+    public void iniciarControlador() {
         cargarProvincias();
         vistarecepcionista.getBtnregistro().addActionListener(l -> RegistrarAdmin());
+        vistarecepcionista.getBtnCancelar().addActionListener(l -> Cancelar());
         vistarecepcionista.getComprovin().addActionListener(l -> cargarCantones());
-        
     }
-    
+
     private void RegistrarAdmin() {
         Date fechaCalendar = vistarecepcionista.getjCalendario().getDate();
         SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
@@ -71,12 +73,12 @@ public class controladorRegistroRecepcionista {
                 JOptionPane.showMessageDialog(null, "GUARDADO EXITOSAMENTE");
             } else {
                 JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR AL ADMINISTRAR");
-            }            
+            }
         } else {
             JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR A LA PERSONA");
         }
     }
-    
+
     private void cargarCantones() {
         if (vistarecepcionista.getComprovin().getSelectedIndex() == 0) {
             vistarecepcionista.getComcanto().addItem("SELECCIONAR");
@@ -91,11 +93,18 @@ public class controladorRegistroRecepcionista {
             });
         }
     }
+
     private void cargarProvincias() {
-         modeloProvincia cargar1 = new modeloProvincia();
-         cargar1.listarProvincias().stream().forEach(c -> {
-                vistarecepcionista.getComprovin().addItem(c.getNombre_Provincia());
-            });
+        modeloProvincia cargar1 = new modeloProvincia();
+        cargar1.listarProvincias().stream().forEach(c -> {
+            vistarecepcionista.getComprovin().addItem(c.getNombre_Provincia());
+        });
     }
-    
+
+    private void Cancelar() {
+        Pantalla_Principal pat = new Pantalla_Principal();
+        pat.setVisible(true);
+        vistarecepcionista.dispose();
+    }
+
 }
