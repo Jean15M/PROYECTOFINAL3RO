@@ -53,7 +53,7 @@ public class vistaPanelControl extends javax.swing.JFrame {
         btnBuscarHabi = new org.edisoncor.gui.button.ButtonRound();
         btnBuscarParq = new org.edisoncor.gui.button.ButtonRound();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(35, 149, 156));
 

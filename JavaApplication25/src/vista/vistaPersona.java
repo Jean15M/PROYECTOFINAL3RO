@@ -45,7 +45,7 @@ public class vistaPersona extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Tb_vista = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         Tb_vista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
