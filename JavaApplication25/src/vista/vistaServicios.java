@@ -7,6 +7,7 @@ package vista;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import org.edisoncor.gui.button.ButtonRound;
 
 
 /**
@@ -43,18 +44,18 @@ public class vistaServicios extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        btSolicitarLimpieza = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        btSolicitarLimpieza = new org.edisoncor.gui.button.ButtonRound();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        btSolicitarComida = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        btSolicitarComida = new org.edisoncor.gui.button.ButtonRound();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        btSolicitarLavanderia = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        btSolicitarLava = new org.edisoncor.gui.button.ButtonRound();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -148,11 +149,15 @@ public class vistaServicios extends javax.swing.JFrame {
 
         jLabel11.setText("<html>Nuestro servicio de limpieza de habitaciones ofrece una limpieza exhaustiva y completa, incluyendo la cama, el mobiliario, los pisos y las superficies. Realizamos un cambio de ropa de cama para asegurar una experiencia fresca y cómoda. Además, brindamos una limpieza profunda del baño, reponemos suministros básicos y organizamos la habitación de manera ordenada. Nuestro personal de limpieza está capacitado para brindar una atención personalizada y satisfacer cualquier necesidad adicional de los huéspedes.<html>");
 
-        btSolicitarLimpieza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/botonnn.png"))); // NOI18N
-        btSolicitarLimpieza.setText("Solicitar");
-        btSolicitarLimpieza.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/limp.jpg"))); // NOI18N
+
+        btSolicitarLimpieza.setBackground(new java.awt.Color(0, 102, 255));
+        btSolicitarLimpieza.setText("Solicitar");
+        btSolicitarLimpieza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSolicitarLimpiezaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -167,13 +172,13 @@ public class vistaServicios extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btSolicitarLimpieza))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btSolicitarLimpieza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +190,7 @@ public class vistaServicios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btSolicitarLimpieza))
+                .addComponent(btSolicitarLimpieza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel4.setBackground(new java.awt.Color(68, 68, 68));
@@ -198,11 +203,15 @@ public class vistaServicios extends javax.swing.JFrame {
 
         jLabel12.setText("<html>Nuestro servicio de comida a la habitación ofrece un amplio menú con opciones para todos los gustos y necesidades dietéticas. Garantizamos entregas puntuales de comidas frescas y calientes, brindando un servicio personalizado y amable. Respetamos la privacidad de nuestros huéspedes y nos aseguramos de que disfruten de sus comidas en un entorno cómodo y privado.<html>");
 
-        btSolicitarComida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/botonnn.png"))); // NOI18N
-        btSolicitarComida.setText("Solicitar");
-        btSolicitarComida.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/comida.jpg"))); // NOI18N
+
+        btSolicitarComida.setBackground(new java.awt.Color(0, 102, 255));
+        btSolicitarComida.setText("Solicitar");
+        btSolicitarComida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSolicitarComidaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -214,11 +223,11 @@ public class vistaServicios extends javax.swing.JFrame {
                 .addGap(67, 67, 67))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btSolicitarComida)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel15))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btSolicitarComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel15)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -231,7 +240,7 @@ public class vistaServicios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btSolicitarComida))
+                .addComponent(btSolicitarComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel6.setBackground(new java.awt.Color(68, 68, 68));
@@ -244,11 +253,15 @@ public class vistaServicios extends javax.swing.JFrame {
 
         jLabel10.setText("<html>Nuestro servicio de lavandería se encarga de lavar, secar, planchar y plegar la ropa de nuestros huéspedes. Ofrecemos un servicio express para entregas rápidas, atendemos las preferencias individuales y proporcionamos recogida y entrega en la habitación del huésped para mayor comodidad. Garantizamos resultados óptimos y un cuidado excepcional de cada prenda.<html>");
 
-        btSolicitarLavanderia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/botonnn.png"))); // NOI18N
-        btSolicitarLavanderia.setText("Solicitar");
-        btSolicitarLavanderia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/lava.jpg"))); // NOI18N
+
+        btSolicitarLava.setBackground(new java.awt.Color(0, 102, 255));
+        btSolicitarLava.setText("Solicitar");
+        btSolicitarLava.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSolicitarLavaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -265,12 +278,12 @@ public class vistaServicios extends javax.swing.JFrame {
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btSolicitarLavanderia))
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btSolicitarLava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,7 +295,7 @@ public class vistaServicios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btSolicitarLavanderia))
+                .addComponent(btSolicitarLava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jLabel2.setBackground(new java.awt.Color(35, 149, 156));
@@ -316,9 +329,9 @@ public class vistaServicios extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -335,6 +348,17 @@ public class vistaServicios extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btSolicitarLimpiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSolicitarLimpiezaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSolicitarLimpiezaActionPerformed
+
+    private void btSolicitarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSolicitarComidaActionPerformed
+        // TODO add your handling code here:
+    }       btSolicitarLimpieza//GEN-LAST:event_btSolicitarComidaActionPerformed
+    private void btSolicitarLavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSolicitarLavaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSolicitarLavaActionPerformed
 
    
     public JButton getBtnInicioRe() {
@@ -373,36 +397,37 @@ public class vistaServicios extends javax.swing.JFrame {
         this.lblUsuario = lblUsuario;
     }
 
-    public JLabel getBtSolicitarComida() {
+    public ButtonRound getBtSolicitarComida() {
         return btSolicitarComida;
     }
 
-    public void setBtSolicitarComida(JLabel btSolicitarComida) {
+    public void setBtSolicitarComida(ButtonRound btSolicitarComida) {
         this.btSolicitarComida = btSolicitarComida;
     }
 
-    public JLabel getBtSolicitarLavanderia() {
-        return btSolicitarLavanderia;
+    public ButtonRound getBtSolicitarLava() {
+        return btSolicitarLava;
     }
 
-    public void setBtSolicitarLavanderia(JLabel btSolicitarLavanderia) {
-        this.btSolicitarLavanderia = btSolicitarLavanderia;
+    public void setBtSolicitarLava(ButtonRound btSolicitarLava) {
+        this.btSolicitarLava = btSolicitarLava;
     }
 
-    public JLabel getBtSolicitarLimpieza() {
+    public ButtonRound getBtSolicitarLimpieza() {
         return btSolicitarLimpieza;
     }
 
-    public void setBtSolicitarLimpieza(JLabel btSolicitarLimpieza) {
+    public void setBtSolicitarLimpieza(ButtonRound btSolicitarLimpieza) {
         this.btSolicitarLimpieza = btSolicitarLimpieza;
     }
+
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btSolicitarComida;
-    private javax.swing.JLabel btSolicitarLavanderia;
-    private javax.swing.JLabel btSolicitarLimpieza;
+    private org.edisoncor.gui.button.ButtonRound btSolicitarComida;
+    private org.edisoncor.gui.button.ButtonRound btSolicitarLava;
+    private org.edisoncor.gui.button.ButtonRound btSolicitarLimpieza;
     private javax.swing.JButton btnInicioRe;
     private javax.swing.JButton btnReservarRe;
     private javax.swing.JButton btnServiciosRe;
