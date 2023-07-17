@@ -355,7 +355,7 @@ public class vistaServicios extends javax.swing.JFrame {
 
     private void btSolicitarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSolicitarComidaActionPerformed
         // TODO add your handling code here:
-    }       btSolicitarLimpieza//GEN-LAST:event_btSolicitarComidaActionPerformed
+    }//GEN-LAST:event_btSolicitarComidaActionPerformed
     private void btSolicitarLavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSolicitarLavaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btSolicitarLavaActionPerformed
