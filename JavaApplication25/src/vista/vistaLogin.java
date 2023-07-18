@@ -5,6 +5,7 @@
  */
 package vista;
 
+import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import org.edisoncor.gui.button.ButtonRound;
@@ -54,6 +55,16 @@ public class vistaLogin extends javax.swing.JFrame {
         this.txtusuario = txtusuario;
     }
 
+    public JButton getBtnOlvidar() {
+        return btnOlvidar;
+    }
+
+    public void setBtnOlvidar(JButton btnOlvidar) {
+        this.btnOlvidar = btnOlvidar;
+    }
+    
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,7 +84,7 @@ public class vistaLogin extends javax.swing.JFrame {
         txtcontra = new javax.swing.JPasswordField();
         btnregistro = new org.edisoncor.gui.button.ButtonRound();
         btniniciarse = new org.edisoncor.gui.button.ButtonRound();
-        jButton1 = new javax.swing.JButton();
+        btnOlvidar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -117,8 +128,8 @@ public class vistaLogin extends javax.swing.JFrame {
         btniniciarse.setBackground(new java.awt.Color(0, 102, 255));
         btniniciarse.setText("INICIAR SESION");
 
-        jButton1.setText("¿Olvidaste tu contraseña?");
-        jButton1.setBorder(null);
+        btnOlvidar.setText("¿Olvidaste tu contraseña?");
+        btnOlvidar.setBorder(null);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -150,7 +161,7 @@ public class vistaLogin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnOlvidar)
                 .addGap(309, 309, 309))
         );
         jPanel2Layout.setVerticalGroup(
@@ -168,7 +179,7 @@ public class vistaLogin extends javax.swing.JFrame {
                 .addGap(1, 1, 1)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnOlvidar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btniniciarse, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -194,9 +205,9 @@ public class vistaLogin extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnOlvidar;
     private org.edisoncor.gui.button.ButtonRound btniniciarse;
     private org.edisoncor.gui.button.ButtonRound btnregistro;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
