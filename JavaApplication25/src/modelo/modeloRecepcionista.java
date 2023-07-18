@@ -32,7 +32,6 @@ public class modeloRecepcionista extends Recepcionista {
             sql1 = mostrarRecepcionista();
         }
         ResultSet rs = cpg.resultBD(sql1);
-
         try {
             while (rs.next()) {
                 Recepcionista per = new Recepcionista();
@@ -53,16 +52,12 @@ public class modeloRecepcionista extends Recepcionista {
                 per.setUsuario_Recep(rs.getString("usuario"));
                 per.setContra_Recep(rs.getString("contrasena"));
                 listaRecepcionista.add(per);
-
             }
             if (listaRecepcionista.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "NO SE ECONTRO NINGUN RESULTADO");
-
             }
             rs.close();
-
             return listaRecepcionista;
-
         } catch (SQLException ex) {
             Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
             return null;
@@ -71,7 +66,7 @@ public class modeloRecepcionista extends Recepcionista {
 
     public boolean grabarRecepcionista() {
         String sql = "insert into  recepcionista(id_recepcionista, usuario, contrasena,sueldo, cedula_persona)";
-        sql += "values('" + super.getId_Recep()+ "','" + getUsuario_Recep() + "','" + getContra_Recep() + "'," + getSueldo_Recep()+ ",'" + getCedula_Recep() + "')";
+        sql += "values('" + super.getId_Recep() + "','" + getUsuario_Recep() + "','" + getContra_Recep() + "'," + getSueldo_Recep() + ",'" + getCedula_Recep() + "')";
         return cpg.accionBd(sql);
     }
 
@@ -79,7 +74,6 @@ public class modeloRecepcionista extends Recepcionista {
         String sql = "select * from vistaRecepcionista";
         sql += "where cedula_persona='" + getCedulaPersona() + "'";
         return sql;
-
     }
 
     public String mostrarRecepcionista() {
@@ -113,4 +107,8 @@ public class modeloRecepcionista extends Recepcionista {
         return null;
     }
 
+    public boolean verificarUsuarioExistente() {
+        String sql = "SELECT * FROM recepcionista WHERE usuario = '" + getUsuario_Recep() + "'";
+        return cpg.accionBd(sql);
+    }
 }

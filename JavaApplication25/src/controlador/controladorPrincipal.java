@@ -9,8 +9,10 @@ import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import modelo.modeloAdministrador;
 import modelo.modeloCliente;
+import modelo.modeloLogin;
 import modelo.modeloRecepcionista;
 import vista.Pantalla_Principal;
+import vista.vistaLogin;
 import vista.vistaRegistro;
 import vista.vistaRegistroAdmin;
 import vista.vistaRegistroRecepcionista;
@@ -32,8 +34,9 @@ public class controladorPrincipal {
 
     public void iniciarControlador() {
         vistaPrincipal.getBtnInicioRe().addActionListener(l -> registroAdmin());
-        vistaPrincipal.getBtnReservarRe().addActionListener(l->registroUsuario());
-        vistaPrincipal.getBtnServiciosRe().addActionListener(l->registroRecepcionista());
+        vistaPrincipal.getBtnReservarRe().addActionListener(l -> registroUsuario());
+        vistaPrincipal.getBtnServiciosRe().addActionListener(l -> registroRecepcionista());
+        vistaPrincipal.getjButton4().addActionListener(l -> Login());
     }
 
     private void registroAdmin() {
@@ -55,8 +58,17 @@ public class controladorPrincipal {
     private void registroRecepcionista() {
         modeloRecepcionista modeloR = new modeloRecepcionista();
         vistaRegistroRecepcionista vistaR = new vistaRegistroRecepcionista();
-        controladorRegistroRecepcionista inicio2 = new controladorRegistroRecepcionista(vistaR,modeloR);
+        controladorRegistroRecepcionista inicio2 = new controladorRegistroRecepcionista(vistaR, modeloR);
         vistaPrincipal.dispose();
         inicio2.iniciarControlador();
     }
+
+    private void Login() {
+        modeloRecepcionista modeloL = new modeloRecepcionista();
+        vistaLogin vistaR = new vistaLogin();
+        Controlador_Login inicio2 = new Controlador_Login(modeloL, vistaR);
+        vistaPrincipal.dispose();
+        inicio2.iniciarControlador();
+    }
+
 }
