@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import java.security.Principal;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,6 +14,8 @@ import modelo.Recepcionista;
 import modelo.modeloAdministrador;
 import modelo.modeloCliente;
 import modelo.modeloRecepcionista;
+import vista.Pantalla_Principal;
+import vista.cliente_ventana;
 import vista.vistaLogin;
 
 /**
@@ -49,13 +52,19 @@ public class Controlador_Login {
         modeloLogin3.setContraCliente(vistaLogin.getTxtcontra().getText());
         try {
             if (modeloLogin.login() == true) {
-                System.out.println("recepcionista");
+                Pantalla_Principal prin = new Pantalla_Principal();
+                prin.setVisible(true);
+                vistaLogin.dispose();
             } else {
                 if (modeloLogin2.login() == true) {
-                    System.out.println("admin");
+//                    cliente_ventana prin = new cliente_ventana();
+//                    prin.setVisible(true);
+//                    vistaLogin.dispose();
                 } else {
                     if (modeloLogin3.login() == true) {
-                        System.out.println("cliente");
+                        cliente_ventana prin = new cliente_ventana();
+                        prin.setVisible(true);
+                        vistaLogin.dispose();
                     } else {
                         JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO");
                     }

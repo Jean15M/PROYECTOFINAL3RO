@@ -433,6 +433,14 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         this.jButton4 = jButton4;
     }
 
+    public JLabel getjLabel21() {
+        return jLabel21;
+    }
+
+    public void setjLabel21(JLabel jLabel21) {
+        this.jLabel21 = jLabel21;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JBtnRegistro;
     private javax.swing.JButton btnInicioRe;
