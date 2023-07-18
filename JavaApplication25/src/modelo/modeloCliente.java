@@ -111,4 +111,13 @@ public class modeloCliente extends Cliente{
         }
         return null;
     }
+    
+    public boolean login() throws SQLException {      
+       String sql =  "SELECT * FROM cliente WHERE usuario = '" + getUsuarioCliente()+ "' and contrasena= '" + getContraCliente()+ "'";
+       ResultSet resulset = cpg.resultBD(sql);
+        while (resulset.next()) {
+            return  true;
+        } 
+        return false;
+    }
 }

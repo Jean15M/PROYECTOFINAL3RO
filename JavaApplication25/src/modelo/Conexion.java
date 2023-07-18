@@ -18,6 +18,7 @@ import java.util.logging.Logger;
  * @author KEVIN SANCHEZ
  */
 public class Conexion {
+
     Connection con;
     private String usuario = "zHotel";
     private String password = "123";
@@ -63,6 +64,5 @@ public class Conexion {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
-
     }
 }

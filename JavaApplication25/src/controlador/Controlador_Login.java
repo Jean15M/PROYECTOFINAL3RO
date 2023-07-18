@@ -5,10 +5,13 @@
  */
 package controlador;
 
-import modelo.Administrador;
-import modelo.Cliente;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import modelo.Recepcionista;
-import modelo.modeloLogin;
+import modelo.modeloAdministrador;
+import modelo.modeloCliente;
 import modelo.modeloRecepcionista;
 import vista.vistaLogin;
 
@@ -19,10 +22,14 @@ import vista.vistaLogin;
 public class Controlador_Login {
 
     private modeloRecepcionista modeloLogin;
+    private modeloAdministrador modeloLogin2;
+    private modeloCliente modeloLogin3;
     private vistaLogin vistaLogin;
 
-    public Controlador_Login(modeloRecepcionista modeloLogin, vistaLogin vistaLogin) {
+    public Controlador_Login(modeloRecepcionista modeloLogin,modeloAdministrador modeloLogin2,modeloCliente modeloLogin3, vistaLogin vistaLogin) {
         this.modeloLogin = modeloLogin;
+        this.modeloLogin2 = modeloLogin2;
+        this.modeloLogin3 = modeloLogin3;
         this.vistaLogin = vistaLogin;
         vistaLogin.setVisible(true);
     }
@@ -34,14 +41,30 @@ public class Controlador_Login {
     }
 
     private void login() {
-        Recepcionista recepcionista = new Recepcionista();
-        recepcionista.setUsuario_Recep(vistaLogin.getTxtusuario().getText());
-        boolean usuarioExistente = modeloLogin.verificarUsuarioExistente();
-        if (usuarioExistente) {
-            System.out.println("El usuario existe en la base de datos");
-        } else {
-            System.out.println("El usuario no existe en la base de datos");
+        modeloLogin.setUsuario_Recep(vistaLogin.getTxtusuario().getText());
+        modeloLogin.setContra_Recep(vistaLogin.getTxtcontra().getText());
+        modeloLogin2.setUsuarioAdmin(vistaLogin.getTxtusuario().getText());
+        modeloLogin2.setContraAdmin(vistaLogin.getTxtcontra().getText());
+        modeloLogin3.setUsuarioCliente(vistaLogin.getTxtusuario().getText());
+        modeloLogin3.setContraCliente(vistaLogin.getTxtcontra().getText());
+        try {
+            if (modeloLogin.login() == true) {
+                System.out.println("recepcionista");
+            } else {
+                if (modeloLogin2.login() == true) {
+                    System.out.println("admin");
+                } else {
+                    if (modeloLogin3.login() == true) {
+                        System.out.println("cliente");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO");
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Controlador_Login.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
 }
