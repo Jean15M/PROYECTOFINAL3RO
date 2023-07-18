@@ -10,17 +10,18 @@ package modelo;
  * @author Joseline
  */
 public class Autos {
+
     private String placa;
     private String modelo;
     private String marca;
 
     public Autos() {
     }
-    
+
     public Autos(String placa, String modelo, String marca) {
         this.placa = placa;
         this.modelo = modelo;
-        this.marca =  marca;
+        this.marca = marca;
     }
 
     public String getPlaca() {
@@ -51,5 +52,5 @@ public class Autos {
     public String toString() {
         return "Autos{" + "placa=" + placa + ", modelo=" + modelo + ", marca=" + marca + '}';
     }
-    
+
 }

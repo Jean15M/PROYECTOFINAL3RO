@@ -10,6 +10,7 @@ package modelo;
  * @author Joseline
  */
 public class Recepcionista extends Personas {
+
     private String id_Recep;
     private double sueldo_Recep;
     private String usuario_Recep;
@@ -27,8 +28,6 @@ public class Recepcionista extends Personas {
         this.contra_Recep = contra_Recep;
         this.cedula_Recep = cedula_Recep;
     }
-
-
 
     public String getId_Recep() {
         return id_Recep;
@@ -74,6 +73,5 @@ public class Recepcionista extends Personas {
     public String toString() {
         return "Recepcionista{" + "id_Recep=" + id_Recep + ", sueldo_Recep=" + sueldo_Recep + ", usuario_Recep=" + usuario_Recep + ", contra_Recep=" + contra_Recep + ", cedula_Recep=" + cedula_Recep + '}';
     }
-    
-    
+
 }

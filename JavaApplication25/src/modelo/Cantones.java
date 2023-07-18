@@ -10,6 +10,7 @@ package modelo;
  * @author Joseline
  */
 public class Cantones {
+
     private String id_Canton;
     private String nombreCan;
     private String id_Provincia;
@@ -51,6 +52,5 @@ public class Cantones {
     public String toString() {
         return "Cantones{" + "id_Canton=" + id_Canton + ", nombreCan=" + nombreCan + ", id_Provincia=" + id_Provincia + '}';
     }
-    
-    
+
 }

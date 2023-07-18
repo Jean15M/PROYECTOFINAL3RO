@@ -13,11 +13,11 @@ import oracle.sql.DATE;
  * @author Joseline
  */
 public class Detalle_fac {
+
     private String id_Detalle;
     private String id_reserva_detalle;
     private double subtotal_detalle;
     private String id_encab_deta;
-    
 
     public Detalle_fac() {
     }
@@ -27,10 +27,8 @@ public class Detalle_fac {
         this.id_reserva_detalle = id_reserva_detalle;
         this.subtotal_detalle = subtotal_detalle;
         this.id_encab_deta = id_encab_deta;
-      
-    }
 
- 
+    }
 
     public String getId_Detalle() {
         return id_Detalle;
@@ -64,12 +62,9 @@ public class Detalle_fac {
         this.id_encab_deta = id_encab_deta;
     }
 
-   
     @Override
     public String toString() {
-        return "Detalle_fac{" + "id_Detalle=" + id_Detalle + ", id_reserva_detalle=" + id_reserva_detalle + ", subtotal_detalle=" + subtotal_detalle + ", id_encab_deta=" + id_encab_deta +  '}';
+        return "Detalle_fac{" + "id_Detalle=" + id_Detalle + ", id_reserva_detalle=" + id_reserva_detalle + ", subtotal_detalle=" + subtotal_detalle + ", id_encab_deta=" + id_encab_deta + '}';
     }
 
-    
-    
 }

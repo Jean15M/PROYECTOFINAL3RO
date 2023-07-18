@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  * @author KEVIN SANCHEZ
  */
 public class modeloEncabez_fac extends Encabez_fac {
-    
+
     Conexion cpg = new Conexion();
 
     public boolean modificar = false;
@@ -71,5 +71,5 @@ public class modeloEncabez_fac extends Encabez_fac {
         String sql = "select id_encabezado_fac,cedula_cliente,fecha,total from encabezado_fac";
         return sql;
     }
-    
+
 }

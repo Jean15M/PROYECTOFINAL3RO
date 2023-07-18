@@ -12,6 +12,7 @@ import java.util.Date;
  * @author Joseline
  */
 public class Parqueadero {
+
     private String id_Parqueadero;
     private Date tiempo;
     private String ubicacion;
@@ -63,6 +64,5 @@ public class Parqueadero {
     public String toString() {
         return "Parqueadero{" + "id_Parqueadero=" + id_Parqueadero + ", tiempo=" + tiempo + ", ubicacion=" + ubicacion + ", placa=" + placa + '}';
     }
-    
-    
+
 }

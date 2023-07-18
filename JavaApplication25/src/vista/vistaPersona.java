@@ -83,8 +83,6 @@ public class vistaPersona extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tb_vista;
     private javax.swing.JScrollPane jScrollPane1;

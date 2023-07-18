@@ -113,7 +113,7 @@ public class modeloAdministrador extends Administrador {
     }
 
     public boolean login() throws SQLException {
-        String sql = "SELECT * FROM administrador WHERE usuario = '" + getUsuarioAdmin()+ "' and contrasena= '" + getContraAdmin()+ "'";
+        String sql = "SELECT * FROM administrador WHERE usuario = '" + getUsuarioAdmin() + "' and contrasena= '" + getContraAdmin() + "'";
         ResultSet resulset = cpg.resultBD(sql);
         while (resulset.next()) {
             return true;

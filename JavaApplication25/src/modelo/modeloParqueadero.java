@@ -18,9 +18,10 @@ import javax.swing.JOptionPane;
  * @author KEVIN SANCHEZ
  */
 public class modeloParqueadero extends Parqueadero {
+
     Conexion cpg = new Conexion();
     public boolean modificar = false;
-    
+
     public List<Parqueadero> listarParqueadero() {
         List<Parqueadero> listaParqueadero = new ArrayList<Parqueadero>();
         String sql1 = "";
@@ -54,7 +55,7 @@ public class modeloParqueadero extends Parqueadero {
 
     public boolean grabarParqueadero() {
         String sql = "insert into  public.parqueadero(id_parqueadero,placa,tiempo,ubicacion)";
-        sql += "values('" + getId_Parqueadero()+ "','" + getPlaca() + "','" + getTiempo() + "','" + getUbicacion() +"')";
+        sql += "values('" + getId_Parqueadero() + "','" + getPlaca() + "','" + getTiempo() + "','" + getUbicacion() + "')";
         return cpg.accionBd(sql);
     }
 
@@ -94,6 +95,5 @@ public class modeloParqueadero extends Parqueadero {
         }
         return null;
     }
-    
-    
+
 }

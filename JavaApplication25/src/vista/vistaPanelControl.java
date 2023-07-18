@@ -321,9 +321,6 @@ public class vistaPanelControl extends javax.swing.JFrame {
     public void setLblUsuario(JLabel lblUsuario) {
         this.lblUsuario = lblUsuario;
     }
-    
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btnBuscarHabi;

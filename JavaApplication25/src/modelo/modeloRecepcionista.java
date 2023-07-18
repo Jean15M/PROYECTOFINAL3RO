@@ -106,13 +106,13 @@ public class modeloRecepcionista extends Recepcionista {
         }
         return null;
     }
-    
-    public boolean login() throws SQLException {      
-       String sql =  "SELECT * FROM recepcionista WHERE usuario = '" + getUsuario_Recep() + "' and contrasena= '" + getContra_Recep()+ "'";
-       ResultSet resulset = cpg.resultBD(sql);
+
+    public boolean login() throws SQLException {
+        String sql = "SELECT * FROM recepcionista WHERE usuario = '" + getUsuario_Recep() + "' and contrasena= '" + getContra_Recep() + "'";
+        ResultSet resulset = cpg.resultBD(sql);
         while (resulset.next()) {
-            return  true;
-        } 
+            return true;
+        }
         return false;
     }
 }

@@ -23,36 +23,37 @@ import vista.vistaRegistro;
  * @author Joseline
  */
 public class controladorRegistroUsuario {
+
     private modeloCliente modeloUsuario;
     private vistaRegistro vistaUsuario;
-    
+
     public controladorRegistroUsuario(modeloCliente modeloUsuario, vistaRegistro vistaUsuario) {
         this.modeloUsuario = modeloUsuario;
         this.vistaUsuario = vistaUsuario;
-        vistaUsuario.setVisible(true);   
+        vistaUsuario.setVisible(true);
     }
-    
-    public void iniciarControlador(){
+
+    public void iniciarControlador() {
         cargarProvincias();
-        vistaUsuario.getBtnAceptar().addActionListener(l->registrarUsuario());
-        vistaUsuario.getBtnCancelar().addActionListener(l->vistaUsuario.dispose());
-        vistaUsuario.getComprovin().addActionListener(l->cargarCantones());
-        
+        vistaUsuario.getBtnAceptar().addActionListener(l -> registrarUsuario());
+        vistaUsuario.getBtnCancelar().addActionListener(l -> vistaUsuario.dispose());
+        vistaUsuario.getComprovin().addActionListener(l -> cargarCantones());
+
     }
-    
+
     private void registrarUsuario() {
         String ced = vistaUsuario.getTxtcedula().getText();
-        if(vistaUsuario.getTxtcedula().getText().isEmpty()||vistaUsuario.getTxtnom1().getText().isEmpty()||vistaUsuario.getTxtnom2().getText().isEmpty()||vistaUsuario.getTxtape1().getText().isEmpty()||vistaUsuario.getTxtape2().getText().isEmpty()||vistaUsuario.getTxtcorreo().getText().isEmpty()||vistaUsuario.getTxttelefono().getText().isEmpty()||vistaUsuario.getTxtcontrasena().getText().isEmpty()||vistaUsuario.getTxtdireccion().getText().isEmpty()||vistaUsuario.getTxtIdUsuario().getText().isEmpty()||vistaUsuario.getTxtUsuario().getText().isEmpty() || vistaUsuario.getComgenero().getSelectedIndex()==0 || vistaUsuario.getComcanto().getSelectedIndex()==0 || vistaUsuario.getComprovin().getSelectedIndex()==0 ){
+        if (vistaUsuario.getTxtcedula().getText().isEmpty() || vistaUsuario.getTxtnom1().getText().isEmpty() || vistaUsuario.getTxtnom2().getText().isEmpty() || vistaUsuario.getTxtape1().getText().isEmpty() || vistaUsuario.getTxtape2().getText().isEmpty() || vistaUsuario.getTxtcorreo().getText().isEmpty() || vistaUsuario.getTxttelefono().getText().isEmpty() || vistaUsuario.getTxtcontrasena().getText().isEmpty() || vistaUsuario.getTxtdireccion().getText().isEmpty() || vistaUsuario.getTxtIdUsuario().getText().isEmpty() || vistaUsuario.getTxtUsuario().getText().isEmpty() || vistaUsuario.getComgenero().getSelectedIndex() == 0 || vistaUsuario.getComcanto().getSelectedIndex() == 0 || vistaUsuario.getComprovin().getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "LLENE LOS CAMPOS POR FAVOR");
-        }else{
-            if(Validaciones.validarCedula(ced)){
-                if(!Validaciones.NombreValido(vistaUsuario.getTxtnom1().getText())||!Validaciones.NombreValido(vistaUsuario.getTxtnom2().getText())){
+        } else {
+            if (Validaciones.validarCedula(ced)) {
+                if (!Validaciones.NombreValido(vistaUsuario.getTxtnom1().getText()) || !Validaciones.NombreValido(vistaUsuario.getTxtnom2().getText())) {
                     JOptionPane.showMessageDialog(null, "Ingrese un nombre correcto");
-                }else if (!Validaciones.NombreValido(vistaUsuario.getTxtape1().getText())||!Validaciones.NombreValido(vistaUsuario.getTxtape2().getText())){
+                } else if (!Validaciones.NombreValido(vistaUsuario.getTxtape1().getText()) || !Validaciones.NombreValido(vistaUsuario.getTxtape2().getText())) {
                     JOptionPane.showMessageDialog(null, "Ingrese un apellido correcto");
-                }else if (!Validaciones.NumCelValido(vistaUsuario.getTxttelefono().getText())){
+                } else if (!Validaciones.NumCelValido(vistaUsuario.getTxttelefono().getText())) {
                     JOptionPane.showMessageDialog(null, "Ingrese un teléfono correcto");
-                }else{
+                } else {
                     Date fechaCalendar = vistaUsuario.getjCalendario().getDate();
                     SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
                     String d1 = date.format(fechaCalendar);
@@ -84,7 +85,7 @@ public class controladorRegistroUsuario {
                         } else {
                             per1.eliminarPersona();
                             modeloUsuario.eliminarCliente();
-                            JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR EL USUARIO");                    
+                            JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR EL USUARIO");
                         }
 
                     } else {
@@ -92,13 +93,13 @@ public class controladorRegistroUsuario {
                         per1.eliminarPersona();
                     }
                 }
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "CÉDULA INGRESADA DE MANERA INCORRECTA");
             }
         }
-        
+
     }
-    
+
     private void cargarCantones() {
         if (vistaUsuario.getComprovin().getSelectedIndex() == 0) {
             vistaUsuario.getComcanto().addItem("SELECCIONAR");
@@ -113,20 +114,22 @@ public class controladorRegistroUsuario {
             });
         }
     }
+
     private void cargarProvincias() {
-         modeloProvincia cargar1 = new modeloProvincia();
-         cargar1.listarProvincias().stream().forEach(c -> {
-                vistaUsuario.getComprovin().addItem(c.getNombre_Provincia());
-            });
+        modeloProvincia cargar1 = new modeloProvincia();
+        cargar1.listarProvincias().stream().forEach(c -> {
+            vistaUsuario.getComprovin().addItem(c.getNombre_Provincia());
+        });
     }
+
     //MÉTODO QUE QUEDARÁ EN DEFINIR SU VISTA PARA PODER UTILIZARLO
-    private void removerUsuario() {  
-   //modeloUsuario.setCedulaCliente();          
-    if (modeloUsuario.eliminarCliente()) {
-        JOptionPane.showMessageDialog(null, "SE ELIMINO LA PERSONA CORRECTAMENTE");   
-    } else {
-            JOptionPane.showMessageDialog(null, "NO SE PUDO ELIMINAR");           
-        }  
+    private void removerUsuario() {
+        //modeloUsuario.setCedulaCliente();          
+        if (modeloUsuario.eliminarCliente()) {
+            JOptionPane.showMessageDialog(null, "SE ELIMINO LA PERSONA CORRECTAMENTE");
+        } else {
+            JOptionPane.showMessageDialog(null, "NO SE PUDO ELIMINAR");
+        }
     }
-       
+
 }

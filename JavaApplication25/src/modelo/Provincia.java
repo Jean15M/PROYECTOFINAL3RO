@@ -10,6 +10,7 @@ package modelo;
  * @author Joseline
  */
 public class Provincia {
+
     private String id_Provincia;
     private String nombre_Provincia;
 
@@ -41,6 +42,5 @@ public class Provincia {
     public String toString() {
         return "Provincia{" + "id_Provincia=" + id_Provincia + ", nombre_Provincia=" + nombre_Provincia + '}';
     }
-    
-    
+
 }

@@ -18,10 +18,10 @@ import javax.swing.JOptionPane;
  * @author KEVIN SANCHEZ
  */
 public class modeloTipoServicio extends Tipo_Servicio {
-    
-     Conexion cpg = new Conexion();
+
+    Conexion cpg = new Conexion();
     public boolean modificar = false;
-    
+
     public List<Tipo_Servicio> listarParqueadero() {
         List<Tipo_Servicio> listaTipo_Servicio = new ArrayList<Tipo_Servicio>();
         String sql1 = "";
@@ -53,13 +53,13 @@ public class modeloTipoServicio extends Tipo_Servicio {
 
     public boolean grabarTipo_Servicio() {
         String sql = "insert into  public.tipo_servicios(id_tipo_servicio,descripcion)";
-        sql += "values('" + getId_tipo_servicio()+ "','" + getDesc_tipo() +"')";
+        sql += "values('" + getId_tipo_servicio() + "','" + getDesc_tipo() + "')";
         return cpg.accionBd(sql);
     }
 
     public String Consultar() {
         String sql = "select id_tipo_servicio,descripcion from tipo_servicios";
-        sql += "where id_tipo_servicio='" + getId_tipo_servicio()+ "'";
+        sql += "where id_tipo_servicio='" + getId_tipo_servicio() + "'";
         return sql;
 
     }
@@ -71,13 +71,13 @@ public class modeloTipoServicio extends Tipo_Servicio {
 
     public boolean modificarTipo_ServicioBD() {
         String sql = "UPDATE public.tipo_servicios SET  descripcion='" + getDesc_tipo() + "'";
-        sql += "where id_tipo_servicio='" + getId_tipo_servicio()+ "'";
+        sql += "where id_tipo_servicio='" + getId_tipo_servicio() + "'";
         return cpg.accionBd(sql);
     }
 
     public boolean eliminarTipo_Servicio() {
         String sql = "DELETE FROM public.tipo_servicios";
-        sql += "where id_tipo_servicio='" + getId_tipo_servicio()+ "'";
+        sql += "where id_tipo_servicio='" + getId_tipo_servicio() + "'";
         return cpg.accionBd(sql);
     }
 
@@ -93,5 +93,5 @@ public class modeloTipoServicio extends Tipo_Servicio {
         }
         return null;
     }
-    
+
 }

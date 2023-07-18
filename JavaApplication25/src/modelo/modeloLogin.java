@@ -10,5 +10,5 @@ package modelo;
  * @author Edisson Leon
  */
 public class modeloLogin {
-    
+
 }

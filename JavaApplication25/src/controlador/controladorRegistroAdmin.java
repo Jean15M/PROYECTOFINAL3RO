@@ -24,22 +24,22 @@ import vista.vistaRegistroAdmin;
  * @author KEVIN SANCHEZ
  */
 public class controladorRegistroAdmin {
-    
+
     private vistaRegistroAdmin vistaAdmin;
     private modeloAdministrador administrador;
-    
+
     public controladorRegistroAdmin(vistaRegistroAdmin vistaAdmin, modeloAdministrador administrador) {
         this.vistaAdmin = vistaAdmin;
         this.administrador = administrador;
         vistaAdmin.setVisible(true);
     }
-    
+
     public void controlador() {
         cargarProvincias();
         vistaAdmin.getButtonRound2().addActionListener(l -> RegistrarAdmin());
         vistaAdmin.getComprovin().addActionListener(l -> cargarCantones());
     }
-    
+
     private void RegistrarAdmin() {
         Date fechaCalendar = vistaAdmin.getJfecha().getDate();
         SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
@@ -66,19 +66,19 @@ public class controladorRegistroAdmin {
         administrador.setContraAdmin(vistaAdmin.getTxtcontrasena().getText());
         administrador.setCedulaAdmin(vistaAdmin.getTxtcedula().getText());
         if (per1.grabarPersona() == true) {
-            if (administrador.grabarAdministrador()==true) {
+            if (administrador.grabarAdministrador() == true) {
                 JOptionPane.showMessageDialog(null, "GUARDADO EXITOSAMENTE");
-            } else{
+            } else {
                 per1.setCedulaPersona(vistaAdmin.getTxtcedula().getText());
                 per1.eliminarPersona();
                 JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR AL ADMINISTRAR");
             }
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR A LA PERSONA");
         }
     }
-    
+
     private void cargarCantones() {
         if (vistaAdmin.getComprovin().getSelectedIndex() == 0) {
             vistaAdmin.getComcanto().addItem("SELECCIONAR");
@@ -93,11 +93,12 @@ public class controladorRegistroAdmin {
             });
         }
     }
+
     private void cargarProvincias() {
-         modeloProvincia cargar1 = new modeloProvincia();
-         cargar1.listarProvincias().stream().forEach(c -> {
-                vistaAdmin.getComprovin().addItem(c.getNombre_Provincia());
-            });
+        modeloProvincia cargar1 = new modeloProvincia();
+        cargar1.listarProvincias().stream().forEach(c -> {
+            vistaAdmin.getComprovin().addItem(c.getNombre_Provincia());
+        });
     }
-    
+
 }

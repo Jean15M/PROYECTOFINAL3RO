@@ -9,7 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import org.edisoncor.gui.button.ButtonRound;
 
-
 /**
  *
  * @author Joseline
@@ -311,7 +310,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btParqueoActionPerformed
 
-   
     public JButton getBtnInicioRe() {
         return btnInicioRe;
     }
@@ -320,7 +318,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         this.btnInicioRe = btnInicioRe;
     }
 
-
     public JButton getBtnReservarRe() {
         return btnReservarRe;
     }
@@ -328,7 +325,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
     public void setBtnReservarRe(JButton btnReservarRe) {
         this.btnReservarRe = btnReservarRe;
     }
-
 
     public JButton getBtnServiciosRe() {
         return btnServiciosRe;
@@ -385,10 +381,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
     public void setBtServicios(ButtonRound btServicios) {
         this.btServicios = btServicios;
     }
-
-    
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btHabitaciones;

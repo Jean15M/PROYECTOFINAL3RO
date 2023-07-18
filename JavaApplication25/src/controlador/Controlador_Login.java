@@ -26,7 +26,7 @@ public class Controlador_Login {
     private modeloCliente modeloLogin3;
     private vistaLogin vistaLogin;
 
-    public Controlador_Login(modeloRecepcionista modeloLogin,modeloAdministrador modeloLogin2,modeloCliente modeloLogin3, vistaLogin vistaLogin) {
+    public Controlador_Login(modeloRecepcionista modeloLogin, modeloAdministrador modeloLogin2, modeloCliente modeloLogin3, vistaLogin vistaLogin) {
         this.modeloLogin = modeloLogin;
         this.modeloLogin2 = modeloLogin2;
         this.modeloLogin3 = modeloLogin3;

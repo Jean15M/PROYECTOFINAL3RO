@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
  *
  * @author KEVIN SANCHEZ
  */
-public class modeloCliente extends Cliente{
+public class modeloCliente extends Cliente {
 
-  Conexion cpg = new Conexion();
+    Conexion cpg = new Conexion();
 
     public boolean modificar = false;
 
@@ -66,14 +66,14 @@ public class modeloCliente extends Cliente{
             Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
-    }   
-    
-       public boolean grabarCliente() {
+    }
+
+    public boolean grabarCliente() {
         String sql = "insert into cliente(id_cliente, usuario, contrasena, cedula_persona)";
         sql += "values('" + super.getId_Cliente() + "','" + getUsuarioCliente() + "','" + getContraCliente() + "','" + getCedulaCliente() + "')";
         return cpg.accionBd(sql);
     }
-       
+
     public String Consultar() {
         String sql = "select * from vistacliente ";
         sql += "where cedula_persona='" + getCedulaPersona() + "'";
@@ -111,13 +111,13 @@ public class modeloCliente extends Cliente{
         }
         return null;
     }
-    
-    public boolean login() throws SQLException {      
-       String sql =  "SELECT * FROM cliente WHERE usuario = '" + getUsuarioCliente()+ "' and contrasena= '" + getContraCliente()+ "'";
-       ResultSet resulset = cpg.resultBD(sql);
+
+    public boolean login() throws SQLException {
+        String sql = "SELECT * FROM cliente WHERE usuario = '" + getUsuarioCliente() + "' and contrasena= '" + getContraCliente() + "'";
+        ResultSet resulset = cpg.resultBD(sql);
         while (resulset.next()) {
-            return  true;
-        } 
+            return true;
+        }
         return false;
     }
 }

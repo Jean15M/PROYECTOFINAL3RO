@@ -12,6 +12,7 @@ import java.util.Date;
  * @author Joseline
  */
 public class Encabez_fac {
+
     private String id_encabez;
     private String cedula_cli;
     private Date fecha_fac;
@@ -63,6 +64,5 @@ public class Encabez_fac {
     public String toString() {
         return "Encabez_fac{" + "id_encabez=" + id_encabez + ", cedula_cli=" + cedula_cli + ", fecha_fac=" + fecha_fac + ", total_fac=" + total_fac + '}';
     }
-    
-    
+
 }

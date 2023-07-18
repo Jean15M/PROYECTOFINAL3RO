@@ -12,6 +12,7 @@ import java.util.Date;
  * @author Joseline
  */
 public class Reservas {
+
     private String id_Reserva;
     private String pago_Reserva;
     private Date fecha_entrada;
@@ -38,8 +39,6 @@ public class Reservas {
         this.id_Recepcionista = id_Recepcionista;
         this.cedula_Cliente = cedula_Cliente;
     }
-
-
 
     public String getId_Reserva() {
         return id_Reserva;
@@ -125,7 +124,5 @@ public class Reservas {
     public String toString() {
         return "Reservas{" + "id_Reserva=" + id_Reserva + ", pago_Reserva=" + pago_Reserva + ", fecha_entrada=" + fecha_entrada + ", fecha_salida=" + fecha_salida + ", total_Reserva=" + total_Reserva + ", id_Habitacion=" + id_Habitacion + ", id_Parqueadero=" + id_Parqueadero + ", id_Recepcionista=" + id_Recepcionista + ", cedula_Cliente=" + cedula_Cliente + '}';
     }
-    
-    
-    
+
 }

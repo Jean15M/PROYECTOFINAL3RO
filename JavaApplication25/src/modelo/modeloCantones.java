@@ -25,7 +25,7 @@ public class modeloCantones extends Cantones {
 
     public List<Cantones> listarCantones() {
         List<Cantones> listaCantones = new ArrayList<Cantones>();
-        String sql1 = "select codigoCanton, codigoProvincia, nombre from cantones where codigoProvincia='"+getId_Provincia()+"'";
+        String sql1 = "select codigoCanton, codigoProvincia, nombre from cantones where codigoProvincia='" + getId_Provincia() + "'";
 
         ResultSet rs = cpg.resultBD(sql1);
 

@@ -153,8 +153,6 @@ public class vistaContrase extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btnCancelar;
     private org.edisoncor.gui.button.ButtonRound buttonRound2;

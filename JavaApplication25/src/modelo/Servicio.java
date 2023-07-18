@@ -10,6 +10,7 @@ package modelo;
  * @author Joseline
  */
 public class Servicio {
+
     private String id_Servicio;
     private String descp_Servicio;
     private String id_Habitacion;
@@ -61,6 +62,5 @@ public class Servicio {
     public String toString() {
         return "Servicio{" + "id_Servicio=" + id_Servicio + ", descp_Servicio=" + descp_Servicio + ", id_Habitacion=" + id_Habitacion + ", id_tipo_servicio=" + id_tipo_servicio + '}';
     }
-    
-    
+
 }

@@ -10,6 +10,7 @@ package modelo;
  * @author Joseline
  */
 public class CategoriaHabitacion {
+
     private String id_Categoria;
     private String nombre_Categoria;
 
@@ -41,6 +42,5 @@ public class CategoriaHabitacion {
     public String toString() {
         return "CategoriaHabitacion{" + "id_Categoria=" + id_Categoria + ", nombre_Categoria=" + nombre_Categoria + '}';
     }
-    
-    
+
 }

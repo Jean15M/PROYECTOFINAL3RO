@@ -38,7 +38,7 @@ public class modeloDetalle_fac extends Detalle_fac {
                 Detalle_fac Detalle_fac1 = new Detalle_fac();
                 Detalle_fac1.setId_Detalle(rs.getString("id_categoria"));
                 Detalle_fac1.setId_encab_deta(rs.getString("nombre"));
-                Detalle_fac1.setId_reserva_detalle(rs.getString("nombre"));        
+                Detalle_fac1.setId_reserva_detalle(rs.getString("nombre"));
                 Detalle_fac1.setSubtotal_detalle(rs.getDouble("subtotal"));
                 listaDetalle_fac.add(Detalle_fac1);
             }

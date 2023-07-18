@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  * @author KEVIN SANCHEZ
  */
 public class modeloReserva extends Reservas {
-    
+
     Conexion cpg = new Conexion();
 
     public boolean modificar = false;
@@ -99,5 +99,5 @@ public class modeloReserva extends Reservas {
         }
         return null;
     }
-    
+
 }

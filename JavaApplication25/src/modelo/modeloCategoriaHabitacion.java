@@ -18,9 +18,8 @@ import javax.swing.JOptionPane;
  * @author KEVIN SANCHEZ
  */
 public class modeloCategoriaHabitacion extends CategoriaHabitacion {
-    
-        
-        Conexion cpg = new Conexion();
+
+    Conexion cpg = new Conexion();
 
     public boolean modificar = false;
 
@@ -52,14 +51,16 @@ public class modeloCategoriaHabitacion extends CategoriaHabitacion {
             return null;
         }
     }
-   public boolean grabarCategoriaHabitacion() {
+
+    public boolean grabarCategoriaHabitacion() {
         String sql = "insert into  public.categoria_Habitacion(id_categoria,nombre)";
         sql += "values('" + super.getId_Categoria() + "','" + getNombre_Categoria() + "')";
         return cpg.accionBd(sql);
     }
+
     public String Consultar() {
         String sql = "select id_categoria, nombre from categoriaHabitacion";
-        sql += "where id_categoria='" + getId_Categoria()+ "'";
+        sql += "where id_categoria='" + getId_Categoria() + "'";
         return sql;
 
     }
@@ -68,8 +69,8 @@ public class modeloCategoriaHabitacion extends CategoriaHabitacion {
         String sql = "select id_categoria, nombre from categoriaHabitacion";
         return sql;
     }
-    
-     public boolean modificarCategoriaHabitacionBD() {
+
+    public boolean modificarCategoriaHabitacionBD() {
         String sql = "UPDATE public.categoriaHabitacion SET marca='" + getNombre_Categoria() + "'";
         sql += "where id_categoria='" + getId_Categoria() + "'";
         return cpg.accionBd(sql);
@@ -81,5 +82,5 @@ public class modeloCategoriaHabitacion extends CategoriaHabitacion {
         return cpg.accionBd(sql);
 
     }
-    
+
 }

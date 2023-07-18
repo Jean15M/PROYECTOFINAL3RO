@@ -10,6 +10,7 @@ package modelo;
  * @author Joseline
  */
 public class Administrador extends Personas {
+
     private String id_Admin;
     private String usuarioAdmin;
     private String contraAdmin;
@@ -25,7 +26,6 @@ public class Administrador extends Personas {
         this.contraAdmin = contraAdmin;
         this.cedulaAdmin = cedulaAdmin;
     }
-
 
     public String getId_Admin() {
         return id_Admin;
@@ -63,6 +63,5 @@ public class Administrador extends Personas {
     public String toString() {
         return "Administrador{" + "id_Admin=" + id_Admin + ", usuarioAdmin=" + usuarioAdmin + ", contraAdmin=" + contraAdmin + ", cedulaAdmin=" + cedulaAdmin + '}';
     }
-    
-    
+
 }

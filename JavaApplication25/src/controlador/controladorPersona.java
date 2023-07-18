@@ -10,5 +10,5 @@ package controlador;
  * @author KEVIN SANCHEZ
  */
 public class controladorPersona {
-    
+
 }

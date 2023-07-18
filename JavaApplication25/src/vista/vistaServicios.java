@@ -9,7 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import org.edisoncor.gui.button.ButtonRound;
 
-
 /**
  *
  * @author Joseline
@@ -360,7 +359,6 @@ public class vistaServicios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btSolicitarLavaActionPerformed
 
-   
     public JButton getBtnInicioRe() {
         return btnInicioRe;
     }
@@ -369,8 +367,6 @@ public class vistaServicios extends javax.swing.JFrame {
         this.btnInicioRe = btnInicioRe;
     }
 
-   
-
     public JButton getBtnReservarRe() {
         return btnReservarRe;
     }
@@ -378,8 +374,6 @@ public class vistaServicios extends javax.swing.JFrame {
     public void setBtnReservarRe(JButton btnReservarRe) {
         this.btnReservarRe = btnReservarRe;
     }
-
-    
 
     public JButton getBtnServiciosRe() {
         return btnServiciosRe;
@@ -420,9 +414,6 @@ public class vistaServicios extends javax.swing.JFrame {
     public void setBtSolicitarLimpieza(ButtonRound btSolicitarLimpieza) {
         this.btSolicitarLimpieza = btSolicitarLimpieza;
     }
-
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btSolicitarComida;

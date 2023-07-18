@@ -154,7 +154,7 @@ public class vistaRegistro extends javax.swing.JFrame {
     public void setTxtUsuario(JTextField txtUsuario) {
         this.txtUsuario = txtUsuario;
     }
-    
+
     public JTextField getTxtcontrasena() {
         return txtcontrasena;
     }
@@ -162,10 +162,7 @@ public class vistaRegistro extends javax.swing.JFrame {
     public void setTxtcontrasena(JTextField txtcontrasena) {
         this.txtcontrasena = txtcontrasena;
     }
-    
-    
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -475,9 +472,6 @@ public class vistaRegistro extends javax.swing.JFrame {
     private void txtcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcorreoActionPerformed
-
-    
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btnAceptar;

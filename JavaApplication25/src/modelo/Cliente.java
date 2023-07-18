@@ -10,6 +10,7 @@ package modelo;
  * @author Joseline
  */
 public class Cliente extends Personas {
+
     private String id_Cliente;
     private String usuarioCliente;
     private String contraCliente;
@@ -25,8 +26,6 @@ public class Cliente extends Personas {
         this.contraCliente = contraCliente;
         this.cedulaCliente = cedulaCliente;
     }
-
-
 
     public String getId_Cliente() {
         return id_Cliente;
@@ -64,7 +63,5 @@ public class Cliente extends Personas {
     public String toString() {
         return "Cliente{" + "id_Cliente=" + id_Cliente + ", usuarioCliente=" + usuarioCliente + ", contraCliente=" + contraCliente + ", cedulaCliente=" + cedulaCliente + '}';
     }
-    
-    
-    
+
 }

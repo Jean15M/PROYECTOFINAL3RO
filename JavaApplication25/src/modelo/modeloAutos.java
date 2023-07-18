@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
  *
  * @author KEVIN SANCHEZ
  */
-public class modeloAutos extends Autos{
-    
-        Conexion cpg = new Conexion();
+public class modeloAutos extends Autos {
+
+    Conexion cpg = new Conexion();
 
     public boolean modificar = false;
 
@@ -52,7 +52,8 @@ public class modeloAutos extends Autos{
             return null;
         }
     }
-     public boolean grabarAutos() {
+
+    public boolean grabarAutos() {
         String sql = "insert into  public.autos(placa,marca,modelo)";
         sql += "values('" + super.getPlaca() + "','" + getMarca() + "','" + getModelo() + "')";
         return cpg.accionBd(sql);
@@ -60,7 +61,7 @@ public class modeloAutos extends Autos{
 
     public String Consultar() {
         String sql = "select placa, modelo, marca from autos";
-        sql += "where placa='" + getPlaca()+ "'";
+        sql += "where placa='" + getPlaca() + "'";
         return sql;
 
     }
@@ -69,8 +70,8 @@ public class modeloAutos extends Autos{
         String sql = "select placa, modelo, marca from autos";
         return sql;
     }
-    
-     public boolean modificarAutosBD() {
+
+    public boolean modificarAutosBD() {
         String sql = "UPDATE public.autos SET marca='" + getMarca() + "', modelo='" + getModelo() + "'";
         sql += "where placa='" + getPlaca() + "'";
         return cpg.accionBd(sql);

@@ -606,7 +606,6 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
         this.txtcontrasena = txtcontrasena;
     }
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btnCancelar;
     private org.edisoncor.gui.button.ButtonRound buttonRound2;

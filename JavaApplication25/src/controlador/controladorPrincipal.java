@@ -13,6 +13,7 @@ import modelo.modeloLogin;
 import modelo.modeloRecepcionista;
 import vista.Pantalla_Principal;
 import vista.vistaLogin;
+import vista.cliente_ventana;
 import vista.vistaRegistro;
 import vista.vistaRegistroAdmin;
 import vista.vistaRegistroRecepcionista;
@@ -37,6 +38,7 @@ public class controladorPrincipal {
         vistaPrincipal.getBtnReservarRe().addActionListener(l -> registroUsuario());
         vistaPrincipal.getBtnServiciosRe().addActionListener(l -> registroRecepcionista());
         vistaPrincipal.getjButton4().addActionListener(l -> Login());
+
     }
 
     private void registroAdmin() {
@@ -65,10 +67,18 @@ public class controladorPrincipal {
 
     private void Login() {
         modeloRecepcionista modeloL = new modeloRecepcionista();
+        modeloCliente modeloC = new modeloCliente();
+        modeloAdministrador modeloA = new modeloAdministrador();
         vistaLogin vistaR = new vistaLogin();
-        Controlador_Login inicio2 = new Controlador_Login(modeloL, vistaR);
+        Controlador_Login inicio2 = new Controlador_Login(modeloL, modeloA, modeloC, vistaR);
         vistaPrincipal.dispose();
         inicio2.iniciarControlador();
     }
 
+    public void iniciarVentana_cliente() {
+        cliente_ventana nuevo1 = new cliente_ventana();
+        controlador_vista_cliente nuevo = new controlador_vista_cliente(nuevo1);
+        nuevo.iniciarControlador();
+
+    }
 }

@@ -17,11 +17,11 @@ import javax.swing.JOptionPane;
  *
  * @author KEVIN SANCHEZ
  */
-public class modeloServicio extends Servicio{
-    
+public class modeloServicio extends Servicio {
+
     Conexion cpg = new Conexion();
     public boolean modificar = false;
-    
+
     public List<Servicio> listarServicio() {
         List<Servicio> listaServicio = new ArrayList<Servicio>();
         String sql1 = "";
@@ -55,7 +55,7 @@ public class modeloServicio extends Servicio{
 
     public boolean grabarServicio() {
         String sql = "insert into  public.servicios(id_servicio,id_tipo_servicio,id_habitacion,descripcion)";
-        sql += "values('" + getId_Servicio()+ "','" + getId_tipo_servicio() + "','" + getId_Habitacion() + "','" + getDescp_Servicio() +"')";
+        sql += "values('" + getId_Servicio() + "','" + getId_tipo_servicio() + "','" + getId_Habitacion() + "','" + getDescp_Servicio() + "')";
         return cpg.accionBd(sql);
     }
 
@@ -72,7 +72,7 @@ public class modeloServicio extends Servicio{
     }
 
     public boolean modificarServicioBD() {
-        String sql = "UPDATE public.servicios SET  descripcion='" + getDescp_Servicio()+"'";
+        String sql = "UPDATE public.servicios SET  descripcion='" + getDescp_Servicio() + "'";
         sql += "where id_servicio='" + getId_Servicio() + "'";
         return cpg.accionBd(sql);
     }
@@ -89,5 +89,5 @@ public class modeloServicio extends Servicio{
         }
         return null;
     }
-    
+
 }

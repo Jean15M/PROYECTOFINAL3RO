@@ -128,8 +128,6 @@ public class Personas {
         this.correoPersona = correoPersona;
     }
 
-
-
     @Override
     public String toString() {
         return "Personas{" + "cedulaPersona=" + cedulaPersona + ", nombrePersona=" + nombrePersona + ", nombrePersona1=" + nombrePersona1 + ", apellidoPersona=" + apellidoPersona + ", apellidoPersona1=" + apellidoPersona1 + ", generoPersona=" + generoPersona + ", telefonoPersona=" + telefonoPersona + ", direccionPersona=" + direccionPersona + ", edadPersona=" + edadPersona + ", cod_canton=" + cod_canton + ", correoPersona=" + correoPersona + '}';
