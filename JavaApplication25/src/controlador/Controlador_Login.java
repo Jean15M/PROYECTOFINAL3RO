@@ -16,6 +16,7 @@ import modelo.modeloCliente;
 import modelo.modeloRecepcionista;
 import vista.Pantalla_Principal;
 import vista.cliente_ventana;
+import vista.vistaContrase;
 import vista.vistaLogin;
 
 /**
@@ -40,7 +41,7 @@ public class Controlador_Login {
     public void iniciarControlador() {
         vistaLogin.getBtniniciarse().addActionListener(l -> login());
         //vistaLogin.getBtnregistro().addActionListener(l -> registro());
-
+        vistaLogin.getBtnOlvidar().addActionListener(l->cambiarContra());
     }
 
     private void login() {
@@ -74,6 +75,15 @@ public class Controlador_Login {
             Logger.getLogger(Controlador_Login.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+    
+    private void cambiarContra(){
+        modeloCliente modeloC = new modeloCliente();
+        modeloRecepcionista modeloR = new modeloRecepcionista();
+        vistaContrase vistaCon = new vistaContrase();
+        vistaCon.setVisible(true);
+        controladorContrasena inicio = new controladorContrasena(modeloC, modeloR, vistaCon);
+        inicio.iniciarControlador();
     }
 
 }
