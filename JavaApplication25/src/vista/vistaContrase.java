@@ -5,6 +5,10 @@
  */
 package vista;
 
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import org.edisoncor.gui.button.ButtonRound;
+
 /**
  *
  * @author KEVIN SANCHEZ
@@ -35,9 +39,9 @@ public class vistaContrase extends javax.swing.JFrame {
         txtusuario = new javax.swing.JTextField();
         txtcontra = new javax.swing.JPasswordField();
         btnCancelar = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound2 = new org.edisoncor.gui.button.ButtonRound();
         jLabel7 = new javax.swing.JLabel();
         txtcontra1 = new javax.swing.JPasswordField();
+        btnGuardar = new org.edisoncor.gui.button.ButtonRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -76,13 +80,13 @@ public class vistaContrase extends javax.swing.JFrame {
         btnCancelar.setBackground(new java.awt.Color(0, 102, 255));
         btnCancelar.setText("CANCELAR");
 
-        buttonRound2.setBackground(new java.awt.Color(0, 102, 255));
-        buttonRound2.setText("GUARDAR");
-
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel7.setText("VERIFICAR CONTRASEÑA:");
 
         txtcontra1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        btnGuardar.setBackground(new java.awt.Color(0, 102, 255));
+        btnGuardar.setText("GUARDAR");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -107,9 +111,9 @@ public class vistaContrase extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtcontra1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
-                        .addComponent(buttonRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(81, 81, 81)
+                        .addGap(216, 216, 216)
+                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79)
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(142, Short.MAX_VALUE))
         );
@@ -129,10 +133,10 @@ public class vistaContrase extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(txtcontra1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
+                .addGap(74, 74, 74)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonRound2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 26, Short.MAX_VALUE))
         );
 
@@ -153,9 +157,53 @@ public class vistaContrase extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+
+    public ButtonRound getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public void setBtnCancelar(ButtonRound btnCancelar) {
+        this.btnCancelar = btnCancelar;
+    }
+
+    public ButtonRound getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public void setBtnGuardar(ButtonRound btnGuardar) {
+        this.btnGuardar = btnGuardar;
+    }
+
+    public JPasswordField getTxtcontra() {
+        return txtcontra;
+    }
+
+    public void setTxtcontra(JPasswordField txtcontra) {
+        this.txtcontra = txtcontra;
+    }
+
+    public JPasswordField getTxtcontra1() {
+        return txtcontra1;
+    }
+
+    public void setTxtcontra1(JPasswordField txtcontra1) {
+        this.txtcontra1 = txtcontra1;
+    }
+
+    public JTextField getTxtusuario() {
+        return txtusuario;
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public void setTxtusuario(JTextField txtusuario) {
+        this.txtusuario = txtusuario;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btnCancelar;
-    private org.edisoncor.gui.button.ButtonRound buttonRound2;
+    private org.edisoncor.gui.button.ButtonRound btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

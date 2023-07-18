@@ -85,10 +85,33 @@ public class modeloCliente extends Cliente {
         String sql = " select * from personas ";
         return sql;
     }
+    
+    public List<Cliente> buscarCliente(){
+        List<Cliente> listaBuscar = new ArrayList<Cliente>();
+        String sql;
+        sql="select * from cliente where usuario='"+super.getUsuarioCliente()+"'";
+        ResultSet rs=cpg.resultBD(sql);
+        Cliente per=new Cliente();
+        try {
+            
+            while(rs.next()){
+                per.setId_Cliente(rs.getString("id_cliente"));
+                per.setCedulaCliente(rs.getString("cedula_persona"));
+                per.setUsuarioCliente(rs.getString("usuario"));
+                per.setContraCliente(rs.getString("contrasena"));
+                listaBuscar.add(per);
+            } 
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }            
+    }
 
     public boolean modificarClienteBD() {
-        String sql = "UPDATE public.personas SET usuario='" + getUsuarioCliente() + "', contrasena='" + getContraCliente() + "'";
-        sql += "where id_cliente='" + getId_Cliente() + "'";
+        String sql = "UPDATE cliente SET usuario='" + getUsuarioCliente() + "', contrasena='" + getContraCliente() + "'";
+        sql += "where usuario='" + getUsuarioCliente()+ "'";
         return cpg.accionBd(sql);
     }
 

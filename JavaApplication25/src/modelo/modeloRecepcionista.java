@@ -80,10 +80,35 @@ public class modeloRecepcionista extends Recepcionista {
         String sql = "select * from vistaRecepcionista";
         return sql;
     }
-
+    
+    public List<Recepcionista> buscarRecepcio() {
+        List<Recepcionista> listaBuscar = new ArrayList<Recepcionista>();
+        String sql;
+        sql="select * from recepcionista where usuario='"+super.getUsuario_Recep()+"'";
+        ResultSet rs=cpg.resultBD(sql);
+        Recepcionista per=new Recepcionista();
+        try {
+            
+            while(rs.next()){
+                per.setId_Recep(rs.getString("id_recepcionista"));
+                per.setCedula_Recep(rs.getString("cedula_persona"));
+                per.setUsuario_Recep(rs.getString("usuario"));
+                per.setContra_Recep(rs.getString("contrasena"));
+                listaBuscar.add(per);
+            } 
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }            
+    
+        
+    }
+    
     public boolean modificarRecepcionistaBD() {
         String sql = "UPDATE recepcionista SET usuario='" + getUsuario_Recep() + "', contrasena='" + getContra_Recep() + "', sueldo=" + getSueldo_Recep() + "";
-        sql += "where id_administrador='" + getUsuario_Recep() + "'";
+        sql += "where usuario='" + getUsuario_Recep() + "'";
         return cpg.accionBd(sql);
     }
 
