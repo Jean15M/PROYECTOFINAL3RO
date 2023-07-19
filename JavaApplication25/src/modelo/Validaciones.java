@@ -5,6 +5,10 @@
  */
 package modelo;
 
+import com.toedter.calendar.JDateChooser;
+import java.util.Date;
+import javax.swing.JComboBox;
+
 /**
  *
  * @author Edisson Leon
@@ -28,11 +32,20 @@ public class Validaciones {
     }
 
     // Método para validar si un sueldo es válido (mayor a cero) con el punto por lo de oracle
-    public static boolean SueldoValido(double sueldo) {
-        return sueldo > 0.0;
+    public static boolean SueldoValido(String sueldoText) {
+        try {
+            double sueldo = Double.parseDouble(sueldoText);
+            if (sueldo >= 0.0) {
+                // Realiza las validaciones adicionales aquí
+                return true;
+            }
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return false;
     }
 
-    //revisar [prque noses  si iria static o solo bolean
+    // Método para validar Cedula Ecuatoriana
     public static boolean validarCedula(String cedula) {
         if (cedula.length() != 10) {
             return false;
@@ -58,33 +71,43 @@ public class Validaciones {
         return verificador == Character.getNumericValue(cedula.charAt(9));
     }
 
-    ////// Método para validar un código postal de 5 dígitos
-    public static boolean esCodigoPostalValido(String codigoPostal) {
+    public static boolean validarCorreoElectronico(String correo) {
+        // Patrón de expresión regular para validar el formato de correo electrónico
+        String patron = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
 
-        String patron = "\\d{5}";
-        return codigoPostal.matches(patron);
+        // Comprobar si el correo coincide con el patrón
+        if (correo.matches(patron)) {
+            return true; // El correo es válido
+        } else {
+            return false; // El correo no es válido
+        }
     }
 
-    // Método para validar un precio 
-    public static boolean PrecioValido(double precio) {
-        return precio > 0.0;
+    public static boolean validarSeleccionComboBox(JComboBox<String> comboBox) {
+        // Obtener el elemento seleccionado
+        String selectedItem = (String) comboBox.getSelectedItem();
+        // Verificar si el elemento seleccionado es válido
+        if (selectedItem != null && !selectedItem.equals("Seleccionar")) {
+            return true; // La selección es válida
+        } else {
+            return false; // No se ha seleccionado un elemento válido
+        }
     }
 
-    // Método para validar un peso (mayor a cero)
-    public static boolean PesoValido(double peso) {
-        return peso > 0.0;
-    }
-
-    // Método para validar una matrícula de un carro
-    public static boolean MatriculaValida(String matricula) {
-        String patron = "[A-Z]{3}-\\d{3}"; // la matrícula tenga 3 letras M seguidas de - y 3 numeros
-        return matricula.matches(patron);
-    }
-
-    public static boolean PotenciaValida(String potencia) {
-        // El patrón verifica que haya uno o más dígitos seguidos opcionalmente de un espacio y las letras "HP" o "CV"
-        String patron = "\\d+\\s*(HP|CV)";
-        return potencia.matches(patron);
+    public static boolean validarFecha(JDateChooser dateChooser) {
+        Date fechaSeleccionada = dateChooser.getDate();
+        if (fechaSeleccionada != null) {
+            // Obtener la fecha actual
+            Date fechaActual = new Date();
+            // Comparar la fecha seleccionada con la fecha actual
+            if (fechaSeleccionada.compareTo(fechaActual) <= 0) {
+                return true; // La fecha es válida (anterior o igual a la fecha actual)
+            } else {
+                return false; // La fecha es inválida (posterior a la fecha actual)
+            }
+        } else {
+            return false; // No se ha seleccionado una fecha válida
+        }
     }
 
 }
