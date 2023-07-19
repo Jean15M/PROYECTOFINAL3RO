@@ -5,14 +5,21 @@
  */
 package controlador;
 
+import modelo.modeloAdministrador;
+import modelo.modeloCliente;
+import modelo.modeloRecepcionista;
 import vista.vistaPanelControlAdministrador;
+import vista.vistaRegistro;
+import vista.vistaRegistroAdmin;
+import vista.vistaRegistroRecepcionista;
 
 /**
  *
  * @author Edisson Leon
  */
 public class Controlador_Paneladmin {
-     private vistaPanelControlAdministrador ventaadmin;
+
+    private vistaPanelControlAdministrador ventaadmin;
 
     public Controlador_Paneladmin(vistaPanelControlAdministrador ventaadmin) {
         this.ventaadmin = ventaadmin;
@@ -20,18 +27,34 @@ public class Controlador_Paneladmin {
     }
 
     public void iniciarControlador() {
-        ventaadmin.getBtnRegistroClien().addActionListener(l -> llamarReserva());
-        ventaadmin.getBtnRegistroClien().addActionListener(l -> llamarReserva());
-        System.out.println("hola: "+Controlador_Login.usuario);
+        ventaadmin.getBtRegisadmin().addActionListener(l -> registroAdmin());
+        ventaadmin.getBtRegisem().addActionListener(l -> registroRecepcionista());
+        ventaadmin.getBtRegiscli().addActionListener(l -> registroUsuario());
+        ventaadmin.getLblUsuario().setText(Controlador_Login.usuario);       
+        System.out.println("hola: " + Controlador_Login.usuario);
     }
 
-    private void llamarReserva() {
-//        vistaReservas vista1 = new vistaReservas();
-//        ventaCliente.getjDesktopPane1().add(vista1);
-//        vista1.setBorder(null);
-//        BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
-//        bui.setNorthPane(null);
-//        vista1.setSize(ventaCliente.getjDesktopPane1().getWidth(), ventaCliente.getjDesktopPane1().getHeight());
-//        controladorReservas inicio = new controladorReservas(vista1);
+    private void registroAdmin() {
+        modeloAdministrador modeloA = new modeloAdministrador();
+        vistaRegistroAdmin vistaA = new vistaRegistroAdmin();
+        controladorRegistroAdmin inicio = new controladorRegistroAdmin(vistaA, modeloA);
+        ventaadmin.dispose();
+        inicio.controlador();
+    }
+
+    private void registroUsuario() {
+        modeloCliente modeloC = new modeloCliente();
+        vistaRegistro vistaC = new vistaRegistro();
+        controladorRegistroUsuario inicio = new controladorRegistroUsuario(modeloC, vistaC);
+        ventaadmin.dispose();
+        inicio.iniciarControlador();
+    }
+
+    private void registroRecepcionista() {
+        modeloRecepcionista modeloR = new modeloRecepcionista();
+        vistaRegistroRecepcionista vistaR = new vistaRegistroRecepcionista();
+        controladorRegistroRecepcionista inicio2 = new controladorRegistroRecepcionista(vistaR, modeloR);
+        ventaadmin.dispose();
+        inicio2.iniciarControlador();
     }
 }
