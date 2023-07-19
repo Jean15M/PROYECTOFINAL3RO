@@ -23,7 +23,7 @@ public class modeloHabitaciones extends Habitaciones {
 
     public boolean modificar = false;
 
-    public List<Habitaciones> listarDetalle_fac() {
+    public List<Habitaciones> listarHabitaciones() {
         List<Habitaciones> listaHabitaciones = new ArrayList<Habitaciones>();
         String sql1 = "";
         if (modificar == true) {

@@ -5,6 +5,8 @@
  */
 package controlador;
 
+import modelo.modeloPersona;
+import vista.vistaAsignarReserva;
 import vista.vistaReservas;
 
 /**
@@ -14,10 +16,17 @@ import vista.vistaReservas;
 public class controladorReservas {
 
     private vistaReservas vistaReservas;
+    
 
     public controladorReservas(vistaReservas vistaReservas) {
         this.vistaReservas = vistaReservas;
         vistaReservas.setVisible(true);
     }
+    
+    public void iniciarControlador(){
+        
+    }
+    
+    
 
 }
