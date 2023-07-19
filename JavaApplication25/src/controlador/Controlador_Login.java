@@ -29,6 +29,7 @@ public class Controlador_Login {
     private modeloAdministrador modeloLogin2;
     private modeloCliente modeloLogin3;
     private vistaLogin vistaLogin;
+    static String usuario;
 
     public Controlador_Login(modeloRecepcionista modeloLogin, modeloAdministrador modeloLogin2, modeloCliente modeloLogin3, vistaLogin vistaLogin) {
         this.modeloLogin = modeloLogin;
@@ -45,6 +46,7 @@ public class Controlador_Login {
     }
 
     private void login() {
+        usuario = vistaLogin.getTxtusuario().getText().toString();
         modeloLogin.setUsuario_Recep(vistaLogin.getTxtusuario().getText());
         modeloLogin.setContra_Recep(vistaLogin.getTxtcontra().getText());
         modeloLogin2.setUsuarioAdmin(vistaLogin.getTxtusuario().getText());
@@ -63,8 +65,9 @@ public class Controlador_Login {
 //                    vistaLogin.dispose();
                 } else {
                     if (modeloLogin3.login() == true) {
-                        cliente_ventana prin = new cliente_ventana();
-                        prin.setVisible(true);
+                        cliente_ventana nuevo1=new cliente_ventana();
+                        controlador_vista_cliente vist=new controlador_vista_cliente(nuevo1);
+                        vist.iniciarControlador();
                         vistaLogin.dispose();
                     } else {
                         JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO");
@@ -76,6 +79,9 @@ public class Controlador_Login {
         }
 
     }
+
+
+
     
     private void cambiarContra(){
         modeloCliente modeloC = new modeloCliente();
