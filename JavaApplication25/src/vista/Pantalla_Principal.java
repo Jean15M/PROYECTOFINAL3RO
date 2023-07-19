@@ -420,15 +420,6 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     public void setBtnServiciosRe(JButton btnServiciosRe) {
         this.btnServiciosRe = btnServiciosRe;
     }
-<<<<<<< Updated upstream
-
-    public JButton getjButton4() {
-        return jButton4;
-    }
-
-    public void setjButton4(JButton jButton4) {
-        this.jButton4 = jButton4;
-    }
 
     public JLabel getjLabel21() {
         return jLabel21;
@@ -437,9 +428,6 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     public void setjLabel21(JLabel jLabel21) {
         this.jLabel21 = jLabel21;
     }
-=======
-   
->>>>>>> Stashed changes
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JBtnRegistro;

@@ -37,8 +37,6 @@ public class controladorPrincipal {
         vistaPrincipal.getBtnInicioRe().addActionListener(l -> registroAdmin());
         vistaPrincipal.getBtnReservarRe().addActionListener(l -> registroUsuario());
         vistaPrincipal.getBtnServiciosRe().addActionListener(l -> registroRecepcionista());
-        vistaPrincipal.getjButton4().addActionListener(l -> Login());
-
     }
 
     private void registroAdmin() {

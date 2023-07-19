@@ -23,6 +23,62 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
         initComponents();
     }
 
+    public ButtonRound getBntRegisEmple() {
+        return bntRegisEmple;
+    }
+
+    public void setBntRegisEmple(ButtonRound bntRegisEmple) {
+        this.bntRegisEmple = bntRegisEmple;
+    }
+
+    public ButtonRound getBtRegisadmin() {
+        return btRegisadmin;
+    }
+
+    public void setBtRegisadmin(ButtonRound btRegisadmin) {
+        this.btRegisadmin = btRegisadmin;
+    }
+
+    public ButtonRound getBtReporte() {
+        return btReporte;
+    }
+
+    public void setBtReporte(ButtonRound btReporte) {
+        this.btReporte = btReporte;
+    }
+
+    public JButton getBtnInicioRe() {
+        return btnInicioRe;
+    }
+
+    public void setBtnInicioRe(JButton btnInicioRe) {
+        this.btnInicioRe = btnInicioRe;
+    }
+
+    public ButtonRound getBtnRegistroClien() {
+        return btnRegistroClien;
+    }
+
+    public void setBtnRegistroClien(ButtonRound btnRegistroClien) {
+        this.btnRegistroClien = btnRegistroClien;
+    }
+
+    public JButton getBtnReservarRe() {
+        return btnReservarRe;
+    }
+
+    public void setBtnReservarRe(JButton btnReservarRe) {
+        this.btnReservarRe = btnReservarRe;
+    }
+
+    public JButton getBtnServiciosRe() {
+        return btnServiciosRe;
+    }
+
+    public void setBtnServiciosRe(JButton btnServiciosRe) {
+        this.btnServiciosRe = btnServiciosRe;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,14 +98,14 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        btReporte1 = new org.edisoncor.gui.button.ButtonRound();
+        bntRegisEmple = new org.edisoncor.gui.button.ButtonRound();
         rSLabelImage2 = new necesario.RSLabelImage();
         rSLabelImage3 = new necesario.RSLabelImage();
         btReporte = new org.edisoncor.gui.button.ButtonRound();
         jPanel4 = new javax.swing.JPanel();
-        btReporte2 = new org.edisoncor.gui.button.ButtonRound();
+        btnRegistroClien = new org.edisoncor.gui.button.ButtonRound();
         rSLabelImage4 = new necesario.RSLabelImage();
-        btReservas = new org.edisoncor.gui.button.ButtonRound();
+        btRegisadmin = new org.edisoncor.gui.button.ButtonRound();
         rSLabelImage1 = new necesario.RSLabelImage();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -136,8 +192,13 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        btReporte1.setBackground(new java.awt.Color(0, 102, 255));
-        btReporte1.setText("Empleados");
+        bntRegisEmple.setBackground(new java.awt.Color(0, 102, 255));
+        bntRegisEmple.setText("Empleados");
+        bntRegisEmple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntRegisEmpleActionPerformed(evt);
+            }
+        });
 
         rSLabelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/vReporte.png"))); // NOI18N
 
@@ -155,7 +216,7 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
                 .addGap(155, 155, 155)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btReporte1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bntRegisEmple, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(78, 78, 78))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(rSLabelImage2, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
@@ -179,22 +240,22 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(rSLabelImage3, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(btReporte1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bntRegisEmple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        btReporte2.setBackground(new java.awt.Color(0, 102, 255));
-        btReporte2.setText("Clientes");
+        btnRegistroClien.setBackground(new java.awt.Color(0, 102, 255));
+        btnRegistroClien.setText("Clientes");
 
         rSLabelImage4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/Cliente.png"))); // NOI18N
 
-        btReservas.setBackground(new java.awt.Color(0, 102, 255));
-        btReservas.setText("Registro");
-        btReservas.addActionListener(new java.awt.event.ActionListener() {
+        btRegisadmin.setBackground(new java.awt.Color(0, 102, 255));
+        btRegisadmin.setText("Registro");
+        btRegisadmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btReservasActionPerformed(evt);
+                btRegisadminActionPerformed(evt);
             }
         });
 
@@ -215,11 +276,11 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rSLabelImage4, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(btReservas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btRegisadmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(30, 30, 30))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(94, 94, 94)
-                        .addComponent(btReporte2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegistroClien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(23, 23, 23)))
                 .addGap(149, 149, 149))
         );
@@ -229,11 +290,11 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(btReservas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btRegisadmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(rSLabelImage4, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(btReporte2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistroClien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
 
@@ -276,67 +337,21 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btReservasActionPerformed
+    private void btRegisadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRegisadminActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btReservasActionPerformed
+    }//GEN-LAST:event_btRegisadminActionPerformed
 
-   
-    public JButton getBtnInicioRe() {
-        return btnInicioRe;
-    }
+    private void bntRegisEmpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntRegisEmpleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntRegisEmpleActionPerformed
 
-    public void setBtnInicioRe(JButton btnInicioRe) {
-        this.btnInicioRe = btnInicioRe;
-    }
-
-
-    public JButton getBtnReservarRe() {
-        return btnReservarRe;
-    }
-
-    public void setBtnReservarRe(JButton btnReservarRe) {
-        this.btnReservarRe = btnReservarRe;
-    }
-
-
-    public JButton getBtnServiciosRe() {
-        return btnServiciosRe;
-    }
-
-    public void setBtnServiciosRe(JButton btnServiciosRe) {
-        this.btnServiciosRe = btnServiciosRe;
-    }
-
-    public JLabel getLblUsuario() {
-        return lblUsuario;
-    }
-
-    public void setLblUsuario(JLabel lblUsuario) {
-        this.lblUsuario = lblUsuario;
-    }
-
-    public ButtonRound getBtReporte() {
-        return btReporte;
-    }
-
-    public void setBtReporte(ButtonRound btReporte) {
-        this.btReporte = btReporte;
-    }
-
-    public ButtonRound getBtReservas() {
-        return btReservas;
-    }
-
-    public void setBtReservas(ButtonRound btReservas) {
-        this.btReservas = btReservas;
-    }   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.edisoncor.gui.button.ButtonRound bntRegisEmple;
+    private org.edisoncor.gui.button.ButtonRound btRegisadmin;
     private org.edisoncor.gui.button.ButtonRound btReporte;
-    private org.edisoncor.gui.button.ButtonRound btReporte1;
-    private org.edisoncor.gui.button.ButtonRound btReporte2;
-    private org.edisoncor.gui.button.ButtonRound btReservas;
     private javax.swing.JButton btnInicioRe;
+    private org.edisoncor.gui.button.ButtonRound btnRegistroClien;
     private javax.swing.JButton btnReservarRe;
     private javax.swing.JButton btnServiciosRe;
     private javax.swing.JLabel jLabel1;
