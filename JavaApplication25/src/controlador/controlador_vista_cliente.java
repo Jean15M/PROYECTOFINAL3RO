@@ -24,6 +24,7 @@ public class controlador_vista_cliente {
 
     public void iniciarControlador() {
         ventaCliente.getBtnReservarRe().addActionListener(l -> llamarReserva());
+        System.out.println("hola: "+Controlador_Login.usuario);
     }
 
     private void llamarReserva() {

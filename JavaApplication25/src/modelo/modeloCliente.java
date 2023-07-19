@@ -20,7 +20,6 @@ import javax.swing.JOptionPane;
 public class modeloCliente extends Cliente {
 
     Conexion cpg = new Conexion();
-
     public boolean modificar = false;
 
     public List<Cliente> listarCliente() {

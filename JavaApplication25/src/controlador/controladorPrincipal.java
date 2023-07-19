@@ -74,11 +74,4 @@ public class controladorPrincipal {
         vistaPrincipal.dispose();
         inicio2.iniciarControlador();
     }
-
-    public void iniciarVentana_cliente() {
-        cliente_ventana nuevo1 = new cliente_ventana();
-        controlador_vista_cliente nuevo = new controlador_vista_cliente(nuevo1);
-        nuevo.iniciarControlador();
-
-    }
 }
