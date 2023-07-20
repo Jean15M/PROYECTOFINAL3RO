@@ -138,6 +138,7 @@ public class controladorRegistroUsuario {
         controladorPrincipal nuevo = new controladorPrincipal(nuevo1);
         nuevo.abrir();
         nuevo.iniciarControlador();
+        vistaUsuario.dispose();
     }
 
 }
