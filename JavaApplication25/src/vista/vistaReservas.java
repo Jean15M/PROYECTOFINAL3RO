@@ -7,6 +7,8 @@ package vista;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
+import necesario.RSLabelImage;
 import org.edisoncor.gui.button.ButtonRound;
 
 /**
@@ -34,16 +36,41 @@ public class vistaReservas extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         btnReservarVIP = new org.edisoncor.gui.button.ButtonRound();
+        rSLabelImage2 = new necesario.RSLabelImage();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        tipo_vip = new javax.swing.JTextField();
+        estado_vip = new javax.swing.JTextField();
+        tamaño_vip = new javax.swing.JTextField();
+        precio_vip = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         btnReservarDel = new org.edisoncor.gui.button.ButtonRound();
+        rSLabelImage3 = new necesario.RSLabelImage();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        estado_dulex = new javax.swing.JTextField();
+        tipo_dulexe = new javax.swing.JTextField();
+        tamaño_dulexe = new javax.swing.JTextField();
+        precio_dulex = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         btnReservarEs = new org.edisoncor.gui.button.ButtonRound();
+        rSLabelImage1 = new necesario.RSLabelImage();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        estado_standar = new javax.swing.JTextField();
+        tipo_standar = new javax.swing.JTextField();
+        tamaño_standar = new javax.swing.JTextField();
+        precio_standar = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -56,44 +83,125 @@ public class vistaReservas extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(35, 149, 156));
         jLabel1.setText("HABITACIONES VIP");
 
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         btnReservarVIP.setText("Reservar");
+
+        rSLabelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/vip.jpg"))); // NOI18N
+
+        jLabel3.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel3.setText("TIPO DE CAMA:");
+
+        jLabel6.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel6.setText("TAMAÑO DE HABITACION:");
+
+        jLabel12.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel12.setText("PRECIO:");
+
+        jLabel15.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel15.setText("ESTADO:");
+
+        tipo_vip.setBackground(new java.awt.Color(68, 68, 68));
+        tipo_vip.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tipo_vip.setForeground(new java.awt.Color(255, 255, 255));
+        tipo_vip.setText("jTextField1");
+        tipo_vip.setBorder(null);
+
+        estado_vip.setBackground(new java.awt.Color(68, 68, 68));
+        estado_vip.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        estado_vip.setForeground(new java.awt.Color(255, 255, 255));
+        estado_vip.setText("jTextField1");
+        estado_vip.setBorder(null);
+
+        tamaño_vip.setBackground(new java.awt.Color(68, 68, 68));
+        tamaño_vip.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tamaño_vip.setForeground(new java.awt.Color(255, 255, 255));
+        tamaño_vip.setText("jTextField1");
+        tamaño_vip.setBorder(null);
+
+        precio_vip.setBackground(new java.awt.Color(68, 68, 68));
+        precio_vip.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        precio_vip.setForeground(new java.awt.Color(255, 255, 255));
+        precio_vip.setText("jTextField1");
+        precio_vip.setBorder(null);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(41, 41, 41))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(btnReservarVIP, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(btnReservarVIP, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(rSLabelImage2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(8, 8, 8))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel15)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(estado_vip, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(precio_vip, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tamaño_vip, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(62, 62, 62)
+                                .addComponent(tipo_vip, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(rSLabelImage2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tipo_vip, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tamaño_vip, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(5, 5, 5)
+                .addComponent(precio_vip, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(estado_vip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addComponent(btnReservarVIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel4.setBackground(new java.awt.Color(68, 68, 68));
         jPanel4.setPreferredSize(new java.awt.Dimension(197, 361));
-
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel5.setPreferredSize(new java.awt.Dimension(177, 116));
 
         jLabel7.setBackground(new java.awt.Color(35, 149, 156));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -102,41 +210,120 @@ public class vistaReservas extends javax.swing.JInternalFrame {
 
         btnReservarDel.setText("Reservar");
 
+        rSLabelImage3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/dulex.jpg"))); // NOI18N
+
+        jLabel5.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel5.setText("TIPO DE CAMA:");
+
+        jLabel9.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel9.setText("TAMAÑO DE HABITACION:");
+
+        jLabel13.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel13.setText("ESTADO:");
+
+        jLabel16.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel16.setText("PRECIO:");
+
+        estado_dulex.setBackground(new java.awt.Color(68, 68, 68));
+        estado_dulex.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        estado_dulex.setForeground(new java.awt.Color(255, 255, 255));
+        estado_dulex.setText("jTextField1");
+        estado_dulex.setBorder(null);
+
+        tipo_dulexe.setBackground(new java.awt.Color(68, 68, 68));
+        tipo_dulexe.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tipo_dulexe.setForeground(new java.awt.Color(255, 255, 255));
+        tipo_dulexe.setText("jTextField1");
+        tipo_dulexe.setBorder(null);
+
+        tamaño_dulexe.setBackground(new java.awt.Color(68, 68, 68));
+        tamaño_dulexe.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tamaño_dulexe.setForeground(new java.awt.Color(255, 255, 255));
+        tamaño_dulexe.setText("jTextField1");
+        tamaño_dulexe.setBorder(null);
+
+        precio_dulex.setBackground(new java.awt.Color(68, 68, 68));
+        precio_dulex.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        precio_dulex.setForeground(new java.awt.Color(255, 255, 255));
+        precio_dulex.setText("jTextField1");
+        precio_dulex.setBorder(null);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(btnReservarDel, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(32, 32, 32))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(rSLabelImage3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(31, 31, 31))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(btnReservarDel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel16)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(tipo_dulexe, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tamaño_dulexe, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(estado_dulex, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(precio_dulex, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(rSLabelImage3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tipo_dulexe)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tamaño_dulexe)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(precio_dulex)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(4, 4, 4)
+                .addComponent(estado_dulex)
+                .addGap(18, 18, 18)
                 .addComponent(btnReservarDel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel6.setBackground(new java.awt.Color(68, 68, 68));
         jPanel6.setPreferredSize(new java.awt.Dimension(197, 0));
-
-        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel8.setBackground(new java.awt.Color(35, 149, 156));
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -145,39 +332,118 @@ public class vistaReservas extends javax.swing.JInternalFrame {
 
         btnReservarEs.setText("Reservar");
 
+        rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/standar.jpeg"))); // NOI18N
+
+        jLabel4.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel4.setText("TIPO DE CAMA:");
+
+        jLabel10.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel10.setText("TAMAÑO DE HABITACION:");
+
+        jLabel14.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel14.setText("ESTADO:");
+
+        jLabel17.setBackground(new java.awt.Color(35, 149, 156));
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(35, 149, 156));
+        jLabel17.setText("PRECIO:");
+
+        estado_standar.setBackground(new java.awt.Color(68, 68, 68));
+        estado_standar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        estado_standar.setForeground(new java.awt.Color(255, 255, 255));
+        estado_standar.setText("jTextField1");
+        estado_standar.setBorder(null);
+
+        tipo_standar.setBackground(new java.awt.Color(68, 68, 68));
+        tipo_standar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tipo_standar.setForeground(new java.awt.Color(255, 255, 255));
+        tipo_standar.setText("jTextField1");
+        tipo_standar.setBorder(null);
+
+        tamaño_standar.setBackground(new java.awt.Color(68, 68, 68));
+        tamaño_standar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tamaño_standar.setForeground(new java.awt.Color(255, 255, 255));
+        tamaño_standar.setText("jTextField1");
+        tamaño_standar.setBorder(null);
+
+        precio_standar.setBackground(new java.awt.Color(68, 68, 68));
+        precio_standar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        precio_standar.setForeground(new java.awt.Color(255, 255, 255));
+        precio_standar.setText("jTextField1");
+        precio_standar.setBorder(null);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(20, 20, 20))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGap(112, 112, 112)
-                .addComponent(btnReservarEs, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(btnReservarEs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel14))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(20, 20, 20))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tamaño_standar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(precio_standar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(estado_standar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(tipo_standar, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnReservarEs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tipo_standar)
+                .addGap(14, 14, 14)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(15, 15, 15)
+                .addComponent(tamaño_standar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(7, 7, 7)
+                .addComponent(precio_standar)
+                .addGap(19, 19, 19)
+                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(4, 4, 4)
+                .addComponent(estado_standar)
+                .addGap(35, 35, 35)
+                .addComponent(btnReservarEs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jLabel2.setBackground(new java.awt.Color(35, 149, 156));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(35, 149, 156));
         jLabel2.setText("HABITACIONES");
 
@@ -187,41 +453,38 @@ public class vistaReservas extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
-                .addGap(29, 29, 29)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
-                .addGap(48, 48, 48)
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                .addGap(38, 38, 38)
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(283, 283, 283)
-                .addComponent(jLabel2)
+                .addGap(334, 334, 334)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE))
-                .addGap(90, 90, 90))
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -251,20 +514,165 @@ public class vistaReservas extends javax.swing.JInternalFrame {
         this.btnReservarVIP = btnReservarVIP;
     }
 
+    public JTextField getEstado_dulex() {
+        return estado_dulex;
+    }
+
+    public void setEstado_dulex(JTextField estado_dulex) {
+        this.estado_dulex = estado_dulex;
+    }
+
+    public JTextField getEstado_standar() {
+        return estado_standar;
+    }
+
+    public void setEstado_standar(JTextField estado_standar) {
+        this.estado_standar = estado_standar;
+    }
+
+    public JTextField getEstado_vip() {
+        return estado_vip;
+    }
+
+    public void setEstado_vip(JTextField estado_vip) {
+        this.estado_vip = estado_vip;
+    }
+
+    public JTextField getPrecio_dulex() {
+        return precio_dulex;
+    }
+
+    public void setPrecio_dulex(JTextField precio_dulex) {
+        this.precio_dulex = precio_dulex;
+    }
+
+    public JTextField getPrecio_standar() {
+        return precio_standar;
+    }
+
+    public void setPrecio_standar(JTextField precio_standar) {
+        this.precio_standar = precio_standar;
+    }
+
+    public JTextField getPrecio_vip() {
+        return precio_vip;
+    }
+
+    public void setPrecio_vip(JTextField precio_vip) {
+        this.precio_vip = precio_vip;
+    }
+
+    public RSLabelImage getrSLabelImage1() {
+        return rSLabelImage1;
+    }
+
+    public void setrSLabelImage1(RSLabelImage rSLabelImage1) {
+        this.rSLabelImage1 = rSLabelImage1;
+    }
+
+    public RSLabelImage getrSLabelImage2() {
+        return rSLabelImage2;
+    }
+
+    public void setrSLabelImage2(RSLabelImage rSLabelImage2) {
+        this.rSLabelImage2 = rSLabelImage2;
+    }
+
+    public RSLabelImage getrSLabelImage3() {
+        return rSLabelImage3;
+    }
+
+    public void setrSLabelImage3(RSLabelImage rSLabelImage3) {
+        this.rSLabelImage3 = rSLabelImage3;
+    }
+
+    public JTextField getTamaño_dulexe() {
+        return tamaño_dulexe;
+    }
+
+    public void setTamaño_dulexe(JTextField tamaño_dulexe) {
+        this.tamaño_dulexe = tamaño_dulexe;
+    }
+
+    public JTextField getTamaño_standar() {
+        return tamaño_standar;
+    }
+
+    public void setTamaño_standar(JTextField tamaño_standar) {
+        this.tamaño_standar = tamaño_standar;
+    }
+
+    public JTextField getTamaño_vip() {
+        return tamaño_vip;
+    }
+
+    public void setTamaño_vip(JTextField tamaño_vip) {
+        this.tamaño_vip = tamaño_vip;
+    }
+
+    public JTextField getTipo_dulexe() {
+        return tipo_dulexe;
+    }
+
+    public void setTipo_dulexe(JTextField tipo_dulexe) {
+        this.tipo_dulexe = tipo_dulexe;
+    }
+
+    public JTextField getTipo_standar() {
+        return tipo_standar;
+    }
+
+    public void setTipo_standar(JTextField tipo_standar) {
+        this.tipo_standar = tipo_standar;
+    }
+
+    public JTextField getTipo_vip() {
+        return tipo_vip;
+    }
+
+    public void setTipo_vip(JTextField tipo_vip) {
+        this.tipo_vip = tipo_vip;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btnReservarDel;
     private org.edisoncor.gui.button.ButtonRound btnReservarEs;
     private org.edisoncor.gui.button.ButtonRound btnReservarVIP;
+    private javax.swing.JTextField estado_dulex;
+    private javax.swing.JTextField estado_standar;
+    private javax.swing.JTextField estado_vip;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JTextField precio_dulex;
+    private javax.swing.JTextField precio_standar;
+    private javax.swing.JTextField precio_vip;
+    private necesario.RSLabelImage rSLabelImage1;
+    private necesario.RSLabelImage rSLabelImage2;
+    private necesario.RSLabelImage rSLabelImage3;
+    private javax.swing.JTextField tamaño_dulexe;
+    private javax.swing.JTextField tamaño_standar;
+    private javax.swing.JTextField tamaño_vip;
+    private javax.swing.JTextField tipo_dulexe;
+    private javax.swing.JTextField tipo_standar;
+    private javax.swing.JTextField tipo_vip;
     // End of variables declaration//GEN-END:variables
 }

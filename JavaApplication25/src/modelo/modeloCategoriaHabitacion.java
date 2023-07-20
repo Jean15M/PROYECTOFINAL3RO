@@ -38,6 +38,8 @@ public class modeloCategoriaHabitacion extends CategoriaHabitacion {
                 CategoriaHabitacion CategoriaHabitacion1 = new CategoriaHabitacion();
                 CategoriaHabitacion1.setId_Categoria(rs.getString("id_categoria"));
                 CategoriaHabitacion1.setNombre_Categoria(rs.getString("nombre"));
+                CategoriaHabitacion1.setPrecio_cate(rs.getDouble("precio_cate"));
+                CategoriaHabitacion1.setCama_Muestra(rs.getString("cama_muestra"));
                 listaCategoriaHabitacion.add(CategoriaHabitacion1);
             }
             if (listaCategoriaHabitacion.isEmpty()) {
@@ -59,8 +61,9 @@ public class modeloCategoriaHabitacion extends CategoriaHabitacion {
     }
 
     public String Consultar() {
-        String sql = "select id_categoria, nombre from categoriaHabitacion";
-        sql += "where id_categoria='" + getId_Categoria() + "'";
+        String sql = "select id_categoria,nombre,precio_cate,plazas_muestra,tamano from categoria_habitacion";
+        sql += " where id_categoria='" + getId_Categoria() + "'";
+        
         return sql;
 
     }
@@ -83,4 +86,33 @@ public class modeloCategoriaHabitacion extends CategoriaHabitacion {
 
     }
 
+    public ResultSet resultado() {
+        String sql1 = Consultar();
+        ResultSet rs = cpg.resultBD(sql1);
+    
+        try {
+            while (rs.next()) {
+              
+                return rs;
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+  public int resultadoEstado() {
+         int resultado = 0;
+        String sql1 = "select sum(estado) from habitacion_cate";
+        ResultSet rs = cpg.resultBD(sql1);
+        try {
+            while (rs.next()) {
+                resultado= rs.getInt("sum(estado)");
+                return resultado;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return resultado;
+    }
 }

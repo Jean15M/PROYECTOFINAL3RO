@@ -94,6 +94,8 @@ public class modeloPersona extends Personas {
         return cpg.accionBd(sql);
 
     }
+    
+    
 
     public ResultSet resultado() {
         String sql1 = Consultar();

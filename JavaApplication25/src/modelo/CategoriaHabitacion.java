@@ -13,13 +13,10 @@ public class CategoriaHabitacion {
 
     private String id_Categoria;
     private String nombre_Categoria;
+    private Double precio_cate;
+    private String cama_Muestra;
 
     public CategoriaHabitacion() {
-    }
-
-    public CategoriaHabitacion(String id_Categoria, String nombre_Categoria) {
-        this.id_Categoria = id_Categoria;
-        this.nombre_Categoria = nombre_Categoria;
     }
 
     public String getId_Categoria() {
@@ -38,9 +35,22 @@ public class CategoriaHabitacion {
         this.nombre_Categoria = nombre_Categoria;
     }
 
-    @Override
-    public String toString() {
-        return "CategoriaHabitacion{" + "id_Categoria=" + id_Categoria + ", nombre_Categoria=" + nombre_Categoria + '}';
+    public Double getPrecio_cate() {
+        return precio_cate;
     }
+
+    public void setPrecio_cate(Double precio_cate) {
+        this.precio_cate = precio_cate;
+    }
+
+    public String getCama_Muestra() {
+        return cama_Muestra;
+    }
+
+    public void setCama_Muestra(String cama_Muestra) {
+        this.cama_Muestra = cama_Muestra;
+    }
+
+ 
 
 }
