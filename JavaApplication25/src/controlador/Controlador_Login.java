@@ -18,6 +18,7 @@ import vista.Pantalla_Principal;
 import vista.cliente_ventana;
 import vista.vistaContrase;
 import vista.vistaLogin;
+import vista.vistaPanelControlAdministrador;
 
 /**
  *
@@ -42,7 +43,7 @@ public class Controlador_Login {
     public void iniciarControlador() {
         vistaLogin.getBtniniciarse().addActionListener(l -> login());
         //vistaLogin.getBtnregistro().addActionListener(l -> registro());
-        vistaLogin.getBtnOlvidar().addActionListener(l->cambiarContra());
+        vistaLogin.getBtnOlvidar().addActionListener(l -> cambiarContra());
     }
 
     private void login() {
@@ -60,13 +61,14 @@ public class Controlador_Login {
                 vistaLogin.dispose();
             } else {
                 if (modeloLogin2.login() == true) {
-//                    cliente_ventana prin = new cliente_ventana();
-//                    prin.setVisible(true);
-//                    vistaLogin.dispose();
+                    vistaPanelControlAdministrador nuevo1 = new vistaPanelControlAdministrador();
+                    Controlador_Paneladmin iniciar = new Controlador_Paneladmin(nuevo1);
+                    iniciar.iniciarControlador();
+                    vistaLogin.dispose();
                 } else {
                     if (modeloLogin3.login() == true) {
-                        cliente_ventana nuevo1=new cliente_ventana();
-                        controlador_vista_cliente vist=new controlador_vista_cliente(nuevo1);
+                        cliente_ventana nuevo1 = new cliente_ventana();
+                        controlador_vista_cliente vist = new controlador_vista_cliente(nuevo1);
                         vist.iniciarControlador();
                         vistaLogin.dispose();
                     } else {
@@ -80,10 +82,7 @@ public class Controlador_Login {
 
     }
 
-
-
-    
-    private void cambiarContra(){
+    private void cambiarContra() {
         modeloCliente modeloC = new modeloCliente();
         modeloRecepcionista modeloR = new modeloRecepcionista();
         vistaContrase vistaCon = new vistaContrase();

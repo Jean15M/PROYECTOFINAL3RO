@@ -92,4 +92,10 @@ public class controladorVistaReservas {
             Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public vistaReservas getReservas() {
+        return reservas;
+    }
+    
+    
 }

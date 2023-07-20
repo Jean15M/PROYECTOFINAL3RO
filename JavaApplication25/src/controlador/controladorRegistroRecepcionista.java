@@ -139,7 +139,8 @@ public class controladorRegistroRecepcionista {
 
     private void Cancelar() {
         Pantalla_Principal pat = new Pantalla_Principal();
-        pat.setVisible(true);
+        controladorPrincipal nuevo=new controladorPrincipal(pat);
+        nuevo.iniciarControlador();
         vistarecepcionista.dispose();
     }
 

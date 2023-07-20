@@ -6,17 +6,23 @@
 package controlador;
 
 import javax.swing.JFrame;
+import javax.swing.plaf.ComponentUI;
+import javax.swing.plaf.DesktopPaneUI;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 import modelo.modeloAdministrador;
+import modelo.modeloCategoriaHabitacion;
 import modelo.modeloCliente;
 import modelo.modeloLogin;
 import modelo.modeloRecepcionista;
 import vista.Pantalla_Principal;
 import vista.vistaLogin;
 import vista.cliente_ventana;
+import vista.paginaInicio;
 import vista.vistaRegistro;
 import vista.vistaRegistroAdmin;
 import vista.vistaRegistroRecepcionista;
+import vista.vistaReservas;
 
 /**
  *
@@ -34,9 +40,11 @@ public class controladorPrincipal {
     }
 
     public void iniciarControlador() {
-        vistaPrincipal.getBtnInicioRe().addActionListener(l -> registroAdmin());
-        vistaPrincipal.getBtnReservarRe().addActionListener(l -> registroUsuario());
+        vistaPrincipal.getBtnInicioRe().addActionListener(l -> llamarReserva1());
+        vistaPrincipal.getBtnReservarRe().addActionListener(l -> llamarReserva());
         vistaPrincipal.getBtnServiciosRe().addActionListener(l -> registroRecepcionista());
+        vistaPrincipal.getBtniniciose().addActionListener(l -> Login());
+        vistaPrincipal.getBtnregistro().addActionListener(l -> registroUsuario());
     }
 
     private void registroAdmin() {
@@ -71,5 +79,28 @@ public class controladorPrincipal {
         Controlador_Login inicio2 = new Controlador_Login(modeloL, modeloA, modeloC, vistaR);
         vistaPrincipal.dispose();
         inicio2.iniciarControlador();
+    }
+
+    private void llamarReserva() {
+        vistaReservas vista1 = new vistaReservas();
+        vistaPrincipal.getPaginaPrincipal().add(vista1);
+        vista1.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
+        bui.setNorthPane(null);
+        vista1.setSize(vistaPrincipal.getPaginaPrincipal().getWidth(), vistaPrincipal.getPaginaPrincipal().getHeight());
+        modeloCategoriaHabitacion nuevo1 = new modeloCategoriaHabitacion();
+        controladorVistaReservas inicio = new controladorVistaReservas(vista1, nuevo1);
+        inicio.iniciarControlador();
+    }
+      private void llamarReserva1() {
+        paginaInicio vista1 = new paginaInicio();
+        vistaPrincipal.getPaginaPrincipal().add(vista1);
+        vista1.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
+        bui.setNorthPane(null);
+        vista1.setSize(vistaPrincipal.getPaginaPrincipal().getWidth(), vistaPrincipal.getPaginaPrincipal().getHeight());
+        modeloCategoriaHabitacion nuevo1 = new modeloCategoriaHabitacion();
+        controladorPaginaPrincipal inicio = new controladorPaginaPrincipal(vista1);
+        inicio.iniciarControlador();
     }
 }
