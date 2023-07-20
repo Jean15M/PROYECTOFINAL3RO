@@ -75,7 +75,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="txtcontrasena" min="-2" pref="239" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="txtadmin" min="-2" pref="239" max="-2" attributes="0"/>
+                          <Component id="txtadminid" min="-2" pref="239" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -98,7 +98,7 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="txtcorreo1" min="-2" pref="415" max="-2" attributes="0"/>
+                                      <Component id="txtusuario" min="-2" pref="415" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
@@ -131,7 +131,7 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                  <Component id="buttonRound2" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnregistrarse" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
               </Group>
               <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
@@ -213,18 +213,18 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtcorreo1" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="txtusuario" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtadmin" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="txtadminid" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="txtcontrasena" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnCancelar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="buttonRound2" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="btnregistrarse" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="40" max="32767" attributes="0"/>
               </Group>
@@ -346,7 +346,7 @@
             <Property name="text" type="java.lang.String" value="FECHA DE NACIMIENTO:"/>
           </Properties>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound2">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="btnregistrarse">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -503,7 +503,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtcorreo1">
+        <Component class="javax.swing.JTextField" name="txtusuario">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -520,7 +520,7 @@
             <Property name="text" type="java.lang.String" value="USUARIO:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtadmin">
+        <Component class="javax.swing.JTextField" name="txtadminid">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">

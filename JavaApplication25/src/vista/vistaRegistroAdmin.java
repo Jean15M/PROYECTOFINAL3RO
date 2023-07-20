@@ -7,8 +7,6 @@ package vista;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import org.edisoncor.gui.button.ButtonRound;
 
@@ -23,6 +21,142 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
      */
     public vistaRegistroAdmin() {
         initComponents();
+    }
+
+    public ButtonRound getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public void setBtnCancelar(ButtonRound btnCancelar) {
+        this.btnCancelar = btnCancelar;
+    }
+
+    public JComboBox<String> getComcanto() {
+        return comcanto;
+    }
+
+    public void setComcanto(JComboBox<String> comcanto) {
+        this.comcanto = comcanto;
+    }
+
+    public JComboBox<String> getComgenero() {
+        return comgenero;
+    }
+
+    public void setComgenero(JComboBox<String> comgenero) {
+        this.comgenero = comgenero;
+    }
+
+    public JComboBox<String> getComprovin() {
+        return comprovin;
+    }
+
+    public void setComprovin(JComboBox<String> comprovin) {
+        this.comprovin = comprovin;
+    }
+
+    public JDateChooser getJfecha() {
+        return jfecha;
+    }
+
+    public void setJfecha(JDateChooser jfecha) {
+        this.jfecha = jfecha;
+    }
+
+    public JTextField getTxtadminid() {
+        return txtadminid;
+    }
+
+    public void setTxtadminid(JTextField txtadminid) {
+        this.txtadminid = txtadminid;
+    }
+
+    public JTextField getTxtape1() {
+        return txtape1;
+    }
+
+    public void setTxtape1(JTextField txtape1) {
+        this.txtape1 = txtape1;
+    }
+
+    public JTextField getTxtape2() {
+        return txtape2;
+    }
+
+    public void setTxtape2(JTextField txtape2) {
+        this.txtape2 = txtape2;
+    }
+
+    public JTextField getTxtcedula() {
+        return txtcedula;
+    }
+
+    public void setTxtcedula(JTextField txtcedula) {
+        this.txtcedula = txtcedula;
+    }
+
+    public JTextField getTxtcontrasena() {
+        return txtcontrasena;
+    }
+
+    public void setTxtcontrasena(JTextField txtcontrasena) {
+        this.txtcontrasena = txtcontrasena;
+    }
+
+    public JTextField getTxtcorreo() {
+        return txtcorreo;
+    }
+
+    public void setTxtcorreo(JTextField txtcorreo) {
+        this.txtcorreo = txtcorreo;
+    }
+
+    public JTextField getTxtdireccion() {
+        return txtdireccion;
+    }
+
+    public void setTxtdireccion(JTextField txtdireccion) {
+        this.txtdireccion = txtdireccion;
+    }
+
+    public JTextField getTxtnom1() {
+        return txtnom1;
+    }
+
+    public void setTxtnom1(JTextField txtnom1) {
+        this.txtnom1 = txtnom1;
+    }
+
+    public JTextField getTxtnom2() {
+        return txtnom2;
+    }
+
+    public void setTxtnom2(JTextField txtnom2) {
+        this.txtnom2 = txtnom2;
+    }
+
+    public JTextField getTxttelefono() {
+        return txttelefono;
+    }
+
+    public void setTxttelefono(JTextField txttelefono) {
+        this.txttelefono = txttelefono;
+    }
+
+    public JTextField getTxtusuario() {
+        return txtusuario;
+    }
+
+    public void setTxtusuario(JTextField txtusuario) {
+        this.txtusuario = txtusuario;
+    }
+
+    public ButtonRound getBtnregistrarse() {
+        return btnregistrarse;
+    }
+
+    public void setBtnregistrarse(ButtonRound btnregistrarse) {
+        this.btnregistrarse = btnregistrarse;
     }
 
     /**
@@ -47,7 +181,7 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        buttonRound2 = new org.edisoncor.gui.button.ButtonRound();
+        btnregistrarse = new org.edisoncor.gui.button.ButtonRound();
         btnCancelar = new org.edisoncor.gui.button.ButtonRound();
         jfecha = new com.toedter.calendar.JDateChooser();
         txtcedula = new javax.swing.JTextField();
@@ -62,9 +196,9 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
         comcanto = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
         txtcorreo = new javax.swing.JTextField();
-        txtcorreo1 = new javax.swing.JTextField();
+        txtusuario = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        txtadmin = new javax.swing.JTextField();
+        txtadminid = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         txtcontrasena = new javax.swing.JTextField();
 
@@ -121,8 +255,8 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel13.setText("FECHA DE NACIMIENTO:");
 
-        buttonRound2.setBackground(new java.awt.Color(0, 102, 255));
-        buttonRound2.setText("REGISTRARSE");
+        btnregistrarse.setBackground(new java.awt.Color(0, 102, 255));
+        btnregistrarse.setText("REGISTRARSE");
 
         btnCancelar.setBackground(new java.awt.Color(0, 102, 255));
         btnCancelar.setText("CANCELAR");
@@ -159,12 +293,12 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
 
         txtcorreo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        txtcorreo1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtusuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel15.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel15.setText("USUARIO:");
 
-        txtadmin.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtadminid.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel16.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel16.setText("CONTRASEÑA:");
@@ -200,7 +334,7 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(txtadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtadminid, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(145, 145, 145))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,7 +354,7 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(jLabel15)
                                     .addGap(10, 10, 10)
-                                    .addComponent(txtcorreo1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel12)
@@ -243,7 +377,7 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
-                .addComponent(buttonRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnregistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(120, 120, 120))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -307,16 +441,16 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
-                    .addComponent(txtcorreo1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(txtadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtadminid, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRound2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnregistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -334,281 +468,9 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public ButtonRound getBtnCancelar() {
-        return btnCancelar;
-    }
-
-    public void setBtnCancelar(ButtonRound btnCancelar) {
-        this.btnCancelar = btnCancelar;
-    }
-
-    public ButtonRound getButtonRound2() {
-        return buttonRound2;
-    }
-
-    public void setButtonRound2(ButtonRound buttonRound2) {
-        this.buttonRound2 = buttonRound2;
-    }
-
-    public JComboBox<String> getComcanto() {
-        return comcanto;
-    }
-
-    public void setComcanto(JComboBox<String> comcanto) {
-        this.comcanto = comcanto;
-    }
-
-    public JComboBox<String> getComgenero() {
-        return comgenero;
-    }
-
-    public void setComgenero(JComboBox<String> comgenero) {
-        this.comgenero = comgenero;
-    }
-
-    public JComboBox<String> getComprovin() {
-        return comprovin;
-    }
-
-    public void setComprovin(JComboBox<String> comprovin) {
-        this.comprovin = comprovin;
-    }
-
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
-    }
-
-    public JLabel getjLabel10() {
-        return jLabel10;
-    }
-
-    public void setjLabel10(JLabel jLabel10) {
-        this.jLabel10 = jLabel10;
-    }
-
-    public JLabel getjLabel11() {
-        return jLabel11;
-    }
-
-    public void setjLabel11(JLabel jLabel11) {
-        this.jLabel11 = jLabel11;
-    }
-
-    public JLabel getjLabel12() {
-        return jLabel12;
-    }
-
-    public void setjLabel12(JLabel jLabel12) {
-        this.jLabel12 = jLabel12;
-    }
-
-    public JLabel getjLabel13() {
-        return jLabel13;
-    }
-
-    public void setjLabel13(JLabel jLabel13) {
-        this.jLabel13 = jLabel13;
-    }
-
-    public JLabel getjLabel4() {
-        return jLabel4;
-    }
-
-    public void setjLabel4(JLabel jLabel4) {
-        this.jLabel4 = jLabel4;
-    }
-
-    public JLabel getjLabel5() {
-        return jLabel5;
-    }
-
-    public void setjLabel5(JLabel jLabel5) {
-        this.jLabel5 = jLabel5;
-    }
-
-    public JLabel getjLabel6() {
-        return jLabel6;
-    }
-
-    public void setjLabel6(JLabel jLabel6) {
-        this.jLabel6 = jLabel6;
-    }
-
-    public JLabel getjLabel7() {
-        return jLabel7;
-    }
-
-    public void setjLabel7(JLabel jLabel7) {
-        this.jLabel7 = jLabel7;
-    }
-
-    public JLabel getjLabel8() {
-        return jLabel8;
-    }
-
-    public void setjLabel8(JLabel jLabel8) {
-        this.jLabel8 = jLabel8;
-    }
-
-    public JLabel getjLabel9() {
-        return jLabel9;
-    }
-
-    public void setjLabel9(JLabel jLabel9) {
-        this.jLabel9 = jLabel9;
-    }
-
-    public JPanel getjPanel1() {
-        return jPanel1;
-    }
-
-    public void setjPanel1(JPanel jPanel1) {
-        this.jPanel1 = jPanel1;
-    }
-
-    public JPanel getjPanel2() {
-        return jPanel2;
-    }
-
-    public void setjPanel2(JPanel jPanel2) {
-        this.jPanel2 = jPanel2;
-    }
-
-    public JDateChooser getJfecha() {
-        return jfecha;
-    }
-
-    public void setJfecha(JDateChooser jfecha) {
-        this.jfecha = jfecha;
-    }
-
-    public JTextField getTxtape1() {
-        return txtape1;
-    }
-
-    public void setTxtape1(JTextField txtape1) {
-        this.txtape1 = txtape1;
-    }
-
-    public JTextField getTxtape2() {
-        return txtape2;
-    }
-
-    public void setTxtape2(JTextField txtape2) {
-        this.txtape2 = txtape2;
-    }
-
-    public JTextField getTxtcedula() {
-        return txtcedula;
-    }
-
-    public void setTxtcedula(JTextField txtcedula) {
-        this.txtcedula = txtcedula;
-    }
-
-    public JTextField getTxtdireccion() {
-        return txtdireccion;
-    }
-
-    public void setTxtdireccion(JTextField txtdireccion) {
-        this.txtdireccion = txtdireccion;
-    }
-
-    public JTextField getTxtnom1() {
-        return txtnom1;
-    }
-
-    public void setTxtnom1(JTextField txtnom1) {
-        this.txtnom1 = txtnom1;
-    }
-
-    public JTextField getTxtnom2() {
-        return txtnom2;
-    }
-
-    public void setTxtnom2(JTextField txtnom2) {
-        this.txtnom2 = txtnom2;
-    }
-
-    public JTextField getTxttelefono() {
-        return txttelefono;
-    }
-
-    public void setTxttelefono(JTextField txttelefono) {
-        this.txttelefono = txttelefono;
-    }
-
-    public JTextField getTxtcorreo() {
-        return txtcorreo;
-    }
-
-    public void setTxtcorreo(JTextField txtcorreo) {
-        this.txtcorreo = txtcorreo;
-    }
-
-    public JLabel getjLabel14() {
-        return jLabel14;
-    }
-
-    public void setjLabel14(JLabel jLabel14) {
-        this.jLabel14 = jLabel14;
-    }
-
-    public JLabel getjLabel15() {
-        return jLabel15;
-    }
-
-    public void setjLabel15(JLabel jLabel15) {
-        this.jLabel15 = jLabel15;
-    }
-
-    public JLabel getjLabel16() {
-        return jLabel16;
-    }
-
-    public void setjLabel16(JLabel jLabel16) {
-        this.jLabel16 = jLabel16;
-    }
-
-    public JTextField getTxtcorreo1() {
-        return txtcorreo1;
-    }
-
-    public void setTxtcorreo1(JTextField txtcorreo1) {
-        this.txtcorreo1 = txtcorreo1;
-    }
-
-    public JTextField getTxtcorreo2() {
-        return txtadmin;
-    }
-
-    public void setTxtcorreo2(JTextField txtcorreo2) {
-        this.txtadmin = txtcorreo2;
-    }
-
-    public JTextField getTxtadmin() {
-        return txtadmin;
-    }
-
-    public void setTxtadmin(JTextField txtadmin) {
-        this.txtadmin = txtadmin;
-    }
-
-    public JTextField getTxtcontrasena() {
-        return txtcontrasena;
-    }
-
-    public void setTxtcontrasena(JTextField txtcontrasena) {
-        this.txtcontrasena = txtcontrasena;
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btnCancelar;
-    private org.edisoncor.gui.button.ButtonRound buttonRound2;
+    private org.edisoncor.gui.button.ButtonRound btnregistrarse;
     private javax.swing.JComboBox<String> comcanto;
     private javax.swing.JComboBox<String> comgenero;
     private javax.swing.JComboBox<String> comprovin;
@@ -629,16 +491,16 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private com.toedter.calendar.JDateChooser jfecha;
-    private javax.swing.JTextField txtadmin;
+    private javax.swing.JTextField txtadminid;
     private javax.swing.JTextField txtape1;
     private javax.swing.JTextField txtape2;
     private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtcontrasena;
     private javax.swing.JTextField txtcorreo;
-    private javax.swing.JTextField txtcorreo1;
     private javax.swing.JTextField txtdireccion;
     private javax.swing.JTextField txtnom1;
     private javax.swing.JTextField txtnom2;
     private javax.swing.JTextField txttelefono;
+    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,12 +11,12 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import javax.swing.JOptionPane;
-import modelo.Personas;
-import modelo.Provincia;
+import modelo.Validaciones;
 import modelo.modeloAdministrador;
 import modelo.modeloCantones;
 import modelo.modeloPersona;
 import modelo.modeloProvincia;
+import vista.Pantalla_Principal;
 import vista.vistaRegistroAdmin;
 
 /**
@@ -36,48 +36,10 @@ public class controladorRegistroAdmin {
 
     public void controlador() {
         cargarProvincias();
-        vistaAdmin.getButtonRound2().addActionListener(l -> RegistrarAdmin());
+        vistaAdmin.getBtnregistrarse().addActionListener(l -> RegistrarAdmin());
+        vistaAdmin.getBtnCancelar().addActionListener(l -> Cancelar());
         vistaAdmin.getComprovin().addActionListener(l -> cargarCantones());
-    }
-
-    private void RegistrarAdmin() {
-        Date fechaCalendar = vistaAdmin.getJfecha().getDate();
-        SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
-        String d1 = date.format(fechaCalendar);
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate fecha = LocalDate.parse(d1, formato);
-        int dias = (int) ChronoUnit.YEARS.between(fecha, LocalDate.now());
-        modeloPersona per1 = new modeloPersona();
-        modeloCantones canton = new modeloCantones();
-        per1.setCedulaPersona(vistaAdmin.getTxtcedula().getText());
-        per1.setNombrePersona(vistaAdmin.getTxtnom1().getText());
-        per1.setNombrePersona1(vistaAdmin.getTxtnom2().getText());
-        per1.setApellidoPersona(vistaAdmin.getTxtape1().getText());
-        per1.setApellidoPersona1(vistaAdmin.getTxtape2().getText());
-        per1.setGeneroPersona(vistaAdmin.getComgenero().getSelectedItem().toString());
-        per1.setTelefonoPersona(vistaAdmin.getTxttelefono().getText());
-        per1.setDireccionPersona(vistaAdmin.getTxtdireccion().getText());
-        per1.setEdadPersona(dias);
-        canton.setNombreCan(vistaAdmin.getComcanto().getSelectedItem().toString());
-        per1.setCod_canton(canton.ObtenerCodigo());
-        per1.setCorreoPersona(vistaAdmin.getTxtcorreo().getText());
-        administrador.setId_Admin(vistaAdmin.getTxtadmin().getText());
-        administrador.setUsuarioAdmin(vistaAdmin.getTxtcorreo1().getText());
-        administrador.setContraAdmin(vistaAdmin.getTxtcontrasena().getText());
-        administrador.setCedulaAdmin(vistaAdmin.getTxtcedula().getText());
-        if (per1.grabarPersona() == true) {
-            if (administrador.grabarAdministrador() == true) {
-                JOptionPane.showMessageDialog(null, "GUARDADO EXITOSAMENTE");
-            } else {
-                per1.setCedulaPersona(vistaAdmin.getTxtcedula().getText());
-                per1.eliminarPersona();
-                JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR AL ADMINISTRAR");
-            }
-
-        } else {
-            JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR A LA PERSONA");
-        }
-    }
+    }   
 
     private void cargarCantones() {
         if (vistaAdmin.getComprovin().getSelectedIndex() == 0) {
@@ -101,4 +63,79 @@ public class controladorRegistroAdmin {
         });
     }
 
+    public void RegistrarAdmin() {
+        boolean esValido1, esValido2, esValido3;
+        boolean fechavalida;
+        if (vistaAdmin.getTxtusuario().getText().isEmpty() || vistaAdmin.getTxtadminid().getText().isEmpty() || vistaAdmin.getTxtcedula().getText().isEmpty() || vistaAdmin.getTxtcedula().getText().isEmpty() || vistaAdmin.getTxtnom2().getText().isEmpty() || vistaAdmin.getTxtnom1().getText().isEmpty() || vistaAdmin.getTxtape1().getText().isEmpty() || vistaAdmin.getTxtape2().getText().isEmpty() || vistaAdmin.getTxttelefono().getText().isEmpty() || vistaAdmin.getTxtdireccion().getText().isEmpty() || vistaAdmin.getTxtcorreo().getText().isEmpty() || vistaAdmin.getTxtcontrasena().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "CAMPOS VACIOS LLENE TODOS LOS campos");
+        }
+        if (Validaciones.validarCedula(vistaAdmin.getTxtcedula().getText())) {
+            if (!Validaciones.NombreValido(vistaAdmin.getTxtnom1().getText())) {
+                JOptionPane.showMessageDialog(null, "INGRESE EL NOMBRE CORRECTAMENTE SOLO LETRAS");
+            } else if (!Validaciones.NombreValido(vistaAdmin.getTxtnom2().getText())) {
+                JOptionPane.showMessageDialog(null, "INGRESE EL NOMBRE CORRECTAMENTE SOLO LETRAS");
+            } else if (!Validaciones.ApellidoValido(vistaAdmin.getTxtape1().getText())) {
+                JOptionPane.showMessageDialog(null, "INGRESE APELLIDO CORRECTAMENTE SOLO LETRAS");
+            } else if (!Validaciones.ApellidoValido(vistaAdmin.getTxtape2().getText())) {
+                JOptionPane.showMessageDialog(null, "INGRESE APELLIDO CORRECTAMENTE SOLO LETRAS");
+            } else if (!Validaciones.NumCelValido(vistaAdmin.getTxttelefono().getText())) {
+                JOptionPane.showMessageDialog(null, "INGRESE UN NUMERO DE CELULAR CORRECTO");
+            } else if (!Validaciones.validarCorreoElectronico(vistaAdmin.getTxtcorreo().getText())) {
+                JOptionPane.showMessageDialog(null, "INGRESE UN CORREO ELECTRONICO VALIDO");
+            } else if (esValido1 = Validaciones.validarSeleccionComboBox(vistaAdmin.getComgenero())) {
+                JOptionPane.showMessageDialog(null, "SELECCIONE UN GENERO VALIDO");
+            } else if (esValido2 = Validaciones.validarSeleccionComboBox(vistaAdmin.getComprovin())) {
+                JOptionPane.showMessageDialog(null, "SELECCIONE UNA PROVINCIA VALIDA");
+            } else if (esValido3 = Validaciones.validarSeleccionComboBox(vistaAdmin.getComcanto())) {
+                JOptionPane.showMessageDialog(null, "SELECCIONE UN CANTONS VALIDO");
+            } else if (fechavalida = Validaciones.validarFecha(vistaAdmin.getJfecha())) {
+                JOptionPane.showMessageDialog(null, "INGRESE UNA FECHA VALIDA");
+            } else {
+                Date fechaCalendar = vistaAdmin.getJfecha().getDate();
+                SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+                String d1 = date.format(fechaCalendar);
+                DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                LocalDate fecha = LocalDate.parse(d1, formato);
+                int dias = (int) ChronoUnit.YEARS.between(fecha, LocalDate.now());
+                modeloPersona per1 = new modeloPersona();
+                modeloCantones canton = new modeloCantones();
+                per1.setCedulaPersona(vistaAdmin.getTxtcedula().getText());
+                per1.setNombrePersona(vistaAdmin.getTxtnom1().getText());
+                per1.setNombrePersona1(vistaAdmin.getTxtnom2().getText());
+                per1.setApellidoPersona(vistaAdmin.getTxtape1().getText());
+                per1.setApellidoPersona1(vistaAdmin.getTxtape2().getText());
+                per1.setGeneroPersona(vistaAdmin.getComgenero().getSelectedItem().toString());
+                per1.setTelefonoPersona(vistaAdmin.getTxttelefono().getText());
+                per1.setDireccionPersona(vistaAdmin.getTxtdireccion().getText());
+                per1.setEdadPersona(dias);
+                canton.setNombreCan(vistaAdmin.getComcanto().getSelectedItem().toString());
+                per1.setCod_canton(canton.ObtenerCodigo());
+                per1.setCorreoPersona(vistaAdmin.getTxtcorreo().getText());
+                administrador.setId_Admin(vistaAdmin.getTxtadminid().getText());
+                administrador.setUsuarioAdmin(vistaAdmin.getTxtusuario().getText());
+                administrador.setContraAdmin(vistaAdmin.getTxtcontrasena().getText());
+                administrador.setCedulaAdmin(vistaAdmin.getTxtcedula().getText());
+                if (per1.grabarPersona() == true) {
+                    if (administrador.grabarAdministrador() == true) {
+                        JOptionPane.showMessageDialog(null, "GUARDADO EXITOSAMENTE");
+                    } else {
+                        per1.setCedulaPersona(vistaAdmin.getTxtcedula().getText());
+                        per1.eliminarPersona();
+                        JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR AL ADMINISTRAR");
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR A LA PERSONA");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR NUMERO DE CEDULA INVALIDA");
+        }
+    }
+    
+    private void Cancelar() {
+        Pantalla_Principal pat = new Pantalla_Principal();
+        pat.setVisible(true);
+        vistaAdmin.dispose();
+    }
 }
