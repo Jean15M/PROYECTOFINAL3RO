@@ -64,7 +64,7 @@ public class controladorRegistroAdmin {
     }
 
     public void RegistrarAdmin() {
-        boolean esValido1, esValido2, esValido3;
+        boolean esValido1 = false, esValido2, esValido3;
         boolean fechavalida;
         if (vistaAdmin.getTxtusuario().getText().isEmpty() || vistaAdmin.getTxtadminid().getText().isEmpty() || vistaAdmin.getTxtcedula().getText().isEmpty() || vistaAdmin.getTxtcedula().getText().isEmpty() || vistaAdmin.getTxtnom2().getText().isEmpty() || vistaAdmin.getTxtnom1().getText().isEmpty() || vistaAdmin.getTxtape1().getText().isEmpty() || vistaAdmin.getTxtape2().getText().isEmpty() || vistaAdmin.getTxttelefono().getText().isEmpty() || vistaAdmin.getTxtdireccion().getText().isEmpty() || vistaAdmin.getTxtcorreo().getText().isEmpty() || vistaAdmin.getTxtcontrasena().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "CAMPOS VACIOS LLENE TODOS LOS campos");
@@ -82,13 +82,13 @@ public class controladorRegistroAdmin {
                 JOptionPane.showMessageDialog(null, "INGRESE UN NUMERO DE CELULAR CORRECTO");
             } else if (!Validaciones.validarCorreoElectronico(vistaAdmin.getTxtcorreo().getText())) {
                 JOptionPane.showMessageDialog(null, "INGRESE UN CORREO ELECTRONICO VALIDO");
-            } else if (esValido1 = Validaciones.validarSeleccionComboBox(vistaAdmin.getComgenero())) {
+            } else if (!Validaciones.validarSeleccionComboBox(vistaAdmin.getComgenero())) {
                 JOptionPane.showMessageDialog(null, "SELECCIONE UN GENERO VALIDO");
-            } else if (esValido2 = Validaciones.validarSeleccionComboBox(vistaAdmin.getComprovin())) {
+            } else if (!Validaciones.validarSeleccionComboBox(vistaAdmin.getComprovin())) {
                 JOptionPane.showMessageDialog(null, "SELECCIONE UNA PROVINCIA VALIDA");
-            } else if (esValido3 = Validaciones.validarSeleccionComboBox(vistaAdmin.getComcanto())) {
+            } else if (!Validaciones.validarSeleccionComboBox(vistaAdmin.getComcanto())) {
                 JOptionPane.showMessageDialog(null, "SELECCIONE UN CANTONS VALIDO");
-            } else if (fechavalida = Validaciones.validarFecha(vistaAdmin.getJfecha())) {
+            } else if (!Validaciones.validarFecha(vistaAdmin.getJfecha())) {
                 JOptionPane.showMessageDialog(null, "INGRESE UNA FECHA VALIDA");
             } else {
                 Date fechaCalendar = vistaAdmin.getJfecha().getDate();

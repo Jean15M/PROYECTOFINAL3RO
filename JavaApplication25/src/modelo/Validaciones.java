@@ -6,6 +6,10 @@
 package modelo;
 
 import com.toedter.calendar.JDateChooser;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import javax.swing.JComboBox;
 
@@ -87,7 +91,7 @@ public class Validaciones {
         // Obtener el elemento seleccionado
         String selectedItem = (String) comboBox.getSelectedItem();
         // Verificar si el elemento seleccionado es válido
-        if (selectedItem != null && !selectedItem.equals("Seleccionar")) {
+        if (selectedItem != null && !selectedItem.equals("SELECCIONAR")) {
             return true; // La selección es válida
         } else {
             return false; // No se ha seleccionado un elemento válido
@@ -95,19 +99,16 @@ public class Validaciones {
     }
 
     public static boolean validarFecha(JDateChooser dateChooser) {
-        Date fechaSeleccionada = dateChooser.getDate();
-        if (fechaSeleccionada != null) {
-            // Obtener la fecha actual
-            Date fechaActual = new Date();
-            // Comparar la fecha seleccionada con la fecha actual
-            if (fechaSeleccionada.compareTo(fechaActual) <= 0) {
-                return true; // La fecha es válida (anterior o igual a la fecha actual)
-            } else {
-                return false; // La fecha es inválida (posterior a la fecha actual)
-            }
-        } else {
-            return false; // No se ha seleccionado una fecha válida
+        Date fechaCalendar = dateChooser.getDate();
+        SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        String d1 = date.format(fechaCalendar);
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate fecha = LocalDate.parse(d1, formato);
+        int edad = (int) ChronoUnit.YEARS.between(fecha, LocalDate.now());
+        if (edad >= 18) {
+            return true;
         }
+        return false;
     }
 
 }
