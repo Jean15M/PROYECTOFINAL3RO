@@ -82,6 +82,7 @@ public class controladorPrincipal {
     }
 
     private void llamarReserva() {
+       
         vistaReservas vista1 = new vistaReservas();
         vistaPrincipal.getPaginaPrincipal().add(vista1);
         vista1.setBorder(null);
@@ -100,7 +101,11 @@ public class controladorPrincipal {
         bui.setNorthPane(null);
         vista1.setSize(vistaPrincipal.getPaginaPrincipal().getWidth(), vistaPrincipal.getPaginaPrincipal().getHeight());
         modeloCategoriaHabitacion nuevo1 = new modeloCategoriaHabitacion();
-        controladorPaginaPrincipal inicio = new controladorPaginaPrincipal(vista1);
+        controladorPaginaPrincipal inicio = new controladorPaginaPrincipal(vista1,vistaPrincipal);
         inicio.iniciarControlador();
     }
+      
+     public void abrir(){
+         vistaPrincipal.setVisible(true);
+     }
 }

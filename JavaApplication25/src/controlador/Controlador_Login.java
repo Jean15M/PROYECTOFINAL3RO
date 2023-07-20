@@ -19,6 +19,7 @@ import vista.cliente_ventana;
 import vista.vistaContrase;
 import vista.vistaLogin;
 import vista.vistaPanelControlAdministrador;
+import vista.vistaRegistro;
 
 /**
  *
@@ -42,8 +43,9 @@ public class Controlador_Login {
 
     public void iniciarControlador() {
         vistaLogin.getBtniniciarse().addActionListener(l -> login());
-        //vistaLogin.getBtnregistro().addActionListener(l -> registro());
+        vistaLogin.getBtnregistro().addActionListener(l -> regresar());
         vistaLogin.getBtnOlvidar().addActionListener(l -> cambiarContra());
+
     }
 
     private void login() {
@@ -91,4 +93,13 @@ public class Controlador_Login {
         inicio.iniciarControlador();
     }
 
+    public void regresar() {
+
+        modeloCliente modeloC = new modeloCliente();
+        vistaRegistro vistaC = new vistaRegistro();
+        controladorRegistroUsuario inicio = new controladorRegistroUsuario(modeloC, vistaC);
+        inicio.iniciarControlador();
+        vistaLogin.dispose();
+
+    }
 }

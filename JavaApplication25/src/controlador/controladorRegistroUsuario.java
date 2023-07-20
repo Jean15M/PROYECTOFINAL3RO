@@ -16,6 +16,7 @@ import modelo.modeloCantones;
 import modelo.modeloCliente;
 import modelo.modeloPersona;
 import modelo.modeloProvincia;
+import vista.Pantalla_Principal;
 import vista.vistaRegistro;
 
 /**
@@ -36,7 +37,7 @@ public class controladorRegistroUsuario {
     public void iniciarControlador() {
         cargarProvincias();
         vistaUsuario.getBtnAceptar().addActionListener(l -> registrarUsuario());
-        vistaUsuario.getBtnCancelar().addActionListener(l -> vistaUsuario.dispose());
+        vistaUsuario.getBtnCancelar().addActionListener(l -> regresar());
         vistaUsuario.getComprovin().addActionListener(l -> cargarCantones());
 
     }
@@ -130,6 +131,13 @@ public class controladorRegistroUsuario {
         } else {
             JOptionPane.showMessageDialog(null, "NO SE PUDO ELIMINAR");
         }
+    }
+
+    public void regresar() {
+        Pantalla_Principal nuevo1 = new Pantalla_Principal();
+        controladorPrincipal nuevo = new controladorPrincipal(nuevo1);
+        nuevo.abrir();
+        nuevo.iniciarControlador();
     }
 
 }

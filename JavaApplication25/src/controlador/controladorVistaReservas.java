@@ -93,9 +93,7 @@ public class controladorVistaReservas {
         }
     }
 
-    public vistaReservas getReservas() {
-        return reservas;
-    }
+     
     
     
 }
