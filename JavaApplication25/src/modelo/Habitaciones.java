@@ -73,4 +73,5 @@ public class Habitaciones {
         return "Habitaciones{" + "id_Habitacion=" + id_Habitacion + ", precio_Habitacion=" + precio_Habitacion + ", nro_Habitacion=" + nro_Habitacion + ", nro_Piso=" + nro_Piso + ", id_Categoria=" + id_Categoria + '}';
     }
 
+    
 }

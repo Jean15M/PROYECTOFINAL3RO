@@ -31,12 +31,19 @@ public class controlador_PanelControlHP {
     
     
     public void iniciarPanel_Control(){
-    
+    mostrarHabitaicon();
+    mostrarParqueadero();
     }
     
-    public void mostrarProducto() {
+    public void mostrarHabitaicon() {
         JTable tbHabitacion = vistaPanel.getTbHabitacion();
         DefaultTableModel modeloTabla = modeloH.mostrarHabitacion();
         tbHabitacion.setModel(modeloTabla);
+    }
+    
+    public void mostrarParqueadero() {
+        JTable tbParqueadero = vistaPanel.getTbParqueadero();
+        DefaultTableModel modeloTabla = modeloP.mostrarParqueaderos();
+        tbParqueadero.setModel(modeloTabla);
     }
 }

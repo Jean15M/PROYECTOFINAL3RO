@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -96,4 +97,28 @@ public class modeloParqueadero extends Parqueadero {
         return null;
     }
 
+    public DefaultTableModel mostrarParqueaderos() {
+        String sql = "SELECT * FROM producto";
+        ResultSet resultado = cpg.resultBD(sql);
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("id_Parqueadero");
+        modelo.addColumn("ubicacion");
+        modelo.addColumn("placa");
+
+        try {
+            while (resultado.next()) {
+                Object[] fila = new Object[3];
+                fila[0] = resultado.getString("id_Parqueadero");
+                fila[1] = resultado.getString("ubicacion");
+                fila[2] = resultado.getString("placa");
+
+                modelo.addRow(fila);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return modelo;
+    }
 }
