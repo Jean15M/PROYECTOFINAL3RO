@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -96,5 +97,29 @@ public class modeloHabitaciones extends Habitaciones {
             Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+    public DefaultTableModel mostrarHabitacion() {
+        String sql = "SELECT * FROM habitaciones";
+        ResultSet resultado = cpg.resultBD(sql);
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("NRO");
+        modelo.addColumn("PISO");
+        modelo.addColumn("ESTADO");
+
+        try {
+            while (resultado.next()) {
+                Object[] fila = new Object[3];
+                fila[0] = resultado.getString("nro_Habitacion");
+                fila[1] = resultado.getString("nro_Piso");
+                fila[2] = resultado.getString("precio_Habitacion");
+
+                modelo.addRow(fila);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return modelo;
     }
 }
