@@ -5,6 +5,8 @@
  */
 package controlador;
 
+import java.util.List;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Habitaciones;
@@ -33,6 +35,9 @@ public class controlador_PanelControlHP {
     public void iniciarPanel_Control(){
     mostrarHabitaicon();
     mostrarParqueadero();
+    llenarHabitaciones();
+    llenarParqueaderos();
+    
     }
     
     public void mostrarHabitaicon() {
@@ -46,4 +51,32 @@ public class controlador_PanelControlHP {
         DefaultTableModel modeloTabla = modeloP.mostrarParqueaderos();
         tbParqueadero.setModel(modeloTabla);
     }
+     public void llenarHabitaciones() {
+        // Obtener el JComboBox de habitaciones de la clase VistaPanelControl
+        JComboBox<String> cbHabitacion = vistaPanel.getCbHabitacion();
+
+        // Obtener la lista de habitaciones
+        List<Habitaciones> listaHabitaciones = modeloH.listarHabitaciones();
+
+        // Llenar el JComboBox con las habitaciones
+        cbHabitacion.removeAllItems(); // Limpiar el JComboBox antes de llenarlo
+        for (Habitaciones habitacion : listaHabitaciones) {
+            cbHabitacion.addItem(habitacion.getId_Habitacion());
+        }
+    }
+
+     public void llenarParqueaderos() {
+        // Obtener el JComboBox de parqueaderos de la clase VistaPanelControl
+        JComboBox<String> cbParqueadero = vistaPanel.getCbParqueadero();
+
+        // Obtener la lista de plazas de parqueadero disponibles
+        List<Parqueadero> listaPlazasParqueadero = modeloP.obtenerTodasLasPlazasParqueadero();
+
+        // Llenar el JComboBox con las plazas de parqueadero disponibles
+        cbParqueadero.removeAllItems(); // Limpiar el JComboBox antes de llenarlo
+        for (Parqueadero parqueadero : listaPlazasParqueadero) {
+            cbParqueadero.addItem(parqueadero.getId_Parqueadero());
+        }
+    }
+
 }

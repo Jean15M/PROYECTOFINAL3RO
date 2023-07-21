@@ -145,6 +145,11 @@ public class vistaPanelControl extends javax.swing.JFrame {
         jLabel3.setText("HABITACIONES");
 
         cbHabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        cbHabitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbHabitacionActionPerformed(evt);
+            }
+        });
 
         cbParqueadero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
 
@@ -248,6 +253,10 @@ public class vistaPanelControl extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbHabitacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbHabitacionActionPerformed
+
     public ButtonRound getBtnBuscarHabi() {
         return btnBuscarHabi;
     }
@@ -319,6 +328,15 @@ public class vistaPanelControl extends javax.swing.JFrame {
     public void setLblUsuario(JLabel lblUsuario) {
         this.lblUsuario = lblUsuario;
     }
+
+    public JComboBox<String> getCbParqueadero() {
+        return cbParqueadero;
+    }
+
+    public void setCbParqueadero(JComboBox<String> cbParqueadero) {
+        this.cbParqueadero = cbParqueadero;
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btnBuscarHabi;
