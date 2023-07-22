@@ -38,7 +38,7 @@ public class modeloParqueadero extends Parqueadero {
                 Parqueadero Parqueadero1 = new Parqueadero();
                 Parqueadero1.setId_Parqueadero(rs.getString("id_parqueadero"));
                 Parqueadero1.setPlaca(rs.getString("placa"));
-                Parqueadero1.setTiempo(rs.getDate("tiempo"));
+                Parqueadero1.setTiempo(rs.getInt("tiempo"));
                 Parqueadero1.setUbicacion(rs.getString("ubicacion"));
                 listaParqueadero.add(Parqueadero1);
             }
@@ -55,7 +55,7 @@ public class modeloParqueadero extends Parqueadero {
     }
 
     public boolean grabarParqueadero() {
-        String sql = "insert into  public.parqueadero(id_parqueadero,placa,tiempo,ubicacion)";
+        String sql = "insert into  parqueadero(id_parqueadero,placa,tiempo,ubicacion)";
         sql += "values('" + getId_Parqueadero() + "','" + getPlaca() + "','" + getTiempo() + "','" + getUbicacion() + "')";
         return cpg.accionBd(sql);
     }
@@ -132,7 +132,7 @@ public class modeloParqueadero extends Parqueadero {
                 Parqueadero parqueadero = new Parqueadero();
                 parqueadero.setId_Parqueadero(rs.getString("id_parqueadero"));
                 parqueadero.setPlaca(rs.getString("placa"));
-                parqueadero.setTiempo(rs.getDate("tiempo"));
+                parqueadero.setTiempo(rs.getInt("tiempo"));
                 parqueadero.setUbicacion(rs.getString("ubicacion"));
                 listaPlazasParqueadero.add(parqueadero);
             }

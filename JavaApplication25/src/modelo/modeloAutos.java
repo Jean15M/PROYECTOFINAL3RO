@@ -23,7 +23,7 @@ public class modeloAutos extends Autos {
 
     public boolean modificar = false;
 
-    public List<Autos> listarCliente() {
+    public List<Autos> listarAutos() {
         List<Autos> listaAutos = new ArrayList<Autos>();
         String sql1 = "";
         if (modificar == true) {
@@ -54,7 +54,7 @@ public class modeloAutos extends Autos {
     }
 
     public boolean grabarAutos() {
-        String sql = "insert into  public.autos(placa,marca,modelo)";
+        String sql = "insert into autos(placa,marca,modelo)";
         sql += "values('" + super.getPlaca() + "','" + getMarca() + "','" + getModelo() + "')";
         return cpg.accionBd(sql);
     }
@@ -72,13 +72,13 @@ public class modeloAutos extends Autos {
     }
 
     public boolean modificarAutosBD() {
-        String sql = "UPDATE public.autos SET marca='" + getMarca() + "', modelo='" + getModelo() + "'";
+        String sql = "UPDATE autos SET marca='" + getMarca() + "', modelo='" + getModelo() + "'";
         sql += "where placa='" + getPlaca() + "'";
         return cpg.accionBd(sql);
     }
 
     public boolean eliminarAutos() {
-        String sql = "DELETE FROM public.autos";
+        String sql = "DELETE FROM autos";
         sql += " WHERE placa='" + getPlaca() + "'";
         return cpg.accionBd(sql);
 

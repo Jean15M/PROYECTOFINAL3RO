@@ -189,8 +189,10 @@ public class vistaPanelControl extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tbHabitacion);
 
+        btnBuscarHabi.setBackground(new java.awt.Color(0, 102, 255));
         btnBuscarHabi.setText("Buscar");
 
+        btnBuscarParq.setBackground(new java.awt.Color(0, 102, 255));
         btnBuscarParq.setText("Buscar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -137,7 +137,7 @@ public class modeloCliente extends Cliente {
     public List<Cliente> cargarCliente(){
         List<Cliente> listaBuscar = new ArrayList<Cliente>();
         String sql;
-        sql="select * from vistacliente where cedula_persona='"+getCedulaCliente()+"'";
+        sql="select * from vistacliente where usuario='"+super.getUsuarioCliente()+"'";
         ResultSet rs=cpg.resultBD(sql);
         Cliente per=new Cliente();
         try {

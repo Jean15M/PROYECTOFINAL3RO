@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+import modelo.modeloAutos;
 import modelo.modeloCliente;
 import modelo.modeloDetalle_fac;
 import modelo.modeloEncabez_fac;
@@ -38,13 +39,15 @@ public class controladorAsignarReserva {
         this.modeloCliente = modeloCliente;
         this.modeloEncabe = modeloEncabe;
         this.modeloDetalle = modeloDetalle;
-        vistaReservas.setVisible(true);
+        vistaReservas.setVisible(true); 
+        mostrarParq(1);
     }
     
     public void iniciarControlador(){
         cargarCombo();
-        vistaReservas.getBtnCargarCliente().addActionListener(l->cargarCliente());
+        cargarCliente();
         vistaReservas.getBtnReservar().addActionListener(l->ingresarReserva());
+        vistaReservas.getRdOpcionSi().addActionListener(l -> mostrarParq(2));
     }
     
     public void ingresarReserva(){
@@ -76,6 +79,15 @@ public class controladorAsignarReserva {
             res.setFecha_salida(fechafin);
             res.setId_Habitacion(String.valueOf(vistaReservas.getCbHabitacion().getSelectedItem()));
             res.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedIndex()));
+            
+            if(vistaReservas.getRdOpcionSi().isSelected()){
+                if(vistaReservas.getCbParque().getSelectedIndex()!=0 || !vistaReservas.getTxtDias().getText().isEmpty()|| !vistaReservas.getTxtPlaca().getText().isEmpty() || !vistaReservas.getTxtMarca().getText().isEmpty() || !vistaReservas.getTxtModelo().getText().isEmpty()){
+                    guardarParqueadero();
+                }else{
+                    JOptionPane.showMessageDialog(null, "LLENE LOS CAMPOS PORFAVOR");
+                }
+                
+            }
             if(res.grabarReservas()==true){
                 guardarFactura();
                 JOptionPane.showMessageDialog(null, "RESERVA ASIGNADA");
@@ -106,25 +118,42 @@ public class controladorAsignarReserva {
         }
     }
     
+    public void guardarParqueadero(){
+        modeloParqueadero modeloP = new modeloParqueadero();
+        modeloAutos modeloA = new modeloAutos();
+        modeloP.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedItem()));
+        modeloP.setTiempo(Integer.parseInt(vistaReservas.getTxtDias().getText()));
+        modeloP.setPlaca(vistaReservas.getTxtPlaca().getText());
+        modeloP.setUbicacion(String.valueOf(vistaReservas.getCbUbicacion().getSelectedItem()));
+        modeloA.setMarca(vistaReservas.getTxtMarca().getText());
+        modeloA.setModelo(vistaReservas.getTxtMarca().getText());
+        modeloA.setPlaca(vistaReservas.getTxtPlaca().getText());
+        if(modeloP.grabarParqueadero()==true){
+            if(modeloA.grabarAutos()){
+                System.out.println("GUARDADO");
+            }
+        }else{
+            System.out.println("ERROR AL GUARDAR");
+        }
+    }
+    
     public double calcularTotal(int dias){
         double total = dias*Double.parseDouble(vistaReservas.getTxtPrecioHabi().getText());
         return total;
     }
     
     public void cargarCliente(){
-        if(vistaReservas.getTxtCliente().getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Ingrese una cédula de usuario");
+        vistaReservas.getTxtCliente().setText(Controlador_Login.usuario);
+        modeloCliente.setUsuarioCliente(Controlador_Login.usuario);
+        if(modeloCliente.cargarCliente().isEmpty()){
+          JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
         }else{
-            modeloCliente.setCedulaCliente(vistaReservas.getTxtCliente().getText());
-            if(modeloCliente.cargarCliente().isEmpty()){
-                JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
-            }else{
-                modeloCliente.cargarCliente().stream().forEach((p)->{
-                    vistaReservas.getLblNombre().setText(p.getNombrePersona());
-                    vistaReservas.getLblApellido().setText(p.getApellidoPersona());
-                });
-            }
+           modeloCliente.cargarCliente().stream().forEach((p)->{
+           vistaReservas.getLblNombre().setText(p.getNombrePersona());
+           vistaReservas.getLblApellido().setText(p.getApellidoPersona());
+           });
         }
+        
     }
     
     public void cargarCombo(){
@@ -135,15 +164,45 @@ public class controladorAsignarReserva {
         
         modeloHabitaciones modeloH = new modeloHabitaciones();
         modeloH.listarHabitaciones().stream().forEach(p->{
-            vistaReservas.getCbPago().addItem(String.valueOf(p.getNro_Habitacion()));
+            vistaReservas.getCbHabitacion().addItem(String.valueOf(p.getNro_Habitacion()));
         });
         
         modeloParqueadero modeloPa = new modeloParqueadero();
         modeloPa.listarParqueadero().stream().forEach(p->{
-            vistaReservas.getCbPago().addItem(String.valueOf(p.getId_Parqueadero()));
+            vistaReservas.getCbParque().addItem(String.valueOf(p.getId_Parqueadero()));
+        });
+        
+        modeloPa.listarParqueadero().stream().forEach(p->{
+            vistaReservas.getCbUbicacion().addItem(String.valueOf(p.getUbicacion()));
         });
         
         
+    }
+    
+    public void mostrarParq(int bandera){
+        if(bandera==1){
+            vistaReservas.getLblParque().setVisible(false);
+            vistaReservas.getLblMarca().setVisible(false);
+            vistaReservas.getLblPlaca().setVisible(false);
+            vistaReservas.getLblModelo().setVisible(false);
+            vistaReservas.getLblUbi().setVisible(false);
+            vistaReservas.getTxtMarca().setVisible(false);
+            vistaReservas.getTxtModelo().setVisible(false);
+            vistaReservas.getTxtPlaca().setVisible(false);
+            vistaReservas.getCbParque().setVisible(false);
+            vistaReservas.getCbUbicacion().setVisible(false);
+        }else if(bandera==2){
+            vistaReservas.getLblParque().setVisible(true);
+            vistaReservas.getLblMarca().setVisible(true);
+            vistaReservas.getLblPlaca().setVisible(true);
+            vistaReservas.getLblModelo().setVisible(true);
+            vistaReservas.getLblUbi().setVisible(true);
+            vistaReservas.getTxtMarca().setVisible(true);
+            vistaReservas.getTxtModelo().setVisible(true);
+            vistaReservas.getTxtPlaca().setVisible(true);
+            vistaReservas.getCbParque().setVisible(true);
+            vistaReservas.getCbUbicacion().setVisible(true);
+        }
     }
     
     

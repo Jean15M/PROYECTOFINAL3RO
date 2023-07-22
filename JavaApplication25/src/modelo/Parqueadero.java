@@ -14,14 +14,14 @@ import java.util.Date;
 public class Parqueadero {
 
     private String id_Parqueadero;
-    private Date tiempo;
+    private int tiempo;
     private String ubicacion;
     private String placa;
 
     public Parqueadero() {
     }
 
-    public Parqueadero(String id_Parqueadero, Date tiempo, String ubicacion, String placa) {
+    public Parqueadero(String id_Parqueadero, int tiempo, String ubicacion, String placa) {
         this.id_Parqueadero = id_Parqueadero;
         this.tiempo = tiempo;
         this.ubicacion = ubicacion;
@@ -36,11 +36,11 @@ public class Parqueadero {
         this.id_Parqueadero = id_Parqueadero;
     }
 
-    public Date getTiempo() {
+    public int getTiempo() {
         return tiempo;
     }
 
-    public void setTiempo(Date tiempo) {
+    public void setTiempo(int tiempo) {
         this.tiempo = tiempo;
     }
 
