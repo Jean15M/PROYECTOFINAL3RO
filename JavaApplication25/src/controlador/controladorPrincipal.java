@@ -6,23 +6,10 @@
 package controlador;
 
 import javax.swing.JFrame;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.DesktopPaneUI;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
-import modelo.modeloAdministrador;
-import modelo.modeloCategoriaHabitacion;
-import modelo.modeloCliente;
-import modelo.modeloLogin;
-import modelo.modeloRecepcionista;
-import vista.Pantalla_Principal;
-import vista.vistaLogin;
-import vista.cliente_ventana;
-import vista.paginaInicio;
-import vista.vistaRegistro;
-import vista.vistaRegistroAdmin;
-import vista.vistaRegistroRecepcionista;
-import vista.vistaReservas;
+import modelo.*;
+import vista.*;
 
 /**
  *
@@ -40,6 +27,8 @@ public class controladorPrincipal {
     }
 
     public void iniciarControlador() {
+        vistaPrincipal.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        vistaPrincipal.setVisible(true);
         vistaPrincipal.getBtnInicioRe().addActionListener(l -> llamarReserva1());
         vistaPrincipal.getBtnReservarRe().addActionListener(l -> llamarReserva());
         vistaPrincipal.getBtnServiciosRe().addActionListener(l -> registroRecepcionista());

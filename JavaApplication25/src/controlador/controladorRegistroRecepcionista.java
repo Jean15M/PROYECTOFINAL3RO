@@ -10,14 +10,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import modelo.Validaciones;
-import modelo.modeloCantones;
-import modelo.modeloPersona;
-import modelo.modeloProvincia;
-import modelo.modeloRecepcionista;
-import vista.Pantalla_Principal;
-import vista.vistaRegistroRecepcionista;
+import modelo.*;
+import vista.*;
 
 /**
  *
@@ -32,6 +28,7 @@ public class controladorRegistroRecepcionista {
         this.vistarecepcionista = vistarecepcionista;
         this.recepcionista = recepcionista;
         vistarecepcionista.setVisible(true);
+        vistarecepcionista.setLocationRelativeTo(null);
     }
 
     public void iniciarControlador() {
@@ -139,9 +136,9 @@ public class controladorRegistroRecepcionista {
 
     private void Cancelar() {
         Pantalla_Principal pat = new Pantalla_Principal();
-        controladorPrincipal nuevo=new controladorPrincipal(pat);
-        nuevo.iniciarControlador();
         vistarecepcionista.dispose();
+        pat.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        pat.setVisible(true);
     }
 
 }
