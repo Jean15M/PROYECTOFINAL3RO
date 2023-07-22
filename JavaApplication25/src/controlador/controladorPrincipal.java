@@ -28,7 +28,6 @@ public class controladorPrincipal {
 
     public void iniciarControlador() {
         vistaPrincipal.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        vistaPrincipal.setVisible(true);
         vistaPrincipal.getBtnInicioRe().addActionListener(l -> llamarReserva1());
         vistaPrincipal.getBtnReservarRe().addActionListener(l -> llamarReserva());
         vistaPrincipal.getBtnServiciosRe().addActionListener(l -> registroRecepcionista());
