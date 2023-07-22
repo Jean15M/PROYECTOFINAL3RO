@@ -45,6 +45,8 @@ public class controladorVistaReservas {
                     reservas.getEstado_vip().setText("Disponible");
                 } else {
                     reservas.getEstado_vip().setText("No Disponible");
+                    reservas.getBtnReservarVIP().setEnabled(false);
+                    
                 }
 
             }
@@ -67,6 +69,7 @@ public class controladorVistaReservas {
                     reservas.getEstado_dulex().setText("Disponible");
                 } else {
                     reservas.getEstado_dulex().setText("No Disponible");
+                    reservas.getBtnReservarDel().setEnabled(false);
                 }
             }
         } catch (SQLException ex) {
@@ -86,6 +89,7 @@ public class controladorVistaReservas {
                     reservas.getEstado_standar().setText("Disponible");
                 } else {
                     reservas.getEstado_standar().setText("No Disponible");
+                    reservas.getBtnReservarEs().setEnabled(false);
                 }
             }
         } catch (SQLException ex) {

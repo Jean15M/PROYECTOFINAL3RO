@@ -103,7 +103,7 @@ public class modeloCategoriaHabitacion extends CategoriaHabitacion {
     }
   public int resultadoEstado() {
          int resultado = 0;
-        String sql1 = "select sum(estado) from habitacion_cate";
+        String sql1 = "select sum(estado) from habitacion_cate where id_categoria='"+getId_Categoria()+"'";
         ResultSet rs = cpg.resultBD(sql1);
         try {
             while (rs.next()) {

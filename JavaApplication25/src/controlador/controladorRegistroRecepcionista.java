@@ -17,6 +17,7 @@ import modelo.modeloPersona;
 import modelo.modeloProvincia;
 import modelo.modeloRecepcionista;
 import vista.Pantalla_Principal;
+import vista.vistaPanelControlAdministrador;
 import vista.vistaRegistroRecepcionista;
 
 /**
@@ -137,10 +138,10 @@ public class controladorRegistroRecepcionista {
         });
     }
 
-    private void Cancelar() {
-        Pantalla_Principal pat = new Pantalla_Principal();
-        controladorPrincipal nuevo=new controladorPrincipal(pat);
-        nuevo.iniciarControlador();
+ private void Cancelar() {
+        vistaPanelControlAdministrador pat = new vistaPanelControlAdministrador();
+        Controlador_Paneladmin inicio=new Controlador_Paneladmin(pat);
+        inicio.iniciarControlador();
         vistarecepcionista.dispose();
     }
 
