@@ -15,12 +15,12 @@ public class Habitaciones {
     private double precio_Habitacion;
     private int nro_Habitacion;
     private int nro_Piso;
-    private String id_Categoria;
+    private int id_Categoria;
 
     public Habitaciones() {
     }
 
-    public Habitaciones(String id_Habitacion, double precio_Habitacion, int nro_Habitacion, int nro_Piso, String id_Categoria) {
+    public Habitaciones(String id_Habitacion, double precio_Habitacion, int nro_Habitacion, int nro_Piso, int id_Categoria) {
         this.id_Habitacion = id_Habitacion;
         this.precio_Habitacion = precio_Habitacion;
         this.nro_Habitacion = nro_Habitacion;
@@ -60,11 +60,11 @@ public class Habitaciones {
         this.nro_Piso = nro_Piso;
     }
 
-    public String getId_Categoria() {
+    public int getId_Categoria() {
         return id_Categoria;
     }
 
-    public void setId_Categoria(String id_Categoria) {
+    public void setId_Categoria(int id_Categoria) {
         this.id_Categoria = id_Categoria;
     }
 

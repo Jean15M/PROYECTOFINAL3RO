@@ -110,5 +110,30 @@ public class Validaciones {
         }
         return false;
     }
-
+    
+        public static boolean validarIdHabitacion(String idHabitacion) {
+        // Verificar que el ID de habitación tenga 7 caracteres (habiXXX).
+        if (idHabitacion == null || idHabitacion.length() != 7) {
+            return false;
+        }
+        // Verificar que los primeros 4 caracteres sean "habi".
+        String prefijo = idHabitacion.substring(0, 4);
+        if (!prefijo.equalsIgnoreCase("habi")) {
+            return false;
+        }
+        // Verificar que los últimos 3 caracteres sean un número válido.
+        String numero = idHabitacion.substring(4);
+        if (!numero.matches("\\d{3}")) {
+            return false;
+        }
+        return true;
+    }
+        public static boolean validarNumeroCuartos(String texto) {
+        try {
+            int numeroCuartos = Integer.parseInt(texto);
+            return numeroCuartos > 0; // Verificar que el número de cuartos sea mayor que cero.
+        } catch (NumberFormatException e) {
+            return false; // Si ocurre una excepción al intentar convertir a entero, entonces no es válido.
+        }
+    }
 }

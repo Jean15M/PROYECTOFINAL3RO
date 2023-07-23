@@ -40,7 +40,7 @@ public class modeloHabitaciones extends Habitaciones {
             while (rs.next()) {
                 Habitaciones Habitaciones1 = new Habitaciones();
                 Habitaciones1.setId_Habitacion(rs.getString("id_habitacio"));
-                Habitaciones1.setId_Categoria(rs.getString("id_categoria"));
+                Habitaciones1.setId_Categoria(rs.getInt("id_categoria"));
                 Habitaciones1.setNro_Habitacion(rs.getInt("n_habitacion"));
                 Habitaciones1.setNro_Piso(rs.getInt("nro_piso"));
                 Habitaciones1.setPrecio_Habitacion(rs.getDouble("precio"));
@@ -141,7 +141,7 @@ public class modeloHabitaciones extends Habitaciones {
             while (rs.next()) {
                 Habitaciones habitacion = new Habitaciones();
                 habitacion.setId_Habitacion(rs.getString("id_habitacio"));
-                habitacion.setId_Categoria(rs.getString("id_categoria"));
+                habitacion.setId_Categoria(rs.getInt("id_categoria"));
                 habitacion.setNro_Habitacion(rs.getInt("n_habitacion"));
                 habitacion.setNro_Piso(rs.getInt("nro_piso"));
                 habitacion.setPrecio_Habitacion(rs.getDouble("precio"));
