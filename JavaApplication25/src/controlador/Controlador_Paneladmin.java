@@ -5,9 +5,15 @@
  */
 package controlador;
 
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import modelo.modeloAdministrador;
 import modelo.modeloCliente;
 import modelo.modeloRecepcionista;
+import vista.PanelAdmin;
 import vista.vistaPanelControlAdministrador;
 import vista.vistaRegistro;
 import vista.vistaRegistroAdmin;
@@ -20,41 +26,39 @@ import vista.vistaRegistroRecepcionista;
 public class Controlador_Paneladmin {
 
     private vistaPanelControlAdministrador ventaadmin;
+ 
 
-    public Controlador_Paneladmin(vistaPanelControlAdministrador ventaadmin) {
+    public Controlador_Paneladmin(vistaPanelControlAdministrador ventaadmin ) {
         this.ventaadmin = ventaadmin;
+      
         ventaadmin.setVisible(true);
     }
 
+
+
     public void iniciarControlador() {
-        ventaadmin.getBtRegisadmin().addActionListener(l -> registroAdmin());
-        ventaadmin.getBtRegisem().addActionListener(l -> registroRecepcionista());
-        ventaadmin.getBtRegiscli().addActionListener(l -> registroUsuario());
+        ventaadmin.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//    
         ventaadmin.getLblUsuario().setText(Controlador_Login.usuario);       
         System.out.println("hola: " + Controlador_Login.usuario);
+        ventaadmin.getPanelRegistros().addActionListener(l->llamarPanel());
+  
+       
     }
 
-    private void registroAdmin() {
-        modeloAdministrador modeloA = new modeloAdministrador();
-        vistaRegistroAdmin vistaA = new vistaRegistroAdmin();
-        controladorRegistroAdmin inicio = new controladorRegistroAdmin(vistaA, modeloA);
-        ventaadmin.dispose();
-        inicio.controlador();
+    
+       private void llamarPanel() {
+        PanelAdmin vista1 = new PanelAdmin();
+        ventaadmin.getEscritorioAdmin().add(vista1);
+        vista1.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
+        bui.setNorthPane(null);
+        vista1.setSize(ventaadmin.getEscritorioAdmin().getWidth(), ventaadmin.getEscritorioAdmin().getHeight());
+        controladorPanelAdmin nuevo1= new controladorPanelAdmin(vista1,ventaadmin);
+//        controladorVistaReservas inicio = new controladorVistaReservas(vista1,nuevo1);
+        nuevo1.iniciarControlador();
     }
+       
 
-    private void registroUsuario() {
-        modeloCliente modeloC = new modeloCliente();
-        vistaRegistro vistaC = new vistaRegistro();
-        controladorRegistroUsuario inicio = new controladorRegistroUsuario(modeloC, vistaC);
-        ventaadmin.dispose();
-        inicio.iniciarControlador();
-    }
-
-    private void registroRecepcionista() {
-        modeloRecepcionista modeloR = new modeloRecepcionista();
-        vistaRegistroRecepcionista vistaR = new vistaRegistroRecepcionista();
-        controladorRegistroRecepcionista inicio2 = new controladorRegistroRecepcionista(vistaR, modeloR);
-        ventaadmin.dispose();
-        inicio2.iniciarControlador();
-    }
+      
 }

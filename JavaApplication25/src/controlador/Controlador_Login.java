@@ -14,6 +14,7 @@ import modelo.Recepcionista;
 import modelo.modeloAdministrador;
 import modelo.modeloCliente;
 import modelo.modeloRecepcionista;
+import vista.PanelAdmin;
 import vista.Pantalla_Principal;
 import vista.cliente_ventana;
 import vista.vistaContrase;
@@ -64,6 +65,7 @@ public class Controlador_Login {
             } else {
                 if (modeloLogin2.login() == true) {
                     vistaPanelControlAdministrador nuevo1 = new vistaPanelControlAdministrador();
+                    
                     Controlador_Paneladmin iniciar = new Controlador_Paneladmin(nuevo1);
                     iniciar.iniciarControlador();
                     vistaLogin.dispose();

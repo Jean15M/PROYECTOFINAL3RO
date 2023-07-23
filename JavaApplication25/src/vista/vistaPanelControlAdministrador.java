@@ -6,6 +6,7 @@
 package vista;
 
 import javax.swing.JButton;
+import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
 import org.edisoncor.gui.button.ButtonRound;
 
@@ -21,45 +22,8 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
     public vistaPanelControlAdministrador() {
         initComponents();
     }
-
-    public ButtonRound getBtRegisadmin() {
-        return btRegisadmin;
-    }
-
-    public void setBtRegisadmin(ButtonRound btRegisadmin) {
-        this.btRegisadmin = btRegisadmin;
-    }
-
-    public ButtonRound getBtRegiscli() {
-        return btRegiscli;
-    }
-
-    public void setBtRegiscli(ButtonRound btRegiscli) {
-        this.btRegiscli = btRegiscli;
-    }
-
-    public ButtonRound getBtRegisem() {
-        return btRegisem;
-    }
-
-    public void setBtRegisem(ButtonRound btRegisem) {
-        this.btRegisem = btRegisem;
-    }
-
-    public ButtonRound getBtReporte() {
-        return btReporte;
-    }
-
-    public void setBtReporte(ButtonRound btReporte) {
-        this.btReporte = btReporte;
-    }
-
-    public JButton getBtnInicioRe() {
-        return btnInicioRe;
-    }
-
     public void setBtnInicioRe(JButton btnInicioRe) {
-        this.btnInicioRe = btnInicioRe;
+        this.PanelRegistros = btnInicioRe;
     }
 
     public JLabel getLblUsuario() {
@@ -69,6 +33,32 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
     public void setLblUsuario(JLabel lblUsuario) {
         this.lblUsuario = lblUsuario;
     }
+
+    public JDesktopPane getEscritorioAdmin() {
+        return EscritorioAdmin;
+    }
+
+    public void setEscritorioAdmin(JDesktopPane EscritorioAdmin) {
+        this.EscritorioAdmin = EscritorioAdmin;
+    }
+
+    public JButton getPanelRegistros() {
+        return PanelRegistros;
+    }
+
+    public void setPanelRegistros(JButton PanelRegistros) {
+        this.PanelRegistros = PanelRegistros;
+    }
+
+    public JButton getBtnInicioRe1() {
+        return btnInicioRe1;
+    }
+
+    public void setBtnInicioRe1(JButton btnInicioRe1) {
+        this.btnInicioRe1 = btnInicioRe1;
+    }
+    
+    
     
     
     /**
@@ -82,21 +72,13 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        btnInicioRe = new javax.swing.JButton();
+        PanelRegistros = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        rSLabelImage2 = new necesario.RSLabelImage();
-        rSLabelImage3 = new necesario.RSLabelImage();
-        btReporte = new org.edisoncor.gui.button.ButtonRound();
-        btRegisem = new org.edisoncor.gui.button.ButtonRound();
-        jPanel4 = new javax.swing.JPanel();
-        rSLabelImage4 = new necesario.RSLabelImage();
+        btnInicioRe1 = new javax.swing.JButton();
+        EscritorioAdmin = new javax.swing.JDesktopPane();
         rSLabelImage1 = new necesario.RSLabelImage();
-        btRegisadmin = new org.edisoncor.gui.button.ButtonRound();
-        btRegiscli = new org.edisoncor.gui.button.ButtonRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -104,12 +86,12 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(35, 149, 156));
 
-        btnInicioRe.setBackground(new java.awt.Color(37, 113, 156));
-        btnInicioRe.setForeground(new java.awt.Color(255, 255, 255));
-        btnInicioRe.setText("INICIO");
-        btnInicioRe.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        btnInicioRe.setBorderPainted(false);
-        btnInicioRe.setPreferredSize(new java.awt.Dimension(88, 27));
+        PanelRegistros.setBackground(new java.awt.Color(37, 113, 156));
+        PanelRegistros.setForeground(new java.awt.Color(255, 255, 255));
+        PanelRegistros.setText("PANEL");
+        PanelRegistros.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        PanelRegistros.setBorderPainted(false);
+        PanelRegistros.setPreferredSize(new java.awt.Dimension(88, 27));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/icons8-usuario-25.png"))); // NOI18N
 
@@ -119,13 +101,20 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/logoproyecto-removebg-preview__2_-removebg-preview (1).png"))); // NOI18N
 
+        btnInicioRe1.setBackground(new java.awt.Color(37, 113, 156));
+        btnInicioRe1.setForeground(new java.awt.Color(255, 255, 255));
+        btnInicioRe1.setText("INICIO");
+        btnInicioRe1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnInicioRe1.setBorderPainted(false);
+        btnInicioRe1.setPreferredSize(new java.awt.Dimension(88, 27));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(300, 300, 300)
@@ -135,7 +124,10 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
                         .addGap(12, 12, 12))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnInicioRe, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(btnInicioRe1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(PanelRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(137, 137, 137))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,117 +135,41 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel9)
                             .addComponent(lblUsuario))
-                        .addGap(11, 11, 11)
-                        .addComponent(btnInicioRe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnInicioRe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PanelRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
 
-        jLabel2.setBackground(new java.awt.Color(35, 149, 156));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(35, 149, 156));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Panel de Control");
+        EscritorioAdmin.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/logo2.png"))); // NOI18N
 
-        rSLabelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/vReporte.png"))); // NOI18N
+        EscritorioAdmin.setLayer(rSLabelImage1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        rSLabelImage3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        rSLabelImage3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/Recepcionista.png"))); // NOI18N
-
-        btReporte.setBackground(new java.awt.Color(0, 102, 255));
-        btReporte.setText("Reportes");
-
-        btRegisem.setBackground(new java.awt.Color(0, 102, 255));
-        btRegisem.setText("REGISTRO EMPLEADOS");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(rSLabelImage2, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(65, 65, 65))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(rSLabelImage3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(btReporte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(82, 82, 82))))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btRegisem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+        javax.swing.GroupLayout EscritorioAdminLayout = new javax.swing.GroupLayout(EscritorioAdmin);
+        EscritorioAdmin.setLayout(EscritorioAdminLayout);
+        EscritorioAdminLayout.setHorizontalGroup(
+            EscritorioAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EscritorioAdminLayout.createSequentialGroup()
+                .addGap(486, 486, 486)
+                .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(473, 473, 473))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rSLabelImage2, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(btReporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSLabelImage3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btRegisem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
-        );
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-
-        rSLabelImage4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/Cliente.png"))); // NOI18N
-
-        rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/addUser.png"))); // NOI18N
-
-        btRegisadmin.setBackground(new java.awt.Color(0, 102, 255));
-        btRegisadmin.setText("REGISTRO ADMINS");
-
-        btRegiscli.setBackground(new java.awt.Color(0, 102, 255));
-        btRegiscli.setText("REGISTRO CLIENTES");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                        .addGap(170, 170, 170))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btRegisadmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSLabelImage4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(btRegiscli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(btRegisadmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(rSLabelImage4, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(btRegiscli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+        EscritorioAdminLayout.setVerticalGroup(
+            EscritorioAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioAdminLayout.createSequentialGroup()
+                .addContainerGap(185, Short.MAX_VALUE)
+                .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(106, 106, 106))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -261,24 +177,14 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(EscritorioAdmin)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(EscritorioAdmin))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -289,7 +195,9 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 10, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -297,22 +205,14 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private org.edisoncor.gui.button.ButtonRound btRegisadmin;
-    private org.edisoncor.gui.button.ButtonRound btRegiscli;
-    private org.edisoncor.gui.button.ButtonRound btRegisem;
-    private org.edisoncor.gui.button.ButtonRound btReporte;
-    private javax.swing.JButton btnInicioRe;
+    private javax.swing.JDesktopPane EscritorioAdmin;
+    private javax.swing.JButton PanelRegistros;
+    private javax.swing.JButton btnInicioRe1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblUsuario;
     private necesario.RSLabelImage rSLabelImage1;
-    private necesario.RSLabelImage rSLabelImage2;
-    private necesario.RSLabelImage rSLabelImage3;
-    private necesario.RSLabelImage rSLabelImage4;
     // End of variables declaration//GEN-END:variables
 }

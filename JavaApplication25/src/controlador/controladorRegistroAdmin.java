@@ -16,6 +16,7 @@ import modelo.modeloAdministrador;
 import modelo.modeloCantones;
 import modelo.modeloPersona;
 import modelo.modeloProvincia;
+import vista.PanelAdmin;
 import vista.Pantalla_Principal;
 import vista.vistaPanelControl;
 import vista.vistaPanelControlAdministrador;
@@ -136,6 +137,7 @@ public class controladorRegistroAdmin {
     }
     
     private void Cancelar() {
+     
         vistaPanelControlAdministrador pat = new vistaPanelControlAdministrador();
         Controlador_Paneladmin inicio=new Controlador_Paneladmin(pat);
         inicio.iniciarControlador();
