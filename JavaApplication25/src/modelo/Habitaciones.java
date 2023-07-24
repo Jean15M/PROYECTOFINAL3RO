@@ -18,6 +18,7 @@ public class Habitaciones {
     private int id_Categoria;
     private String num_plazas;
     private int estado;
+    //PRIVATE
 
     public Habitaciones() {
     }
@@ -86,6 +87,11 @@ public class Habitaciones {
 
     public void setEstado(int estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Habitaciones{" + "id_Habitacion=" + id_Habitacion + ", precio_Habitacion=" + precio_Habitacion + ", nro_Habitacion=" + nro_Habitacion + ", nro_Piso=" + nro_Piso + ", id_Categoria=" + id_Categoria + ", num_plazas=" + num_plazas + ", estado=" + estado + '}';
     }
 
 

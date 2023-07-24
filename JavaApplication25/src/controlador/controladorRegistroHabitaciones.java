@@ -61,6 +61,7 @@ public class controladorRegistroHabitaciones {
                 } else if (opcionSeleccionada.equals("estandar")) {
                     hab.setNum_plazas("1 Plazas");
                     hab.setId_Categoria(3);
+                    System.out.println("prueba");
                 }
                 hab.setId_Habitacion(vistahabi.getTxtIdhabi().getText());
                 hab.setNro_Habitacion(Integer.parseInt(vistahabi.getTxtNumero().getText()));
