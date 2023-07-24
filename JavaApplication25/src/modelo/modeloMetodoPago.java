@@ -22,11 +22,11 @@ public class modeloMetodoPago extends MetodoPago {
     
     public String ObtenerCodigo() {
         try {
-            String sql = "select codigo_pago from cantones where nombre='" + super.getNombrePago()+ "'";
+            String sql = "select id_pago from metodo_pago where nombre='" + super.getNombrePago()+ "'";
             ResultSet rs = cpg.resultBD(sql);
             MetodoPago c = new MetodoPago();
             while (rs.next()) {
-                c.setId_Pago(rs.getString("codigo_pago"));
+                c.setId_Pago(rs.getString("id_pago"));
 
             }
             rs.close();
@@ -40,14 +40,14 @@ public class modeloMetodoPago extends MetodoPago {
     public List<MetodoPago> listarPago(){
         List<MetodoPago> listaPago = new ArrayList<MetodoPago>();
         String sql;
-        sql="select * from metodopago ";
+        sql="select * from metodo_pago ";
         ResultSet rs=cpg.resultBD(sql);
         MetodoPago m = new MetodoPago();
         try {
             
             while(rs.next()){
                 m.setNombrePago(rs.getString("nombre"));
-                m.setId_Pago(rs.getString("codigo_pago"));
+                m.setId_Pago(rs.getString("id_pago"));
                 listaPago.add(m);
             } 
             rs.close();
