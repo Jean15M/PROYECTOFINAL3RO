@@ -20,6 +20,7 @@ import vista.cliente_ventana;
 import vista.vistaContrase;
 import vista.vistaLogin;
 import vista.vistaPanelControlAdministrador;
+import vista.vistaPanelControlPrincipal;
 import vista.vistaRegistro;
 
 /**
@@ -59,9 +60,10 @@ public class Controlador_Login {
         modeloLogin3.setContraCliente(vistaLogin.getTxtcontra().getText());
         try {
             if (modeloLogin.login() == true) {
-                Pantalla_Principal prin = new Pantalla_Principal();
-                prin.setVisible(true);
-                vistaLogin.dispose();
+                vistaPanelControlPrincipal inicio=new vistaPanelControlPrincipal();
+               controladorRecepcionista nuevo = new controladorRecepcionista(inicio);
+               nuevo.iniciarControlador();
+               vistaLogin.dispose();
             } else {
                 if (modeloLogin2.login() == true) {
                     vistaPanelControlAdministrador nuevo1 = new vistaPanelControlAdministrador();

@@ -5,8 +5,13 @@
  */
 package controlador;
 
+import java.beans.PropertyVetoException;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Habitaciones;
@@ -14,69 +19,78 @@ import modelo.Parqueadero;
 import modelo.modeloHabitaciones;
 import modelo.modeloParqueadero;
 import vista.vistaPanelControl;
+import vista.vistaPanelControlPrincipal;
 
 /**
  *
  * @author 4lej4
  */
 public class controlador_PanelControlHP {
+
+    DefaultTableModel mTabla;
     private modelo.modeloHabitaciones modeloH;
     private modelo.modeloParqueadero modeloP;
     private vista.vistaPanelControl vistaPanel;
+    private vistaPanelControlPrincipal vistaRecepcionista;
 
-    public controlador_PanelControlHP(modeloHabitaciones modeloH, modeloParqueadero modeloP, vistaPanelControl vistaPanel) {
+    public controlador_PanelControlHP( modeloHabitaciones modeloH, modeloParqueadero modeloP, vistaPanelControl vistaPanel, vistaPanelControlPrincipal vistaRecepcionista) {
+        
         this.modeloH = modeloH;
         this.modeloP = modeloP;
         this.vistaPanel = vistaPanel;
+        this.vistaRecepcionista = vistaRecepcionista;
+        vistaPanel.setVisible(true);
     }
 
-    
-    
-    public void iniciarPanel_Control(){
-    mostrarHabitaicon();
-    mostrarParqueadero();
-    llenarHabitaciones();
-    llenarParqueaderos();
-    
+ 
+    public void iniciarPanel_Control() {
+        vistaPanel.getBtnBuscarHabi().addActionListener(l->llenarHabitaciones());
+        vistaRecepcionista.getBtnInicioRe().addActionListener(l->cerrar());
     }
-    
-    public void mostrarHabitaicon() {
-        JTable tbHabitacion = vistaPanel.getTbHabitacion();
-        DefaultTableModel modeloTabla = modeloH.mostrarHabitacion();
-        tbHabitacion.setModel(modeloTabla);
-    }
-    
-    public void mostrarParqueadero() {
-        JTable tbParqueadero = vistaPanel.getTbParqueadero();
-        DefaultTableModel modeloTabla = modeloP.mostrarParqueaderos();
-        tbParqueadero.setModel(modeloTabla);
-    }
-     public void llenarHabitaciones() {
-        // Obtener el JComboBox de habitaciones de la clase VistaPanelControl
-        JComboBox<String> cbHabitacion = vistaPanel.getCbHabitacion();
 
-        // Obtener la lista de habitaciones
-        List<Habitaciones> listaHabitaciones = modeloH.listarHabitaciones();
+    private void llenarHabitaciones() {
 
-        // Llenar el JComboBox con las habitaciones
-        cbHabitacion.removeAllItems(); // Limpiar el JComboBox antes de llenarlo
-        for (Habitaciones habitacion : listaHabitaciones) {
-            cbHabitacion.addItem(habitacion.getId_Habitacion());
+        if (vistaPanel.getCb_habitacion().getSelectedItem().equals("Seleccionar")) {
+            JOptionPane.showMessageDialog(null, "SELECCIONE UNA OPCION PORFAVOR");
+
+        } else {
+
+            if (vistaPanel.getCb_habitacion().getSelectedItem().equals("Disponibles")) {
+                modeloH.modificar = true;
+                modeloH.setEstado(1);
+                habitaciones();
+               
+
+            } else {
+                modeloH.modificar = true;
+                modeloH.setEstado(0);
+                habitaciones();
+            }
+
         }
+
     }
 
-     public void llenarParqueaderos() {
-        // Obtener el JComboBox de parqueaderos de la clase VistaPanelControl
-        JComboBox<String> cbParqueadero = vistaPanel.getCbParqueadero();
+    public void habitaciones() {
+        mTabla = (DefaultTableModel) vistaPanel.getTbHabitacion().getModel();
+        mTabla.setNumRows(0);
+        modeloH.listarHabitaciones().stream().forEach(lista -> {
+            String[] fila = {lista.getId_Habitacion(), String.valueOf(lista.getNro_Habitacion()), String.valueOf(lista.getNro_Piso()), lista.getNum_plazas(), String.valueOf(lista.getPrecio_Habitacion()), String.valueOf(lista.getId_Categoria())};
+            mTabla.addRow(fila);
+        });
+        vistaPanel.getTbHabitacion().setModel(mTabla);
+    }
+    
+        private void cerrar() {
 
-        // Obtener la lista de plazas de parqueadero disponibles
-        List<Parqueadero> listaPlazasParqueadero = modeloP.obtenerTodasLasPlazasParqueadero();
-
-        // Llenar el JComboBox con las plazas de parqueadero disponibles
-        cbParqueadero.removeAllItems(); // Limpiar el JComboBox antes de llenarlo
-        for (Parqueadero parqueadero : listaPlazasParqueadero) {
-            cbParqueadero.addItem(parqueadero.getId_Parqueadero());
+        
+        try {
+            vistaPanel.setClosed(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(controlador_PanelControlHP.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+
     }
 
 }
