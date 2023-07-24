@@ -29,6 +29,7 @@ import vista.vistaAsignarReserva;
  * @author Joseline
  */
 public class controladorAsignarReserva {
+    static String tipo;
     private vistaAsignarReserva vistaReservas;
     private modeloCliente modeloCliente;
     private modeloEncabez_fac modeloEncabe;

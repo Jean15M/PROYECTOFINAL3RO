@@ -10,8 +10,12 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.modeloCategoriaHabitacion;
+import modelo.modeloCliente;
+import modelo.modeloDetalle_fac;
+import modelo.modeloEncabez_fac;
 import vista.Pantalla_Principal;
 import vista.cliente_ventana;
+import vista.vistaAsignarReserva;
 import vista.vistaReservas;
 
 /**
@@ -38,6 +42,9 @@ public class controladorVistaReservas {
     public void iniciarControlador() {
         inicio.getBtnInicioRe().addActionListener(l->cerrar());
         cliente.getBtnInicioRe().addActionListener(l->cerrar());
+        reservas.getBtnReservarVIP().addActionListener(l->asignarReserva("1"));
+        reservas.getBtnReservarDel().addActionListener(l->asignarReserva("2"));
+        reservas.getBtnReservarVIP().addActionListener(l->asignarReserva("3"));
         cargarInformacion();
         carrgarDukex();
         cargarStandar();
@@ -115,5 +122,16 @@ public class controladorVistaReservas {
             Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+  }
+  
+  public void asignarReserva(String tipo_habi){
+      controladorAsignarReserva.tipo = tipo_habi;
+      System.out.println("CATEGORIA: "+controladorAsignarReserva.tipo);
+      vistaAsignarReserva vistaReservas = new vistaAsignarReserva();
+      modeloCliente modeloCliente = new modeloCliente();
+      modeloEncabez_fac modeloEncabe = new modeloEncabez_fac();
+      modeloDetalle_fac modeloDetalle = new modeloDetalle_fac();
+      controladorAsignarReserva inicio = new controladorAsignarReserva(vistaReservas, modeloCliente, modeloEncabe, modeloDetalle);
+      inicio.iniciarControlador();
   }
 }
