@@ -39,7 +39,7 @@ public class modeloHabitaciones extends Habitaciones {
         try {
             while (rs.next()) {
                 Habitaciones Habitaciones1 = new Habitaciones();
-                Habitaciones1.setId_Habitacion(rs.getString("id_habitacio"));
+                Habitaciones1.setId_Habitacion(rs.getString("id_habitacion"));
                 Habitaciones1.setId_Categoria(rs.getInt("id_categoria"));
                 Habitaciones1.setNro_Habitacion(rs.getInt("n_habitacion"));
                 Habitaciones1.setNro_Piso(rs.getInt("nro_piso"));
@@ -59,32 +59,32 @@ public class modeloHabitaciones extends Habitaciones {
     }
 
     public boolean grabarHabitaciones() {
-        String sql = "insert into  public.habitaciones(id_habitacio,id_categoria,n_habitacion,nro_piso,precio)";
+        String sql = "insert into  habitaciones(id_habitacion,id_categoria,n_habitacion,nro_piso,precio)";
         sql += "values('" + super.getId_Habitacion() + "','" + getId_Categoria() + "','" + getNro_Habitacion() + "','" + getNro_Piso() + "'," + getPrecio_Habitacion() + ")";
         return cpg.accionBd(sql);
     }
 
     public String Consultar() {
-        String sql = "select id_habitacio,id_categoria,n_habitacion,nro_piso,precio from habitaciones";
+        String sql = "select id_habitacion,id_categoria,n_habitacion,nro_piso,precio from habitaciones";
         sql += "where id_habitacio='" + getId_Habitacion() + "'";
         return sql;
 
     }
 
     public String mostrarHabitaciones() {
-        String sql = "select id_habitacio,id_categoria,n_habitacion,nro_piso,precio from habitaciones";
+        String sql = "select id_habitacion,id_categoria,n_habitacion,nro_piso,precio from habitaciones";
         return sql;
     }
 
     public boolean modificarHabitacionesBD() {
-        String sql = "UPDATE public.habitaciones SET n_Habitacion='" + getNro_Habitacion() + "', nro_piso='" + getNro_Piso() + "', precio=" + getPrecio_Habitacion() + "";
-        sql += "where id_habitacio='" + getId_Habitacion() + "'";
+        String sql = "UPDATE habitaciones SET n_Habitacion='" + getNro_Habitacion() + "', nro_piso='" + getNro_Piso() + "', precio=" + getPrecio_Habitacion() + "";
+        sql += "where id_habitacion='" + getId_Habitacion() + "'";
         return cpg.accionBd(sql);
     }
 
     public boolean eliminarAutos() {
-        String sql = "DELETE FROM public.habitaciones";
-        sql += " WHERE id_habitacio='" + getId_Habitacion() + "'";
+        String sql = "DELETE FROM habitaciones";
+        sql += " WHERE id_habitacion='" + getId_Habitacion() + "'";
         return cpg.accionBd(sql);
     }
 
@@ -134,13 +134,13 @@ public class modeloHabitaciones extends Habitaciones {
     // Método para obtener todas las habitaciones desde la base de datos
     public List<Habitaciones> obtenerTodasLasHabitaciones() {
         List<Habitaciones> listaHabitaciones = new ArrayList<>();
-        String sql = "select id_habitacio, id_categoria, n_habitacion, nro_piso, precio from habitaciones";
+        String sql = "select id_habitacion, id_categoria, n_habitacion, nro_piso, precio from habitaciones";
         ResultSet rs = cpg.resultBD(sql);
 
         try {
             while (rs.next()) {
                 Habitaciones habitacion = new Habitaciones();
-                habitacion.setId_Habitacion(rs.getString("id_habitacio"));
+                habitacion.setId_Habitacion(rs.getString("id_habitacion"));
                 habitacion.setId_Categoria(rs.getInt("id_categoria"));
                 habitacion.setNro_Habitacion(rs.getInt("n_habitacion"));
                 habitacion.setNro_Piso(rs.getInt("nro_piso"));

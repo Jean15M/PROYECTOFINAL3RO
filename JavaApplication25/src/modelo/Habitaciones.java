@@ -16,6 +16,7 @@ public class Habitaciones {
     private int nro_Habitacion;
     private int nro_Piso;
     private int id_Categoria;
+    private int num_cama;
 
     public Habitaciones() {
     }

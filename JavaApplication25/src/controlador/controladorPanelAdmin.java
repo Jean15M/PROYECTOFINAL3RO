@@ -10,11 +10,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.modeloAdministrador;
 import modelo.modeloCliente;
+import modelo.modeloHabitaciones;
 import modelo.modeloRecepcionista;
 import vista.PanelAdmin;
 import vista.vistaPanelControlAdministrador;
 import vista.vistaRegistro;
 import vista.vistaRegistroAdmin;
+import vista.vistaRegistroHabitacion;
 import vista.vistaRegistroRecepcionista;
 
 /**
@@ -36,6 +38,7 @@ public class controladorPanelAdmin {
         admin.getBtRegisadmin().addActionListener(l -> registroAdmin());
         admin.getBtRegisem().addActionListener(l -> registroRecepcionista());
         admin.getBtRegiscli().addActionListener(l -> registroUsuario());
+        admin.getBtnhabitaciones().addActionListener(l -> registrohabitaciones());
         adminp.getBtnInicioRe1().addActionListener(l -> cerrar());
 
     }
@@ -63,6 +66,14 @@ public class controladorPanelAdmin {
         controladorRegistroAdmin inicio = new controladorRegistroAdmin(vistaA, modeloA);
         admin.dispose();
         inicio.controlador();
+    }
+    
+    private void registrohabitaciones() {
+        modeloHabitaciones modeloA = new modeloHabitaciones();
+        vistaRegistroHabitacion vistaA = new vistaRegistroHabitacion();
+        controladorRegistroHabitaciones inicio = new controladorRegistroHabitaciones(vistaA, modeloA);
+        admin.dispose();
+        inicio.iniciarControlador();
     }
 
     public void cerrar() {

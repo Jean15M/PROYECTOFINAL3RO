@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Validaciones;
 import modelo.modeloHabitaciones;
@@ -29,7 +30,7 @@ public class controladorRegistroHabitaciones {
 
     public void iniciarControlador() {
         vistahabi.getBtnAceptar().addActionListener(l -> RegistrarHabitacion());
-        vistahabi.getBtnCancelar().addActionListener(l -> Regresar());
+        vistahabi.getBtnCancelar().addActionListener(l -> Cancelar());
     }
 
     public void RegistrarHabitacion() {
@@ -44,7 +45,7 @@ public class controladorRegistroHabitaciones {
                 JOptionPane.showMessageDialog(null, "INGRESE EL NUMERO DE CUARTOS CORRESPONDIENTE");
             } else if (!Validaciones.validarNumeroCuartos(vistahabi.getTxtPiso().getText())) {
                 JOptionPane.showMessageDialog(null, "INGRESE EL NUMERO DE PISO CORRESPONDIENTE");
-            } else if (esValido1 = Validaciones.validarSeleccionComboBox(vistahabi.getComcategoria())) {
+            } else if (!Validaciones.validarSeleccionComboBox(vistahabi.getComcategoria())) {
                 JOptionPane.showMessageDialog(null, "SELECCIONE UNA CATEGORIA VALIDA");
             } else {
                 modeloHabitaciones hab = new modeloHabitaciones();
@@ -52,16 +53,15 @@ public class controladorRegistroHabitaciones {
                 if (opcionSeleccionada.equals("Vip")) {
                     hab.setId_Categoria(1);
                     System.out.println("Se seleccionó la Opción 1");
-                } else if (opcionSeleccionada.equals("deluxe")) {
-                    hab.setId_Categoria(1);
+                } else if (opcionSeleccionada.equals("deluxe")) { 
+                    hab.setId_Categoria(2);
                 } else if (opcionSeleccionada.equals("estandar")) {
-                    hab.setId_Categoria(1);
-                }             
+                    hab.setId_Categoria(3);
+                }
                 hab.setId_Habitacion(vistahabi.getTxtIdhabi().getText());
                 hab.setNro_Habitacion(Integer.parseInt(vistahabi.getTxtNumero().getText()));
                 hab.setNro_Piso(Integer.parseInt(vistahabi.getTxtPiso().getText()));
                 hab.setPrecio_Habitacion(Double.parseDouble(vistahabi.getTxtPrecio().getText()));
-
                 if (hab.grabarHabitaciones() == true) {
                     JOptionPane.showMessageDialog(null, "HABITACION GUARDADA CORRECTAMENTE");
                 } else {
@@ -73,11 +73,10 @@ public class controladorRegistroHabitaciones {
         }
     }
 
-    public void Regresar() {
-        Pantalla_Principal nuevo1 = new Pantalla_Principal();
-        controladorPrincipal nuevo = new controladorPrincipal(nuevo1);
-        nuevo.abrir();
-        nuevo.iniciarControlador();
+    private void Cancelar() {
+        Pantalla_Principal pat = new Pantalla_Principal();
         vistahabi.dispose();
+        pat.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        pat.setVisible(true);
     }
 }

@@ -5,19 +5,11 @@
  */
 package controlador;
 
-import java.beans.PropertyVetoException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-import modelo.modeloAdministrador;
-import modelo.modeloCliente;
-import modelo.modeloRecepcionista;
+
 import vista.PanelAdmin;
 import vista.vistaPanelControlAdministrador;
-import vista.vistaRegistro;
-import vista.vistaRegistroAdmin;
-import vista.vistaRegistroRecepcionista;
 
 /**
  *
@@ -29,8 +21,7 @@ public class Controlador_Paneladmin {
  
 
     public Controlador_Paneladmin(vistaPanelControlAdministrador ventaadmin ) {
-        this.ventaadmin = ventaadmin;
-      
+        this.ventaadmin = ventaadmin;     
         ventaadmin.setVisible(true);
     }
 
