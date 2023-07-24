@@ -5,8 +5,10 @@
  */
 package controlador;
 
+import javax.swing.JFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import modelo.modeloCategoriaHabitacion;
+import vista.Pantalla_Principal;
 import vista.cliente_ventana;
 import vista.vistaReservas;
 
@@ -24,8 +26,9 @@ public class controlador_vista_cliente {
     }
 
     public void iniciarControlador() {
+        ventaCliente.setExtendedState(JFrame.MAXIMIZED_BOTH);
         ventaCliente.getBtnReservarRe().addActionListener(l -> llamarReserva());
-        System.out.println("hola: "+Controlador_Login.usuario);
+        System.out.println("hola: " + Controlador_Login.usuario);
     }
 
     private void llamarReserva() {
@@ -35,8 +38,9 @@ public class controlador_vista_cliente {
         BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
         bui.setNorthPane(null);
         vista1.setSize(ventaCliente.getjDesktopPane1().getWidth(), ventaCliente.getjDesktopPane1().getHeight());
-        modeloCategoriaHabitacion nuevo1= new modeloCategoriaHabitacion();
-        controladorVistaReservas inicio = new controladorVistaReservas(vista1,nuevo1);
+        modeloCategoriaHabitacion nuevo1 = new modeloCategoriaHabitacion();
+        Pantalla_Principal inicio1 = new Pantalla_Principal();
+        controladorVistaReservas inicio = new controladorVistaReservas(vista1, nuevo1, inicio1, ventaCliente);
         inicio.iniciarControlador();
     }
 

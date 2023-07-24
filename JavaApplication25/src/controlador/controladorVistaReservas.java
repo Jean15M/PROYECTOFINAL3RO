@@ -5,10 +5,13 @@
  */
 package controlador;
 
+import java.beans.PropertyVetoException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.modeloCategoriaHabitacion;
+import vista.Pantalla_Principal;
+import vista.cliente_ventana;
 import vista.vistaReservas;
 
 /**
@@ -19,14 +22,22 @@ public class controladorVistaReservas {
 
     private vistaReservas reservas;
     private modeloCategoriaHabitacion habitacionesCate;
+    private Pantalla_Principal inicio;
+    private cliente_ventana cliente;
 
-    public controladorVistaReservas(vistaReservas reservas, modeloCategoriaHabitacion habitacionesCate) {
+    public controladorVistaReservas(vistaReservas reservas, modeloCategoriaHabitacion habitacionesCate, Pantalla_Principal inicio, cliente_ventana cliente) {
         this.reservas = reservas;
         this.habitacionesCate = habitacionesCate;
-        this.reservas.setVisible(true);
+        this.inicio = inicio;
+        this.cliente = cliente;
+        reservas.setVisible(true);
     }
 
+ 
+
     public void iniciarControlador() {
+        inicio.getBtnInicioRe().addActionListener(l->cerrar());
+        cliente.getBtnInicioRe().addActionListener(l->cerrar());
         cargarInformacion();
         carrgarDukex();
         cargarStandar();
@@ -96,8 +107,13 @@ public class controladorVistaReservas {
             Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-     
-    
-    
+  public void cerrar() {
+        
+        try {
+            reservas.setClosed(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+  }
 }
