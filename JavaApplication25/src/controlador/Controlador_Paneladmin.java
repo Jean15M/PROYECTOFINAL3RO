@@ -28,8 +28,7 @@ public class Controlador_Paneladmin {
 
 
     public void iniciarControlador() {
-        ventaadmin.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//    
+        ventaadmin.setExtendedState(JFrame.MAXIMIZED_BOTH);    
         ventaadmin.getLblUsuario().setText(Controlador_Login.usuario);       
         System.out.println("hola: " + Controlador_Login.usuario);
         ventaadmin.getPanelRegistros().addActionListener(l->llamarPanel());

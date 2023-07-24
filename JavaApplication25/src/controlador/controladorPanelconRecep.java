@@ -31,8 +31,10 @@ public class controladorPanelconRecep {
     }
 
     public void iniciarControlador() {
+        vistaRecepcionista.getLblUsuario().setText(Controlador_Login.usuario);
+        System.out.println("hola: " + Controlador_Login.usuario);
         vistaRecepcionista.getBtnInicioRe().addActionListener(l -> cerrar());
-        vistapanel.getBtHabitaciones().addActionListener(l->llamarPanelHp());
+        vistapanel.getBtHabitaciones().addActionListener(l -> llamarPanelHp());
     }
 
     private void cerrar() {
@@ -54,7 +56,7 @@ public class controladorPanelconRecep {
         BasicInternalFrameUI bui = (BasicInternalFrameUI) inicio.getUI();
         bui.setNorthPane(null);
         inicio.setSize(vistaRecepcionista.getjDesktopPane1().getWidth(), vistaRecepcionista.getjDesktopPane1().getHeight());
-        controlador_PanelControlHP ph = new controlador_PanelControlHP(modH, modP, inicio,vistaRecepcionista);
+        controlador_PanelControlHP ph = new controlador_PanelControlHP(modH, modP, inicio, vistaRecepcionista);
         ph.iniciarPanel_Control();
         vistapanel.dispose();
 
