@@ -9,10 +9,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.modeloCategoriaHabitacion;
-import modelo.modeloCliente;
-import modelo.modeloDetalle_fac;
-import modelo.modeloEncabez_fac;
-import vista.vistaAsignarReserva;
 import vista.vistaReservas;
 
 /**
@@ -34,8 +30,6 @@ public class controladorVistaReservas {
         cargarInformacion();
         carrgarDukex();
         cargarStandar();
-        reservas.getBtnReservarVIP().addActionListener(l->asignarReserva());
-        reservas.getBtnReservarDel().addActionListener(l->asignarReserva());
     }
 
     private void cargarInformacion() {
@@ -101,15 +95,6 @@ public class controladorVistaReservas {
         } catch (SQLException ex) {
             Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
-    public void asignarReserva(){
-        vistaAsignarReserva vistaR = new vistaAsignarReserva();
-        modeloCliente modeloCliente = new modeloCliente(); 
-        modeloEncabez_fac modeloEncabe = new modeloEncabez_fac();
-        modeloDetalle_fac modeloDetalle = new modeloDetalle_fac();
-        controladorAsignarReserva iniciar = new controladorAsignarReserva(vistaR, modeloCliente, modeloEncabe, modeloDetalle);
-        iniciar.iniciarControlador();
     }
 
      
