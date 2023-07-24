@@ -16,17 +16,20 @@ public class Habitaciones {
     private int nro_Habitacion;
     private int nro_Piso;
     private int id_Categoria;
-    private int num_cama;
+    private String num_plazas;
+    private int estado;
 
     public Habitaciones() {
     }
 
-    public Habitaciones(String id_Habitacion, double precio_Habitacion, int nro_Habitacion, int nro_Piso, int id_Categoria) {
+    public Habitaciones(String id_Habitacion, double precio_Habitacion, int nro_Habitacion, int nro_Piso, int id_Categoria, String num_plazas, int estado) {
         this.id_Habitacion = id_Habitacion;
         this.precio_Habitacion = precio_Habitacion;
         this.nro_Habitacion = nro_Habitacion;
         this.nro_Piso = nro_Piso;
         this.id_Categoria = id_Categoria;
+        this.num_plazas = num_plazas;
+        this.estado = estado;
     }
 
     public String getId_Habitacion() {
@@ -69,10 +72,21 @@ public class Habitaciones {
         this.id_Categoria = id_Categoria;
     }
 
-    @Override
-    public String toString() {
-        return "Habitaciones{" + "id_Habitacion=" + id_Habitacion + ", precio_Habitacion=" + precio_Habitacion + ", nro_Habitacion=" + nro_Habitacion + ", nro_Piso=" + nro_Piso + ", id_Categoria=" + id_Categoria + '}';
+    public String getNum_plazas() {
+        return num_plazas;
     }
 
-    
+    public void setNum_plazas(String num_plazas) {
+        this.num_plazas = num_plazas;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
+
 }

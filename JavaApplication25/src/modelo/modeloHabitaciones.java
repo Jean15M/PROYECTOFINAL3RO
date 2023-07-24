@@ -44,6 +44,8 @@ public class modeloHabitaciones extends Habitaciones {
                 Habitaciones1.setNro_Habitacion(rs.getInt("n_habitacion"));
                 Habitaciones1.setNro_Piso(rs.getInt("nro_piso"));
                 Habitaciones1.setPrecio_Habitacion(rs.getDouble("precio"));
+                Habitaciones1.setEstado(rs.getInt("estado"));
+                Habitaciones1.setNum_plazas(rs.getString("camas"));
                 listaHabitaciones.add(Habitaciones1);
             }
             if (listaHabitaciones.isEmpty()) {
@@ -59,8 +61,8 @@ public class modeloHabitaciones extends Habitaciones {
     }
 
     public boolean grabarHabitaciones() {
-        String sql = "insert into  habitaciones(id_habitacion,id_categoria,n_habitacion,nro_piso,precio)";
-        sql += "values('" + super.getId_Habitacion() + "','" + getId_Categoria() + "','" + getNro_Habitacion() + "','" + getNro_Piso() + "'," + getPrecio_Habitacion() + ")";
+        String sql = "insert into  habitaciones(id_habitacion,id_categoria,n_habitacion,nro_piso,camas,estado,precio)";
+        sql += "values('" + super.getId_Habitacion() + "','" + getId_Categoria() + "','" + getNro_Habitacion() + "','" + getNro_Piso() + "','" + getNum_plazas()+ "','" + getEstado()+ "'," + getPrecio_Habitacion() + ")";
         return cpg.accionBd(sql);
     }
 

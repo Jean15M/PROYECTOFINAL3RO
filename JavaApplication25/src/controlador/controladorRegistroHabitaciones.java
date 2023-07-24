@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import modelo.Validaciones;
 import modelo.modeloHabitaciones;
 import vista.Pantalla_Principal;
+import vista.vistaPanelControlAdministrador;
 import vista.vistaRegistroHabitacion;
 
 /**
@@ -52,16 +53,20 @@ public class controladorRegistroHabitaciones {
                 String opcionSeleccionada = vistahabi.getComcategoria().getSelectedItem().toString();
                 if (opcionSeleccionada.equals("Vip")) {
                     hab.setId_Categoria(1);
+                    hab.setNum_plazas("3 Plazas");
                     System.out.println("Se seleccionó la Opción 1");
-                } else if (opcionSeleccionada.equals("deluxe")) { 
+                } else if (opcionSeleccionada.equals("deluxe")) {
                     hab.setId_Categoria(2);
+                    hab.setNum_plazas("2 Plazas");
                 } else if (opcionSeleccionada.equals("estandar")) {
+                    hab.setNum_plazas("1 Plazas");
                     hab.setId_Categoria(3);
                 }
                 hab.setId_Habitacion(vistahabi.getTxtIdhabi().getText());
                 hab.setNro_Habitacion(Integer.parseInt(vistahabi.getTxtNumero().getText()));
                 hab.setNro_Piso(Integer.parseInt(vistahabi.getTxtPiso().getText()));
                 hab.setPrecio_Habitacion(Double.parseDouble(vistahabi.getTxtPrecio().getText()));
+                hab.setEstado(1);
                 if (hab.grabarHabitaciones() == true) {
                     JOptionPane.showMessageDialog(null, "HABITACION GUARDADA CORRECTAMENTE");
                 } else {
@@ -74,9 +79,9 @@ public class controladorRegistroHabitaciones {
     }
 
     private void Cancelar() {
-        Pantalla_Principal pat = new Pantalla_Principal();
+        vistaPanelControlAdministrador pat = new vistaPanelControlAdministrador();
+        Controlador_Paneladmin inicio=new Controlador_Paneladmin(pat);
+        inicio.iniciarControlador();
         vistahabi.dispose();
-        pat.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        pat.setVisible(true);
     }
 }
