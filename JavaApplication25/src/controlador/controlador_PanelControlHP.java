@@ -69,34 +69,36 @@ public class controlador_PanelControlHP {
         }
 
     }
-  private void llenarPaqueaderos() {
+
+    private void llenarPaqueaderos() {
 
         if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Seleccionar")) {
             JOptionPane.showMessageDialog(null, "SELECCIONE UNA OPCION PORFAVOR");
 
         } else {
-
-            if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Disponibles")) {
-                modeloP.setPlaca(null);
-                try {
-                    if (modeloP.resultado().getString("Placa").equals(null)) {
+            boolean mensaje = false;
+            for (int i = 0; i < modeloP.listarParqueadero().size(); i++) {
+                if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Ocupado")) {
+                    if (!modeloP.listarParqueadero().get(i).getPlaca().equals(null)) {
+                        mensaje = true;
                         parqueadero();
-                    }else if (!modeloP.resultado().getString("Placa").equals(null)) {
-                         parqueadero();
                     }
-                } catch (SQLException ex) {
-                    Logger.getLogger(controlador_PanelControlHP.class.getName()).log(Level.SEVERE, null, ex);
+                } else if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Disponibles")) {
+                    if (modeloP.listarParqueadero().get(i).getPlaca().equals(null)) {
+                        parqueadero();
+                        mensaje = true;
+                    }
                 }
-
-            } else {
-                modeloH.modificar = true;
-                modeloH.setEstado(0);
-                habitaciones();
+            }
+            if (mensaje == false) {
+                    mTabla.setNumRows(0);
+                JOptionPane.showMessageDialog(null, "NO SE ENCONTRO RESULTADOS");
             }
 
         }
 
     }
+
     public void habitaciones() {
         mTabla = (DefaultTableModel) vistaPanel.getTbHabitacion().getModel();
         mTabla.setNumRows(0);
@@ -106,15 +108,17 @@ public class controlador_PanelControlHP {
         });
         vistaPanel.getTbHabitacion().setModel(mTabla);
     }
-   public void parqueadero() {
+
+    public void parqueadero() {
         mTabla = (DefaultTableModel) vistaPanel.getTbParqueadero().getModel();
         mTabla.setNumRows(0);
         modeloP.listarParqueadero().stream().forEach(lista -> {
-            String[] fila = {lista.getId_Parqueadero(),lista.getPlaca(),lista.getUbicacion()};
+            String[] fila = {lista.getId_Parqueadero(), lista.getPlaca(), lista.getUbicacion()};
             mTabla.addRow(fila);
         });
         vistaPanel.getTbParqueadero().setModel(mTabla);
     }
+
     private void cerrar() {
 
         try {
