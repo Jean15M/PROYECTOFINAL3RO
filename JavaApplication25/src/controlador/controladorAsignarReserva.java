@@ -87,7 +87,6 @@ public class controladorAsignarReserva {
             res.setId_Reserva(vistaReservas.getTxtReserva().getText());
             res.setTotal_Reserva(calcularTotal(dias));
             res.setCedula_Cliente(vistaReservas.getLblCliente().getText());
-            System.out.println(vistaReservas.getLblCliente().getText());
             res.setFecha_entrada(fechain);
             res.setFecha_salida(fechafin);
             res.setId_Habitacion(modeloH.ObtenerCodigo());

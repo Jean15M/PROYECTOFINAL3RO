@@ -132,13 +132,13 @@ public class modeloHabitaciones extends Habitaciones {
         try {
             String sql = "select id_habitacion from habitaciones where n_habitacion='" + super.getNro_Habitacion() + "'";
             ResultSet rs = cpg.resultBD(sql);
-            Cantones c = new Cantones();
+            Habitaciones h = new Habitaciones();
             while (rs.next()) {
-                c.setId_Canton(rs.getString("id_habitacion"));
+                h.setId_Habitacion(rs.getString("id_habitacion"));
 
             }
             rs.close();
-            return c.getId_Canton();
+            return h.getId_Habitacion();
         } catch (SQLException ex) {
             Logger.getLogger(modeloCantones.class.getName()).log(Level.SEVERE, null, ex);
             return null;
