@@ -74,7 +74,7 @@ public class modeloHabitaciones extends Habitaciones {
     }
 
     public String mostrarHabitaciones() {
-        String sql = "select id_habitacion,id_categoria,n_habitacion,nro_piso,precio from habitaciones";
+        String sql = "select * from habitaciones";
         return sql;
     }
 
