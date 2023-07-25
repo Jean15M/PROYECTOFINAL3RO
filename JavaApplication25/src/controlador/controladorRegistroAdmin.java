@@ -11,16 +11,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import javax.swing.JOptionPane;
-import modelo.Validaciones;
-import modelo.modeloAdministrador;
-import modelo.modeloCantones;
-import modelo.modeloPersona;
-import modelo.modeloProvincia;
-import vista.PanelAdmin;
-import vista.Pantalla_Principal;
-import vista.vistaPanelControl;
-import vista.vistaPanelControlAdministrador;
-import vista.vistaRegistroAdmin;
+import modelo.*;
+import vista.*;
 
 /**
  *
@@ -34,6 +26,7 @@ public class controladorRegistroAdmin {
     public controladorRegistroAdmin(vistaRegistroAdmin vistaAdmin, modeloAdministrador administrador) {
         this.vistaAdmin = vistaAdmin;
         this.administrador = administrador;
+        vistaAdmin.setLocationRelativeTo(null);
         vistaAdmin.setVisible(true);
     }
 

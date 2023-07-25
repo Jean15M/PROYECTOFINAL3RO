@@ -31,6 +31,7 @@ public class controladorRegistroUsuario {
     public controladorRegistroUsuario(modeloCliente modeloUsuario, vistaRegistro vistaUsuario) {
         this.modeloUsuario = modeloUsuario;
         this.vistaUsuario = vistaUsuario;
+        vistaUsuario.setLocationRelativeTo(null);
         vistaUsuario.setVisible(true);
     }
 

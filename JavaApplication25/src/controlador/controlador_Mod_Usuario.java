@@ -8,19 +8,20 @@ import vista.*;
  *
  * @author DELL
  */
-public class controlador_Mod_Del_Usuario {
+public class controlador_Mod_Usuario {
     
     private modeloCliente modeloUsuario;
-    private vista_Mod_Del_User vistaMod;
+    private vista_Mod_User vistaMod;
 
-    public controlador_Mod_Del_Usuario(modeloCliente modeloUsuario, vista_Mod_Del_User vistaMod) {
+    public controlador_Mod_Usuario(modeloCliente modeloUsuario, vista_Mod_User vistaMod) {
         this.modeloUsuario = modeloUsuario;
         this.vistaMod = vistaMod;
         vistaMod.setVisible(true);
     }
     
     public void iniciarControl(){
-        
+        cargarProvincias();
+        vistaMod.getComprovin().addActionListener(l -> cargarCantones());
     }
     private void cargarProvincias() {
         modeloProvincia cargar1 = new modeloProvincia();
@@ -43,7 +44,9 @@ public class controlador_Mod_Del_Usuario {
         }
     }
     
+    public void buscarCliente(){
     
+    }
     
 
     
