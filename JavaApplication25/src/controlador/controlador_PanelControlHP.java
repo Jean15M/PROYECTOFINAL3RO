@@ -33,8 +33,8 @@ public class controlador_PanelControlHP {
     private vista.vistaPanelControl vistaPanel;
     private vistaPanelControlPrincipal vistaRecepcionista;
 
-    public controlador_PanelControlHP( modeloHabitaciones modeloH, modeloParqueadero modeloP, vistaPanelControl vistaPanel, vistaPanelControlPrincipal vistaRecepcionista) {
-        
+    public controlador_PanelControlHP(modeloHabitaciones modeloH, modeloParqueadero modeloP, vistaPanelControl vistaPanel, vistaPanelControlPrincipal vistaRecepcionista) {
+
         this.modeloH = modeloH;
         this.modeloP = modeloP;
         this.vistaPanel = vistaPanel;
@@ -42,10 +42,10 @@ public class controlador_PanelControlHP {
         vistaPanel.setVisible(true);
     }
 
- 
     public void iniciarPanel_Control() {
-        vistaPanel.getBtnBuscarHabi().addActionListener(l->llenarHabitaciones());
-        vistaRecepcionista.getBtnInicioRe().addActionListener(l->cerrar());
+        vistaPanel.getBtnBuscarHabi().addActionListener(l -> llenarHabitaciones());
+        vistaPanel.getBtnBuscarParq().addActionListener(l -> llenarPaqueaderos());
+        vistaRecepcionista.getBtnInicioRe().addActionListener(l -> cerrar());
     }
 
     private void llenarHabitaciones() {
@@ -59,12 +59,40 @@ public class controlador_PanelControlHP {
                 modeloH.modificar = true;
                 modeloH.setEstado(1);
                 habitaciones();
-               
 
             } else {
                 modeloH.modificar = true;
                 modeloH.setEstado(0);
                 habitaciones();
+            }
+
+        }
+
+    }
+
+    private void llenarPaqueaderos() {
+
+        if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Seleccionar")) {
+            JOptionPane.showMessageDialog(null, "SELECCIONE UNA OPCION PORFAVOR");
+
+        } else {
+            boolean mensaje = false;
+            for (int i = 0; i < modeloP.listarParqueadero().size(); i++) {
+                if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Ocupado")) {
+                    if (!modeloP.listarParqueadero().get(i).getPlaca().equals(null)) {
+                        mensaje = true;
+                        parqueadero();
+                    }
+                } else if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Disponibles")) {
+                    if (modeloP.listarParqueadero().get(i).getPlaca().equals(null)) {
+                        parqueadero();
+                        mensaje = true;
+                    }
+                }
+            }
+            if (mensaje == false) {
+                    mTabla.setNumRows(0);
+                JOptionPane.showMessageDialog(null, "NO SE ENCONTRO RESULTADOS");
             }
 
         }
@@ -80,16 +108,24 @@ public class controlador_PanelControlHP {
         });
         vistaPanel.getTbHabitacion().setModel(mTabla);
     }
-    
-        private void cerrar() {
 
-        
+    public void parqueadero() {
+        mTabla = (DefaultTableModel) vistaPanel.getTbParqueadero().getModel();
+        mTabla.setNumRows(0);
+        modeloP.listarParqueadero().stream().forEach(lista -> {
+            String[] fila = {lista.getId_Parqueadero(), lista.getPlaca(), lista.getUbicacion()};
+            mTabla.addRow(fila);
+        });
+        vistaPanel.getTbParqueadero().setModel(mTabla);
+    }
+
+    private void cerrar() {
+
         try {
             vistaPanel.setClosed(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(controlador_PanelControlHP.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
 
     }
 
