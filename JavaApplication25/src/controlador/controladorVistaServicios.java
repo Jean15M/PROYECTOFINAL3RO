@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.modeloTipoServicio;
 import vista.vistaServicios;
+import vista.vista_Pedir_Servicio;
 
 /**
  *
@@ -18,6 +19,7 @@ import vista.vistaServicios;
 public class controladorVistaServicios {
     private vistaServicios servicios;
     private modeloTipoServicio tipoS;
+    private vista_Pedir_Servicio Comida;
 
     public controladorVistaServicios(vistaServicios servicios, modeloTipoServicio tipoS) {
         this.servicios = servicios;
@@ -27,6 +29,7 @@ public class controladorVistaServicios {
         cargarInformacionLimpieza();
         cargarInformacionComida();
         cargarInformacionLimpieza();
+        llamarPedirComida();
     }
     
     private void cargarInformacionLimpieza() {
@@ -64,4 +67,18 @@ public class controladorVistaServicios {
             Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    private void llamarPedirComida(){
+        Comida.setVisible(true);
+}
+    
+//    private void llamarPedirComida(){
+//        Comida.setVisible(true);
+//}
+//    
+//    private void llamarPedirComida(){
+//        Comida.setVisible(true);
+//}
+//    
+    
 }

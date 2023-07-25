@@ -96,7 +96,7 @@
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnInicioRe" alignment="3" max="32767" attributes="0"/>
-                          <Component id="btnReservarRe" alignment="3" max="32767" attributes="0"/>
+                          <Component id="btnReservarRe" alignment="3" pref="32" max="32767" attributes="0"/>
                           <Component id="btnServiciosRe" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -168,9 +168,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="377" max="32767" attributes="0"/>
+                      <EmptySpace pref="399" max="32767" attributes="0"/>
                       <Component id="rSLabelImage1" min="-2" pref="524" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="315" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
