@@ -45,7 +45,7 @@ public class controladorVistaReservas {
         cliente.getBtnInicioRe().addActionListener(l->cerrar());
         reservas.getBtnReservarVIP().addActionListener(l->asignarReserva("1"));
         reservas.getBtnReservarDel().addActionListener(l->asignarReserva("2"));
-        reservas.getBtnReservarVIP().addActionListener(l->asignarReserva("3"));
+        reservas.getBtnReservarEs().addActionListener(l->asignarReserva("3"));
         cargarInformacion();
         carrgarDukex();
         cargarStandar();

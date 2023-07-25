@@ -79,8 +79,7 @@ public class modeloHabitaciones extends Habitaciones {
     }
 
     public boolean modificarHabitacionesBD() {
-        String sql = "UPDATE habitaciones SET n_Habitacion='" + getNro_Habitacion() + "', nro_piso='" + getNro_Piso() + "', precio=" + getPrecio_Habitacion() + "";
-        sql += "where id_habitacion='" + getId_Habitacion() + "'";
+        String sql = "UPDATE habitaciones SET estado='" + getEstado()+ "' where n_habitacion='"+getNro_Habitacion()+"'";
         return cpg.accionBd(sql);
     }
 
@@ -101,5 +100,31 @@ public class modeloHabitaciones extends Habitaciones {
             Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+    
+    public List<Habitaciones> buscarCat(){
+        List<Habitaciones> listaBuscar = new ArrayList<Habitaciones>();
+        String sql;
+        sql="select * from habitaciones where id_categoria='"+super.getId_Categoria()+"'";
+        ResultSet rs=cpg.resultBD(sql);
+        Habitaciones hab=new Habitaciones();
+        try {
+            
+            while(rs.next()){
+                hab.setId_Habitacion(rs.getString("id_habitacion"));
+                hab.setId_Categoria(rs.getInt("id_categoria"));
+                hab.setNro_Habitacion(rs.getInt("n_habitacion"));
+                hab.setNro_Piso(rs.getInt("nro_piso"));
+                hab.setPrecio_Habitacion(rs.getDouble("precio"));
+                hab.setEstado(rs.getInt("estado"));
+                hab.setNum_plazas(rs.getString("camas"));
+                listaBuscar.add(hab);
+            } 
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }     
     }
 }
