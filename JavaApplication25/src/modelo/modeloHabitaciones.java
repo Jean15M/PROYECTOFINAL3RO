@@ -127,4 +127,21 @@ public class modeloHabitaciones extends Habitaciones {
             return null;
         }     
     }
+    
+    public String ObtenerCodigo() {
+        try {
+            String sql = "select id_habitacion from habitaciones where n_habitacion='" + super.getNro_Habitacion() + "'";
+            ResultSet rs = cpg.resultBD(sql);
+            Cantones c = new Cantones();
+            while (rs.next()) {
+                c.setId_Canton(rs.getString("id_habitacion"));
+
+            }
+            rs.close();
+            return c.getId_Canton();
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCantones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
 }
