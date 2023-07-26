@@ -40,6 +40,7 @@ public class Controlador_Login {
         this.modeloLogin2 = modeloLogin2;
         this.modeloLogin3 = modeloLogin3;
         this.vistaLogin = vistaLogin;
+        vistaLogin.setLocationRelativeTo(null);
         vistaLogin.setVisible(true);
     }
 

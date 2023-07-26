@@ -107,6 +107,7 @@ public class cliente_ventana extends javax.swing.JFrame {
 
         rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/logo2.png"))); // NOI18N
 
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/icons8-usuario-25.png"))); // NOI18N
         btnModificar.setText("jButton1");
 
         jDesktopPane1.setLayer(rSLabelImage1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -386,6 +387,14 @@ public class cliente_ventana extends javax.swing.JFrame {
 
     public void setrSLabelImage1(RSLabelImage rSLabelImage1) {
         this.rSLabelImage1 = rSLabelImage1;
+    }
+
+    public JButton getBtnModificar() {
+        return btnModificar;
+    }
+
+    public void setBtnModificar(JButton btnModificar) {
+        this.btnModificar = btnModificar;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

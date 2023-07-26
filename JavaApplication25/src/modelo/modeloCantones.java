@@ -62,7 +62,7 @@ public class modeloCantones extends Cantones {
             Cantones c = new Cantones();
             while (rs.next()) {
                 c.setId_Canton(rs.getString("codigoCanton"));
-
+                
             }
             rs.close();
             return c.getId_Canton();
@@ -71,5 +71,20 @@ public class modeloCantones extends Cantones {
             return null;
         }
     }
-
+    public String ObtenerNombre() {
+        try {
+            String sql = "select codigoCanton from cantones where nombre='" + super.getNombreCan() + "'";
+            ResultSet rs = cpg.resultBD(sql);
+            Cantones c = new Cantones();
+            while (rs.next()) {
+                c.setId_Canton(rs.getString("codigoCanton"));
+                
+            }
+            rs.close();
+            return c.getId_Canton();
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCantones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
 }

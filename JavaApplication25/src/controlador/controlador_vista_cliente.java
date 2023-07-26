@@ -24,14 +24,17 @@ public class controlador_vista_cliente {
     }
 
     public void iniciarControlador() {
+        ventaCliente.getBtnModificar().setText(Controlador_Login.usuario);
         ventaCliente.setExtendedState(JFrame.MAXIMIZED_BOTH);
         ventaCliente.getBtnReservarRe().addActionListener(l -> llamarReserva());
         System.out.println("hola: " + Controlador_Login.usuario);
+        ventaCliente.getBtnModificar().addActionListener(l -> modificar());
     }
 
     private void llamarReserva() {
         vistaReservas vista1 = new vistaReservas();
         ventaCliente.getjDesktopPane1().add(vista1);
+        vista1.setTitle("reservas");
         vista1.setBorder(null);
         BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
         bui.setNorthPane(null);
@@ -41,6 +44,7 @@ public class controlador_vista_cliente {
         controladorVistaReservas inicio = new controladorVistaReservas(vista1, nuevo1, inicio1, ventaCliente);
         inicio.iniciarControlador();
     }
+    
 
     private void modificar() {
         vista_Mod_User vistaA = new vista_Mod_User();

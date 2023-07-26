@@ -28,15 +28,12 @@ public class Conexion {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
            // String myDB = "jdbc:oracle:thin:@localhost:1521:XE";
-           String myDB = "jdbc:oracle:thin:@192.168.137.105:1521:XE";
+           String myDB = "jdbc:oracle:thin:@192.168.137.150:1521:XE";
             con = DriverManager.getConnection(myDB, usuario, password);
-            System.out.println("coneccion positiva");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            System.out.println("Conectado!!!");
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public ResultSet resultBD(String sql) {
@@ -48,7 +45,6 @@ public class Conexion {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
-
     }
 
     public boolean accionBd(String sql) {

@@ -74,7 +74,6 @@ public class modeloPersona extends Personas {
         String sql = "select cedula,nombre1,nombre2,apellido1,apellido2,genero,telefono,direccion,edad,cod_canton,correo from personas ";
         sql += "where cedula='" + getCedulaPersona() + "'";
         return sql;
-
     }
 
     public String mostrarPersonas() {
@@ -83,7 +82,7 @@ public class modeloPersona extends Personas {
     }
 
     public boolean modificarPersonaBD() {
-        String sql = "UPDATE public.personas SET  nombre1='" + getNombrePersona() + "', nombre2='" + getNombrePersona1() + "', apellido1='" + getApellidoPersona() + "', apellido2='" + getApellidoPersona1() + "', genero='" + getGeneroPersona() + "', telefon='" + getTelefonoPersona() + "', dirreccion='" + getDireccionPersona() + "', edad=" + getEdadPersona() + ", correo='" + getCorreoPersona() + "'";
+        String sql = "UPDATE personas SET  nombre1='" + getNombrePersona() + "', nombre2='" + getNombrePersona1() + "', apellido1='" + getApellidoPersona() + "', apellido2='" + getApellidoPersona1() + "', telefono='" + getTelefonoPersona() + "', direccion='" + getDireccionPersona() + "', correo='" + getCorreoPersona() + "'";
         sql += "where cedula='" + getCedulaPersona() + "'";
         return cpg.accionBd(sql);
     }
@@ -92,10 +91,7 @@ public class modeloPersona extends Personas {
         String sql = "DELETE FROM personas";
         sql += " WHERE cedula ='" + getCedulaPersona() + "'";
         return cpg.accionBd(sql);
-
-    }
-    
-    
+    }    
 
     public ResultSet resultado() {
         String sql1 = Consultar();
@@ -109,5 +105,4 @@ public class modeloPersona extends Personas {
         }
         return null;
     }
-
 }

@@ -110,7 +110,7 @@ public class modeloCliente extends Cliente {
 
     public boolean modificarClienteBD() {
         String sql = "UPDATE cliente SET usuario='" + getUsuarioCliente() + "', contrasena='" + getContraCliente() + "'";
-        sql += "where usuario='" + getUsuarioCliente()+ "'";
+        sql += "where cedula_persona='" + getCedulaCliente()+ "'";
         return cpg.accionBd(sql);
     }
 
@@ -148,6 +148,35 @@ public class modeloCliente extends Cliente {
                 per.setNombrePersona1(rs.getString("nombre2"));
                 per.setApellidoPersona(rs.getString("apellido1"));
                 per.setApellidoPersona1(rs.getString("apellido2"));
+                listaBuscar.add(per);
+            } 
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }            
+    }
+    public List<Cliente> cargarCliente1(){
+        List<Cliente> listaBuscar = new ArrayList<Cliente>();
+        String sql;
+        sql="select * from vistacliente where usuario='"+super.getUsuarioCliente()+"'";
+        ResultSet rs=cpg.resultBD(sql);
+        Cliente per=new Cliente();
+        try {
+            
+            while(rs.next()){
+                per.setCedulaPersona(rs.getString("cedula_persona"));
+                per.setUsuarioCliente(rs.getString("usuario"));
+                per.setNombrePersona(rs.getString("nombre1"));
+                per.setNombrePersona1(rs.getString("nombre2"));
+                per.setApellidoPersona(rs.getString("apellido1"));
+                per.setApellidoPersona1(rs.getString("apellido2"));
+                per.setGeneroPersona(rs.getString("genero"));
+                per.setCorreoPersona(rs.getString("correo"));
+                per.setTelefonoPersona(rs.getString("telefono"));
+                per.setDireccionPersona(rs.getString("direccion"));
+                per.setContraCliente(rs.getString("contrasena"));
                 listaBuscar.add(per);
             } 
             rs.close();
