@@ -5,11 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import javax.swing.JOptionPane;
-import modelo.Validaciones;
-import modelo.modeloCantones;
-import modelo.modeloCliente;
-import modelo.modeloPersona;
-import modelo.modeloProvincia;
+import modelo.*;
 import vista.*;
 
 /**
