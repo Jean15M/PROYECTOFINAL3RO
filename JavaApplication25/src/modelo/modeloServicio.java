@@ -53,11 +53,18 @@ public class modeloServicio extends Servicio {
         }
     }
 
-    public boolean grabarServicio() {
-        String sql = "insert into  public.servicios(id_servicio,id_tipo_servicio,id_habitacion,descripcion)";
-        sql += "values('" + getId_Servicio() + "','" + getId_tipo_servicio() + "','" + getId_Habitacion() + "','" + getDescp_Servicio() + "')";
+//    public boolean grabarServicio() {
+//        String sql = "insert into  public.servicios(id_servicio,id_tipo_servicio,id_habitacion,descripcion)";
+//        sql += "values('" + getId_Servicio() + "','" + getId_tipo_servicio() + "','" + getId_Habitacion() + "','" + getDescp_Servicio() + "')";
+//        return cpg.accionBd(sql);
+//    }
+     public boolean grabarServicio(Servicio servicio) {
+        String sql = "INSERT INTO servicios (id_servicio, id_tipo_servicio, id_habitacion, descripcion) ";
+        sql += "VALUES ('" + servicio.getId_Servicio() + "', '" + servicio.getId_tipo_servicio() + "', '" + servicio.getId_Habitacion() + "', '" + servicio.getDescp_Servicio() + "')";
+
         return cpg.accionBd(sql);
     }
+    
 
     public String Consultar() {
         String sql = "select id_servicio,id_tipo_servicio,id_habitacion,descripcion from servicios";
@@ -88,6 +95,22 @@ public class modeloServicio extends Servicio {
             Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+    
+    public boolean codigoExisteEnBD(String codigo) {
+        String sql = "SELECT COUNT(*) FROM servicios WHERE id_servicio='" + codigo + "'";
+        ResultSet rs = cpg.resultBD(sql);
+
+        try {
+            if (rs.next()) {
+                int count = rs.getInt(1);
+                return count > 0;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloServicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return false;
     }
 
 }
