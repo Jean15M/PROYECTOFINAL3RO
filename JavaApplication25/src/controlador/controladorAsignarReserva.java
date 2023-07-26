@@ -151,7 +151,7 @@ public class controladorAsignarReserva {
     }
     
     public double calcularTotal(int dias){
-        double total = dias*Double.parseDouble(vistaReservas.getTxtPrecioHabi().getText());
+        double total = dias*Double.parseDouble(vistaReservas.getTxtPrecio().getText());
         return total;
     }
     
