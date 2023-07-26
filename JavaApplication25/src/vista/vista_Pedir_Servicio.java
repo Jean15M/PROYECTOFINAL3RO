@@ -7,6 +7,7 @@ package vista;
 
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
+import modelo.Habitaciones;
 import org.edisoncor.gui.button.ButtonRound;
 
 /**
@@ -62,7 +63,6 @@ public class vista_Pedir_Servicio extends javax.swing.JInternalFrame {
         jLabel5.setText("Habitacion");
 
         cbHabitacion.setBackground(new java.awt.Color(68, 68, 68));
-        cbHabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btCamcelar.setBackground(new java.awt.Color(0, 102, 255));
         btCamcelar.setText("Cancelar");
@@ -183,12 +183,11 @@ public class vista_Pedir_Servicio extends javax.swing.JInternalFrame {
     public void setBtPedir(ButtonRound btPedir) {
         this.btPedir = btPedir;
     }
-
-    public JComboBox<String> getCbHabitacion() {
+    public JComboBox<Habitaciones> getCbHabitacion() {
         return cbHabitacion;
     }
 
-    public void setCbHabitacion(JComboBox<String> cbHabitacion) {
+    public void setCbHabitacion(JComboBox<Habitaciones> cbHabitacion) {
         this.cbHabitacion = cbHabitacion;
     }
 
@@ -197,7 +196,7 @@ public class vista_Pedir_Servicio extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea Descripcion;
     private org.edisoncor.gui.button.ButtonRound btCamcelar;
     private org.edisoncor.gui.button.ButtonRound btPedir;
-    private javax.swing.JComboBox<String> cbHabitacion;
+    private javax.swing.JComboBox<Habitaciones> cbHabitacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
