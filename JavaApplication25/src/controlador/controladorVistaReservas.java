@@ -10,13 +10,16 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import modelo.modeloAdministrador;
 import modelo.modeloCategoriaHabitacion;
 import modelo.modeloCliente;
 import modelo.modeloDetalle_fac;
 import modelo.modeloEncabez_fac;
+import modelo.modeloRecepcionista;
 import vista.Pantalla_Principal;
 import vista.cliente_ventana;
 import vista.vistaAsignarReserva;
+import vista.vistaLogin;
 import vista.vistaReservas;
 
 /**
@@ -38,14 +41,12 @@ public class controladorVistaReservas {
         reservas.setVisible(true);
     }
 
- 
-
     public void iniciarControlador() {
-        inicio.getBtnInicioRe().addActionListener(l->cerrar());
-        cliente.getBtnInicioRe().addActionListener(l->cerrar());
-        reservas.getBtnReservarVIP().addActionListener(l->asignarReserva("1"));
-        reservas.getBtnReservarDel().addActionListener(l->asignarReserva("2"));
-        reservas.getBtnReservarVIP().addActionListener(l->asignarReserva("3"));
+        inicio.getBtnInicioRe().addActionListener(l -> cerrar());
+        cliente.getBtnInicioRe().addActionListener(l -> cerrar());
+        reservas.getBtnReservarVIP().addActionListener(l -> asignarReserva("1"));
+        reservas.getBtnReservarDel().addActionListener(l -> asignarReserva("2"));
+        reservas.getBtnReservarEs().addActionListener(l -> asignarReserva("3"));
         cargarInformacion();
         carrgarDukex();
         cargarStandar();
@@ -65,7 +66,7 @@ public class controladorVistaReservas {
                 } else {
                     reservas.getEstado_vip().setText("No Disponible");
                     reservas.getBtnReservarVIP().setEnabled(false);
-                    
+
                 }
 
             }
@@ -115,29 +116,59 @@ public class controladorVistaReservas {
             Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-  public void cerrar() {
-        
+
+    public void cerrar() {
+
         try {
             reservas.setClosed(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-  }
-  
-  public void asignarReserva(String tipo_habi){
-      controladorAsignarReserva.tipo = tipo_habi;
-      System.out.println("CATEGORIA: "+controladorAsignarReserva.tipo);
-      vistaAsignarReserva vistaReservas = new vistaAsignarReserva();
-     cliente.getjDesktopPane1().add(vistaReservas);
-     vistaReservas.setBorder(null);
-        BasicInternalFrameUI bui = (BasicInternalFrameUI) vistaReservas.getUI();
-        bui.setNorthPane(null);
-        vistaReservas.setSize(cliente.getjDesktopPane1().getWidth(), cliente.getjDesktopPane1().getHeight());
-      modeloCliente modeloCliente = new modeloCliente();
-      modeloEncabez_fac modeloEncabe = new modeloEncabez_fac();
-      modeloDetalle_fac modeloDetalle = new modeloDetalle_fac();
-      controladorAsignarReserva inicio = new controladorAsignarReserva(vistaReservas, modeloCliente, modeloEncabe, modeloDetalle);
-      inicio.iniciarControlador();
-  }
+
+    }
+
+    public void asignarReserva(String tipo_habi) {
+        if (reservas.getTitle().equals("PANTALLA_PRINCIPAL")) {
+            modeloRecepcionista modeloL = new modeloRecepcionista();
+            modeloCliente modeloC = new modeloCliente();
+            modeloAdministrador modeloA = new modeloAdministrador();
+            vistaLogin vistaR = new vistaLogin();
+            Controlador_Login inicio2 = new Controlador_Login(modeloL, modeloA, modeloC, vistaR);
+            inicio2.iniciarControlador();
+            inicio.dispose();
+
+        } else if (reservas.getTitle().equals("reservas")) {
+            controladorAsignarReserva.tipo = tipo_habi;
+            System.out.println("CATEGORIA: " + controladorAsignarReserva.tipo);
+            vistaAsignarReserva vistaReservas = new vistaAsignarReserva();
+            cliente.getjDesktopPane1().add(vistaReservas);
+            vistaReservas.setBorder(null);
+            BasicInternalFrameUI bui = (BasicInternalFrameUI) vistaReservas.getUI();
+            bui.setNorthPane(null);
+            vistaReservas.setSize(cliente.getjDesktopPane1().getWidth(), cliente.getjDesktopPane1().getHeight());
+            modeloCliente modeloCliente = new modeloCliente();
+            modeloEncabez_fac modeloEncabe = new modeloEncabez_fac();
+            modeloDetalle_fac modeloDetalle = new modeloDetalle_fac();
+            controladorAsignarReserva inicio = new controladorAsignarReserva(vistaReservas, modeloCliente, modeloEncabe, modeloDetalle);
+            inicio.iniciarControlador();
+        }
+    }
+
+    public void evaluar() {
+        if (reservas.getTitle().equals("PANTALLA_PRINCIPAL")) {
+            modeloRecepcionista modeloL = new modeloRecepcionista();
+            modeloCliente modeloC = new modeloCliente();
+            modeloAdministrador modeloA = new modeloAdministrador();
+            vistaLogin vistaR = new vistaLogin();
+            Controlador_Login inicio2 = new Controlador_Login(modeloL, modeloA, modeloC, vistaR);
+            inicio2.iniciarControlador();
+            inicio.dispose();
+
+        } else if (reservas.getTitle().equals("reservas")) {
+            reservas.getBtnReservarVIP().addActionListener(l -> asignarReserva("1"));
+            reservas.getBtnReservarDel().addActionListener(l -> asignarReserva("2"));
+            reservas.getBtnReservarEs().addActionListener(l -> asignarReserva("3"));
+        }
+    }
+
 }

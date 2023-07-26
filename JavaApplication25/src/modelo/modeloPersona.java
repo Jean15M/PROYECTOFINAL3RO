@@ -71,10 +71,9 @@ public class modeloPersona extends Personas {
     }
 
     public String Consultar() {
-        String sql = "select cedula,nombre1,nombre2,apellido1,apellido2,genero,telefono,direccion,edad,cod_canton,correo from personas ";
+        String sql = "select cedula,nombre1,nombre2,apellido1,apellido2,genero,telefono,direccion,edad,cod_canton,correo from personas";
         sql += "where cedula='" + getCedulaPersona() + "'";
         return sql;
-
     }
 
     public String mostrarPersonas() {
@@ -92,10 +91,7 @@ public class modeloPersona extends Personas {
         String sql = "DELETE FROM personas";
         sql += " WHERE cedula ='" + getCedulaPersona() + "'";
         return cpg.accionBd(sql);
-
-    }
-    
-    
+    }  
 
     public ResultSet resultado() {
         String sql1 = Consultar();
@@ -109,5 +105,4 @@ public class modeloPersona extends Personas {
         }
         return null;
     }
-
 }
