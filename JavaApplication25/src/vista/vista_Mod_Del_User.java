@@ -14,12 +14,12 @@ import org.edisoncor.gui.button.ButtonRound;
  *
  * @author KEVIN SANCHEZ
  */
-public class vista_Mod_User extends javax.swing.JFrame {
+public class vista_Mod_Del_User extends javax.swing.JFrame {
 
     /**
      * Creates new form vistaPersona
      */
-    public vista_Mod_User() {
+    public vista_Mod_Del_User() {
         initComponents();
     }
 
@@ -111,12 +111,12 @@ public class vista_Mod_User extends javax.swing.JFrame {
         this.txttelefono = txttelefono;
     }
 
-    public ButtonRound getBtnModificar() {
+    public ButtonRound getBtnAceptar() {
         return btnModificar;
     }
 
-    public void setBtnModificar(ButtonRound btnAceptar) {
-        this.btnModificar = btnModificar;
+    public void setBtnAceptar(ButtonRound btnAceptar) {
+        this.btnModificar = btnAceptar;
     }
 
     public ButtonRound getBtnCancelar() {

@@ -10,8 +10,14 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-import modelo.*;
-import vista.*;
+import modelo.modeloCategoriaHabitacion;
+import modelo.modeloCliente;
+import modelo.modeloDetalle_fac;
+import modelo.modeloEncabez_fac;
+import vista.Pantalla_Principal;
+import vista.cliente_ventana;
+import vista.vistaAsignarReserva;
+import vista.vistaReservas;
 
 /**
  *

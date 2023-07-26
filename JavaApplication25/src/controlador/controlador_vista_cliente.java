@@ -7,8 +7,10 @@ package controlador;
 
 import javax.swing.JFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-import modelo.*;
-import vista.*;
+import modelo.modeloCategoriaHabitacion;
+import vista.Pantalla_Principal;
+import vista.cliente_ventana;
+import vista.vistaReservas;
 
 /**
  *
@@ -26,7 +28,6 @@ public class controlador_vista_cliente {
     public void iniciarControlador() {
         ventaCliente.setExtendedState(JFrame.MAXIMIZED_BOTH);
         ventaCliente.getBtnReservarRe().addActionListener(l -> llamarReserva());
-        ventaCliente.getBtnModificar().addActionListener(l -> modificar());
         System.out.println("hola: " + Controlador_Login.usuario);
     }
 
@@ -43,11 +44,4 @@ public class controlador_vista_cliente {
         inicio.iniciarControlador();
     }
 
-    private void modificar() {
-        vista_Mod_User vistaA = new vista_Mod_User();
-        modeloCliente modelo = new modeloCliente();
-        controlador_Mod_Usuario inicio = new controlador_Mod_Usuario(modelo,vistaA);
-        ventaCliente.dispose();
-        inicio.iniciarControl();
-    }
 }

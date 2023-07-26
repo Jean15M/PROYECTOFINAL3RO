@@ -25,6 +25,7 @@ public class vistaAsignarReserva extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -612,7 +613,12 @@ public class vistaAsignarReserva extends javax.swing.JInternalFrame {
 
     public void setTxtPlaca(JTextField txtPlaca) {
         this.txtPlaca = txtPlaca;
-    }    
+    }
+    
+    
+
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btnCancelar;
