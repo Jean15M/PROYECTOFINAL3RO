@@ -17,17 +17,15 @@ public class Encabez_fac {
     private String cedula_cli;
     private Date fecha_fac;
     private double total_fac;
-    private String id_reserva;
 
     public Encabez_fac() {
     }
 
-    public Encabez_fac(String id_encabez, String cedula_cli, Date fecha_fac, double total_fac, String id_reserva) {
+    public Encabez_fac(String id_encabez, String cedula_cli, Date fecha_fac, double total_fac) {
         this.id_encabez = id_encabez;
         this.cedula_cli = cedula_cli;
         this.fecha_fac = fecha_fac;
         this.total_fac = total_fac;
-        this.id_reserva = id_reserva;
     }
 
     public String getId_encabez() {
@@ -61,16 +59,6 @@ public class Encabez_fac {
     public void setTotal_fac(double total_fac) {
         this.total_fac = total_fac;
     }
-
-    public String getId_reserva() {
-        return id_reserva;
-    }
-
-    public void setId_reserva(String id_reserva) {
-        this.id_reserva = id_reserva;
-    }
-    
-    
 
     @Override
     public String toString() {

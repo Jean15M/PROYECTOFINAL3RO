@@ -5,12 +5,23 @@
  */
 package controlador;
 
+import java.security.Principal;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import modelo.*;
-import vista.*;
+import modelo.Recepcionista;
+import modelo.modeloAdministrador;
+import modelo.modeloCliente;
+import modelo.modeloRecepcionista;
+import vista.PanelAdmin;
+import vista.Pantalla_Principal;
+import vista.cliente_ventana;
+import vista.vistaContrase;
+import vista.vistaLogin;
+import vista.vistaPanelControlAdministrador;
+import vista.vistaPanelControlPrincipal;
+import vista.vistaRegistro;
 
 /**
  *
@@ -29,7 +40,6 @@ public class Controlador_Login {
         this.modeloLogin2 = modeloLogin2;
         this.modeloLogin3 = modeloLogin3;
         this.vistaLogin = vistaLogin;
-        vistaLogin.setLocationRelativeTo(null);
         vistaLogin.setVisible(true);
     }
 
@@ -37,6 +47,7 @@ public class Controlador_Login {
         vistaLogin.getBtniniciarse().addActionListener(l -> login());
         vistaLogin.getBtnregistro().addActionListener(l -> regresar());
         vistaLogin.getBtnOlvidar().addActionListener(l -> cambiarContra());
+
     }
 
     private void login() {
@@ -93,5 +104,6 @@ public class Controlador_Login {
         controladorRegistroUsuario inicio = new controladorRegistroUsuario(modeloC, vistaC);
         inicio.iniciarControlador();
         vistaLogin.dispose();
+
     }
 }

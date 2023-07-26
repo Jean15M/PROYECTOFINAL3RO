@@ -11,7 +11,6 @@ import modelo.modeloAdministrador;
 import vista.Pantalla_Principal;
 import vista.vistaPersona;
 import vista.vistaRegistroAdmin;
-import vista.vistaReservas;
 
 /**
  *
@@ -20,7 +19,6 @@ import vista.vistaReservas;
 public class zHotel {
 
     public static void main(String[] args) {
-      
         Pantalla_Principal nuevo1 = new Pantalla_Principal();
         controladorPrincipal iniciar = new controladorPrincipal(nuevo1);
         iniciar.iniciarControlador();

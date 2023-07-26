@@ -21,9 +21,7 @@ public class controladorPrincipal {
     private Pantalla_Principal vistaPrincipal;
 
     public controladorPrincipal(Pantalla_Principal vistaPrincipal) {
-
         this.vistaPrincipal = vistaPrincipal;
-
         vistaPrincipal.setExtendedState(JFrame.MAXIMIZED_BOTH);
         vistaPrincipal.setVisible(true);
     }
@@ -34,7 +32,6 @@ public class controladorPrincipal {
         vistaPrincipal.getBtnServiciosRe().addActionListener(l -> registroRecepcionista());
         vistaPrincipal.getBtniniciose().addActionListener(l -> Login());
         vistaPrincipal.getBtnregistro().addActionListener(l -> registroUsuario());
-
     }
 
     private void registroAdmin() {
@@ -72,24 +69,20 @@ public class controladorPrincipal {
     }
 
     private void llamarReserva() {
-
+       
         vistaReservas vista1 = new vistaReservas();
         vistaPrincipal.getPaginaPrincipal().add(vista1);
-        vista1.setTitle("PANTALLA_PRINCIPAL");
         vista1.setBorder(null);
         BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
         bui.setNorthPane(null);
         vista1.setSize(vistaPrincipal.getPaginaPrincipal().getWidth(), vistaPrincipal.getPaginaPrincipal().getHeight());
         modeloCategoriaHabitacion nuevo1 = new modeloCategoriaHabitacion();
-        cliente_ventana cliente1 = new cliente_ventana();
-        controladorVistaReservas inicio = new controladorVistaReservas(vista1, nuevo1, vistaPrincipal, cliente1);
+        cliente_ventana  cliente1=new cliente_ventana();
+        controladorVistaReservas inicio = new controladorVistaReservas(vista1, nuevo1,vistaPrincipal,cliente1);
         inicio.iniciarControlador();
-
+      
     }
-
-    public void abrir() {
-        vistaPrincipal.setVisible(true);
-    }
-
-
+     public void abrir(){
+         vistaPrincipal.setVisible(true);
+     }
 }
