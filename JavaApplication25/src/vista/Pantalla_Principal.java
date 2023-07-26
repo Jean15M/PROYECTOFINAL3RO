@@ -239,9 +239,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(jLabel20))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel21)))
+                    .addComponent(jLabel21))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -404,10 +402,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
+        btniniciose.setBackground(new java.awt.Color(255, 255, 255));
         btniniciose.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btniniciose.setText("Iniciar Sesión");
         btniniciose.setBorder(null);
 
+        btnregistro.setBackground(new java.awt.Color(255, 255, 255));
         btnregistro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnregistro.setText("Registrarse");
         btnregistro.setBorder(null);
