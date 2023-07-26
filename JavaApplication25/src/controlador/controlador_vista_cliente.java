@@ -34,6 +34,7 @@ public class controlador_vista_cliente {
     private void llamarReserva() {
         vistaReservas vista1 = new vistaReservas();
         ventaCliente.getjDesktopPane1().add(vista1);
+        vista1.setTitle("reservas");
         vista1.setBorder(null);
         BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
         bui.setNorthPane(null);

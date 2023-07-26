@@ -72,6 +72,7 @@ public class controladorPrincipal {
        
         vistaReservas vista1 = new vistaReservas();
         vistaPrincipal.getPaginaPrincipal().add(vista1);
+        vista1.setTitle("PANTALLA_PRINCIPAL");
         vista1.setBorder(null);
         BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
         bui.setNorthPane(null);
