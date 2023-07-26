@@ -28,6 +28,7 @@ import vista.vistaPanelControlPrincipal;
 public class controlador_PanelControlHP {
 
     DefaultTableModel mTabla;
+     DefaultTableModel mTabla1;
     private modelo.modeloHabitaciones modeloH;
     private modelo.modeloParqueadero modeloP;
     private vista.vistaPanelControl vistaPanel;
@@ -84,14 +85,14 @@ public class controlador_PanelControlHP {
                         parqueadero();
                     }
                 } else if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Disponibles")) {
-                    if (modeloP.listarParqueadero().get(i).getPlaca().equals(null)) {
+                    if (modeloP.listarParqueadero().get(i).getPlaca().equals("")) {
                         parqueadero();
                         mensaje = true;
                     }
                 }
             }
             if (mensaje == false) {
-                    mTabla.setNumRows(0);
+                    mTabla1.setNumRows(0);
                 JOptionPane.showMessageDialog(null, "NO SE ENCONTRO RESULTADOS");
             }
 
@@ -110,13 +111,13 @@ public class controlador_PanelControlHP {
     }
 
     public void parqueadero() {
-        mTabla = (DefaultTableModel) vistaPanel.getTbParqueadero().getModel();
-        mTabla.setNumRows(0);
+        mTabla1 = (DefaultTableModel) vistaPanel.getTbParqueadero().getModel();
+        mTabla1.setNumRows(0);
         modeloP.listarParqueadero().stream().forEach(lista -> {
             String[] fila = {lista.getId_Parqueadero(), lista.getPlaca(), lista.getUbicacion()};
-            mTabla.addRow(fila);
+            mTabla1.addRow(fila);
         });
-        vistaPanel.getTbParqueadero().setModel(mTabla);
+        vistaPanel.getTbParqueadero().setModel(mTabla1);
     }
 
     private void cerrar() {
