@@ -98,7 +98,6 @@ public class controladorRegistroUsuario {
                 JOptionPane.showMessageDialog(null, "CÉDULA INGRESADA DE MANERA INCORRECTA");
             }
         }
-
     }
 
     private void cargarCantones() {

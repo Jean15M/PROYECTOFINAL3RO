@@ -40,6 +40,7 @@ public class controladorPanelAdmin {
         admin.getBtRegiscli().addActionListener(l -> registroUsuario());
         admin.getBtnhabitaciones().addActionListener(l -> registrohabitaciones());
         adminp.getBtnInicioRe1().addActionListener(l -> cerrar());
+        
 
     }
 

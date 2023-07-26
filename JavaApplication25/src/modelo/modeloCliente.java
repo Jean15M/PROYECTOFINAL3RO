@@ -143,7 +143,7 @@ public class modeloCliente extends Cliente {
         try {
             
             while(rs.next()){
-                per.setCedulaPersona(rs.getString("cedula"));
+                per.setCedulaCliente(rs.getString("cedula_persona"));
                 per.setNombrePersona(rs.getString("nombre1"));
                 per.setNombrePersona1(rs.getString("nombre2"));
                 per.setApellidoPersona(rs.getString("apellido1"));
