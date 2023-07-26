@@ -102,4 +102,47 @@ public class modeloHabitaciones extends Habitaciones {
         }
         return null;
     }
+
+    public List<Habitaciones> buscarCat() {
+        List<Habitaciones> listaBuscar = new ArrayList<Habitaciones>();
+        String sql;
+        sql = "select * from habitaciones where id_categoria='" + super.getId_Categoria() + "'";
+        ResultSet rs = cpg.resultBD(sql);
+        Habitaciones hab = new Habitaciones();
+        try {
+
+            while (rs.next()) {
+                hab.setId_Habitacion(rs.getString("id_habitacion"));
+                hab.setId_Categoria(rs.getInt("id_categoria"));
+                hab.setNro_Habitacion(rs.getInt("n_habitacion"));
+                hab.setNro_Piso(rs.getInt("nro_piso"));
+                hab.setPrecio_Habitacion(rs.getDouble("precio"));
+                hab.setEstado(rs.getInt("estado"));
+                hab.setNum_plazas(rs.getString("camas"));
+                listaBuscar.add(hab);
+            }
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+
+    public String ObtenerCodigo() {
+        try {
+            String sql = "select id_habitacion from habitaciones where n_habitacion='" + super.getNro_Habitacion() + "'";
+            ResultSet rs = cpg.resultBD(sql);
+            Cantones c = new Cantones();
+            while (rs.next()) {
+                c.setId_Canton(rs.getString("id_habitacion"));
+
+            }
+            rs.close();
+            return c.getId_Canton();
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCantones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
 }
