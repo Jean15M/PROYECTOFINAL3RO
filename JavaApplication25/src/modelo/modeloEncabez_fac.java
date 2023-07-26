@@ -55,8 +55,8 @@ public class modeloEncabez_fac extends Encabez_fac {
     }
 
     public boolean grabarEncabez_fac() {
-        String sql = "insert into  encabezado_fac(id_encabezado_fac,cedula_cliente,fecha,total)";
-        sql += "values('" + super.getId_encabez() + "','" + getCedula_cli() + "',to_date('" + getFecha_fac() + "','YYYY-MM-DD')," + getTotal_fac() + ")";
+        String sql = "insert into  encabezado_fac(id_encabezado_fac,cedula_cliente,fecha,total,id_reserva)";
+        sql += "values('" + super.getId_encabez() + "','" + getCedula_cli() + "',to_date('" + getFecha_fac() + "','YYYY-MM-DD')," + getTotal_fac() +","+getId_reserva()+ ")";
         return cpg.accionBd(sql);
     }
 

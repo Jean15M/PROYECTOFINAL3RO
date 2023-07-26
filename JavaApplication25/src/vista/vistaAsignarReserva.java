@@ -73,7 +73,7 @@ public class vistaAsignarReserva extends javax.swing.JInternalFrame {
         txtPlaca = new javax.swing.JTextField();
         txtModelo = new javax.swing.JTextField();
         txtMarca = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
+        lblCliente = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(35, 149, 156));
@@ -202,8 +202,8 @@ public class vistaAsignarReserva extends javax.swing.JInternalFrame {
 
         txtMarca.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setText("-");
+        lblCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblCliente.setText("-");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -253,7 +253,7 @@ public class vistaAsignarReserva extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(lblCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(7, 7, 7))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
@@ -322,7 +322,7 @@ public class vistaAsignarReserva extends javax.swing.JInternalFrame {
                                         .addGap(9, 9, 9)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(jLabel12)
-                                            .addComponent(jLabel10))
+                                            .addComponent(lblCliente))
                                         .addGap(22, 22, 22)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(jLabel14)
@@ -503,12 +503,12 @@ public class vistaAsignarReserva extends javax.swing.JInternalFrame {
         this.lblNombre = lblNombre;
     }
 
-    public JLabel getTxtCliente() {
-        return jLabel10;
+    public JLabel getLblCliente() {
+        return lblCliente;
     }
 
-    public void setTxtCliente(JLabel txtCliente) {
-        this.jLabel10 = txtCliente;
+    public void setLblCliente(JLabel lblCliente) {
+        this.lblCliente = lblCliente;
     }
 
     public JComboBox<String> getCbHabitacion() {
@@ -632,7 +632,6 @@ public class vistaAsignarReserva extends javax.swing.JInternalFrame {
     private com.toedter.calendar.JDateChooser jCalendarioFin;
     private com.toedter.calendar.JDateChooser jCalendarioIni;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -650,6 +649,7 @@ public class vistaAsignarReserva extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblApellido;
+    private javax.swing.JLabel lblCliente;
     private javax.swing.JLabel lblMarca;
     private javax.swing.JLabel lblModelo;
     private javax.swing.JLabel lblNombre;
