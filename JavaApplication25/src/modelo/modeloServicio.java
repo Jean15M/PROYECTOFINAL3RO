@@ -97,6 +97,35 @@ public class modeloServicio extends Servicio {
         return null;
     }
     
+//    public List<Servicio> buscarServicios(){
+//       
+//        List<Servicio> listaBuscar = new ArrayList<Servicio>();
+//        String sql;
+//        sql = "select * from servicios where estado='" + super.getEstado()+ "'";
+//        ResultSet rs = cpg.resultBD(sql);
+//        Habitaciones hab = new Habitaciones();
+//        try {
+//
+//            while (rs.next()) {
+//                hab.setId_Habitacion(rs.getString("id_habitacion"));
+//                hab.setId_Categoria(rs.getInt("id_categoria"));
+//                hab.setNro_Habitacion(rs.getInt("n_habitacion"));
+//                hab.setNro_Piso(rs.getInt("nro_piso"));
+//                hab.setPrecio_Habitacion(rs.getDouble("precio"));
+//                hab.setEstado(rs.getString("estado"));
+//                hab.setNum_plazas(rs.getString("camas"));
+//                listaBuscar.add(hab);
+//            }
+//            rs.close();
+//            return listaBuscar;
+//        } catch (SQLException ex) {
+//            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+//            return null;
+//        }
+//    
+//        
+//    }
+    
     public boolean codigoExisteEnBD(String codigo) {
         String sql = "SELECT COUNT(*) FROM servicios WHERE id_servicio='" + codigo + "'";
         ResultSet rs = cpg.resultBD(sql);

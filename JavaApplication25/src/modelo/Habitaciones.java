@@ -17,13 +17,13 @@ public class Habitaciones {
     private int nro_Piso;
     private int id_Categoria;
     private String num_plazas;
-    private int estado;
+    private String estado;
     //PRIVATE
 
     public Habitaciones() {
     }
 
-    public Habitaciones(String id_Habitacion, double precio_Habitacion, int nro_Habitacion, int nro_Piso, int id_Categoria, String num_plazas, int estado) {
+    public Habitaciones(String id_Habitacion, double precio_Habitacion, int nro_Habitacion, int nro_Piso, int id_Categoria, String num_plazas, String estado) {
         this.id_Habitacion = id_Habitacion;
         this.precio_Habitacion = precio_Habitacion;
         this.nro_Habitacion = nro_Habitacion;
@@ -81,11 +81,11 @@ public class Habitaciones {
         this.num_plazas = num_plazas;
     }
 
-    public int getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(int estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 

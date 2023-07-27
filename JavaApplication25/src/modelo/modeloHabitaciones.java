@@ -44,7 +44,7 @@ public class modeloHabitaciones extends Habitaciones {
                 Habitaciones1.setNro_Habitacion(rs.getInt("n_habitacion"));
                 Habitaciones1.setNro_Piso(rs.getInt("nro_piso"));
                 Habitaciones1.setPrecio_Habitacion(rs.getDouble("precio"));
-                Habitaciones1.setEstado(rs.getInt("estado"));
+                Habitaciones1.setEstado(rs.getString("estado"));
                 Habitaciones1.setNum_plazas(rs.getString("camas"));
                 listaHabitaciones.add(Habitaciones1);
             }
@@ -83,6 +83,12 @@ public class modeloHabitaciones extends Habitaciones {
         sql += "where id_habitacion='" + getId_Habitacion() + "'";
         return cpg.accionBd(sql);
     }
+    
+    public boolean modificarEstado() {
+        String sql = "UPDATE habitaciones SET estado='" + getEstado()+ "'";
+        sql += "where n_habitacion='" + getNro_Habitacion()+ "'";
+        return cpg.accionBd(sql);
+    }
 
     public boolean eliminarAutos() {
         String sql = "DELETE FROM habitaciones";
@@ -106,7 +112,7 @@ public class modeloHabitaciones extends Habitaciones {
     public List<Habitaciones> buscarCat() {
         List<Habitaciones> listaBuscar = new ArrayList<Habitaciones>();
         String sql;
-        sql = "select * from habitaciones where id_categoria='" + super.getId_Categoria() + "'";
+        sql = "select * from habitaciones where id_categoria='" + super.getId_Categoria() + "' AND estado=1";
         ResultSet rs = cpg.resultBD(sql);
         Habitaciones hab = new Habitaciones();
         try {
@@ -117,7 +123,7 @@ public class modeloHabitaciones extends Habitaciones {
                 hab.setNro_Habitacion(rs.getInt("n_habitacion"));
                 hab.setNro_Piso(rs.getInt("nro_piso"));
                 hab.setPrecio_Habitacion(rs.getDouble("precio"));
-                hab.setEstado(rs.getInt("estado"));
+                hab.setEstado(rs.getString("estado"));
                 hab.setNum_plazas(rs.getString("camas"));
                 listaBuscar.add(hab);
             }

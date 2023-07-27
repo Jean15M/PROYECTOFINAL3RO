@@ -27,21 +27,21 @@ public class controladorPanelServicios {
 
     
     
-//    public void iniciarControlador(){
-//        vistaR.getBtnBuscarServi().addActionListener(l->cargarTabla());
-//    }
-//    
-//    public void cargarTabla(){
-//    if(vistaR.getCbServicios().getSelectedIndex()==0){
-//        JOptionPane.showMessageDialog(null, "SELECCIONE UNA OPCIÓN");
-//    }else{
-//        mTabla = (DefaultTableModel) vistaR.getTbServicios().getModel();
-//        mTabla.setNumRows(0);
-//        modeloS.listarServicio().stream().forEach(lista -> {
-//            String[] fila = {lista.getId_Servicio(), lista.getId_tipo_servicio(), lista.getId_Habitacion()};
-//            mTabla.addRow(fila);
-//        });
-//        vistaR.getTbServicios().setModel(mTabla);
-//     }
-//    }
+    public void iniciarControlador(){
+        vistaR.getBtnBuscarServ().addActionListener(l->cargarTabla());
+    }
+    
+    public void cargarTabla(){
+    if(vistaR.getCbServicios().getSelectedIndex()==0){
+        JOptionPane.showMessageDialog(null, "SELECCIONE UNA OPCIÓN");
+    }else{
+        mTabla = (DefaultTableModel) vistaR.getTbServicios().getModel();
+        mTabla.setNumRows(0);
+        modeloS.listarServicio().stream().forEach(lista -> {
+            String[] fila = {lista.getId_Servicio(), lista.getId_tipo_servicio(), lista.getId_Habitacion()};
+            mTabla.addRow(fila);
+        });
+        vistaR.getTbServicios().setModel(mTabla);
+     }
+    }
 }

@@ -17,15 +17,17 @@ public class Parqueadero {
     private int tiempo;
     private String ubicacion;
     private String placa;
+    private String estado;
 
     public Parqueadero() {
     }
 
-    public Parqueadero(String id_Parqueadero, int tiempo, String ubicacion, String placa) {
+    public Parqueadero(String id_Parqueadero, int tiempo, String ubicacion, String placa, String estado) {
         this.id_Parqueadero = id_Parqueadero;
         this.tiempo = tiempo;
         this.ubicacion = ubicacion;
         this.placa = placa;
+        this.estado = estado;
     }
 
     public String getId_Parqueadero() {
@@ -60,9 +62,19 @@ public class Parqueadero {
         this.placa = placa;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     @Override
     public String toString() {
-        return "Parqueadero{" + "id_Parqueadero=" + id_Parqueadero + ", tiempo=" + tiempo + ", ubicacion=" + ubicacion + ", placa=" + placa + '}';
+        return "Parqueadero{" + "id_Parqueadero=" + id_Parqueadero + ", tiempo=" + tiempo + ", ubicacion=" + ubicacion + ", placa=" + placa + ", estado=" + estado + '}';
     }
+
+    
 
 }

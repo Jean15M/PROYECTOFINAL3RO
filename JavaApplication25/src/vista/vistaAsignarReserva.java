@@ -113,7 +113,7 @@ public class vistaAsignarReserva extends javax.swing.JInternalFrame {
         jLabel8.setForeground(new java.awt.Color(35, 149, 156));
         jLabel8.setText("FECHA FIN:");
 
-        cbPersonas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        cbPersonas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "1", "2", "3", "4" }));
 
         txtDias.setEditable(false);
         txtDias.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));

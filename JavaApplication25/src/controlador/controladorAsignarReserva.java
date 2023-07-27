@@ -6,6 +6,7 @@
 package controlador;
 
 import java.beans.PropertyChangeEvent;
+import java.beans.PropertyVetoException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -13,6 +14,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.modeloAutos;
 import modelo.modeloCliente;
@@ -23,6 +26,7 @@ import modelo.modeloMetodoPago;
 import modelo.modeloParqueadero;
 import modelo.modeloPersona;
 import modelo.modeloReserva;
+import vista.cliente_ventana;
 import vista.vistaAsignarReserva;
 
 /**
@@ -35,12 +39,14 @@ public class controladorAsignarReserva {
     private modeloCliente modeloCliente;
     private modeloEncabez_fac modeloEncabe;
     private modeloDetalle_fac modeloDetalle;
+    private cliente_ventana vistaCliente;
 
-    public controladorAsignarReserva(vistaAsignarReserva vistaReservas, modeloCliente modeloCliente, modeloEncabez_fac modeloEncabe, modeloDetalle_fac modeloDetalle ) {
+    public controladorAsignarReserva(vistaAsignarReserva vistaReservas, modeloCliente modeloCliente, modeloEncabez_fac modeloEncabe, modeloDetalle_fac modeloDetalle, cliente_ventana vistaCliente ) {
         this.vistaReservas = vistaReservas;
         this.modeloCliente = modeloCliente;
         this.modeloEncabe = modeloEncabe;
         this.modeloDetalle = modeloDetalle;
+        this.vistaCliente = vistaCliente;
         vistaReservas.setVisible(true); 
         mostrarParq(1);
     }
@@ -50,6 +56,8 @@ public class controladorAsignarReserva {
         cargarCliente();
         vistaReservas.getRdOpcionSi().addActionListener(l -> mostrarParq(2));
         vistaReservas.getRdOpcionNo().addActionListener(l -> mostrarParq(1));
+        vistaReservas.getBtnReservar().addActionListener(l->ingresarReserva());
+        vistaReservas.getBtnCancelar().addActionListener(l->cerrar());
         calcularDia();
     }
     
@@ -222,14 +230,38 @@ public class controladorAsignarReserva {
     
     public void cambiarEstado(){
         modeloHabitaciones modeloH = new modeloHabitaciones();
-        modeloH.setEstado(0);
+        modeloH.setEstado("Ocupado");
         modeloH.setNro_Habitacion(Integer.parseInt(vistaReservas.getCbHabitacion().getSelectedItem().toString()));
-        if(modeloH.modificarHabitacionesBD()==true){
+        if(modeloH.modificarEstado()==true){
             System.out.println("ESTADO MODIFICADO");
         }else{
             System.out.println("ERROR AL MODIFICAR");
         }
                 
+    }
+    
+    public void cambiarEstadoParq(){
+        modeloParqueadero modeloP = new modeloParqueadero();
+        modeloP.setEstado("Ocupado");
+        modeloP.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedItem()));
+        if(modeloP.modificarEstado()==true){
+            System.out.println("ESTADO MODIFICADO");
+        }else{
+            System.out.println("ERROR AL MODIFICAR");
+        }
+                
+    }
+    
+   
+    private void cerrar() {
+
+        try {
+            vistaReservas.setClosed(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(controladorAsignarReserva.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+
     }
  
     public void mostrarParq(int bandera){

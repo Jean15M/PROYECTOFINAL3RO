@@ -58,12 +58,12 @@ public class controlador_PanelControlHP {
 
             if (vistaPanel.getCb_habitacion().getSelectedItem().equals("Disponibles")) {
                 modeloH.modificar = true;
-                modeloH.setEstado(1);
+                modeloH.setEstado("Disponible");
                 habitaciones();
 
             } else {
                 modeloH.modificar = true;
-                modeloH.setEstado(0);
+                modeloH.setEstado("Ocupado");
                 habitaciones();
             }
 

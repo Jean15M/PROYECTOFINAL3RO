@@ -67,7 +67,7 @@ public class controladorRegistroHabitaciones {
                 hab.setNro_Habitacion(Integer.parseInt(vistahabi.getTxtNumero().getText()));
                 hab.setNro_Piso(Integer.parseInt(vistahabi.getTxtPiso().getText()));
                 hab.setPrecio_Habitacion(Double.parseDouble(vistahabi.getTxtPrecio().getText()));
-                hab.setEstado(1);
+                hab.setEstado("Disponible");
                 if (hab.grabarHabitaciones() == true) {
                     JOptionPane.showMessageDialog(null, "HABITACION GUARDADA CORRECTAMENTE");
                 } else {

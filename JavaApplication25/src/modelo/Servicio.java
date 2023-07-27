@@ -15,15 +15,17 @@ public class Servicio {
     private String descp_Servicio;
     private String id_Habitacion;
     private String id_tipo_servicio;
+    private String estado;
 
     public Servicio() {
     }
 
-    public Servicio(String id_Servicio, String descp_Servicio, String id_Habitacion, String id_tipo_servicio) {
+    public Servicio(String id_Servicio, String descp_Servicio, String id_Habitacion, String id_tipo_servicio, String estado) {
         this.id_Servicio = id_Servicio;
         this.descp_Servicio = descp_Servicio;
         this.id_Habitacion = id_Habitacion;
         this.id_tipo_servicio = id_tipo_servicio;
+        this.estado = estado;
     }
 
     public String getId_Servicio() {
@@ -58,9 +60,17 @@ public class Servicio {
         this.id_tipo_servicio = id_tipo_servicio;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     @Override
     public String toString() {
-        return "Servicio{" + "id_Servicio=" + id_Servicio + ", descp_Servicio=" + descp_Servicio + ", id_Habitacion=" + id_Habitacion + ", id_tipo_servicio=" + id_tipo_servicio + '}';
+        return "Servicio{" + "id_Servicio=" + id_Servicio + ", descp_Servicio=" + descp_Servicio + ", id_Habitacion=" + id_Habitacion + ", id_tipo_servicio=" + id_tipo_servicio + ", estado=" + estado + '}';
     }
 
 }
