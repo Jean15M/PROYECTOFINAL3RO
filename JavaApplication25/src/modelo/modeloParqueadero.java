@@ -61,8 +61,8 @@ public class modeloParqueadero extends Parqueadero {
     }
 
     public String Consultar() {
-        String sql = "select id_parqueadero,placa,tiempo,ubicacion from parqueadero";
-        sql += "where placa='" + getPlaca()+"'";
+        String sql = "select * from parqueadero";
+        sql += " where placa='" + getPlaca()+"'";
         return sql;
 
     }

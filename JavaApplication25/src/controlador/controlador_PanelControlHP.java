@@ -28,7 +28,7 @@ import vista.vistaPanelControlPrincipal;
 public class controlador_PanelControlHP {
 
     DefaultTableModel mTabla;
-     DefaultTableModel mTabla1;
+    DefaultTableModel mTabla1;
     private modelo.modeloHabitaciones modeloH;
     private modelo.modeloParqueadero modeloP;
     private vista.vistaPanelControl vistaPanel;
@@ -72,31 +72,27 @@ public class controlador_PanelControlHP {
     }
 
     private void llenarPaqueaderos() {
-
+        boolean mensaje = false;
         if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Seleccionar")) {
             JOptionPane.showMessageDialog(null, "SELECCIONE UNA OPCION PORFAVOR");
 
         } else {
-            boolean mensaje = false;
-            for (int i = 0; i < modeloP.listarParqueadero().size(); i++) {
-                if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Ocupado")) {
-                    if (!modeloP.listarParqueadero().get(i).getPlaca().equals(null)) {
-                        mensaje = true;
-                        parqueadero();
-                    }
-                } else if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Disponibles")) {
-                    if (modeloP.listarParqueadero().get(i).getPlaca().equals("")) {
-                        parqueadero();
-                        mensaje = true;
-                    }
-                }
-            }
-            if (mensaje == false) {
-                    mTabla1.setNumRows(0);
-                JOptionPane.showMessageDialog(null, "NO SE ENCONTRO RESULTADOS");
-            }
 
+            if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Ocupado")) {
+                modeloP.setPlaca("");
+                modeloP.modificar = true;
+                
+                parqueadero();
+
+            } else if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Disponibles")) {
+                modeloP.setPlaca(null);
+                modeloP.modificar = true;
+                parqueadero();
+               
+
+            }
         }
+      
 
     }
 
