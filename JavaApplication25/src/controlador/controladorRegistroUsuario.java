@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Validaciones;
 import modelo.modeloCantones;
@@ -35,6 +36,7 @@ public class controladorRegistroUsuario {
     }
 
     public void iniciarControlador() {
+         vistaUsuario.setExtendedState(JFrame.MAXIMIZED_BOTH);
         cargarProvincias();
         vistaUsuario.getBtnAceptar().addActionListener(l -> registrarUsuario());
         vistaUsuario.getBtnCancelar().addActionListener(l -> regresar());
