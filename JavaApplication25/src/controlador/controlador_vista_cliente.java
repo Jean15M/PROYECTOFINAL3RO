@@ -33,6 +33,7 @@ public class controlador_vista_cliente {
         ventaCliente.getBtnPerfil().addActionListener(l -> abrirDialogo());
         ventaCliente.getBtnModificar().addActionListener(l -> llamarPanleModificar());
         ventaCliente.getBtnVerDatos().addActionListener(l -> verDatos());
+        ventaCliente.getBtnCerrarSesión().addActionListener(l->cerrarSesion());
     }
 
     private void llamarReserva() {
@@ -118,5 +119,12 @@ public class controlador_vista_cliente {
         cliente_ventana cliente1 = new cliente_ventana();
         controladorVistaServicios inicio = new controladorVistaServicios(vista1, nuevo1);
         inicio.iniciarControlador();
+    }
+    
+    public void cerrarSesion(){
+        Pantalla_Principal vistaPrincipal = new Pantalla_Principal();
+        controladorPrincipal inicio = new controladorPrincipal(vistaPrincipal);
+        inicio.iniciarControlador();
+        ventaCliente.dispose();
     }
 }

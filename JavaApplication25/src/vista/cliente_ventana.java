@@ -48,7 +48,7 @@ public class cliente_ventana extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         rSLabelImage1 = new necesario.RSLabelImage();
-        buttonPopup1 = new org.edisoncor.gui.button.ButtonPopup();
+        btnCerrarSesión = new org.edisoncor.gui.button.ButtonPopup();
         btnPerfil = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -152,9 +152,9 @@ public class cliente_ventana extends javax.swing.JFrame {
 
         rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/logo2.png"))); // NOI18N
 
-        buttonPopup1.setBorder(null);
-        buttonPopup1.setText("Cerrar Sesión");
-        buttonPopup1.setContentAreaFilled(false);
+        btnCerrarSesión.setBorder(null);
+        btnCerrarSesión.setText("Cerrar Sesión");
+        btnCerrarSesión.setContentAreaFilled(false);
 
         btnPerfil.setBackground(new java.awt.Color(255, 255, 255));
         btnPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/icons8-usuario-25.png"))); // NOI18N
@@ -162,7 +162,7 @@ public class cliente_ventana extends javax.swing.JFrame {
         btnPerfil.setFocusPainted(false);
 
         jDesktopPane1.setLayer(rSLabelImage1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(buttonPopup1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnCerrarSesión, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnPerfil, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
@@ -175,7 +175,7 @@ public class cliente_ventana extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(buttonPopup1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCerrarSesión, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,7 +185,7 @@ public class cliente_ventana extends javax.swing.JFrame {
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonPopup1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCerrarSesión, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -471,11 +471,11 @@ public class cliente_ventana extends javax.swing.JFrame {
     }
 
     public ButtonPopup getButtonPopup1() {
-        return buttonPopup1;
+        return btnCerrarSesión;
     }
 
     public void setButtonPopup1(ButtonPopup buttonPopup1) {
-        this.buttonPopup1 = buttonPopup1;
+        this.btnCerrarSesión = buttonPopup1;
     }
 
     public JDialog getjDialogDatos() {
@@ -486,14 +486,24 @@ public class cliente_ventana extends javax.swing.JFrame {
         this.jDialogDatos = jDialogDatos;
     }
 
+    public ButtonPopup getBtnCerrarSesión() {
+        return btnCerrarSesión;
+    }
+
+    public void setBtnCerrarSesión(ButtonPopup btnCerrarSesión) {
+        this.btnCerrarSesión = btnCerrarSesión;
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.edisoncor.gui.button.ButtonPopup btnCerrarSesión;
     private javax.swing.JButton btnInicioRe;
     private org.edisoncor.gui.button.ButtonNice btnModificar;
     private javax.swing.JButton btnPerfil;
     private javax.swing.JButton btnReservarRe;
     private javax.swing.JButton btnServiciosRe;
     private org.edisoncor.gui.button.ButtonNice btnVerDatos;
-    private org.edisoncor.gui.button.ButtonPopup buttonPopup1;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDialog jDialogDatos;
     private javax.swing.JLabel jLabel1;
