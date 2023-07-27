@@ -31,6 +31,7 @@ public class controlador_vista_cliente {
         System.out.println("hola: " + Controlador_Login.usuario);
         ventaCliente.getBtnPerfil().addActionListener(l -> abrirDialogo());
         ventaCliente.getBtnModificar().addActionListener(l -> llamarPanleModificar());
+        ventaCliente.getBtnVerDatos().addActionListener(l -> verDatos());
     }
 
     private void llamarReserva() {
