@@ -29,17 +29,9 @@ public class controladorPrincipal {
     public void iniciarControlador() {
         vistaPrincipal.setExtendedState(JFrame.MAXIMIZED_BOTH);
         vistaPrincipal.getBtnReservarRe().addActionListener(l -> llamarReserva());
-        vistaPrincipal.getBtnServiciosRe().addActionListener(l -> registroRecepcionista());
+        vistaPrincipal.getBtnServiciosRe().addActionListener(l -> llamarServicio());
         vistaPrincipal.getBtniniciose().addActionListener(l -> Login());
         vistaPrincipal.getBtnregistro().addActionListener(l -> registroUsuario());
-    }
-
-    private void registroAdmin() {
-        modeloAdministrador nuevo = new modeloAdministrador();
-        vistaRegistroAdmin nuevo1 = new vistaRegistroAdmin();
-        controladorRegistroAdmin inicio = new controladorRegistroAdmin(nuevo1, nuevo);
-        vistaPrincipal.dispose();
-        inicio.controlador();
     }
 
     private void registroUsuario() {
@@ -50,13 +42,7 @@ public class controladorPrincipal {
         inicio.iniciarControlador();
     }
 
-    private void registroRecepcionista() {
-        modeloRecepcionista modeloR = new modeloRecepcionista();
-        vistaRegistroRecepcionista vistaR = new vistaRegistroRecepcionista();
-        controladorRegistroRecepcionista inicio2 = new controladorRegistroRecepcionista(vistaR, modeloR);
-        vistaPrincipal.dispose();
-        inicio2.iniciarControlador();
-    }
+ 
 
     private void Login() {
         modeloRecepcionista modeloL = new modeloRecepcionista();
@@ -82,6 +68,20 @@ public class controladorPrincipal {
         controladorVistaReservas inicio = new controladorVistaReservas(vista1, nuevo1,vistaPrincipal,cliente1);
         inicio.iniciarControlador();
       
+    }
+    
+    public void llamarServicio(){
+          vistaServicios vista1 = new vistaServicios();
+        vistaPrincipal.getPaginaPrincipal().add(vista1);
+        vista1.setTitle("PANTALLA_PRINCIPAL");
+        vista1.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
+        bui.setNorthPane(null);
+        vista1.setSize(vistaPrincipal.getPaginaPrincipal().getWidth(), vistaPrincipal.getPaginaPrincipal().getHeight());
+        modeloTipoServicio nuevo1 = new modeloTipoServicio();
+        cliente_ventana  cliente1=new cliente_ventana();
+        controladorVistaServicios inicio = new controladorVistaServicios(vista1, nuevo1);
+        inicio.iniciarControlador();
     }
      public void abrir(){
          vistaPrincipal.setVisible(true);
