@@ -98,7 +98,7 @@ public class controladorAsignarReserva {
             
             if(vistaReservas.getRdOpcionSi().isSelected()){
                 if(vistaReservas.getCbParque().getSelectedIndex()!=0 || !vistaReservas.getTxtDias().getText().isEmpty()|| !vistaReservas.getTxtPlaca().getText().isEmpty() || !vistaReservas.getTxtMarca().getText().isEmpty() || !vistaReservas.getTxtModelo().getText().isEmpty()){
-                    res.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedIndex()));
+                    res.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedItem()));
                     guardarParqueadero();
                 }else{
                     JOptionPane.showMessageDialog(null, "LLENE LOS CAMPOS POR FAVOR");
@@ -139,14 +139,12 @@ public class controladorAsignarReserva {
     public void guardarParqueadero(){
         modeloParqueadero modeloP = new modeloParqueadero();
         modeloAutos modeloA = new modeloAutos();
-        modeloP.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedItem()));
-        modeloP.setTiempo(Integer.parseInt(vistaReservas.getTxtDias().getText()));
         modeloP.setPlaca(vistaReservas.getTxtPlaca().getText());
-        modeloP.setUbicacion(String.valueOf(vistaReservas.getCbUbicacion().getSelectedItem()));
+        modeloP.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedItem()));
         modeloA.setMarca(vistaReservas.getTxtMarca().getText());
         modeloA.setModelo(vistaReservas.getTxtMarca().getText());
         modeloA.setPlaca(vistaReservas.getTxtPlaca().getText());
-        if(modeloP.grabarParqueadero()==true){
+        if(modeloP.modificarParqueaderoBD()==true){
             if(modeloA.grabarAutos()){
                 System.out.println("GUARDADO");
             }

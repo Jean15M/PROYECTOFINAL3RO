@@ -124,9 +124,10 @@ public class modeloServicio extends Servicio {
     }
     
     public List<Servicio> filtrarServicios(){
+       
         List<Servicio> listaBuscar = new ArrayList<Servicio>();
         String sql;
-        sql = "select * from servicios where descripcion='" + super.getDescp_Servicio()+ "'";
+        sql = "select * from servicios where estado='" + super.getDescp_Servicio()+ "'";
         ResultSet rs = cpg.resultBD(sql);
         Servicio ser = new Servicio();
         try {
