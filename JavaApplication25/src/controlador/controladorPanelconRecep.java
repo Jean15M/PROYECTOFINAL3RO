@@ -9,11 +9,15 @@ import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import modelo.modeloCliente;
+import modelo.modeloDetalle_fac;
+import modelo.modeloEncabez_fac;
 import modelo.modeloHabitaciones;
 import modelo.modeloParqueadero;
 import vista.PanelControlRecepcionista;
 import vista.vistaPanelControl;
 import vista.vistaPanelControlPrincipal;
+import vista.vistaReservarecep;
 
 /**
  *
@@ -21,7 +25,7 @@ import vista.vistaPanelControlPrincipal;
  */
 public class controladorPanelconRecep {
 
-    private vistaPanelControlPrincipal vistaRecepcionista;
+    private vistaPanelControlPrincipal vistaRecepcionista;   
     private PanelControlRecepcionista vistapanel;
 
     public controladorPanelconRecep(vistaPanelControlPrincipal vistaRecepcionista, PanelControlRecepcionista vistapanel) {
@@ -35,10 +39,10 @@ public class controladorPanelconRecep {
         System.out.println("hola: " + Controlador_Login.usuario);
         vistaRecepcionista.getBtnInicioRe().addActionListener(l -> cerrar());
         vistapanel.getBtHabitaciones().addActionListener(l -> llamarPanelHp());
+        vistapanel.getBtReservas().addActionListener(l -> llamarpa());
     }
 
     private void cerrar() {
-
         try {
             vistapanel.setClosed(true);
         } catch (PropertyVetoException ex) {
@@ -60,6 +64,21 @@ public class controladorPanelconRecep {
         ph.iniciarPanel_Control();
         vistapanel.dispose();
 
+    }
+
+    private void llamarpa() {
+        vistaReservarecep inicio = new vistaReservarecep();
+        modeloCliente modP = new modeloCliente();
+        modeloEncabez_fac modH = new modeloEncabez_fac();
+        modeloDetalle_fac deta = new modeloDetalle_fac();
+        vistaRecepcionista.getjDesktopPane1().add(inicio);
+        inicio.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) inicio.getUI();
+        bui.setNorthPane(null);
+        inicio.setSize(vistaRecepcionista.getjDesktopPane1().getWidth(), vistaRecepcionista.getjDesktopPane1().getHeight());
+        controlador_Recep_Reserva ph = new controlador_Recep_Reserva(inicio,modP, modH,deta);
+        ph.iniciarControlador();
+        vistapanel.dispose();
     }
 
 }

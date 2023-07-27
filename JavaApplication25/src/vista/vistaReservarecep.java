@@ -6,6 +6,7 @@
 package vista;
 
 import com.toedter.calendar.JDateChooser;
+import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -23,6 +24,230 @@ public class vistaReservarecep extends javax.swing.JInternalFrame {
      */
     public vistaReservarecep() {
         initComponents();
+    }
+
+    public ButtonRound getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public void setBtnCancelar(ButtonRound btnCancelar) {
+        this.btnCancelar = btnCancelar;
+    }
+
+    public ButtonRound getBtnReservar() {
+        return btnReservar;
+    }
+
+    public void setBtnReservar(ButtonRound btnReservar) {
+        this.btnReservar = btnReservar;
+    }
+
+    public ButtonGroup getButtonGroup1() {
+        return buttonGroup1;
+    }
+
+    public void setButtonGroup1(ButtonGroup buttonGroup1) {
+        this.buttonGroup1 = buttonGroup1;
+    }
+
+    public JComboBox<String> getCbPago() {
+        return cbPago;
+    }
+
+    public void setCbPago(JComboBox<String> cbPago) {
+        this.cbPago = cbPago;
+    }
+
+    public JComboBox<String> getCbParque() {
+        return cbParque;
+    }
+
+    public void setCbParque(JComboBox<String> cbParque) {
+        this.cbParque = cbParque;
+    }
+
+    public JComboBox<String> getCbPersonas() {
+        return cbPersonas;
+    }
+
+    public void setCbPersonas(JComboBox<String> cbPersonas) {
+        this.cbPersonas = cbPersonas;
+    }
+
+    public JComboBox<String> getCbUbicacion() {
+        return cbUbicacion;
+    }
+
+    public void setCbUbicacion(JComboBox<String> cbUbicacion) {
+        this.cbUbicacion = cbUbicacion;
+    }
+
+    public JComboBox<String> getCombocategoria() {
+        return combocategoria;
+    }
+
+    public void setCombocategoria(JComboBox<String> combocategoria) {
+        this.combocategoria = combocategoria;
+    }
+
+    public JComboBox<String> getCombohabitacion() {
+        return combohabitacion;
+    }
+
+    public void setCombohabitacion(JComboBox<String> combohabitacion) {
+        this.combohabitacion = combohabitacion;
+    }
+
+    public JDateChooser getjCalendarioFin() {
+        return jCalendarioFin;
+    }
+
+    public void setjCalendarioFin(JDateChooser jCalendarioFin) {
+        this.jCalendarioFin = jCalendarioFin;
+    }
+
+    public JDateChooser getjCalendarioIni() {
+        return jCalendarioIni;
+    }
+
+    public void setjCalendarioIni(JDateChooser jCalendarioIni) {
+        this.jCalendarioIni = jCalendarioIni;
+    }
+
+    public JTextField getTxtDias() {
+        return txtDias;
+    }
+
+    public void setTxtDias(JTextField txtDias) {
+        this.txtDias = txtDias;
+    }
+
+    public JTextField getTxtMarca() {
+        return txtMarca;
+    }
+
+    public void setTxtMarca(JTextField txtMarca) {
+        this.txtMarca = txtMarca;
+    }
+
+    public JTextField getTxtModelo() {
+        return txtModelo;
+    }
+
+    public void setTxtModelo(JTextField txtModelo) {
+        this.txtModelo = txtModelo;
+    }
+
+    public JTextField getTxtPlaca() {
+        return txtPlaca;
+    }
+
+    public void setTxtPlaca(JTextField txtPlaca) {
+        this.txtPlaca = txtPlaca;
+    }
+
+    public JTextField getTxtPrecio() {
+        return txtPrecio;
+    }
+
+    public void setTxtPrecio(JTextField txtPrecio) {
+        this.txtPrecio = txtPrecio;
+    }
+
+    public JTextField getTxtPrecioHabi() {
+        return txtPrecioHabi;
+    }
+
+    public void setTxtPrecioHabi(JTextField txtPrecioHabi) {
+        this.txtPrecioHabi = txtPrecioHabi;
+    }
+
+    public JTextField getTxtReserva() {
+        return txtReserva;
+    }
+
+    public void setTxtReserva(JTextField txtReserva) {
+        this.txtReserva = txtReserva;
+    }
+
+    public JLabel getLblApellido() {
+        return lblApellido;
+    }
+
+    public void setLblApellido(JLabel lblApellido) {
+        this.lblApellido = lblApellido;
+    }
+
+    public JLabel getLblCliente() {
+        return lblCliente;
+    }
+
+    public void setLblCliente(JLabel lblCliente) {
+        this.lblCliente = lblCliente;
+    }
+
+    public JLabel getLblMarca() {
+        return lblMarca;
+    }
+
+    public void setLblMarca(JLabel lblMarca) {
+        this.lblMarca = lblMarca;
+    }
+
+    public JLabel getLblModelo() {
+        return lblModelo;
+    }
+
+    public void setLblModelo(JLabel lblModelo) {
+        this.lblModelo = lblModelo;
+    }
+
+    public JLabel getLblNombre() {
+        return lblNombre;
+    }
+
+    public void setLblNombre(JLabel lblNombre) {
+        this.lblNombre = lblNombre;
+    }
+
+    public JLabel getLblParque() {
+        return lblParque;
+    }
+
+    public void setLblParque(JLabel lblParque) {
+        this.lblParque = lblParque;
+    }
+
+    public JLabel getLblPlaca() {
+        return lblPlaca;
+    }
+
+    public void setLblPlaca(JLabel lblPlaca) {
+        this.lblPlaca = lblPlaca;
+    }
+
+    public JLabel getLblUbi() {
+        return lblUbi;
+    }
+
+    public void setLblUbi(JLabel lblUbi) {
+        this.lblUbi = lblUbi;
+    }
+
+    public JRadioButton getRdOpcionNo() {
+        return rdOpcionNo;
+    }
+
+    public void setRdOpcionNo(JRadioButton rdOpcionNo) {
+        this.rdOpcionNo = rdOpcionNo;
+    }
+
+    public JRadioButton getRdOpcionSi() {
+        return rdOpcionSi;
+    }
+
+    public void setRdOpcionSi(JRadioButton rdOpcionSi) {
+        this.rdOpcionSi = rdOpcionSi;
     }
 
    
@@ -58,7 +283,7 @@ public class vistaReservarecep extends javax.swing.JInternalFrame {
         jLabel15 = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblApellido = new javax.swing.JLabel();
-        cbHabitacion = new javax.swing.JComboBox<>();
+        combohabitacion = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         txtPrecioHabi = new javax.swing.JTextField();
@@ -76,7 +301,7 @@ public class vistaReservarecep extends javax.swing.JInternalFrame {
         txtMarca = new javax.swing.JTextField();
         lblCliente = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        cbHabitacion1 = new javax.swing.JComboBox<>();
+        combocategoria = new javax.swing.JComboBox<>();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -86,7 +311,7 @@ public class vistaReservarecep extends javax.swing.JInternalFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -175,10 +400,10 @@ public class vistaReservarecep extends javax.swing.JInternalFrame {
         lblApellido.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblApellido.setText("-");
 
-        cbHabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
-        cbHabitacion.addActionListener(new java.awt.event.ActionListener() {
+        combohabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        combohabitacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbHabitacionActionPerformed(evt);
+                combohabitacionActionPerformed(evt);
             }
         });
 
@@ -241,10 +466,10 @@ public class vistaReservarecep extends javax.swing.JInternalFrame {
         jLabel18.setForeground(new java.awt.Color(35, 149, 156));
         jLabel18.setText("Categoria");
 
-        cbHabitacion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
-        cbHabitacion1.addActionListener(new java.awt.event.ActionListener() {
+        combocategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        combocategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbHabitacion1ActionPerformed(evt);
+                combocategoriaActionPerformed(evt);
             }
         });
 
@@ -259,100 +484,113 @@ public class vistaReservarecep extends javax.swing.JInternalFrame {
                 .addGap(581, 581, 581)
                 .addComponent(jLabel13))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel1))
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel7)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel8))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel18)))
-                .addGap(16, 16, 16)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbHabitacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCalendarioIni, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCalendarioFin, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(49, 49, 49)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addGap(10, 10, 10)
-                        .addComponent(lblCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(10, 10, 10)
-                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addGap(6, 6, 6)
-                        .addComponent(lblApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addGap(18, 18, 18)
-                        .addComponent(rdOpcionSi)
-                        .addGap(2, 2, 2)
-                        .addComponent(rdOpcionNo))))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLabel16)
-                .addGap(12, 12, 12)
-                .addComponent(cbHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(113, 113, 113)
-                .addComponent(lblParque)
-                .addGap(4, 4, 4)
-                .addComponent(cbParque, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(16, 16, 16)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDias, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(103, 103, 103)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblUbi)
-                    .addComponent(lblPlaca))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cbPago, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111)
-                .addComponent(lblModelo)
-                .addGap(44, 44, 44)
-                .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jLabel9)
-                .addGap(17, 17, 17)
-                .addComponent(txtPrecioHabi, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(103, 103, 103)
-                .addComponent(lblMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(349, 349, 349)
                 .addComponent(btnReservar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(108, 108, 108)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel1))
+                            .addComponent(jLabel3)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel7))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(jLabel8))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel18)))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(combocategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jCalendarioIni, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jCalendarioFin, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel16)
+                        .addGap(12, 12, 12)
+                        .addComponent(combohabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(153, 153, 153)
+                                .addComponent(jLabel5))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel4)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDias, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(jLabel6)
+                        .addGap(12, 12, 12)
+                        .addComponent(cbPago, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel9)
+                        .addGap(17, 17, 17)
+                        .addComponent(txtPrecioHabi, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(41, 41, 41)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(10, 10, 10)
+                                .addComponent(lblCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(10, 10, 10)
+                                .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(6, 6, 6)
+                                .addComponent(lblApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addGap(18, 18, 18)
+                                .addComponent(rdOpcionSi)
+                                .addGap(2, 2, 2)
+                                .addComponent(rdOpcionNo))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(lblParque)
+                        .addGap(4, 4, 4)
+                        .addComponent(cbParque, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblUbi)
+                            .addComponent(lblPlaca))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(lblModelo)
+                        .addGap(44, 44, 44)
+                        .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(lblMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,101 +600,107 @@ public class vistaReservarecep extends javax.swing.JInternalFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jLabel13)
                 .addGap(20, 20, 20)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel3)
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel7)
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel8)
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel18))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(txtReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jCalendarioIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(jCalendarioFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(cbHabitacion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(lblCliente))
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
-                            .addComponent(lblNombre))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addComponent(lblApellido))
-                        .addGap(16, 16, 16)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel3)
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel7)
+                                .addGap(25, 25, 25)
+                                .addComponent(jLabel8)
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel18))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(2, 2, 2)
-                                .addComponent(jLabel17))
-                            .addComponent(rdOpcionSi)
-                            .addComponent(rdOpcionNo))))
-                .addGap(2, 2, 2)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
-                    .addComponent(cbHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(lblParque))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(cbParque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(7, 7, 7)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel5))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txtDias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lblUbi)
-                        .addGap(9, 9, 9)
-                        .addComponent(lblPlaca))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(cbUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11)
-                        .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblModelo)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(txtReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(jCalendarioIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jCalendarioFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(combocategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(lblCliente))
+                                .addGap(22, 22, 22)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel14)
+                                    .addComponent(lblNombre))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(lblApellido))
+                                .addGap(16, 16, 16)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(jLabel17))
+                                    .addComponent(rdOpcionSi)
+                                    .addComponent(rdOpcionNo))))
                         .addGap(2, 2, 2)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(cbPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16)
+                            .addComponent(combohabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addComponent(lblParque))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(cbParque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(lblUbi)
+                                        .addGap(9, 9, 9)
+                                        .addComponent(lblPlaca))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(cbUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(11, 11, 11)
+                                        .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtDias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
+                                .addGap(11, 11, 11)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(13, 13, 13)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
                                 .addComponent(jLabel6))
-                            .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(5, 5, 5)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel9))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(txtPrecioHabi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblMarca)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(cbPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblModelo)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel9))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(txtPrecioHabi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblMarca)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jSeparator1))
                 .addGap(42, 42, 42)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnReservar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -482,241 +726,28 @@ public class vistaReservarecep extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbHabitacionActionPerformed
+    private void combohabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combohabitacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbHabitacionActionPerformed
+    }//GEN-LAST:event_combohabitacionActionPerformed
 
-    private void cbHabitacion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbHabitacion1ActionPerformed
+    private void combocategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combocategoriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbHabitacion1ActionPerformed
+    }//GEN-LAST:event_combocategoriaActionPerformed
 
     private void txtDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDiasActionPerformed
-    
-    public ButtonRound getBtnCancelar() {
-        return btnCancelar;
-    }
-
-    public void setBtnCancelar(ButtonRound btnCancelar) {
-        this.btnCancelar = btnCancelar;
-    }
-
-    public ButtonRound getBtnReservar() {
-        return btnReservar;
-    }
-
-    public void setBtnReservar(ButtonRound btnReservar) {
-        this.btnReservar = btnReservar;
-    }
-
-    public JComboBox<String> getCbPago() {
-        return cbPago;
-    }
-
-    public void setCbPago(JComboBox<String> cbPago) {
-        this.cbPago = cbPago;
-    }
-
-    public JComboBox<String> getCbParque() {
-        return cbParque;
-    }
-
-    public void setCbParque(JComboBox<String> cbParque) {
-        this.cbParque = cbParque;
-    }
-
-    public JComboBox<String> getCbPersonas() {
-        return cbPersonas;
-    }
-
-    public void setCbPersonas(JComboBox<String> cbPersonas) {
-        this.cbPersonas = cbPersonas;
-    }
-
-    public JDateChooser getjCalendarioFin() {
-        return jCalendarioFin;
-    }
-
-    public void setjCalendarioFin(JDateChooser jCalendarioFin) {
-        this.jCalendarioFin = jCalendarioFin;
-    }
-
-    public JDateChooser getjCalendarioIni() {
-        return jCalendarioIni;
-    }
-
-    public void setjCalendarioIni(JDateChooser jCalendarioIni) {
-        this.jCalendarioIni = jCalendarioIni;
-    }
-
-    public JTextField getTxtDias() {
-        return txtDias;
-    }
-
-    public void setTxtDias(JTextField txtDias) {
-        this.txtDias = txtDias;
-    }
-
-    public JTextField getTxtPrecio() {
-        return txtPrecio;
-    }
-
-    public void setTxtPrecio(JTextField txtPrecio) {
-        this.txtPrecio = txtPrecio;
-    }
-
-    public JTextField getTxtReserva() {
-        return txtReserva;
-    }
-
-    public void setTxtReserva(JTextField txtReserva) {
-        this.txtReserva = txtReserva;
-    }
-
-    public JLabel getLblApellido() {
-        return lblApellido;
-    }
-
-    public void setLblApellido(JLabel lblApellido) {
-        this.lblApellido = lblApellido;
-    }
-
-    public JLabel getLblNombre() {
-        return lblNombre;
-    }
-
-    public void setLblNombre(JLabel lblNombre) {
-        this.lblNombre = lblNombre;
-    }
-
-    public JLabel getLblCliente() {
-        return lblCliente;
-    }
-
-    public void setLblCliente(JLabel lblCliente) {
-        this.lblCliente = lblCliente;
-    }
-
-    public JComboBox<String> getCbHabitacion() {
-        return cbHabitacion;
-    }
-
-    public void setCbHabitacion(JComboBox<String> cbHabitacion) {
-        this.cbHabitacion = cbHabitacion;
-    }
-
-    public JTextField getTxtPrecioHabi() {
-        return txtPrecioHabi;
-    }
-
-    public void setTxtPrecioHabi(JTextField txtPrecioHabi) {
-        this.txtPrecioHabi = txtPrecioHabi;
-    }
-
-    public JComboBox<String> getCbUbicacion() {
-        return cbUbicacion;
-    }
-
-    public void setCbUbicacion(JComboBox<String> cbUbicacion) {
-        this.cbUbicacion = cbUbicacion;
-    }
-
-    public JLabel getLblMarca() {
-        return lblMarca;
-    }
-
-    public void setLblMarca(JLabel lblMarca) {
-        this.lblMarca = lblMarca;
-    }
-
-    public JLabel getLblModelo() {
-        return lblModelo;
-    }
-
-    public void setLblModelo(JLabel lblModelo) {
-        this.lblModelo = lblModelo;
-    }
-
-    public JLabel getLblParque() {
-        return lblParque;
-    }
-
-    public void setLblParque(JLabel lblParque) {
-        this.lblParque = lblParque;
-    }
-
-    public JLabel getLblPlaca() {
-        return lblPlaca;
-    }
-
-    public void setLblPlaca(JLabel lblPlaca) {
-        this.lblPlaca = lblPlaca;
-    }
-
-    public JLabel getLblUbi() {
-        return lblUbi;
-    }
-
-    public void setLblUbi(JLabel lblUbi) {
-        this.lblUbi = lblUbi;
-    }
-
-    public JRadioButton getRdOpcionNo() {
-        return rdOpcionNo;
-    }
-
-    public void setRdOpcionNo(JRadioButton rdOpcionNo) {
-        this.rdOpcionNo = rdOpcionNo;
-    }
-
-    public JRadioButton getRdOpcionSi() {
-        return rdOpcionSi;
-    }
-
-    public void setRdOpcionSi(JRadioButton rdOpcionSi) {
-        this.rdOpcionSi = rdOpcionSi;
-    }
-
-    public JTextField getTxtMarca() {
-        return txtMarca;
-    }
-
-    public void setTxtMarca(JTextField txtMarca) {
-        this.txtMarca = txtMarca;
-    }
-
-    public JTextField getTxtModelo() {
-        return txtModelo;
-    }
-
-    public void setTxtModelo(JTextField txtModelo) {
-        this.txtModelo = txtModelo;
-    }
-
-    public JTextField getTxtPlaca() {
-        return txtPlaca;
-    }
-
-    public void setTxtPlaca(JTextField txtPlaca) {
-        this.txtPlaca = txtPlaca;
-    }
-    
-    
-
-    
-    
-
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btnCancelar;
     private org.edisoncor.gui.button.ButtonRound btnReservar;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox<String> cbHabitacion;
-    private javax.swing.JComboBox<String> cbHabitacion1;
     private javax.swing.JComboBox<String> cbPago;
     private javax.swing.JComboBox<String> cbParque;
     private javax.swing.JComboBox<String> cbPersonas;
     private javax.swing.JComboBox<String> cbUbicacion;
+    private javax.swing.JComboBox<String> combocategoria;
+    private javax.swing.JComboBox<String> combohabitacion;
     private com.toedter.calendar.JDateChooser jCalendarioFin;
     private com.toedter.calendar.JDateChooser jCalendarioIni;
     private javax.swing.JLabel jLabel1;
