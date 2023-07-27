@@ -6,10 +6,13 @@ package vista;
 
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import necesario.RSLabelImage;
+import org.edisoncor.gui.button.ButtonNice;
+import org.edisoncor.gui.button.ButtonPopup;
 
 /**
  *
@@ -34,6 +37,9 @@ public class cliente_ventana extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollBar1 = new javax.swing.JScrollBar();
+        jDialogDatos = new javax.swing.JDialog();
+        btnVerDatos = new org.edisoncor.gui.button.ButtonNice();
+        btnModificar = new org.edisoncor.gui.button.ButtonNice();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnInicioRe = new javax.swing.JButton();
@@ -41,7 +47,7 @@ public class cliente_ventana extends javax.swing.JFrame {
         btnServiciosRe = new javax.swing.JButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         rSLabelImage1 = new necesario.RSLabelImage();
-        btnModificar = new javax.swing.JButton();
+        btnPerfil = new javax.swing.JButton();
         buttonPopup1 = new org.edisoncor.gui.button.ButtonPopup();
         jPanel5 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -54,6 +60,36 @@ public class cliente_ventana extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+
+        btnVerDatos.setText("VER MIS DATOS");
+
+        btnModificar.setText("MODIFICAR MIS DATOS");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialogDatosLayout = new javax.swing.GroupLayout(jDialogDatos.getContentPane());
+        jDialogDatos.getContentPane().setLayout(jDialogDatosLayout);
+        jDialogDatosLayout.setHorizontalGroup(
+            jDialogDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogDatosLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(jDialogDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVerDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+        jDialogDatosLayout.setVerticalGroup(
+            jDialogDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogDatosLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(btnVerDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,13 +144,13 @@ public class cliente_ventana extends javax.swing.JFrame {
 
         rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/logo2.png"))); // NOI18N
 
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/icons8-usuario-25.png"))); // NOI18N
-        btnModificar.setText("jButton1");
+        btnPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/icons8-usuario-25.png"))); // NOI18N
+        btnPerfil.setText("jButton1");
 
         buttonPopup1.setText("Cerrar Sesión");
 
         jDesktopPane1.setLayer(rSLabelImage1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnModificar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnPerfil, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(buttonPopup1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
@@ -127,7 +163,7 @@ public class cliente_ventana extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(buttonPopup1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnModificar)
+                        .addComponent(btnPerfil)
                         .addGap(16, 16, 16))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -137,10 +173,10 @@ public class cliente_ventana extends javax.swing.JFrame {
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnModificar)
+                    .addComponent(btnPerfil)
                     .addComponent(buttonPopup1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -215,7 +251,7 @@ public class cliente_ventana extends javax.swing.JFrame {
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addComponent(jLabel20)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel21)
@@ -276,6 +312,10 @@ public class cliente_ventana extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     public JButton getBtnInicioRe() {
         return btnInicioRe;
@@ -397,21 +437,56 @@ public class cliente_ventana extends javax.swing.JFrame {
         this.rSLabelImage1 = rSLabelImage1;
     }
 
-    public JButton getBtnModificar() {
+    public ButtonNice getBtnModificar() {
         return btnModificar;
     }
 
-    public void setBtnModificar(JButton btnModificar) {
+    public void setBtnModificar(ButtonNice btnModificar) {
         this.btnModificar = btnModificar;
+    }
+
+    public JButton getBtnPerfil() {
+        return btnPerfil;
+    }
+
+    public void setBtnPerfil(JButton btnPerfil) {
+        this.btnPerfil = btnPerfil;
+    }
+
+    public ButtonNice getBtnVerDatos() {
+        return btnVerDatos;
+    }
+
+    public void setBtnVerDatos(ButtonNice btnVerDatos) {
+        this.btnVerDatos = btnVerDatos;
+    }
+
+    public ButtonPopup getButtonPopup1() {
+        return buttonPopup1;
+    }
+
+    public void setButtonPopup1(ButtonPopup buttonPopup1) {
+        this.buttonPopup1 = buttonPopup1;
+    }
+
+    public JDialog getjDialogDatos() {
+        return jDialogDatos;
+    }
+
+    public void setjDialogDatos(JDialog jDialogDatos) {
+        this.jDialogDatos = jDialogDatos;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInicioRe;
-    private javax.swing.JButton btnModificar;
+    private org.edisoncor.gui.button.ButtonNice btnModificar;
+    private javax.swing.JButton btnPerfil;
     private javax.swing.JButton btnReservarRe;
     private javax.swing.JButton btnServiciosRe;
+    private org.edisoncor.gui.button.ButtonNice btnVerDatos;
     private org.edisoncor.gui.button.ButtonPopup buttonPopup1;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDialog jDialogDatos;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;

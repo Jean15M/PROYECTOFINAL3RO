@@ -6,6 +6,7 @@
 package controlador;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import modelo.*;
 import vista.*;
@@ -17,18 +18,18 @@ import vista.*;
 public class controlador_vista_cliente {
 
     private cliente_ventana ventaCliente;
-    //private 
-
+    
     public controlador_vista_cliente(cliente_ventana ventaCliente) {
         this.ventaCliente = ventaCliente;
         ventaCliente.setVisible(true);
     }
 
     public void iniciarControlador() {
-        ventaCliente.getBtnModificar().setText(Controlador_Login.usuario);
+        ventaCliente.getBtnPerfil().setText(Controlador_Login.usuario);
         ventaCliente.setExtendedState(JFrame.MAXIMIZED_BOTH);
         ventaCliente.getBtnReservarRe().addActionListener(l -> llamarReserva());
         System.out.println("hola: " + Controlador_Login.usuario);
+        ventaCliente.getBtnPerfil().addActionListener(l -> abrirDialogo());
         ventaCliente.getBtnModificar().addActionListener(l -> llamarPanleModificar());
     }
 
@@ -45,19 +46,10 @@ public class controlador_vista_cliente {
         controladorVistaReservas inicio = new controladorVistaReservas(vista1, nuevo1, inicio1, ventaCliente);
         inicio.iniciarControlador();
     }
-    
-
-    private void modificar() {
-        Panel_Mod_User vistaA = new Panel_Mod_User();
-        modeloCliente modelo = new modeloCliente();
-        controlador_Panel_Mod_Usuario inicio = new controlador_Panel_Mod_Usuario(modelo,vistaA);
-        ventaCliente.dispose();
-        inicio.iniciarControl();
-    }
 
      public void llamarPanleModificar(){
         modeloCliente modelo = new modeloCliente();
-        Panel_Mod_User vista = new Panel_Mod_User();
+        Panel_Modificar vista = new Panel_Modificar();
         ventaCliente.getjDesktopPane1().add(vista);
         vista.setBorder(null);
         BasicInternalFrameUI bui = (BasicInternalFrameUI) vista.getUI();
@@ -65,5 +57,50 @@ public class controlador_vista_cliente {
         vista.setSize(ventaCliente.getjDesktopPane1().getWidth(), ventaCliente.getjDesktopPane1().getHeight());
         controlador_Panel_Mod_Usuario controlador = new controlador_Panel_Mod_Usuario(modelo, vista);
         controlador.iniciarControl();
+    }
+     
+    public void abrirDialogo(){
+        ventaCliente.getjDialogDatos().setLocationRelativeTo(null);
+        ventaCliente.getjDialogDatos().setVisible(true);
+    }
+    
+    public void verDatos(){
+        modeloCliente modeloCliente = new modeloCliente();
+        Panel_Modificar vistaMod = new Panel_Modificar();
+        vistaMod.getTxtUsuario().setText(Controlador_Login.usuario);
+        modeloCliente.setUsuarioCliente(Controlador_Login.usuario);
+        ventaCliente.getjDesktopPane1().add(vistaMod);
+        vistaMod.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) vistaMod.getUI();
+        bui.setNorthPane(null);
+        vistaMod.setSize(ventaCliente.getjDesktopPane1().getWidth(), ventaCliente.getjDesktopPane1().getHeight());
+        controlador_Panel_Mod_Usuario controlador = new controlador_Panel_Mod_Usuario(modeloCliente, vistaMod);
+        controlador.iniciarControl();
+        vistaMod.getBtnModificar().setVisible(false);
+        vistaMod.getBtnCancelar().setText("Regresar");
+        if(modeloCliente.cargarCliente1().isEmpty()){
+          JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
+        }else{
+           modeloCliente.cargarCliente1().stream().forEach((p)->{
+           vistaMod.getTxtcedula().setText(p.getCedulaPersona());
+           vistaMod.getTxtcedula().setEnabled(false);           
+           vistaMod.getTxtnom1().setText(p.getNombrePersona());
+           vistaMod.getTxtnom1().setEditable(false);
+           vistaMod.getTxtnom2().setText(p.getNombrePersona1());
+           vistaMod.getTxtnom2().setEditable(false);
+           vistaMod.getTxtape1().setText(p.getApellidoPersona());
+           vistaMod.getTxtape1().setEditable(false);
+           vistaMod.getTxtape2().setText(p.getApellidoPersona1());
+           vistaMod.getTxtape2().setEditable(false);
+           vistaMod.getTxttelefono().setText(p.getTelefonoPersona());
+           vistaMod.getTxttelefono().setEditable(false);
+           vistaMod.getTxtdireccion().setText(p.getDireccionPersona());
+           vistaMod.getTxtdireccion().setEditable(false);
+           vistaMod.getTxtcorreo().setText(p.getCorreoPersona());
+           vistaMod.getTxtcorreo().setEditable(false);
+           vistaMod.getTxtcontrasena().setText(p.getContraCliente());
+           vistaMod.getTxtcontrasena().setEditable(false);
+           });
+        }
     }
 }

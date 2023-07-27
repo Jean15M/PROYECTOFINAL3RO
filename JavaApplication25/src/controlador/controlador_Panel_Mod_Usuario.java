@@ -10,9 +10,9 @@ import vista.*;
 public class controlador_Panel_Mod_Usuario {
     
     private modeloCliente modeloCliente;
-    private Panel_Mod_User vistaMod;
+    private Panel_Modificar vistaMod;
 
-    public controlador_Panel_Mod_Usuario(modeloCliente modeloCliente, Panel_Mod_User vistaMod) {
+    public controlador_Panel_Mod_Usuario(modeloCliente modeloCliente, Panel_Modificar vistaMod) {
         this.modeloCliente = modeloCliente;
         this.vistaMod = vistaMod;
         vistaMod.setVisible(true);
@@ -86,4 +86,5 @@ public class controlador_Panel_Mod_Usuario {
     public void cancelar(){
         vistaMod.dispose();
     }
+    
 }

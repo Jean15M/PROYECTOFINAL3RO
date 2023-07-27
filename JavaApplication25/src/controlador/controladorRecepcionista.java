@@ -8,7 +8,7 @@ package controlador;
 import javax.swing.JFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import vista.PanelControlRecepcionista;
-import vista.Panel_Mod_User;
+import vista.Panel_Modificar;
 import vista.vistaPanelControlPrincipal;
 
 /**

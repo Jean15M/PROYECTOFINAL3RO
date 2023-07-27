@@ -11,11 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import modelo.*;
-import vista.Pantalla_Principal;
-import vista.cliente_ventana;
-import vista.vistaAsignarReserva;
-import vista.vistaLogin;
-import vista.vistaReservas;
+import vista.*;
 
 /**
  *
@@ -146,8 +142,8 @@ public class controladorVistaReservas {
             modeloCliente modeloCliente = new modeloCliente();
             modeloEncabez_fac modeloEncabe = new modeloEncabez_fac();
             modeloDetalle_fac modeloDetalle = new modeloDetalle_fac();
-            controladorAsignarReserva inicio = new controladorAsignarReserva(vistaReservas, modeloCliente, modeloEncabe, modeloDetalle);
-            inicio.iniciarControlador();
+           // controladorAsignarReserva inicio = new controladorAsignarReserva(vistaReservas, modeloCliente, modeloEncabe, modeloDetalle);
+            //inicio.iniciarControlador();
         }
     }
 }
