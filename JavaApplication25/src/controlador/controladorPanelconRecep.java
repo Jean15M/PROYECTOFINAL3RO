@@ -14,7 +14,9 @@ import modelo.modeloDetalle_fac;
 import modelo.modeloEncabez_fac;
 import modelo.modeloHabitaciones;
 import modelo.modeloParqueadero;
+import modelo.modeloServicio;
 import vista.PanelControlRecepcionista;
+import vista.PanelControlServ;
 import vista.vistaPanelControl;
 import vista.vistaPanelControlPrincipal;
 import vista.vistaReservarecep;
@@ -40,6 +42,7 @@ public class controladorPanelconRecep {
         vistaRecepcionista.getBtnInicioRe().addActionListener(l -> cerrar());
         vistapanel.getBtHabitaciones().addActionListener(l -> llamarPanelHp());
         vistapanel.getBtReservas().addActionListener(l -> llamarpa());
+        vistapanel.getBtServicios().addActionListener(l->llamarPanelServi());
     }
 
     private void cerrar() {
@@ -78,6 +81,19 @@ public class controladorPanelconRecep {
         inicio.setSize(vistaRecepcionista.getjDesktopPane1().getWidth(), vistaRecepcionista.getjDesktopPane1().getHeight());
         controlador_Recep_Reserva ph = new controlador_Recep_Reserva(inicio,modP, modH,deta);
         ph.iniciarControlador();
+        vistapanel.dispose();
+    }
+    
+    public void llamarPanelServi(){
+        modeloServicio modeloS = new modeloServicio();
+        PanelControlServ vistaR = new PanelControlServ();
+        vistaRecepcionista.getjDesktopPane1().add(vistaR);
+        vistaR.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) vistaR.getUI();
+        bui.setNorthPane(null);
+        vistaR.setSize(vistaRecepcionista.getjDesktopPane1().getWidth(), vistaRecepcionista.getjDesktopPane1().getHeight());
+        controladorPanelServicios iniciar = new controladorPanelServicios(modeloS, vistaR);
+        iniciar.iniciarControlador();
         vistapanel.dispose();
     }
 

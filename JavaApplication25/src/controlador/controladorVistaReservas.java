@@ -142,8 +142,8 @@ public class controladorVistaReservas {
             modeloCliente modeloCliente = new modeloCliente();
             modeloEncabez_fac modeloEncabe = new modeloEncabez_fac();
             modeloDetalle_fac modeloDetalle = new modeloDetalle_fac();
-           // controladorAsignarReserva inicio = new controladorAsignarReserva(vistaReservas, modeloCliente, modeloEncabe, modeloDetalle);
-            //inicio.iniciarControlador();
+            controladorAsignarReserva inicio = new controladorAsignarReserva(vistaReservas, modeloCliente, modeloEncabe, modeloDetalle);
+            inicio.iniciarControlador();
         }
     }
 }

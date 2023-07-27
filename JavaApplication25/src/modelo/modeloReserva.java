@@ -60,7 +60,7 @@ public class modeloReserva extends Reservas {
 
     public boolean grabarReservas() {
         String sql = "insert into  reserva(id_reserva,id_pago,id_habitacion,id_parqueadero,id_recepcionista, cedula_persona,fecha_entrada,fecha_salida)";
-        sql += "values('" + super.getId_Reserva() + "','" + getId_pago() + "','" + getId_Habitacion() + "','" + getId_Parqueadero() + "','" + getId_Recepcionista() + "','" + getCedula_Cliente() + "',to_date('" + getFecha_entrada() + "','YYYY-MM-DD'),to_date('" + getFecha_salida()+ "','YYYY-MM-DD'))";
+        sql += "values('0','" + getId_pago() + "','" + getId_Habitacion() + "','" + getId_Parqueadero() + "','" + getId_Recepcionista() + "','" + getCedula_Cliente() + "',to_date('" + getFecha_entrada() + "','YYYY-MM-DD'),to_date('" + getFecha_salida()+ "','YYYY-MM-DD'))";
         return cpg.accionBd(sql);
     }
 
@@ -86,7 +86,25 @@ public class modeloReserva extends Reservas {
         sql += " WHERE id_reserva='" + getId_Reserva() + "'";
         return cpg.accionBd(sql);
     }
+    
+    public String ObtenerCodigoRes() {
+        try {
+            String sql = "select MAX(id_reserva) from reserva";
+            ResultSet rs = cpg.resultBD(sql);
+            Reservas res = new Reservas();
+            while (rs.next()) {
+                res.setId_Reserva(rs.getString("MAX(id_reserva)"));
 
+            }
+            rs.close();
+            return res.getId_Reserva();
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
+    
     public ResultSet resultado() {
         String sql1 = Consultar();
         ResultSet rs = cpg.resultBD(sql1);

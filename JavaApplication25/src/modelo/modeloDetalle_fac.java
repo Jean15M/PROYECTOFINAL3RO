@@ -56,7 +56,7 @@ public class modeloDetalle_fac extends Detalle_fac {
 
     public boolean grabarDetalle_fac() {
         String sql = "insert into detalle_fac(id_detalle_fac,id_encabezado_fac, id_reserva,subtotal)";
-        sql += "values('" + super.getId_Detalle() + "','" + getId_encab_deta() + "','" + getId_reserva_detalle() + "'," + getSubtotal_detalle() + ")";
+        sql += "values('0','" + getId_encab_deta() + "','" + getId_reserva_detalle() + "'," + getSubtotal_detalle() + ")";
         return cpg.accionBd(sql);
     }
 

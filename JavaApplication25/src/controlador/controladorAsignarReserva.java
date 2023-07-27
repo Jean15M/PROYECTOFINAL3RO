@@ -39,14 +39,13 @@ public class controladorAsignarReserva {
     private modeloCliente modeloCliente;
     private modeloEncabez_fac modeloEncabe;
     private modeloDetalle_fac modeloDetalle;
-    private cliente_ventana vistaCliente;
+    
 
-    public controladorAsignarReserva(vistaAsignarReserva vistaReservas, modeloCliente modeloCliente, modeloEncabez_fac modeloEncabe, modeloDetalle_fac modeloDetalle, cliente_ventana vistaCliente ) {
+    public controladorAsignarReserva(vistaAsignarReserva vistaReservas, modeloCliente modeloCliente, modeloEncabez_fac modeloEncabe, modeloDetalle_fac modeloDetalle) {
         this.vistaReservas = vistaReservas;
         this.modeloCliente = modeloCliente;
         this.modeloEncabe = modeloEncabe;
         this.modeloDetalle = modeloDetalle;
-        this.vistaCliente = vistaCliente;
         vistaReservas.setVisible(true); 
         mostrarParq(1);
     }
@@ -62,7 +61,7 @@ public class controladorAsignarReserva {
     }
     
     public void ingresarReserva(){
-        if(vistaReservas.getjCalendarioIni().getDate().equals(null) || vistaReservas.getjCalendarioIni().getDate().equals(null) || vistaReservas.getLblCliente().getText().isEmpty() || vistaReservas.getLblNombre().getText().equals("-") || vistaReservas.getLblNombre().getText().equals("-") || vistaReservas.getLblApellido().getText().equals("-") ){
+        if(vistaReservas.getjCalendarioIni().getDate().equals(null) || vistaReservas.getjCalendarioIni().getDate().equals(null) || vistaReservas.getLblCliente().getText().isEmpty() || vistaReservas.getCbHabitacion().getSelectedIndex()==0 || vistaReservas.getCbPago().getSelectedIndex()==0 || vistaReservas.getCbPersonas().getSelectedIndex()==0){
             JOptionPane.showMessageDialog(null, "Llene todo los campos por favor...");
         }else{
             java.util.Date fechaCalendar = vistaReservas.getjCalendarioIni().getDate();
@@ -87,7 +86,6 @@ public class controladorAsignarReserva {
             modeloMetodoPago modeloP = new modeloMetodoPago();
             modeloH.setNro_Habitacion(Integer.parseInt(vistaReservas.getCbHabitacion().getSelectedItem().toString()));
             modeloP.setNombrePago(String.valueOf(vistaReservas.getCbPago().getSelectedItem()));
-            res.setId_Reserva(vistaReservas.getTxtReserva().getText());
             res.setTotal_Reserva(calcularTotal(dias));
             res.setCedula_Cliente(vistaReservas.getLblCliente().getText());
             System.out.println(vistaReservas.getLblCliente().getText());
@@ -119,18 +117,17 @@ public class controladorAsignarReserva {
     }
     
     public void guardarFactura(){
+        modeloReserva res = new modeloReserva();
         LocalDate fecha = LocalDate.now();
         java.sql.Date fech = java.sql.Date.valueOf(fecha);
-        modeloEncabe.setId_encabez("1");
         modeloEncabe.setCedula_cli(vistaReservas.getLblCliente().getText());
-        modeloEncabe.setId_reserva(vistaReservas.getTxtReserva().getText());
+        modeloEncabe.setId_reserva(res.ObtenerCodigoRes());
         modeloEncabe.setFecha_fac(fech);
         modeloEncabe.setTotal_fac(Double.parseDouble(vistaReservas.getTxtPrecioHabi().getText()));
-        modeloDetalle.setId_Detalle("1");
-        modeloDetalle.setId_encab_deta("1");
-        modeloDetalle.setId_reserva_detalle(vistaReservas.getTxtReserva().getText());
-        modeloDetalle.setSubtotal_detalle(Double.parseDouble(vistaReservas.getTxtPrecio().getText()));
         if(modeloEncabe.grabarEncabez_fac()==true){
+            modeloDetalle.setId_encab_deta(modeloEncabe.ObtenerCodigo());
+            modeloDetalle.setId_reserva_detalle(res.ObtenerCodigoRes());
+            modeloDetalle.setSubtotal_detalle(Double.parseDouble(vistaReservas.getTxtPrecio().getText()));
             if(modeloDetalle.grabarDetalle_fac()){
                 System.out.println("GUARDADO");
             }

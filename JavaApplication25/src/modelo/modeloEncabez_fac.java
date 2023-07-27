@@ -56,7 +56,7 @@ public class modeloEncabez_fac extends Encabez_fac {
 
     public boolean grabarEncabez_fac() {
         String sql = "insert into  encabezado_fac(id_encabezado_fac,cedula_cliente,fecha,total,id_reserva)";
-        sql += "values('" + super.getId_encabez() + "','" + getCedula_cli() + "',to_date('" + getFecha_fac() + "','YYYY-MM-DD')," + getTotal_fac() +","+getId_reserva()+ ")";
+        sql += "values('0','" + getCedula_cli() + "',to_date('" + getFecha_fac() + "','YYYY-MM-DD')," + getTotal_fac() +","+getId_reserva()+ ")";
         return cpg.accionBd(sql);
     }
 
@@ -71,5 +71,24 @@ public class modeloEncabez_fac extends Encabez_fac {
         String sql = "select id_encabezado_fac,cedula_cliente,fecha,total from encabezado_fac";
         return sql;
     }
+    
+    public String ObtenerCodigo() {
+        try {
+            String sql = "select MAX(id_encabezado_fac) from encabezado_fac";
+            ResultSet rs = cpg.resultBD(sql);
+            Encabez_fac enc = new Encabez_fac();
+            while (rs.next()) {
+                enc.setId_encabez(rs.getString("MAX(id_encabezado_fac)"));
+
+            }
+            rs.close();
+            return enc.getId_encabez();
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
+    
 
 }

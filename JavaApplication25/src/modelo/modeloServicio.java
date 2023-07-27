@@ -97,34 +97,56 @@ public class modeloServicio extends Servicio {
         return null;
     }
     
-//    public List<Servicio> buscarServicios(){
-//       
-//        List<Servicio> listaBuscar = new ArrayList<Servicio>();
-//        String sql;
-//        sql = "select * from servicios where estado='" + super.getEstado()+ "'";
-//        ResultSet rs = cpg.resultBD(sql);
-//        Habitaciones hab = new Habitaciones();
-//        try {
-//
-//            while (rs.next()) {
-//                hab.setId_Habitacion(rs.getString("id_habitacion"));
-//                hab.setId_Categoria(rs.getInt("id_categoria"));
-//                hab.setNro_Habitacion(rs.getInt("n_habitacion"));
-//                hab.setNro_Piso(rs.getInt("nro_piso"));
-//                hab.setPrecio_Habitacion(rs.getDouble("precio"));
-//                hab.setEstado(rs.getString("estado"));
-//                hab.setNum_plazas(rs.getString("camas"));
-//                listaBuscar.add(hab);
-//            }
-//            rs.close();
-//            return listaBuscar;
-//        } catch (SQLException ex) {
-//            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
-//            return null;
-//        }
-//    
-//        
-//    }
+    public List<Servicio> buscarServicios(){
+       
+        List<Servicio> listaBuscar = new ArrayList<Servicio>();
+        String sql;
+        sql = "select * from servicios where estado='" + super.getEstado()+ "'";
+        ResultSet rs = cpg.resultBD(sql);
+        Servicio ser = new Servicio();
+        try {
+
+            while (rs.next()) {
+                ser.setId_Servicio(rs.getString("id_servicio"));
+                ser.setId_tipo_servicio(rs.getString("id_tipo_servicio"));
+                ser.setId_Habitacion(rs.getString("id_habitacion"));
+                ser.setDescp_Servicio(rs.getString("descripcion"));
+                ser.setEstado(rs.getString("estado"));
+                listaBuscar.add(ser);
+            }
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+      
+    }
+    
+    public List<Servicio> filtrarServicios(){
+        List<Servicio> listaBuscar = new ArrayList<Servicio>();
+        String sql;
+        sql = "select * from servicios where descripcion='" + super.getDescp_Servicio()+ "'";
+        ResultSet rs = cpg.resultBD(sql);
+        Servicio ser = new Servicio();
+        try {
+
+            while (rs.next()) {
+                ser.setId_Servicio(rs.getString("id_servicio"));
+                ser.setId_tipo_servicio(rs.getString("id_tipo_servicio"));
+                ser.setId_Habitacion(rs.getString("id_habitacion"));
+                ser.setDescp_Servicio(rs.getString("descripcion"));
+                ser.setEstado(rs.getString("estado"));
+                listaBuscar.add(ser);
+            }
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+      
+    }
     
     public boolean codigoExisteEnBD(String codigo) {
         String sql = "SELECT COUNT(*) FROM servicios WHERE id_servicio='" + codigo + "'";
