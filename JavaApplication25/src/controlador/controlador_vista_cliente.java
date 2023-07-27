@@ -17,6 +17,7 @@ import vista.*;
 public class controlador_vista_cliente {
 
     private cliente_ventana ventaCliente;
+    //private 
 
     public controlador_vista_cliente(cliente_ventana ventaCliente) {
         this.ventaCliente = ventaCliente;
@@ -28,7 +29,7 @@ public class controlador_vista_cliente {
         ventaCliente.setExtendedState(JFrame.MAXIMIZED_BOTH);
         ventaCliente.getBtnReservarRe().addActionListener(l -> llamarReserva());
         System.out.println("hola: " + Controlador_Login.usuario);
-        ventaCliente.getBtnModificar().addActionListener(l -> modificar());
+        ventaCliente.getBtnModificar().addActionListener(l -> llamarPanleModificar());
     }
 
     private void llamarReserva() {
@@ -47,11 +48,22 @@ public class controlador_vista_cliente {
     
 
     private void modificar() {
-        vista_Mod_User vistaA = new vista_Mod_User();
+        Panel_Mod_User vistaA = new Panel_Mod_User();
         modeloCliente modelo = new modeloCliente();
-        controlador_Mod_Usuario inicio = new controlador_Mod_Usuario(modelo,vistaA);
+        controlador_Panel_Mod_Usuario inicio = new controlador_Panel_Mod_Usuario(modelo,vistaA);
         ventaCliente.dispose();
         inicio.iniciarControl();
     }
 
+     public void llamarPanleModificar(){
+        modeloCliente modelo = new modeloCliente();
+        Panel_Mod_User vista = new Panel_Mod_User();
+        ventaCliente.getjDesktopPane1().add(vista);
+        vista.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) vista.getUI();
+        bui.setNorthPane(null);
+        vista.setSize(ventaCliente.getjDesktopPane1().getWidth(), ventaCliente.getjDesktopPane1().getHeight());
+        controlador_Panel_Mod_Usuario controlador = new controlador_Panel_Mod_Usuario(modelo, vista);
+        controlador.iniciarControl();
+    }
 }

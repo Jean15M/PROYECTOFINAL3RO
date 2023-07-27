@@ -101,9 +101,38 @@ public class modeloRecepcionista extends Recepcionista {
         } catch (SQLException ex) {
             Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
             return null;
-        }            
+        }               
+    }
     
-        
+    public List<Recepcionista> buscarRecepcionista() {
+        List<Recepcionista> listaBuscar = new ArrayList<Recepcionista>();
+        String sql;
+        sql="select * from recepcionista where cedula_persona='"+super.getCedula_Recep()+"'";
+        ResultSet rs=cpg.resultBD(sql);
+        Recepcionista per=new Recepcionista();
+        try {
+            
+            while(rs.next()){
+                per.setCedula_Recep(rs.getString("cedula_persona"));
+                per.setUsuario_Recep(rs.getString("usuario"));
+                per.setContra_Recep(rs.getString("contrasena"));
+                per.setNombrePersona(rs.getString("nombre1"));
+                per.setNombrePersona1(rs.getString("nombre2"));
+                per.setApellidoPersona(rs.getString("apellido1"));
+                per.setApellidoPersona1(rs.getString("apellido2"));
+                per.setGeneroPersona(rs.getString("genero"));
+                per.setCorreoPersona(rs.getString("correo"));
+                per.setTelefonoPersona(rs.getString("telefono"));
+                per.setDireccionPersona(rs.getString("direccion"));
+                per.setSueldo_Recep(rs.getDouble("sueldo"));
+                listaBuscar.add(per);
+            } 
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }               
     }
     
     public boolean modificarRecepcionistaBD() {

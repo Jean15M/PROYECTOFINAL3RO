@@ -75,7 +75,6 @@ public class controladorRegistroRecepcionista {
                 LocalDate fecha = LocalDate.parse(d1, formato);
                 int dias = (int) ChronoUnit.YEARS.between(fecha, LocalDate.now());
                 modeloPersona per1 = new modeloPersona();
-                modeloRecepcionista per2 = new modeloRecepcionista();
                 modeloCantones canton = new modeloCantones();
                 per1.setCedulaPersona(vistarecepcionista.getTxtcedula().getText());
                 per1.setNombrePersona(vistarecepcionista.getTxtnom1().getText());
