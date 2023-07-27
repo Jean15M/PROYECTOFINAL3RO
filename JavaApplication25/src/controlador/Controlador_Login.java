@@ -9,6 +9,7 @@ import java.security.Principal;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Recepcionista;
 import modelo.modeloAdministrador;
@@ -45,6 +46,7 @@ public class Controlador_Login {
     }
 
     public void iniciarControlador() {
+        vistaLogin.setExtendedState(JFrame.MAXIMIZED_BOTH);
         vistaLogin.getBtniniciarse().addActionListener(l -> login());
         vistaLogin.getBtnregistro().addActionListener(l -> regresar());
         vistaLogin.getBtnOlvidar().addActionListener(l -> cambiarContra());
@@ -61,14 +63,14 @@ public class Controlador_Login {
         modeloLogin3.setContraCliente(vistaLogin.getTxtcontra().getText());
         try {
             if (modeloLogin.login() == true) {
-                vistaPanelControlPrincipal inicio=new vistaPanelControlPrincipal();
-               controladorRecepcionista nuevo = new controladorRecepcionista(inicio);
-               nuevo.iniciarControlador();
-               vistaLogin.dispose();
+                vistaPanelControlPrincipal inicio = new vistaPanelControlPrincipal();
+                controladorRecepcionista nuevo = new controladorRecepcionista(inicio);
+                nuevo.iniciarControlador();
+                vistaLogin.dispose();
             } else {
                 if (modeloLogin2.login() == true) {
                     vistaPanelControlAdministrador nuevo1 = new vistaPanelControlAdministrador();
-                    
+
                     Controlador_Paneladmin iniciar = new Controlador_Paneladmin(nuevo1);
                     iniciar.iniciarControlador();
                     vistaLogin.dispose();
