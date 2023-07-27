@@ -24,12 +24,13 @@ public class controladorVistaServicios {
     public controladorVistaServicios(vistaServicios servicios, modeloTipoServicio tipoS) {
         this.servicios = servicios;
         this.tipoS = tipoS;
+        servicios.setVisible(true);
     }
     public void iniciarControlador() {
-        cargarInformacionLimpieza();
-        cargarInformacionComida();
-        cargarInformacionLimpieza();
-        llamarPedirComida();
+//        cargarInformacionLimpieza();
+//        cargarInformacionComida();
+//        cargarInformacionLimpieza();
+//        llamarPedirComida();
     }
     
     private void cargarInformacionLimpieza() {
