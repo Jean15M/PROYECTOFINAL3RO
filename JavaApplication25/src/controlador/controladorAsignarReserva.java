@@ -34,36 +34,39 @@ import vista.vistaAsignarReserva;
  * @author Joseline
  */
 public class controladorAsignarReserva {
+
     static String tipo;
     private vistaAsignarReserva vistaReservas;
     private modeloCliente modeloCliente;
     private modeloEncabez_fac modeloEncabe;
     private modeloDetalle_fac modeloDetalle;
-    
+    private cliente_ventana cliente;
 
-    public controladorAsignarReserva(vistaAsignarReserva vistaReservas, modeloCliente modeloCliente, modeloEncabez_fac modeloEncabe, modeloDetalle_fac modeloDetalle) {
+    public controladorAsignarReserva(vistaAsignarReserva vistaReservas, modeloCliente modeloCliente, modeloEncabez_fac modeloEncabe, modeloDetalle_fac modeloDetalle, cliente_ventana cliente) {
         this.vistaReservas = vistaReservas;
         this.modeloCliente = modeloCliente;
         this.modeloEncabe = modeloEncabe;
         this.modeloDetalle = modeloDetalle;
-        vistaReservas.setVisible(true); 
+        this.cliente = cliente;
+        vistaReservas.setVisible(true);
         mostrarParq(1);
     }
-    
-    public void iniciarControlador(){
+
+    public void iniciarControlador() {
         cargarCombo();
         cargarCliente();
         vistaReservas.getRdOpcionSi().addActionListener(l -> mostrarParq(2));
         vistaReservas.getRdOpcionNo().addActionListener(l -> mostrarParq(1));
-        vistaReservas.getBtnReservar().addActionListener(l->ingresarReserva());
-        vistaReservas.getBtnCancelar().addActionListener(l->cerrar());
+        vistaReservas.getBtnReservar().addActionListener(l -> ingresarReserva());
+        vistaReservas.getBtnCancelar().addActionListener(l -> cerrar());
+        cliente.getBtnInicioRe().addActionListener(l -> cerrarInternal());
         calcularDia();
     }
-    
-    public void ingresarReserva(){
-        if(vistaReservas.getjCalendarioIni().getDate().equals(null) || vistaReservas.getjCalendarioIni().getDate().equals(null) || vistaReservas.getLblCliente().getText().isEmpty() || vistaReservas.getCbHabitacion().getSelectedIndex()==0 || vistaReservas.getCbPago().getSelectedIndex()==0 || vistaReservas.getCbPersonas().getSelectedIndex()==0){
+
+    public void ingresarReserva() {
+        if (vistaReservas.getjCalendarioIni().getDate().equals(null) || vistaReservas.getjCalendarioIni().getDate().equals(null) || vistaReservas.getLblCliente().getText().isEmpty() || vistaReservas.getCbHabitacion().getSelectedIndex() == 0 || vistaReservas.getCbPago().getSelectedIndex() == 0 || vistaReservas.getCbPersonas().getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Llene todo los campos por favor...");
-        }else{
+        } else {
             java.util.Date fechaCalendar = vistaReservas.getjCalendarioIni().getDate();
             SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
             String d1 = date.format(fechaCalendar);
@@ -95,28 +98,28 @@ public class controladorAsignarReserva {
             res.setId_pago(modeloP.ObtenerCodigo());
             res.setId_Parqueadero("");
             res.setId_Recepcionista("");
-            
-            if(vistaReservas.getRdOpcionSi().isSelected()){
-                if(vistaReservas.getCbParque().getSelectedIndex()!=0 || !vistaReservas.getTxtDias().getText().isEmpty()|| !vistaReservas.getTxtPlaca().getText().isEmpty() || !vistaReservas.getTxtMarca().getText().isEmpty() || !vistaReservas.getTxtModelo().getText().isEmpty()){
+
+            if (vistaReservas.getRdOpcionSi().isSelected()) {
+                if (vistaReservas.getCbParque().getSelectedIndex() != 0 || !vistaReservas.getTxtDias().getText().isEmpty() || !vistaReservas.getTxtPlaca().getText().isEmpty() || !vistaReservas.getTxtMarca().getText().isEmpty() || !vistaReservas.getTxtModelo().getText().isEmpty()) {
                     res.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedItem()));
                     guardarParqueadero();
-                }else{
+                } else {
                     JOptionPane.showMessageDialog(null, "LLENE LOS CAMPOS POR FAVOR");
                 }
-                
+
             }
-            if(res.grabarReservas()==true){
+            if (res.grabarReservas() == true) {
                 guardarFactura();
                 cambiarEstado();
                 JOptionPane.showMessageDialog(null, "RESERVA ASIGNADA");
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "ERROR DE INGRESO");
             }
         }
-        
+
     }
-    
-    public void guardarFactura(){
+
+    public void guardarFactura() {
         modeloReserva res = new modeloReserva();
         LocalDate fecha = LocalDate.now();
         java.sql.Date fech = java.sql.Date.valueOf(fecha);
@@ -124,19 +127,19 @@ public class controladorAsignarReserva {
         modeloEncabe.setId_reserva(res.ObtenerCodigoRes());
         modeloEncabe.setFecha_fac(fech);
         modeloEncabe.setTotal_fac(Double.parseDouble(vistaReservas.getTxtPrecioHabi().getText()));
-        if(modeloEncabe.grabarEncabez_fac()==true){
+        if (modeloEncabe.grabarEncabez_fac() == true) {
             modeloDetalle.setId_encab_deta(modeloEncabe.ObtenerCodigo());
             modeloDetalle.setId_reserva_detalle(res.ObtenerCodigoRes());
             modeloDetalle.setSubtotal_detalle(Double.parseDouble(vistaReservas.getTxtPrecio().getText()));
-            if(modeloDetalle.grabarDetalle_fac()){
+            if (modeloDetalle.grabarDetalle_fac()) {
                 System.out.println("GUARDADO");
             }
-        }else{
+        } else {
             System.out.println("ERROR AL GUARDAR");
         }
     }
-    
-    public void guardarParqueadero(){
+
+    public void guardarParqueadero() {
         modeloParqueadero modeloP = new modeloParqueadero();
         modeloAutos modeloA = new modeloAutos();
         modeloP.setPlaca(vistaReservas.getTxtPlaca().getText());
@@ -146,110 +149,108 @@ public class controladorAsignarReserva {
         modeloA.setMarca(vistaReservas.getTxtMarca().getText());
         modeloA.setModelo(vistaReservas.getTxtMarca().getText());
         modeloA.setPlaca(vistaReservas.getTxtPlaca().getText());
-        if(modeloP.modificarParqueaderoBD()==true){
-            if(modeloA.grabarAutos()){
+        if (modeloP.modificarParqueaderoBD() == true) {
+            if (modeloA.grabarAutos()) {
                 System.out.println("GUARDADO");
             }
-        }else{
+        } else {
             System.out.println("ERROR AL GUARDAR");
         }
     }
-    
-    public double calcularTotal(int dias){
-        double total = dias*Double.parseDouble(vistaReservas.getTxtPrecio().getText());
+
+    public double calcularTotal(int dias) {
+        double total = dias * Double.parseDouble(vistaReservas.getTxtPrecio().getText());
         return total;
     }
-    
-    public void cargarCliente(){
+
+    public void cargarCliente() {
         vistaReservas.getLblCliente().setText(Controlador_Login.usuario);
         modeloCliente.setUsuarioCliente(Controlador_Login.usuario);
-        if(modeloCliente.cargarCliente().isEmpty()){
-          JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
-        }else{
-           modeloCliente.cargarCliente().stream().forEach((p)->{
-           vistaReservas.getLblCliente().setText(p.getCedulaPersona());
-           vistaReservas.getLblNombre().setText(p.getNombrePersona());
-           vistaReservas.getLblApellido().setText(p.getApellidoPersona());
-           });
+        if (modeloCliente.cargarCliente().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
+        } else {
+            modeloCliente.cargarCliente().stream().forEach((p) -> {
+                vistaReservas.getLblCliente().setText(p.getCedulaPersona());
+                vistaReservas.getLblNombre().setText(p.getNombrePersona());
+                vistaReservas.getLblApellido().setText(p.getApellidoPersona());
+            });
         }
-        
+
     }
-    
-    public void cargarCombo(){
+
+    public void cargarCombo() {
         modeloMetodoPago modeloP = new modeloMetodoPago();
-        modeloP.listarPago().stream().forEach(p->{
+        modeloP.listarPago().stream().forEach(p -> {
             vistaReservas.getCbPago().addItem(p.getNombrePago());
         });
-        
+
         modeloHabitaciones modeloH = new modeloHabitaciones();
         modeloH.setId_Categoria(tipo);
-        modeloH.buscarCat().stream().forEach(p->{
+        modeloH.buscarCat().stream().forEach(p -> {
             vistaReservas.getCbHabitacion().addItem(String.valueOf(p.getNro_Habitacion()));
             vistaReservas.getTxtPrecio().setText(String.valueOf(p.getPrecio_Habitacion()));
         });
-        
+
         modeloParqueadero modeloPa = new modeloParqueadero();
-        modeloPa.listarParqueadero().stream().forEach(p->{
+        modeloPa.listarParqueadero().stream().forEach(p -> {
             vistaReservas.getCbParque().addItem(String.valueOf(p.getId_Parqueadero()));
         });
-        
-        modeloPa.listarParqueadero().stream().forEach(p->{
+
+        modeloPa.listarParqueadero().stream().forEach(p -> {
             vistaReservas.getCbUbicacion().addItem(String.valueOf(p.getUbicacion()));
         });
-        
-        
+
     }
-    
-    public void calcularDia(){
-            vistaReservas.getjCalendarioFin().addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-                @Override
-                public void propertyChange(PropertyChangeEvent evt) {
-                    java.util.Date fechaCalendar = vistaReservas.getjCalendarioIni().getDate();
-                    java.util.Date fechaCalendarfin = vistaReservas.getjCalendarioFin().getDate();
-                    if(fechaCalendar==null|| fechaCalendarfin==null){
-                        System.out.println("NO HAY FECHA");
-                    }else{   
-                        SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
-                        String d1 = date.format(fechaCalendar);
-                        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                        LocalDate fecha = LocalDate.parse(d1, formato);
-                        SimpleDateFormat date1 = new SimpleDateFormat("dd/MM/yyyy");
-                        String d2 = date1.format(fechaCalendarfin);
-                        DateTimeFormatter formato1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                        LocalDate fecha1 = LocalDate.parse(d2, formato1);
-                        int dias = (int) ChronoUnit.DAYS.between(fecha, fecha1);
-                        vistaReservas.getTxtDias().setText(String.valueOf(dias));
-                        vistaReservas.getTxtPrecioHabi().setText(String.valueOf(calcularTotal(dias)));
-                    }
+
+    public void calcularDia() {
+        vistaReservas.getjCalendarioFin().addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            @Override
+            public void propertyChange(PropertyChangeEvent evt) {
+                java.util.Date fechaCalendar = vistaReservas.getjCalendarioIni().getDate();
+                java.util.Date fechaCalendarfin = vistaReservas.getjCalendarioFin().getDate();
+                if (fechaCalendar == null || fechaCalendarfin == null) {
+                    System.out.println("NO HAY FECHA");
+                } else {
+                    SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+                    String d1 = date.format(fechaCalendar);
+                    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                    LocalDate fecha = LocalDate.parse(d1, formato);
+                    SimpleDateFormat date1 = new SimpleDateFormat("dd/MM/yyyy");
+                    String d2 = date1.format(fechaCalendarfin);
+                    DateTimeFormatter formato1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                    LocalDate fecha1 = LocalDate.parse(d2, formato1);
+                    int dias = (int) ChronoUnit.DAYS.between(fecha, fecha1);
+                    vistaReservas.getTxtDias().setText(String.valueOf(dias));
+                    vistaReservas.getTxtPrecioHabi().setText(String.valueOf(calcularTotal(dias)));
                 }
-            });   
+            }
+        });
     }
-    
-    public void cambiarEstado(){
+
+    public void cambiarEstado() {
         modeloHabitaciones modeloH = new modeloHabitaciones();
         modeloH.setEstado("Ocupado");
         modeloH.setNro_Habitacion(Integer.parseInt(vistaReservas.getCbHabitacion().getSelectedItem().toString()));
-        if(modeloH.modificarEstado()==true){
+        if (modeloH.modificarEstado() == true) {
             System.out.println("ESTADO MODIFICADO");
-        }else{
+        } else {
             System.out.println("ERROR AL MODIFICAR");
         }
-                
+
     }
-    
-    public void cambiarEstadoParq(){
+
+    public void cambiarEstadoParq() {
         modeloParqueadero modeloP = new modeloParqueadero();
         modeloP.setEstado("Ocupado");
         modeloP.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedItem()));
-        if(modeloP.modificarEstado()==true){
+        if (modeloP.modificarEstado() == true) {
             System.out.println("ESTADO MODIFICADO");
-        }else{
+        } else {
             System.out.println("ERROR AL MODIFICAR");
         }
-                
+
     }
-    
-   
+
     private void cerrar() {
 
         try {
@@ -257,12 +258,11 @@ public class controladorAsignarReserva {
         } catch (PropertyVetoException ex) {
             Logger.getLogger(controladorAsignarReserva.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
 
     }
- 
-    public void mostrarParq(int bandera){
-        if(bandera==1){
+
+    public void mostrarParq(int bandera) {
+        if (bandera == 1) {
             vistaReservas.getLblParque().setVisible(false);
             vistaReservas.getLblMarca().setVisible(false);
             vistaReservas.getLblPlaca().setVisible(false);
@@ -273,7 +273,7 @@ public class controladorAsignarReserva {
             vistaReservas.getTxtPlaca().setVisible(false);
             vistaReservas.getCbParque().setVisible(false);
             vistaReservas.getCbUbicacion().setVisible(false);
-        }else if(bandera==2){
+        } else if (bandera == 2) {
             vistaReservas.getLblParque().setVisible(true);
             vistaReservas.getLblMarca().setVisible(true);
             vistaReservas.getLblPlaca().setVisible(true);
@@ -286,6 +286,15 @@ public class controladorAsignarReserva {
             vistaReservas.getCbUbicacion().setVisible(true);
         }
     }
-    
-    
+
+    public void cerrarInternal() {
+
+        try {
+            vistaReservas.setClosed(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
 }

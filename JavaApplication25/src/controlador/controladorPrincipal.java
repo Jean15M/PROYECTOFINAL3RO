@@ -80,7 +80,8 @@ public class controladorPrincipal {
         vista1.setSize(vistaPrincipal.getPaginaPrincipal().getWidth(), vistaPrincipal.getPaginaPrincipal().getHeight());
         modeloTipoServicio nuevo1 = new modeloTipoServicio();
         cliente_ventana  cliente1=new cliente_ventana();
-        controladorVistaServicios inicio = new controladorVistaServicios(vista1, nuevo1);
+        
+        controladorVistaServicios inicio = new controladorVistaServicios(vista1, nuevo1,vistaPrincipal,cliente1);
         inicio.iniciarControlador();
     }
      public void abrir(){

@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
 import necesario.RSLabelImage;
+import org.edisoncor.gui.button.ButtonPopup;
 import org.edisoncor.gui.button.ButtonRound;
 
 /**
@@ -36,13 +37,12 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnInicioRe = new javax.swing.JButton();
-        btnReservarRe = new javax.swing.JButton();
-        btnServiciosRe = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         rSLabelImage1 = new necesario.RSLabelImage();
+        btnCerrarSesión = new org.edisoncor.gui.button.ButtonPopup();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -57,18 +57,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         btnInicioRe.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnInicioRe.setBorderPainted(false);
         btnInicioRe.setPreferredSize(new java.awt.Dimension(88, 27));
-
-        btnReservarRe.setBackground(new java.awt.Color(37, 113, 156));
-        btnReservarRe.setForeground(new java.awt.Color(255, 255, 255));
-        btnReservarRe.setText("RESERVAR");
-        btnReservarRe.setBorderPainted(false);
-        btnReservarRe.setPreferredSize(new java.awt.Dimension(88, 27));
-
-        btnServiciosRe.setBackground(new java.awt.Color(37, 113, 156));
-        btnServiciosRe.setForeground(new java.awt.Color(255, 255, 255));
-        btnServiciosRe.setText("SERVICIOS");
-        btnServiciosRe.setBorderPainted(false);
-        btnServiciosRe.setPreferredSize(new java.awt.Dimension(88, 27));
 
         jButton4.setBackground(new java.awt.Color(37, 113, 156));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,15 +75,11 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(819, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(btnInicioRe, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnReservarRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnServiciosRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(33, 33, 33)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -114,8 +98,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInicioRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReservarRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnServiciosRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
@@ -123,23 +105,33 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
 
         rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/logo2.png"))); // NOI18N
 
+        btnCerrarSesión.setBorder(null);
+        btnCerrarSesión.setText("Cerrar Sesión");
+        btnCerrarSesión.setContentAreaFilled(false);
+
         jDesktopPane1.setLayer(rSLabelImage1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnCerrarSesión, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(428, 428, 428)
+                .addGap(362, 362, 362)
                 .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
-                .addGap(287, 287, 287))
+                .addGap(353, 353, 353))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCerrarSesión, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
-                .addGap(96, 96, 96))
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addComponent(btnCerrarSesión, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -179,21 +171,15 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         this.btnInicioRe = btnInicioRe;
     }
 
-    public JButton getBtnReservarRe() {
-        return btnReservarRe;
+    public ButtonPopup getBtnCerrarSesión() {
+        return btnCerrarSesión;
     }
 
-    public void setBtnReservarRe(JButton btnReservarRe) {
-        this.btnReservarRe = btnReservarRe;
+    public void setBtnCerrarSesión(ButtonPopup btnCerrarSesión) {
+        this.btnCerrarSesión = btnCerrarSesión;
     }
 
-    public JButton getBtnServiciosRe() {
-        return btnServiciosRe;
-    }
 
-    public void setBtnServiciosRe(JButton btnServiciosRe) {
-        this.btnServiciosRe = btnServiciosRe;
-    }
 
     public JLabel getLblUsuario() {
         return lblUsuario;
@@ -229,9 +215,8 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
 
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.edisoncor.gui.button.ButtonPopup btnCerrarSesión;
     private javax.swing.JButton btnInicioRe;
-    private javax.swing.JButton btnReservarRe;
-    private javax.swing.JButton btnServiciosRe;
     private javax.swing.JButton jButton4;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel9;

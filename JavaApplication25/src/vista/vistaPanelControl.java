@@ -46,8 +46,6 @@ public class vistaPanelControl extends javax.swing.JInternalFrame {
         btnBuscarHabi = new org.edisoncor.gui.button.ButtonRound();
         btnBuscarParq = new org.edisoncor.gui.button.ButtonRound();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -72,11 +70,11 @@ public class vistaPanelControl extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "UBICACIÓN", "ESTADO"
+                "ID", "Placa", "Tiempo", "Ubicacion", "Estado"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

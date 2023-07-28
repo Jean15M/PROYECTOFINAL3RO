@@ -91,6 +91,8 @@ public class controladorVistaReservas {
                     if (comprobar.listarHabitaciones().get(i).getId_Categoria().equals("2")) {
                         if (comprobar.listarHabitaciones().get(i).getEstado().equals("Disponible")) {
                             reservas.getEstado_dulex().setText("Disponible");
+                            reservas.getBtnReservarDel().setEnabled(true);
+                            reservas.getBtnReservarDel().setBackground(Color.BLUE);
                         } else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
                             reservas.getEstado_dulex().setText("No Disponible");
                             reservas.getBtnReservarDel().setEnabled(false);
@@ -119,6 +121,8 @@ public class controladorVistaReservas {
                     if (comprobar.listarHabitaciones().get(i).getId_Categoria().equals("3")) {
                         if (comprobar.listarHabitaciones().get(i).getEstado().equals("Disponible")) {
                             reservas.getEstado_standar().setText("Disponible");
+                            reservas.getBtnReservarEs().setEnabled(true);
+                            reservas.getBtnReservarEs().setBackground(Color.BLUE);
                         } else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
                             reservas.getEstado_standar().setText("No Disponible");
                             reservas.getBtnReservarEs().setEnabled(false);
@@ -169,7 +173,7 @@ public class controladorVistaReservas {
             modeloCliente modeloCliente = new modeloCliente();
             modeloEncabez_fac modeloEncabe = new modeloEncabez_fac();
             modeloDetalle_fac modeloDetalle = new modeloDetalle_fac();
-            controladorAsignarReserva inicio = new controladorAsignarReserva(vistaReservas, modeloCliente, modeloEncabe, modeloDetalle);
+            controladorAsignarReserva inicio = new controladorAsignarReserva(vistaReservas, modeloCliente, modeloEncabe, modeloDetalle, cliente);
             inicio.iniciarControlador();
         }
     }

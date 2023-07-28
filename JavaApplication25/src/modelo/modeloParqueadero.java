@@ -40,6 +40,7 @@ public class modeloParqueadero extends Parqueadero {
                 Parqueadero1.setPlaca(rs.getString("placa"));
                 Parqueadero1.setTiempo(rs.getInt("tiempo"));
                 Parqueadero1.setUbicacion(rs.getString("ubicacion"));
+                Parqueadero1.setEstado(rs.getString("estado"));
                 listaParqueadero.add(Parqueadero1);
             }
             if (listaParqueadero.isEmpty()) {
@@ -62,13 +63,13 @@ public class modeloParqueadero extends Parqueadero {
 
     public String Consultar() {
         String sql = "select * from parqueadero";
-        sql += " where placa='" + getPlaca()+"'";
+        sql += " where estado='" + getEstado()+"'";
         return sql;
 
     }
 
     public String mostrarParqueadero() {
-        String sql = "select id_parqueadero,placa,tiempo,ubicacion from parqueadero";
+        String sql = "select * from parqueadero";
         return sql;
     }
 

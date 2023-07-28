@@ -8,6 +8,7 @@ package vista;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
+import org.edisoncor.gui.button.ButtonPopup;
 import org.edisoncor.gui.button.ButtonRound;
 
 /**
@@ -57,6 +58,14 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
     public void setBtnInicioRe1(JButton btnInicioRe1) {
         this.btnInicioRe1 = btnInicioRe1;
     }
+
+    public ButtonPopup getBtnCerrarSesión() {
+        return btnCerrarSesión;
+    }
+
+    public void setBtnCerrarSesión(ButtonPopup btnCerrarSesión) {
+        this.btnCerrarSesión = btnCerrarSesión;
+    }
     
     
     
@@ -79,6 +88,7 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
         btnInicioRe1 = new javax.swing.JButton();
         EscritorioAdmin = new javax.swing.JDesktopPane();
         rSLabelImage1 = new necesario.RSLabelImage();
+        btnCerrarSesión = new org.edisoncor.gui.button.ButtonPopup();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -153,7 +163,12 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
 
         rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/logo2.png"))); // NOI18N
 
+        btnCerrarSesión.setBorder(null);
+        btnCerrarSesión.setText("Cerrar Sesión");
+        btnCerrarSesión.setContentAreaFilled(false);
+
         EscritorioAdmin.setLayer(rSLabelImage1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        EscritorioAdmin.setLayer(btnCerrarSesión, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout EscritorioAdminLayout = new javax.swing.GroupLayout(EscritorioAdmin);
         EscritorioAdmin.setLayout(EscritorioAdminLayout);
@@ -161,13 +176,18 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
             EscritorioAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EscritorioAdminLayout.createSequentialGroup()
                 .addGap(486, 486, 486)
-                .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
                 .addGap(473, 473, 473))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioAdminLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCerrarSesión, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         EscritorioAdminLayout.setVerticalGroup(
             EscritorioAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioAdminLayout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
+                .addComponent(btnCerrarSesión, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
                 .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(106, 106, 106))
         );
@@ -207,6 +227,7 @@ public class vistaPanelControlAdministrador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane EscritorioAdmin;
     private javax.swing.JButton PanelRegistros;
+    private org.edisoncor.gui.button.ButtonPopup btnCerrarSesión;
     private javax.swing.JButton btnInicioRe1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel9;

@@ -148,7 +148,8 @@ public class controlador_vista_cliente {
         vista1.setSize(ventaCliente.getjDesktopPane1().getWidth(), ventaCliente.getjDesktopPane1().getHeight());
         modeloTipoServicio nuevo1 = new modeloTipoServicio();
         cliente_ventana cliente1 = new cliente_ventana();
-        controladorVistaServicios inicio = new controladorVistaServicios(vista1, nuevo1);
+        Pantalla_Principal principal=new Pantalla_Principal();
+        controladorVistaServicios inicio = new controladorVistaServicios(vista1, nuevo1,principal,ventaCliente);
         inicio.iniciarControlador();
     }
     
