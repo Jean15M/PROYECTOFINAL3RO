@@ -47,13 +47,14 @@ public class controlador_Recep_Reserva {
 
     public void iniciarControlador() {
         cargarCombo();
+        cargarCategorias();
         vistaRe.getRdOpcionSi().addActionListener(l -> mostrarParq(2));
         vistaRe.getRdOpcionNo().addActionListener(l -> mostrarParq(1));
         vistaRe.getBtnReservar().addActionListener(l -> ingresarReserva());
         //vistaRe.getBtnCancelar().addActionListener(l->cerrar());
-        vistaRe.getCbcategoria().addActionListener(l -> cargarCategorias());
-        vistaRe.getCbHabitacion1().addActionListener(l -> cargarHabitaciones());
+        vistaRe.getCbcategoria().addActionListener(l -> cargarHabitaciones());
         vistaRe.getBntbuscar().addActionListener(l -> cargarCliente());
+
     }
 
     public void ingresarReserva() {
@@ -237,28 +238,40 @@ public class controlador_Recep_Reserva {
     }
 
     private void cargarHabitaciones() {
+        modeloCategoriaHabitacion codigo = new modeloCategoriaHabitacion();
+        codigo.setNombre_Categoria(vistaRe.getCbcategoria().getSelectedItem().toString());
         modeloHabitaciones cargar = new modeloHabitaciones();
-        cargar.listarHabitaciones().stream().forEach(h -> {
-            vistaRe.getCbHabitacion1().addItem(String.valueOf(h.getNro_Habitacion()));
-        });
+        cargar.setId_Categoria(codigo.ObtenerCodigo());
+        if (cargar.buscarCat().isEmpty()) {
+            System.out.println("si entro");
+            vistaRe.getCbHabitacion1().removeAllItems();
+            vistaRe.getCbHabitacion1().addItem("OCUPADO");
+        } else {
+            cargar.buscarCat().stream().forEach(h -> {
+                vistaRe.getCbHabitacion1().removeAllItems();
+                vistaRe.getCbHabitacion1().addItem(String.valueOf(h.getNro_Habitacion()));
+
+            });
+
+        }
     }
 
-     public void cargarCombo(){
+    public void cargarCombo() {
         modeloMetodoPago modeloP = new modeloMetodoPago();
-        modeloP.listarPago().stream().forEach(p->{
+        modeloP.listarPago().stream().forEach(p -> {
             vistaRe.getCbPago().addItem(p.getNombrePago());
         });
         modeloParqueadero modeloPa = new modeloParqueadero();
-        modeloPa.listarParqueadero().stream().forEach(p->{
+        modeloPa.listarParqueadero().stream().forEach(p -> {
             vistaRe.getCbParque().addItem(String.valueOf(p.getId_Parqueadero()));
         });
-        
-        modeloPa.listarParqueadero().stream().forEach(p->{
+
+        modeloPa.listarParqueadero().stream().forEach(p -> {
             vistaRe.getCbUbicacion().addItem(String.valueOf(p.getUbicacion()));
         });
-        
-        
+
     }
+
     public void cargarCliente() {
         if (vistaRe.getTxtusuario().getText().isEmpty()) {
             System.out.println("ingrese datos");

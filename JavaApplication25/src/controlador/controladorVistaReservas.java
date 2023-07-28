@@ -24,7 +24,7 @@ public class controladorVistaReservas {
     private modeloCategoriaHabitacion habitacionesCate;
     private Pantalla_Principal inicio;
     private cliente_ventana cliente;
-     modeloHabitaciones comprobar=new modeloHabitaciones();
+    modeloHabitaciones comprobar = new modeloHabitaciones();
 
     public controladorVistaReservas(vistaReservas reservas, modeloCategoriaHabitacion habitacionesCate, Pantalla_Principal inicio, cliente_ventana cliente) {
         this.reservas = reservas;
@@ -46,7 +46,7 @@ public class controladorVistaReservas {
     }
 
     private void cargarInformacion() {
-        
+
         try {
             habitacionesCate.setId_Categoria("1");
             if (habitacionesCate.resultado().getString("id_categoria").equals("1")) {
@@ -58,14 +58,16 @@ public class controladorVistaReservas {
                     if (comprobar.listarHabitaciones().get(i).getId_Categoria().equals("1")) {
                         if (comprobar.listarHabitaciones().get(i).getEstado().equals("Disponible")) {
                             reservas.getEstado_vip().setText("Disponible");
-                        }else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
-                            reservas.getEstado_vip().setText("NoDisponible");
+                            reservas.getBtnReservarVIP().setEnabled(true);
+                            reservas.getBtnReservarVIP().setBackground(Color.BLUE);
+                        } else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
+                            reservas.getEstado_vip().setText("No Disponible");
                             reservas.getBtnReservarVIP().setEnabled(false);
                             reservas.getBtnReservarVIP().setBackground(Color.red);
                         }
-                        
+
                     }
-                    
+
                 }
 
             }
@@ -77,7 +79,7 @@ public class controladorVistaReservas {
     }
 
     public void carrgarDukex() {
-       
+
         try {
             habitacionesCate.setId_Categoria("2");
             if (habitacionesCate.resultado().getString("id_categoria").equals("2")) {
@@ -85,20 +87,20 @@ public class controladorVistaReservas {
                 reservas.getTamaño_dulexe().setText(habitacionesCate.resultado().getString("tamano"));
                 reservas.getPrecio_dulex().setText(String.valueOf(habitacionesCate.resultado().getDouble("precio_cate")));
                 habitacionesCate.resultado().close();
-                   for (int i = 0; i < comprobar.listarHabitaciones().size(); i++) {
+                for (int i = 0; i < comprobar.listarHabitaciones().size(); i++) {
                     if (comprobar.listarHabitaciones().get(i).getId_Categoria().equals("2")) {
                         if (comprobar.listarHabitaciones().get(i).getEstado().equals("Disponible")) {
                             reservas.getEstado_dulex().setText("Disponible");
-                        }else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
+                        } else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
                             reservas.getEstado_dulex().setText("No Disponible");
                             reservas.getBtnReservarDel().setEnabled(false);
                             reservas.getBtnReservarDel().setBackground(Color.red);
                         }
-                        
+
                     }
-                    
+
                 }
-                
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
@@ -113,20 +115,20 @@ public class controladorVistaReservas {
                 reservas.getTamaño_standar().setText(habitacionesCate.resultado().getString("tamano"));
                 reservas.getPrecio_standar().setText(String.valueOf(habitacionesCate.resultado().getDouble("precio_cate")));
                 habitacionesCate.resultado().close();
-                   for (int i = 0; i < comprobar.listarHabitaciones().size(); i++) {
+                for (int i = 0; i < comprobar.listarHabitaciones().size(); i++) {
                     if (comprobar.listarHabitaciones().get(i).getId_Categoria().equals("3")) {
                         if (comprobar.listarHabitaciones().get(i).getEstado().equals("Disponible")) {
                             reservas.getEstado_standar().setText("Disponible");
-                        }else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
+                        } else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
                             reservas.getEstado_standar().setText("No Disponible");
                             reservas.getBtnReservarEs().setEnabled(false);
                             reservas.getBtnReservarEs().setBackground(Color.red);
                         }
-                        
+
                     }
-                    
+
                 }
-               
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);

@@ -39,7 +39,7 @@ public class modeloCategoriaHabitacion extends CategoriaHabitacion {
                 CategoriaHabitacion1.setId_Categoria(rs.getString("id_categoria"));
                 CategoriaHabitacion1.setNombre_Categoria(rs.getString("nombre"));
                 CategoriaHabitacion1.setPrecio_cate(rs.getDouble("precio_cate"));
-                CategoriaHabitacion1.setCama_Muestra(rs.getString("cama_muestra"));
+                CategoriaHabitacion1.setCama_Muestra(rs.getString("plazas_muestra"));
                 listaCategoriaHabitacion.add(CategoriaHabitacion1);
             }
             if (listaCategoriaHabitacion.isEmpty()) {
@@ -63,13 +63,13 @@ public class modeloCategoriaHabitacion extends CategoriaHabitacion {
     public String Consultar() {
         String sql = "select id_categoria,nombre,precio_cate,plazas_muestra,tamano from categoria_habitacion";
         sql += " where id_categoria='" + getId_Categoria() + "'";
-        
+
         return sql;
 
     }
 
     public String mostrarCategoriaHabitacion() {
-        String sql = "select id_categoria, nombre from categoriaHabitacion";
+        String sql = "select *  from categoria_Habitacion";
         return sql;
     }
 
@@ -89,30 +89,47 @@ public class modeloCategoriaHabitacion extends CategoriaHabitacion {
     public ResultSet resultado() {
         String sql1 = Consultar();
         ResultSet rs = cpg.resultBD(sql1);
-    
+
         try {
             while (rs.next()) {
-              
+
                 return rs;
-                
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
-  public String resultadoEstado() {
-          String resultado = "";
-        String sql1 = "select estado from habitacion_cate where id_categoria='"+getId_Categoria()+"'";
+
+    public String resultadoEstado() {
+        String resultado = "";
+        String sql1 = "select estado from habitacion_cate where id_categoria='" + getId_Categoria() + "'";
         ResultSet rs = cpg.resultBD(sql1);
         try {
             while (rs.next()) {
-                resultado= rs.getString("estado");
+                resultado = rs.getString("estado");
                 return resultado;
             }
         } catch (SQLException ex) {
             Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
         }
         return resultado;
+    }
+
+    public String ObtenerCodigo() {
+        try {
+            String sql = "select * from categoria_habitacion where nombre='" + super.getNombre_Categoria() + "'";
+            ResultSet rs = cpg.resultBD(sql);
+            modeloCategoriaHabitacion c = new modeloCategoriaHabitacion();
+            while (rs.next()) {
+                c.setId_Categoria(rs.getString("id_categoria"));
+            }
+            rs.close();
+            return c.getId_Categoria();
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
     }
 }
