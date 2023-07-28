@@ -8,9 +8,9 @@ package vista;
 import javax.swing.JTextField;
 import org.edisoncor.gui.button.ButtonRound;
 
-public class Panel_Modificar extends javax.swing.JInternalFrame {
+public class Panel_Modificar_User extends javax.swing.JInternalFrame {
 
-    public Panel_Modificar() {
+    public Panel_Modificar_User() {
         initComponents();
     }
 

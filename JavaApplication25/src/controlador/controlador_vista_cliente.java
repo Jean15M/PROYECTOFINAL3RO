@@ -50,9 +50,13 @@ public class controlador_vista_cliente {
         inicio.iniciarControlador();
     }
 
+<<<<<<< Updated upstream
     public void llamarPanleModificar() {
+=======
+    public void llamarPanleModificar(){
+>>>>>>> Stashed changes
         modeloCliente modelo = new modeloCliente();
-        Panel_Modificar vista = new Panel_Modificar();
+        Panel_Modificar_User vista = new Panel_Modificar_User();
         ventaCliente.getjDesktopPane1().add(vista);
         vista.setBorder(null);
         BasicInternalFrameUI bui = (BasicInternalFrameUI) vista.getUI();
@@ -64,13 +68,15 @@ public class controlador_vista_cliente {
 
     public void abrirDialogo() {
         ventaCliente.getjDialogDatos().setLocationRelativeTo(null);
+        ventaCliente.getjDialogDatos().setSize(384,212);
         ventaCliente.getjDialogDatos().setVisible(true);
     }
 
     public void verDatos() {
         modeloCliente modeloCliente = new modeloCliente();
-        Panel_Modificar vistaMod = new Panel_Modificar();
+        Panel_Modificar_User vistaMod = new Panel_Modificar_User();
         vistaMod.getTxtUsuario().setText(Controlador_Login.usuario);
+        vistaMod.getTxtUsuario().setEditable(false);
         modeloCliente.setUsuarioCliente(Controlador_Login.usuario);
         ventaCliente.getjDesktopPane1().add(vistaMod);
         vistaMod.setBorder(null);
@@ -81,6 +87,7 @@ public class controlador_vista_cliente {
         controlador.iniciarControl();
         vistaMod.getBtnModificar().setVisible(false);
         vistaMod.getBtnCancelar().setText("Regresar");
+<<<<<<< Updated upstream
         if (modeloCliente.cargarCliente1().isEmpty()) {
             JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
         } else {
@@ -104,6 +111,31 @@ public class controlador_vista_cliente {
                 vistaMod.getTxtcontrasena().setText(p.getContraCliente());
                 vistaMod.getTxtcontrasena().setEditable(false);
             });
+=======
+        if(modeloCliente.cargarCliente1().isEmpty()){
+          JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
+        }else{
+           modeloCliente.cargarCliente1().stream().forEach((p)->{
+           vistaMod.getTxtcedula().setText(p.getCedulaPersona());
+           vistaMod.getTxtcedula().setEditable(false);           
+           vistaMod.getTxtnom1().setText(p.getNombrePersona());
+           vistaMod.getTxtnom1().setEditable(false);
+           vistaMod.getTxtnom2().setText(p.getNombrePersona1());
+           vistaMod.getTxtnom2().setEditable(false);
+           vistaMod.getTxtape1().setText(p.getApellidoPersona());
+           vistaMod.getTxtape1().setEditable(false);
+           vistaMod.getTxtape2().setText(p.getApellidoPersona1());
+           vistaMod.getTxtape2().setEditable(false);
+           vistaMod.getTxttelefono().setText(p.getTelefonoPersona());
+           vistaMod.getTxttelefono().setEditable(false);
+           vistaMod.getTxtdireccion().setText(p.getDireccionPersona());
+           vistaMod.getTxtdireccion().setEditable(false);
+           vistaMod.getTxtcorreo().setText(p.getCorreoPersona());
+           vistaMod.getTxtcorreo().setEditable(false);
+           vistaMod.getTxtcontrasena().setText(p.getContraCliente());
+           vistaMod.getTxtcontrasena().setEditable(false);
+           });
+>>>>>>> Stashed changes
         }
     }
 

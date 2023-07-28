@@ -10,9 +10,9 @@ import vista.*;
 public class controlador_Mod_Recepcionista {
     
     private modeloRecepcionista modeloRecepcionista;
-    private vistaModificarRecepcionista vistaMod;
+    private PanelModificarRecepcionista vistaMod;
 
-    public controlador_Mod_Recepcionista(modeloRecepcionista modeloRecepcionista, vistaModificarRecepcionista vistaMod) {
+    public controlador_Mod_Recepcionista(modeloRecepcionista modeloRecepcionista, PanelModificarRecepcionista vistaMod) {
         this.modeloRecepcionista = modeloRecepcionista;
         this.vistaMod = vistaMod;
         vistaMod.setLocationRelativeTo(null);

@@ -10,9 +10,9 @@ import vista.*;
 public class controlador_Panel_Mod_Usuario {
     
     private modeloCliente modeloCliente;
-    private Panel_Modificar vistaMod;
+    private Panel_Modificar_User vistaMod;
 
-    public controlador_Panel_Mod_Usuario(modeloCliente modeloCliente, Panel_Modificar vistaMod) {
+    public controlador_Panel_Mod_Usuario(modeloCliente modeloCliente, Panel_Modificar_User vistaMod) {
         this.modeloCliente = modeloCliente;
         this.vistaMod = vistaMod;
         vistaMod.setVisible(true);
