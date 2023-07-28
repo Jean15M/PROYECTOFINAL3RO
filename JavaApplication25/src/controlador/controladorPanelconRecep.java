@@ -41,7 +41,7 @@ public class controladorPanelconRecep {
         System.out.println("hola: " + Controlador_Login.usuario);
         vistaRecepcionista.getBtnInicioRe().addActionListener(l -> cerrar());
         vistapanel.getBtHabitaciones().addActionListener(l -> llamarPanelHp());
-        vistapanel.getBtReservas().addActionListener(l -> regresar());
+        vistapanel.getBtReservas().addActionListener(l -> llamarPanelReser());
         vistapanel.getBtServicios().addActionListener(l -> llamarPanelServi());
     }
 
@@ -82,13 +82,18 @@ public class controladorPanelconRecep {
         vistapanel.dispose();
     }
 
-    public void regresar() {
+    public void llamarPanelReser() {
         modeloCliente modeloC = new modeloCliente();
         modeloEncabez_fac modeloEn = new modeloEncabez_fac();
         modeloDetalle_fac modeloDe = new modeloDetalle_fac();
         v_recep_reserva vistaRe = new v_recep_reserva();
-        controlador_Recep_Reserva inicio = new controlador_Recep_Reserva(vistaRe, modeloC, modeloEn, modeloDe);
-        inicio.iniciarControlador();
+        vistaRecepcionista.getjDesktopPane1().add(vistaRe);
+        vistaRe.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) vistaRe.getUI();
+        bui.setNorthPane(null);
+        vistaRe.setSize(vistaRecepcionista.getjDesktopPane1().getWidth(), vistaRecepcionista.getjDesktopPane1().getHeight());
+        controlador_Recep_Reserva iniciar = new controlador_Recep_Reserva(vistaRe, modeloC, modeloEn, modeloDe);
+        iniciar.iniciarControlador();
+        vistapanel.dispose();
     }
-
 }

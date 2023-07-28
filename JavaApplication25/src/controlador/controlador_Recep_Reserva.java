@@ -46,16 +46,18 @@ public class controlador_Recep_Reserva {
     }
 
     public void iniciarControlador() {
+        cargarCombo();
         vistaRe.getRdOpcionSi().addActionListener(l -> mostrarParq(2));
         vistaRe.getRdOpcionNo().addActionListener(l -> mostrarParq(1));
-        vistaRe.getBtnReservar().addActionListener(l->ingresarReserva());
+        vistaRe.getBtnReservar().addActionListener(l -> ingresarReserva());
         //vistaRe.getBtnCancelar().addActionListener(l->cerrar());
         vistaRe.getCbcategoria().addActionListener(l -> cargarCategorias());
         vistaRe.getCbHabitacion1().addActionListener(l -> cargarHabitaciones());
+        vistaRe.getBntbuscar().addActionListener(l -> cargarCliente());
     }
 
     public void ingresarReserva() {
-        if (vistaRe.getjCalendarioIni().getDate().equals(null) || vistaRe.getjCalendarioIni().getDate().equals(null) || vistaRe.getLblCliente().getText().isEmpty() || vistaRe.getCbHabitacion1().getSelectedIndex() == 0 || vistaRe.getCbPago().getSelectedIndex() == 0 || vistaRe.getCbPersonas().getSelectedIndex() == 0) {
+        if (vistaRe.getjCalendarioIni().getDate().equals(null) || vistaRe.getjCalendarioIni().getDate().equals(null) || vistaRe.getTxtusuario().getText().isEmpty() || vistaRe.getCbHabitacion1().getSelectedIndex() == 0 || vistaRe.getCbPago().getSelectedIndex() == 0 || vistaRe.getCbPersonas().getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Llene todo los campos por favor...");
         } else {
             java.util.Date fechaCalendar = vistaRe.getjCalendarioIni().getDate();
@@ -81,8 +83,8 @@ public class controlador_Recep_Reserva {
             modeloH.setNro_Habitacion(Integer.parseInt(vistaRe.getCbHabitacion1().getSelectedItem().toString()));
             modeloP.setNombrePago(String.valueOf(vistaRe.getCbPago().getSelectedItem()));
             res.setTotal_Reserva(calcularTotal(dias));
-            res.setCedula_Cliente(vistaRe.getLblCliente().getText());
-            System.out.println(vistaRe.getLblCliente().getText());
+            res.setCedula_Cliente(vistaRe.getTxtusuario().getText());
+            System.out.println(vistaRe.getTxtusuario().getText());
             res.setFecha_entrada(fechain);
             res.setFecha_salida(fechafin);
             res.setId_Habitacion(modeloH.ObtenerCodigo());
@@ -113,7 +115,7 @@ public class controlador_Recep_Reserva {
         modeloReserva res = new modeloReserva();
         LocalDate fecha = LocalDate.now();
         java.sql.Date fech = java.sql.Date.valueOf(fecha);
-        modeloEncabe.setCedula_cli(vistaRe.getLblCliente().getText());
+        modeloEncabe.setCedula_cli(vistaRe.getTxtusuario().getText());
         modeloEncabe.setId_reserva(res.ObtenerCodigoRes());
         modeloEncabe.setFecha_fac(fech);
         modeloEncabe.setTotal_fac(Double.parseDouble(vistaRe.getTxtPrecioHabi().getText()));
@@ -241,4 +243,35 @@ public class controlador_Recep_Reserva {
         });
     }
 
+     public void cargarCombo(){
+        modeloMetodoPago modeloP = new modeloMetodoPago();
+        modeloP.listarPago().stream().forEach(p->{
+            vistaRe.getCbPago().addItem(p.getNombrePago());
+        });
+        modeloParqueadero modeloPa = new modeloParqueadero();
+        modeloPa.listarParqueadero().stream().forEach(p->{
+            vistaRe.getCbParque().addItem(String.valueOf(p.getId_Parqueadero()));
+        });
+        
+        modeloPa.listarParqueadero().stream().forEach(p->{
+            vistaRe.getCbUbicacion().addItem(String.valueOf(p.getUbicacion()));
+        });
+        
+        
+    }
+    public void cargarCliente() {
+        if (vistaRe.getTxtusuario().getText().isEmpty()) {
+            System.out.println("ingrese datos");
+        } else {
+            modeloCliente.setUsuarioCliente(vistaRe.getTxtusuario().getText());
+            if (modeloCliente.cargarCliente1().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
+            } else {
+                modeloCliente.cargarCliente1().stream().forEach((p) -> {
+                    vistaRe.getLblNombre().setText(p.getNombrePersona());
+                    vistaRe.getLblApellido().setText(p.getNombrePersona1());
+                });
+            }
+        }
+    }
 }

@@ -6,6 +6,7 @@
 package vista;
 
 import com.toedter.calendar.JDateChooser;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -17,7 +18,7 @@ import org.edisoncor.gui.comboBox.ComboBoxRound;
  *
  * @author Joseline
  */
-public class v_recep_reserva extends javax.swing.JFrame {
+public class v_recep_reserva extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form vistaAsignarReserva
@@ -25,7 +26,7 @@ public class v_recep_reserva extends javax.swing.JFrame {
     public v_recep_reserva() {
         initComponents();
     }
- 
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -67,7 +68,6 @@ public class v_recep_reserva extends javax.swing.JFrame {
         txtPlaca = new javax.swing.JTextField();
         txtModelo = new javax.swing.JTextField();
         txtMarca = new javax.swing.JTextField();
-        lblCliente = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         cbPersonas = new org.edisoncor.gui.comboBox.ComboBoxRound();
         cbcategoria = new org.edisoncor.gui.comboBox.ComboBoxRound();
@@ -76,6 +76,8 @@ public class v_recep_reserva extends javax.swing.JFrame {
         cbUbicacion = new org.edisoncor.gui.comboBox.ComboBoxRound();
         jLabel19 = new javax.swing.JLabel();
         cbHabitacion1 = new org.edisoncor.gui.comboBox.ComboBoxRound();
+        txtusuario = new javax.swing.JTextField();
+        bntbuscar = new javax.swing.JButton();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -196,9 +198,6 @@ public class v_recep_reserva extends javax.swing.JFrame {
 
         txtMarca.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        lblCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblCliente.setText("-");
-
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(35, 149, 156));
         jLabel18.setText("DATOS RESERVA");
@@ -218,6 +217,10 @@ public class v_recep_reserva extends javax.swing.JFrame {
         jLabel19.setText("Habitación:");
 
         cbHabitacion1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar" }));
+
+        txtusuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        bntbuscar.setText("buscar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -277,13 +280,17 @@ public class v_recep_reserva extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel14)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel12))
+                                    .addComponent(jLabel15))
                                 .addGap(51, 51, 51)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(lblApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bntbuscar)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
@@ -335,7 +342,7 @@ public class v_recep_reserva extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(jLabel13))
-                .addGap(34, 34, 34)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -346,9 +353,11 @@ public class v_recep_reserva extends javax.swing.JFrame {
                             .addComponent(jLabel7)
                             .addComponent(jCalendarioIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel12)
-                            .addComponent(lblCliente))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bntbuscar)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
@@ -421,7 +430,7 @@ public class v_recep_reserva extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(txtPrecioHabi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(131, 131, 131)
@@ -457,7 +466,7 @@ public class v_recep_reserva extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   
+
     public ButtonRound getBtnCancelar() {
         return btnCancelar;
     }
@@ -610,14 +619,6 @@ public class v_recep_reserva extends javax.swing.JFrame {
         this.lblApellido = lblApellido;
     }
 
-    public JLabel getLblCliente() {
-        return lblCliente;
-    }
-
-    public void setLblCliente(JLabel lblCliente) {
-        this.lblCliente = lblCliente;
-    }
-
     public JLabel getLblMarca() {
         return lblMarca;
     }
@@ -666,7 +667,24 @@ public class v_recep_reserva extends javax.swing.JFrame {
         this.lblUbi = lblUbi;
     }
 
+    public JButton getBntbuscar() {
+        return bntbuscar;
+    }
+
+    public void setBntbuscar(JButton bntbuscar) {
+        this.bntbuscar = bntbuscar;
+    }
+
+    public JTextField getTxtusuario() {
+        return txtusuario;
+    }
+
+    public void setTxtusuario(JTextField txtusuario) {
+        this.txtusuario = txtusuario;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bntbuscar;
     private org.edisoncor.gui.button.ButtonRound btnCancelar;
     private org.edisoncor.gui.button.ButtonRound btnReservar;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -698,7 +716,6 @@ public class v_recep_reserva extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblApellido;
-    private javax.swing.JLabel lblCliente;
     private javax.swing.JLabel lblMarca;
     private javax.swing.JLabel lblModelo;
     private javax.swing.JLabel lblNombre;
@@ -713,5 +730,6 @@ public class v_recep_reserva extends javax.swing.JFrame {
     private javax.swing.JTextField txtPlaca;
     private javax.swing.JTextField txtPrecio;
     private javax.swing.JTextField txtPrecioHabi;
+    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }

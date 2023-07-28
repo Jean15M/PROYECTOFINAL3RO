@@ -36,8 +36,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnInicioRe = new javax.swing.JButton();
-        btnReservarRe = new javax.swing.JButton();
-        btnServiciosRe = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
@@ -58,18 +56,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         btnInicioRe.setBorderPainted(false);
         btnInicioRe.setPreferredSize(new java.awt.Dimension(88, 27));
 
-        btnReservarRe.setBackground(new java.awt.Color(37, 113, 156));
-        btnReservarRe.setForeground(new java.awt.Color(255, 255, 255));
-        btnReservarRe.setText("RESERVAR");
-        btnReservarRe.setBorderPainted(false);
-        btnReservarRe.setPreferredSize(new java.awt.Dimension(88, 27));
-
-        btnServiciosRe.setBackground(new java.awt.Color(37, 113, 156));
-        btnServiciosRe.setForeground(new java.awt.Color(255, 255, 255));
-        btnServiciosRe.setText("SERVICIOS");
-        btnServiciosRe.setBorderPainted(false);
-        btnServiciosRe.setPreferredSize(new java.awt.Dimension(88, 27));
-
         jButton4.setBackground(new java.awt.Color(37, 113, 156));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("PANEL");
@@ -87,14 +73,10 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(834, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(btnInicioRe, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnReservarRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnServiciosRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
@@ -114,8 +96,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInicioRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReservarRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnServiciosRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
@@ -179,22 +159,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         this.btnInicioRe = btnInicioRe;
     }
 
-    public JButton getBtnReservarRe() {
-        return btnReservarRe;
-    }
-
-    public void setBtnReservarRe(JButton btnReservarRe) {
-        this.btnReservarRe = btnReservarRe;
-    }
-
-    public JButton getBtnServiciosRe() {
-        return btnServiciosRe;
-    }
-
-    public void setBtnServiciosRe(JButton btnServiciosRe) {
-        this.btnServiciosRe = btnServiciosRe;
-    }
-
     public JLabel getLblUsuario() {
         return lblUsuario;
     }
@@ -227,11 +191,9 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         this.rSLabelImage1 = rSLabelImage1;
     }
 
- 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInicioRe;
-    private javax.swing.JButton btnReservarRe;
-    private javax.swing.JButton btnServiciosRe;
     private javax.swing.JButton jButton4;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel9;
