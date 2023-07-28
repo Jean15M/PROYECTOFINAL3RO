@@ -17,9 +17,9 @@ import modelo.modeloParqueadero;
 import modelo.modeloServicio;
 import vista.PanelControlRecepcionista;
 import vista.PanelControlServ;
+import vista.v_recep_reserva;
 import vista.vistaPanelControl;
 import vista.vistaPanelControlPrincipal;
-import vista.vistaReservarecep;
 
 /**
  *
@@ -27,7 +27,7 @@ import vista.vistaReservarecep;
  */
 public class controladorPanelconRecep {
 
-    private vistaPanelControlPrincipal vistaRecepcionista;   
+    private vistaPanelControlPrincipal vistaRecepcionista;
     private PanelControlRecepcionista vistapanel;
 
     public controladorPanelconRecep(vistaPanelControlPrincipal vistaRecepcionista, PanelControlRecepcionista vistapanel) {
@@ -41,8 +41,8 @@ public class controladorPanelconRecep {
         System.out.println("hola: " + Controlador_Login.usuario);
         vistaRecepcionista.getBtnInicioRe().addActionListener(l -> cerrar());
         vistapanel.getBtHabitaciones().addActionListener(l -> llamarPanelHp());
-        vistapanel.getBtReservas().addActionListener(l -> llamarpa());
-        vistapanel.getBtServicios().addActionListener(l->llamarPanelServi());
+        vistapanel.getBtReservas().addActionListener(l -> regresar());
+        vistapanel.getBtServicios().addActionListener(l -> llamarPanelServi());
     }
 
     private void cerrar() {
@@ -69,22 +69,7 @@ public class controladorPanelconRecep {
 
     }
 
-    private void llamarpa() {
-        vistaReservarecep inicio = new vistaReservarecep();
-        modeloCliente modP = new modeloCliente();
-        modeloEncabez_fac modH = new modeloEncabez_fac();
-        modeloDetalle_fac deta = new modeloDetalle_fac();
-        vistaRecepcionista.getjDesktopPane1().add(inicio);
-        inicio.setBorder(null);
-        BasicInternalFrameUI bui = (BasicInternalFrameUI) inicio.getUI();
-        bui.setNorthPane(null);
-        inicio.setSize(vistaRecepcionista.getjDesktopPane1().getWidth(), vistaRecepcionista.getjDesktopPane1().getHeight());
-        controlador_Recep_Reserva ph = new controlador_Recep_Reserva(inicio,modP, modH,deta);
-        ph.iniciarControlador();
-        vistapanel.dispose();
-    }
-    
-    public void llamarPanelServi(){
+    public void llamarPanelServi() {
         modeloServicio modeloS = new modeloServicio();
         PanelControlServ vistaR = new PanelControlServ();
         vistaRecepcionista.getjDesktopPane1().add(vistaR);
@@ -95,6 +80,15 @@ public class controladorPanelconRecep {
         controladorPanelServicios iniciar = new controladorPanelServicios(modeloS, vistaR);
         iniciar.iniciarControlador();
         vistapanel.dispose();
+    }
+
+    public void regresar() {
+        modeloCliente modeloC = new modeloCliente();
+        modeloEncabez_fac modeloEn = new modeloEncabez_fac();
+        modeloDetalle_fac modeloDe = new modeloDetalle_fac();
+        v_recep_reserva vistaRe = new v_recep_reserva();
+        controlador_Recep_Reserva inicio = new controlador_Recep_Reserva(vistaRe, modeloC, modeloEn, modeloDe);
+        inicio.iniciarControlador();
     }
 
 }
