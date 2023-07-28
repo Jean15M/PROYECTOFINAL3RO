@@ -149,8 +149,8 @@ public class controladorAsignarReserva {
         modeloA.setMarca(vistaReservas.getTxtMarca().getText());
         modeloA.setModelo(vistaReservas.getTxtMarca().getText());
         modeloA.setPlaca(vistaReservas.getTxtPlaca().getText());
-        if (modeloP.modificarParqueaderoBD() == true) {
-            if (modeloA.grabarAutos()) {
+        if (modeloA.grabarAutos()) {
+            if (modeloP.modificarParqueaderoBD()==true) {
                 System.out.println("GUARDADO");
             }
         } else {
@@ -194,11 +194,12 @@ public class controladorAsignarReserva {
         });
          
         modeloParqueadero modeloPa = new modeloParqueadero();
-        modeloPa.listarParqueadero().stream().forEach(p -> {
+        modeloPa.setEstado("Disponible");
+        modeloPa.obtenerParqueadero().stream().forEach(p -> {
             vistaReservas.getCbParque().addItem(String.valueOf(p.getId_Parqueadero()));
         });
 
-        modeloPa.listarParqueadero().stream().forEach(p -> {
+        modeloPa.obtenerParqueadero().stream().forEach(p -> {
             vistaReservas.getCbUbicacion().addItem(String.valueOf(p.getUbicacion()));
         });
 

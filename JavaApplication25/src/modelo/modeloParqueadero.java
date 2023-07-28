@@ -150,4 +150,28 @@ public class modeloParqueadero extends Parqueadero {
 
         return listaPlazasParqueadero;
     }
+    
+    public List<Parqueadero> obtenerParqueadero() {
+        List<Parqueadero> listaBuscar = new ArrayList<>();
+        String sql = "SELECT * FROM parqueadero where estado='"+getEstado()+"'";
+        ResultSet rs = cpg.resultBD(sql);
+
+        try {
+            while (rs.next()) {
+                Parqueadero parqueadero = new Parqueadero();
+                parqueadero.setId_Parqueadero(rs.getString("id_parqueadero"));
+                parqueadero.setPlaca(rs.getString("placa"));
+                parqueadero.setTiempo(rs.getInt("tiempo"));
+                parqueadero.setUbicacion(rs.getString("ubicacion"));
+                listaBuscar.add(parqueadero);
+            }
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+
+        
+    }
 }

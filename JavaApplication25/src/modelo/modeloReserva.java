@@ -8,6 +8,7 @@ package modelo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +24,7 @@ public class modeloReserva extends Reservas {
 
     public boolean modificar = false;
 
-    public List<Reservas> listarDetalle_fac() {
+    public List<Reservas> reservas() {
         List<Reservas> listaReservas = new ArrayList<Reservas>();
         String sql1 = "";
         if (modificar == true) {
@@ -80,6 +81,12 @@ public class modeloReserva extends Reservas {
         sql += "where id_reserva='" + getId_Reserva() + "'";
         return cpg.accionBd(sql);
     }
+    
+    public boolean modificarEstado() {
+        String sql = "UPDATE reserva SET estado_reserva='" + getEstado_reser()+ "'";
+        sql += "where id_reserva='" + getId_Reserva() + "'";
+        return cpg.accionBd(sql);
+    }
 
     public boolean eliminarReservas() {
         String sql = "DELETE FROM public.reserva";
@@ -100,6 +107,52 @@ public class modeloReserva extends Reservas {
             return res.getId_Reserva();
         } catch (SQLException ex) {
             Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
+    public List<Reservas> buscarReservas(){
+        List<Reservas> listaBuscar = new ArrayList<Reservas>();
+        String sql;
+        sql = "select * from reserva where estado_reserva='" + super.getEstado_reser()+ "'";
+        ResultSet rs = cpg.resultBD(sql);
+        Reservas res = new Reservas();
+        try {
+
+            while (rs.next()) {
+                res.setId_Reserva(rs.getString("id_reserva"));
+                res.setId_pago(rs.getString("id_pago"));
+                res.setId_Habitacion(rs.getString("id_habitacion"));
+                res.setId_Parqueadero(rs.getString("id_parqueadero"));
+                res.setId_Recepcionista(rs.getString("id_recepcionista"));
+                res.setCedula_Cliente(rs.getString("cedula_persona"));
+                res.setFecha_entrada(rs.getDate("fecha_entrada"));
+                res.setFecha_salida(rs.getDate("fecha_salida"));
+                res.setEstado_reser("estado_reserva");
+                listaBuscar.add(res);
+            }
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
+    public Date obtenerFechafin(){
+        String sql = "select fecha_salida from reserva where id_reserva='" + super.getId_Reserva()+ "'";
+        ResultSet rs = cpg.resultBD(sql);
+        Reservas res = new Reservas();
+        try {
+
+            while (rs.next()) {
+                res.setFecha_salida(rs.getDate("fecha_salida"));
+                
+            }
+            rs.close();
+            return res.getFecha_salida();
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
