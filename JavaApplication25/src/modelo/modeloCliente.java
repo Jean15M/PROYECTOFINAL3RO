@@ -148,6 +148,9 @@ public class modeloCliente extends Cliente {
                 per.setNombrePersona1(rs.getString("nombre2"));
                 per.setApellidoPersona(rs.getString("apellido1"));
                 per.setApellidoPersona1(rs.getString("apellido2"));
+                per.setDireccionPersona(rs.getString("direccion"));
+                per.setTelefonoPersona(rs.getString("telefono"));
+                per.setCorreoPersona(rs.getString("correo"));
                 listaBuscar.add(per);
             }
             rs.close();

@@ -13,11 +13,15 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import modelo.Conexion;
 import modelo.modeloAutos;
+import modelo.modeloCategoriaHabitacion;
 import modelo.modeloCliente;
 import modelo.modeloDetalle_fac;
 import modelo.modeloEncabez_fac;
@@ -26,6 +30,12 @@ import modelo.modeloMetodoPago;
 import modelo.modeloParqueadero;
 import modelo.modeloPersona;
 import modelo.modeloReserva;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import vista.cliente_ventana;
 import vista.vistaAsignarReserva;
 
@@ -53,14 +63,16 @@ public class controladorAsignarReserva {
     }
 
     public void iniciarControlador() {
+        vistaReservas.getBtnFactura().setEnabled(false);
         cargarCombo();
         cargarCliente();
         vistaReservas.getRdOpcionSi().addActionListener(l -> mostrarParq(2));
         vistaReservas.getRdOpcionNo().addActionListener(l -> mostrarParq(1));
         vistaReservas.getBtnReservar().addActionListener(l -> ingresarReserva());
-        vistaReservas.getBtnCancelar().addActionListener(l -> cerrar());
+        vistaReservas.getBtnCancelar().addActionListener(l -> cerrarInternal());
         cliente.getBtnInicioRe().addActionListener(l -> cerrarInternal());
         calcularDia();
+        vistaReservas.getBtnFactura().addActionListener(l -> imPrimirFactura());
     }
 
     public void ingresarReserva() {
@@ -112,6 +124,7 @@ public class controladorAsignarReserva {
                 guardarFactura();
                 cambiarEstado();
                 JOptionPane.showMessageDialog(null, "RESERVA ASIGNADA");
+                vistaReservas.getBtnFactura().setEnabled(true);
             } else {
                 JOptionPane.showMessageDialog(null, "ERROR DE INGRESO");
             }
@@ -150,7 +163,7 @@ public class controladorAsignarReserva {
         modeloA.setModelo(vistaReservas.getTxtMarca().getText());
         modeloA.setPlaca(vistaReservas.getTxtPlaca().getText());
         if (modeloA.grabarAutos()) {
-            if (modeloP.modificarParqueaderoBD()==true) {
+            if (modeloP.modificarParqueaderoBD() == true) {
                 System.out.println("GUARDADO");
             }
         } else {
@@ -192,7 +205,7 @@ public class controladorAsignarReserva {
             vistaReservas.getCbHabitacion().addItem(String.valueOf(p.getNro_Habitacion()));
             vistaReservas.getTxtPrecio().setText(String.valueOf(p.getPrecio_Habitacion()));
         });
-         
+
         modeloParqueadero modeloPa = new modeloParqueadero();
         modeloPa.setEstado("Disponible");
         modeloPa.obtenerParqueadero().stream().forEach(p -> {
@@ -254,16 +267,6 @@ public class controladorAsignarReserva {
 
     }
 
-    private void cerrar() {
-
-        try {
-            vistaReservas.setClosed(true);
-        } catch (PropertyVetoException ex) {
-            Logger.getLogger(controladorAsignarReserva.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
-
     public void mostrarParq(int bandera) {
         if (bandera == 1) {
             vistaReservas.getLblParque().setVisible(false);
@@ -300,4 +303,45 @@ public class controladorAsignarReserva {
 
     }
 
+    public void imPrimirFactura() {
+        Conexion cpg = new Conexion();
+        try {
+            JasperReport jr = (JasperReport) JRLoader.loadObject(
+                    getClass().getResource("/vista/Reportes/Reporte_cliente.jasper")
+            );
+            Map<String, Object> parametros = new HashMap<String, Object>();
+            modeloCliente.setUsuarioCliente(Controlador_Login.usuario);
+            modeloCliente.cargarCliente().stream().forEach((p) -> {
+
+                parametros.put("b_cedula", p.getNombrePersona());
+                parametros.put("nombre2", p.getNombrePersona1());
+                parametros.put("apellido1", p.getApellidoPersona());
+                parametros.put("apelldio2", p.getApellidoPersona1());
+                parametros.put("cedula_cliente", p.getCedulaPersona());
+                parametros.put("telefono", p.getTelefonoPersona());
+                parametros.put("correo", p.getCorreoPersona());
+                parametros.put("direccion", p.getDireccionPersona());
+                parametros.put("n_habitacio", vistaReservas.getCbHabitacion().getSelectedItem().toString());
+
+                parametros.put("subtotal", vistaReservas.getTxtPrecio().getText());
+                parametros.put("total", vistaReservas.getTxtPrecioHabi().getText());
+                parametros.put("dias", vistaReservas.getTxtDias().getText());
+                parametros.put("personas", vistaReservas.getCbPersonas().getSelectedItem().toString());
+                parametros.put("imagen", this.getClass().getResourceAsStream("/vista/imagenes/logo2.png"));
+            });
+            modeloCategoriaHabitacion modeloH = new modeloCategoriaHabitacion();
+            modeloH.modificar = true;
+            modeloH.setId_Categoria(tipo);
+            modeloH.listarCategoriaHabitacion().stream().forEach(p -> {
+                parametros.put("tipo", p.getNombre_Categoria());
+            });
+
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, cpg.getCon());
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setVisible(true);
+
+        } catch (JRException ex) {
+            Logger.getLogger(controladorAsignarReserva.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
