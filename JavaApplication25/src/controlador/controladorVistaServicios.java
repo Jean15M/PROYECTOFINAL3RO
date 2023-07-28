@@ -9,6 +9,8 @@ import java.beans.PropertyVetoException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
+import modelo.modeloServicio;
 import modelo.modeloTipoServicio;
 import vista.Pantalla_Principal;
 import vista.cliente_ventana;
@@ -24,89 +26,36 @@ import vista.vista_Pedir_ServicioLava;
 public class controladorVistaServicios {
 
     private vistaServicios servicios;
-    private modeloTipoServicio tipoS;
-    private vista_Pedir_Servicio Comida;
-    private vista_Pedir_ServicioLimp limpieza;
-    private vista_Pedir_ServicioLava lava;
     private Pantalla_Principal nueva;
-    private cliente_ventana vista2;
+    private cliente_ventana cliente;
 
-    public controladorVistaServicios(vistaServicios servicios, modeloTipoServicio tipoS, Pantalla_Principal nueva,cliente_ventana vista2) {
+    public controladorVistaServicios(vistaServicios servicios, Pantalla_Principal nueva,cliente_ventana cliente) {
         this.servicios = servicios;
-        this.tipoS = tipoS;
         this.nueva = nueva;
-        this.vista2=vista2;
+        this.cliente=cliente;
         servicios.setVisible(true);
     }
 
     public void iniciarControlador() {
-//        cargarInformacionLimpieza();
-//        cargarInformacionComida();
-//        cargarInformacionLimpieza();
-//        llamarPedirComida();
-        servicios.getBtSolicitarLimpieza().addActionListener(l -> llamarPedirLimpieza());
-        servicios.getBtSolicitarComida().addActionListener(l -> llamarPedirComida());
-        servicios.getBtSolicitarLava().addActionListener(l -> llamarPedirLava());
-        nueva.getBtnInicioRe().addActionListener(l -> cerrar());
-        vista2.getBtnInicioRe().addActionListener(l -> cerrar());
+        servicios.getBtSolicitarLimpieza().addActionListener(l->iniciarAsignarServ("3"));
+        servicios.getBtSolicitarComida().addActionListener(l->iniciarAsignarServ("2"));
+        servicios.getBtSolicitarLava().addActionListener(l->iniciarAsignarServ("1"));
+        cliente.getBtnInicioRe().addActionListener(l->cerrar());
+        nueva.getBtnInicioRe().addActionListener(l->cerrar());
     }
-
-    private void cargarInformacionLimpieza() {
-        try {
-            tipoS.setId_tipo_servicio("1");
-            if (tipoS.resultado().getString("id_tipo_servicio").equals("1")) {
-                servicios.getDescripcionLimpieza().setText(tipoS.resultado().getString("descp_Servicio"));
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    
+    public void iniciarAsignarServ(String tipoServ){
+        controladorAsignarServicio.tipo_serv = tipoServ;
+        vista_Pedir_Servicio vistaS = new vista_Pedir_Servicio();
+        cliente.getjDesktopPane1().add(vistaS);
+        vistaS.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) vistaS.getUI();
+        bui.setNorthPane(null);
+        vistaS.setSize(cliente.getjDesktopPane1().getWidth(), cliente.getjDesktopPane1().getHeight());
+        modeloServicio modeloServ = new modeloServicio();
+        controladorAsignarServicio iniciar = new controladorAsignarServicio(vistaS, modeloServ, cliente);
+        iniciar.iniciarControlador();
     }
-
-    private void cargarInformacionComida() {
-        try {
-            tipoS.setId_tipo_servicio("2");
-            if (tipoS.resultado().getString("id_tipo_servicio").equals("2")) {
-                servicios.getDescripcionLimpieza().setText(tipoS.resultado().getString("descp_Servicio"));
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    private void cargarInformacionLava() {
-        try {
-            tipoS.setId_tipo_servicio("3");
-            if (tipoS.resultado().getString("id_tipo_servicio").equals("3")) {
-                servicios.getDescripcionLimpieza().setText(tipoS.resultado().getString("descp_Servicio"));
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    private void llamarPedirComida() {
-        Comida.setVisible(true);
-    }
-
-    private void llamarPedirLimpieza() {
-        limpieza.setVisible(true);
-    }
-
-    private void llamarPedirLava() {
-        limpieza.setVisible(true);
-    }
-//    private void llamarPedirComida(){
-//        Comida.setVisible(true);
-//}
-//    
-//    private void llamarPedirComida(){
-//        Comida.setVisible(true);
-//}
-//    
-
     public void cerrar() {
 
         try {

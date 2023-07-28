@@ -127,10 +127,14 @@ public class vistaLogin extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        txtcontra.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtcontra.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtcontra.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/log.png"))); // NOI18N
 
+        txtusuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtusuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtusuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N

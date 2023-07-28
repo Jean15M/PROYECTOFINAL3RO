@@ -149,7 +149,7 @@ public class controlador_vista_cliente {
         modeloTipoServicio nuevo1 = new modeloTipoServicio();
         cliente_ventana cliente1 = new cliente_ventana();
         Pantalla_Principal principal=new Pantalla_Principal();
-        controladorVistaServicios inicio = new controladorVistaServicios(vista1, nuevo1,principal,ventaCliente);
+        controladorVistaServicios inicio = new controladorVistaServicios(vista1,principal,ventaCliente);
         inicio.iniciarControlador();
     }
     

@@ -58,9 +58,9 @@ public class modeloServicio extends Servicio {
 //        sql += "values('" + getId_Servicio() + "','" + getId_tipo_servicio() + "','" + getId_Habitacion() + "','" + getDescp_Servicio() + "')";
 //        return cpg.accionBd(sql);
 //    }
-     public boolean grabarServicio(Servicio servicio) {
-        String sql = "INSERT INTO servicios (id_servicio, id_tipo_servicio, id_habitacion, descripcion) ";
-        sql += "VALUES ('" + servicio.getId_Servicio() + "', '" + servicio.getId_tipo_servicio() + "', '" + servicio.getId_Habitacion() + "', '" + servicio.getDescp_Servicio() + "')";
+     public boolean grabarServicio() {
+        String sql = "INSERT INTO servicios (id_tipo_servicio, id_habitacion, descripcion) ";
+        sql += "VALUES ('0', '" + getId_tipo_servicio() + "', '" + getId_Habitacion() + "', '" + getDescp_Servicio() + "')";
 
         return cpg.accionBd(sql);
     }
@@ -127,7 +127,7 @@ public class modeloServicio extends Servicio {
        
         List<Servicio> listaBuscar = new ArrayList<Servicio>();
         String sql;
-        sql = "select * from servicios where estado='" + super.getDescp_Servicio()+ "'";
+        sql = "select * from servicios where descripcion='" + super.getDescp_Servicio()+ "'";
         ResultSet rs = cpg.resultBD(sql);
         Servicio ser = new Servicio();
         try {
@@ -148,6 +148,8 @@ public class modeloServicio extends Servicio {
         }
       
     }
+    
+    
     
     public boolean codigoExisteEnBD(String codigo) {
         String sql = "SELECT COUNT(*) FROM servicios WHERE id_servicio='" + codigo + "'";

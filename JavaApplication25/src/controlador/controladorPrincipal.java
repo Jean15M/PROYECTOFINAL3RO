@@ -71,17 +71,16 @@ public class controladorPrincipal {
     }
     
     public void llamarServicio(){
-          vistaServicios vista1 = new vistaServicios();
+        vistaServicios vista1 = new vistaServicios();
         vistaPrincipal.getPaginaPrincipal().add(vista1);
         vista1.setTitle("PANTALLA_PRINCIPAL");
         vista1.setBorder(null);
         BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
         bui.setNorthPane(null);
         vista1.setSize(vistaPrincipal.getPaginaPrincipal().getWidth(), vistaPrincipal.getPaginaPrincipal().getHeight());
-        modeloTipoServicio nuevo1 = new modeloTipoServicio();
         cliente_ventana  cliente1=new cliente_ventana();
         
-        controladorVistaServicios inicio = new controladorVistaServicios(vista1, nuevo1,vistaPrincipal,cliente1);
+        controladorVistaServicios inicio = new controladorVistaServicios(vista1,vistaPrincipal,cliente1);
         inicio.iniciarControlador();
     }
      public void abrir(){

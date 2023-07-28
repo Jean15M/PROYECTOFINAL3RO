@@ -134,6 +134,32 @@ public class modeloHabitaciones extends Habitaciones {
             return null;
         }
     }
+    
+    public List<Habitaciones> buscarHabi() {
+        List<Habitaciones> listaBuscar = new ArrayList<Habitaciones>();
+        String sql;
+        sql = "select * from habitaciones where estado='Disponible'";
+        ResultSet rs = cpg.resultBD(sql);
+        Habitaciones hab = new Habitaciones();
+        try {
+
+            while (rs.next()) {
+                hab.setId_Habitacion(rs.getString("id_habitacion"));
+                hab.setId_Categoria(rs.getString("id_categoria"));
+                hab.setNro_Habitacion(rs.getInt("n_habitacion"));
+                hab.setNro_Piso(rs.getInt("nro_piso"));
+                hab.setPrecio_Habitacion(rs.getDouble("precio"));
+                hab.setEstado(rs.getString("estado"));
+                hab.setNum_plazas(rs.getString("camas"));
+                listaBuscar.add(hab);
+            }
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
 
     public String ObtenerCodigo() {
         try {

@@ -80,6 +80,44 @@ public class modeloTipoServicio extends Tipo_Servicio {
         sql += "where id_tipo_servicio='" + getId_tipo_servicio() + "'";
         return cpg.accionBd(sql);
     }
+    
+    public String buscarServicios1(){
+       
+        String sql;
+        sql = "select * from tipo_servicios where id_tipo_servicio='" + super.getId_tipo_servicio()+ "'";
+        ResultSet rs = cpg.resultBD(sql);
+        Tipo_Servicio Tipo_Servicio1 = new Tipo_Servicio();
+        try {
+
+            while (rs.next()) {
+                Tipo_Servicio1.setDesc_tipo(rs.getString("descripcion"));;
+                
+            }
+            rs.close();
+            return Tipo_Servicio1.getDesc_tipo();
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+      
+    }
+    
+    public String ObtenerCodigo() {
+        try {
+            String sql = "select id_tipo_servicio from tipo_servicios where descripcion='" + super.getDesc_tipo()+ "'";
+            ResultSet rs = cpg.resultBD(sql);
+            Tipo_Servicio t = new Tipo_Servicio();
+            while (rs.next()) {
+                t.setDesc_tipo(rs.getString("descripcion"));
+
+            }
+            rs.close();
+            return t.getDesc_tipo();
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloHabitaciones.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
 
     public ResultSet resultado() {
         String sql1 = Consultar();
