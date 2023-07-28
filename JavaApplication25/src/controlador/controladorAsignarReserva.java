@@ -142,6 +142,7 @@ public class controladorAsignarReserva {
         modeloP.setPlaca(vistaReservas.getTxtPlaca().getText());
         modeloP.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedItem()));
         modeloP.setUbicacion(String.valueOf(vistaReservas.getCbUbicacion().getSelectedItem()));
+        modeloP.setTiempo(Integer.parseInt(vistaReservas.getTxtDias().getText()));
         modeloA.setMarca(vistaReservas.getTxtMarca().getText());
         modeloA.setModelo(vistaReservas.getTxtMarca().getText());
         modeloA.setPlaca(vistaReservas.getTxtPlaca().getText());
