@@ -11,6 +11,8 @@ import java.util.logging.Logger;
 import modelo.modeloTipoServicio;
 import vista.vistaServicios;
 import vista.vista_Pedir_Servicio;
+import vista.vista_Pedir_ServicioLimp;
+import vista.vista_Pedir_ServicioLava;
 
 /**
  *
@@ -20,6 +22,8 @@ public class controladorVistaServicios {
     private vistaServicios servicios;
     private modeloTipoServicio tipoS;
     private vista_Pedir_Servicio Comida;
+    private vista_Pedir_ServicioLimp limpieza;
+    private vista_Pedir_ServicioLava lava;
 
     public controladorVistaServicios(vistaServicios servicios, modeloTipoServicio tipoS) {
         this.servicios = servicios;
@@ -31,6 +35,9 @@ public class controladorVistaServicios {
 //        cargarInformacionComida();
 //        cargarInformacionLimpieza();
 //        llamarPedirComida();
+    servicios.getBtSolicitarLimpieza().addActionListener(l->llamarPedirLimpieza());
+    servicios.getBtSolicitarComida().addActionListener(l->llamarPedirComida());
+    servicios.getBtSolicitarLava().addActionListener(l->llamarPedirLava());
     }
     
     private void cargarInformacionLimpieza() {
@@ -72,7 +79,12 @@ public class controladorVistaServicios {
     private void llamarPedirComida(){
         Comida.setVisible(true);
 }
-    
+    private void llamarPedirLimpieza(){
+        limpieza.setVisible(true);
+}
+    private void llamarPedirLava(){
+        limpieza.setVisible(true);
+}
 //    private void llamarPedirComida(){
 //        Comida.setVisible(true);
 //}
