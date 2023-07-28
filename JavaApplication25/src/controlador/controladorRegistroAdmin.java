@@ -49,6 +49,7 @@ public class controladorRegistroAdmin {
             vistaAdmin.getComcanto().addItem("SELECCIONAR");
         } else {
             vistaAdmin.getComcanto().removeAllItems();
+             vistaAdmin.getComcanto().addItem("SELECCIONAR");
             modeloCantones cargar = new modeloCantones();
             modeloProvincia cargar1 = new modeloProvincia();
             cargar1.setNombre_Provincia(vistaAdmin.getComprovin().getSelectedItem().toString());

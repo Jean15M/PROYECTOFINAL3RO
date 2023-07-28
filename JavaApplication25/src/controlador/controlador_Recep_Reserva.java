@@ -24,6 +24,7 @@ import modelo.modeloMetodoPago;
 import modelo.modeloParqueadero;
 import modelo.modeloReserva;
 import vista.v_recep_reserva;
+import vista.vistaPanelControlPrincipal;
 
 /**
  *
@@ -36,12 +37,14 @@ public class controlador_Recep_Reserva {
     private modeloCliente modeloCliente;
     private modeloEncabez_fac modeloEncabe;
     private modeloDetalle_fac modeloDetalle;
+    private vistaPanelControlPrincipal vistaRecep1;
 
-    public controlador_Recep_Reserva(v_recep_reserva vistaRe, modeloCliente modeloCliente, modeloEncabez_fac modeloEncabe, modeloDetalle_fac modeloDetalle) {
+    public controlador_Recep_Reserva(v_recep_reserva vistaRe, modeloCliente modeloCliente, modeloEncabez_fac modeloEncabe, modeloDetalle_fac modeloDetalle,vistaPanelControlPrincipal vistaRecep1) {
         this.vistaRe = vistaRe;
         this.modeloCliente = modeloCliente;
         this.modeloEncabe = modeloEncabe;
         this.modeloDetalle = modeloDetalle;
+        this.vistaRecep1=vistaRecep1;
         vistaRe.setVisible(true);
     }
 
@@ -54,6 +57,7 @@ public class controlador_Recep_Reserva {
         //vistaRe.getBtnCancelar().addActionListener(l->cerrar());
         vistaRe.getCbcategoria().addActionListener(l -> cargarHabitaciones());
         vistaRe.getBntbuscar().addActionListener(l -> cargarCliente());
+        vistaRecep1.getBtnInicioRe().addActionListener(l->cerrar());
 
     }
 
@@ -285,6 +289,18 @@ public class controlador_Recep_Reserva {
                     vistaRe.getLblApellido().setText(p.getNombrePersona1());
                 });
             }
+            
+            
         }
+    }
+    
+        public void cerrar() {
+
+        try {
+            vistaRe.setClosed(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 }

@@ -13,11 +13,14 @@ import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Validaciones;
+import modelo.modeloAdministrador;
 import modelo.modeloCantones;
 import modelo.modeloCliente;
 import modelo.modeloPersona;
 import modelo.modeloProvincia;
+import modelo.modeloRecepcionista;
 import vista.Pantalla_Principal;
+import vista.vistaLogin;
 import vista.vistaRegistro;
 
 /**
@@ -36,7 +39,7 @@ public class controladorRegistroUsuario {
     }
 
     public void iniciarControlador() {
-         vistaUsuario.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        vistaUsuario.setExtendedState(JFrame.MAXIMIZED_BOTH);
         cargarProvincias();
         vistaUsuario.getBtnAceptar().addActionListener(l -> registrarUsuario());
         vistaUsuario.getBtnCancelar().addActionListener(l -> regresar());
@@ -85,6 +88,13 @@ public class controladorRegistroUsuario {
                         if (modeloUsuario.grabarCliente()) {
                             JOptionPane.showMessageDialog(null, "GUARDADO EXITOSAMENTE");
                             vistaUsuario.dispose();
+                            modeloRecepcionista modeloL = new modeloRecepcionista();
+                            modeloCliente modeloC = new modeloCliente();
+                            modeloAdministrador modeloA = new modeloAdministrador();
+                            vistaLogin vistaR = new vistaLogin();
+                            Controlador_Login inicio2 = new Controlador_Login(modeloL, modeloA, modeloC, vistaR);
+
+                            inicio2.iniciarControlador();
                         } else {
                             per1.eliminarPersona();
                             modeloUsuario.eliminarCliente();
@@ -108,6 +118,7 @@ public class controladorRegistroUsuario {
             vistaUsuario.getComcanto().addItem("SELECCIONAR");
         } else {
             vistaUsuario.getComcanto().removeAllItems();
+            vistaUsuario.getComcanto().addItem("Seleccionar");
             modeloCantones cargar = new modeloCantones();
             modeloProvincia cargar1 = new modeloProvincia();
             cargar1.setNombre_Provincia(vistaUsuario.getComprovin().getSelectedItem().toString());

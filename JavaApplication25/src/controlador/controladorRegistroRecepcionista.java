@@ -116,6 +116,7 @@ public class controladorRegistroRecepcionista {
             vistarecepcionista.getComcanto().addItem("SELECCIONAR");
         } else {
             vistarecepcionista.getComcanto().removeAllItems();
+            vistarecepcionista.getComcanto().addItem("SELECCIONAR");
             modeloCantones cargar = new modeloCantones();
             modeloProvincia cargar1 = new modeloProvincia();
             cargar1.setNombre_Provincia(vistarecepcionista.getComprovin().getSelectedItem().toString());

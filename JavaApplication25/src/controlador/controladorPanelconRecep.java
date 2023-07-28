@@ -99,7 +99,7 @@ public class controladorPanelconRecep {
         BasicInternalFrameUI bui = (BasicInternalFrameUI) vistaRe.getUI();
         bui.setNorthPane(null);
         vistaRe.setSize(vistaRecepcionista.getjDesktopPane1().getWidth(), vistaRecepcionista.getjDesktopPane1().getHeight());
-        controlador_Recep_Reserva iniciar = new controlador_Recep_Reserva(vistaRe, modeloC, modeloEn, modeloDe);
+        controlador_Recep_Reserva iniciar = new controlador_Recep_Reserva(vistaRe, modeloC, modeloEn, modeloDe,vistaRecepcionista);
         iniciar.iniciarControlador();
         vistapanel.dispose();
     }

@@ -187,10 +187,12 @@ public class controladorAsignarReserva {
         modeloHabitaciones modeloH = new modeloHabitaciones();
         modeloH.setId_Categoria(tipo);
         modeloH.buscarCat().stream().forEach(p -> {
+            vistaReservas.getCbHabitacion().removeAllItems();
+            vistaReservas.getCbHabitacion().addItem("Seleccionar");
             vistaReservas.getCbHabitacion().addItem(String.valueOf(p.getNro_Habitacion()));
             vistaReservas.getTxtPrecio().setText(String.valueOf(p.getPrecio_Habitacion()));
         });
-
+         
         modeloParqueadero modeloPa = new modeloParqueadero();
         modeloPa.listarParqueadero().stream().forEach(p -> {
             vistaReservas.getCbParque().addItem(String.valueOf(p.getId_Parqueadero()));
