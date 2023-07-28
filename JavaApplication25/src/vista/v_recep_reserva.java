@@ -114,7 +114,6 @@ public class v_recep_reserva extends javax.swing.JInternalFrame {
         txtDias.setBackground(new java.awt.Color(255, 255, 255));
         txtDias.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        txtPrecio.setEditable(false);
         txtPrecio.setBackground(new java.awt.Color(255, 255, 255));
         txtPrecio.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
@@ -220,7 +219,16 @@ public class v_recep_reserva extends javax.swing.JInternalFrame {
 
         txtusuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        bntbuscar.setText("buscar");
+        bntbuscar.setBackground(new java.awt.Color(255, 255, 255));
+        bntbuscar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        bntbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/icons8-usuario-25.png"))); // NOI18N
+        bntbuscar.setText("BUSCAR");
+        bntbuscar.setBorder(null);
+        bntbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntbuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -390,7 +398,7 @@ public class v_recep_reserva extends javax.swing.JInternalFrame {
                             .addComponent(lblParque))
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(21, 21, 21)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cbHabitacion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19))
@@ -430,7 +438,7 @@ public class v_recep_reserva extends javax.swing.JInternalFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(txtPrecioHabi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(131, 131, 131)
@@ -466,6 +474,10 @@ public class v_recep_reserva extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bntbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntbuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntbuscarActionPerformed
 
     public ButtonRound getBtnCancelar() {
         return btnCancelar;

@@ -84,33 +84,33 @@ public class modeloCliente extends Cliente {
         String sql = " select * from personas ";
         return sql;
     }
-    
-    public List<Cliente> buscarCliente(){
+
+    public List<Cliente> buscarCliente() {
         List<Cliente> listaBuscar = new ArrayList<Cliente>();
         String sql;
-        sql="select * from cliente where usuario='"+super.getUsuarioCliente()+"'";
-        ResultSet rs=cpg.resultBD(sql);
-        Cliente per=new Cliente();
+        sql = "select * from cliente where usuario='" + super.getUsuarioCliente() + "'";
+        ResultSet rs = cpg.resultBD(sql);
+        Cliente per = new Cliente();
         try {
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 per.setId_Cliente(rs.getString("id_cliente"));
                 per.setCedulaCliente(rs.getString("cedula_persona"));
                 per.setUsuarioCliente(rs.getString("usuario"));
                 per.setContraCliente(rs.getString("contrasena"));
                 listaBuscar.add(per);
-            } 
+            }
             rs.close();
             return listaBuscar;
         } catch (SQLException ex) {
             Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
             return null;
-        }            
+        }
     }
 
     public boolean modificarClienteBD() {
         String sql = "UPDATE cliente SET usuario='" + getUsuarioCliente() + "', contrasena='" + getContraCliente() + "'";
-        sql += "where cedula_persona='" + getCedulaCliente()+ "'";
+        sql += "where cedula_persona='" + getCedulaCliente() + "'";
         return cpg.accionBd(sql);
     }
 
@@ -133,39 +133,40 @@ public class modeloCliente extends Cliente {
         }
         return null;
     }
-    
-    public List<Cliente> cargarCliente(){
+
+    public List<Cliente> cargarCliente() {
         List<Cliente> listaBuscar = new ArrayList<Cliente>();
         String sql;
-        sql="select * from vistacliente where usuario='"+super.getUsuarioCliente()+"'";
-        ResultSet rs=cpg.resultBD(sql);
-        Cliente per=new Cliente();
+        sql = "select * from vistacliente where usuario='" + super.getUsuarioCliente() + "'";
+        ResultSet rs = cpg.resultBD(sql);
+        Cliente per = new Cliente();
         try {
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 per.setCedulaPersona(rs.getString("cedula"));
                 per.setNombrePersona(rs.getString("nombre1"));
                 per.setNombrePersona1(rs.getString("nombre2"));
                 per.setApellidoPersona(rs.getString("apellido1"));
                 per.setApellidoPersona1(rs.getString("apellido2"));
                 listaBuscar.add(per);
-            } 
+            }
             rs.close();
             return listaBuscar;
         } catch (SQLException ex) {
             Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
             return null;
-        }            
+        }
     }
-    public List<Cliente> cargarCliente1(){
+
+    public List<Cliente> cargarCliente1() {
         List<Cliente> listaBuscar = new ArrayList<Cliente>();
         String sql;
-        sql="select * from vistacliente where usuario='"+super.getUsuarioCliente()+"'";
-        ResultSet rs=cpg.resultBD(sql);
-        Cliente per=new Cliente();
+        sql = "select * from vistacliente where usuario='" + super.getUsuarioCliente() + "'";
+        ResultSet rs = cpg.resultBD(sql);
+        Cliente per = new Cliente();
         try {
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 per.setCedulaPersona(rs.getString("cedula_persona"));
                 per.setUsuarioCliente(rs.getString("usuario"));
                 per.setNombrePersona(rs.getString("nombre1"));
@@ -178,13 +179,36 @@ public class modeloCliente extends Cliente {
                 per.setDireccionPersona(rs.getString("direccion"));
                 per.setContraCliente(rs.getString("contrasena"));
                 listaBuscar.add(per);
-            } 
+            }
             rs.close();
             return listaBuscar;
         } catch (SQLException ex) {
             Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
             return null;
-        }            
+        }
+    }
+    
+    
+
+    public List<Cliente> cargarClienteRes() {
+        List<Cliente> listaBuscar = new ArrayList<Cliente>();
+        String sql;
+        sql = "select * from vistacliente where cedula_persona='" + super.getCedulaCliente() + "'";
+        ResultSet rs = cpg.resultBD(sql);
+        Cliente per = new Cliente();
+        try {
+            while (rs.next()) {
+                per.setCedulaPersona(rs.getString("cedula_persona"));
+                per.setNombrePersona(rs.getString("nombre1"));
+                per.setApellidoPersona(rs.getString("apellido1"));
+                listaBuscar.add(per);
+            }
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
     }
 
     public boolean login() throws SQLException {

@@ -39,13 +39,14 @@ public class controlador_Recep_Reserva {
     private modeloDetalle_fac modeloDetalle;
     private vistaPanelControlPrincipal vistaRecep1;
 
-    public controlador_Recep_Reserva(v_recep_reserva vistaRe, modeloCliente modeloCliente, modeloEncabez_fac modeloEncabe, modeloDetalle_fac modeloDetalle,vistaPanelControlPrincipal vistaRecep1) {
+    public controlador_Recep_Reserva(v_recep_reserva vistaRe, modeloCliente modeloCliente, modeloEncabez_fac modeloEncabe, modeloDetalle_fac modeloDetalle, vistaPanelControlPrincipal vistaRecep1) {
         this.vistaRe = vistaRe;
         this.modeloCliente = modeloCliente;
         this.modeloEncabe = modeloEncabe;
         this.modeloDetalle = modeloDetalle;
-        this.vistaRecep1=vistaRecep1;
+        this.vistaRecep1 = vistaRecep1;
         vistaRe.setVisible(true);
+        mostrarParq(1);
     }
 
     public void iniciarControlador() {
@@ -57,7 +58,8 @@ public class controlador_Recep_Reserva {
         //vistaRe.getBtnCancelar().addActionListener(l->cerrar());
         vistaRe.getCbcategoria().addActionListener(l -> cargarHabitaciones());
         vistaRe.getBntbuscar().addActionListener(l -> cargarCliente());
-        vistaRecep1.getBtnInicioRe().addActionListener(l->cerrar());
+        vistaRecep1.getBtnInicioRe().addActionListener(l -> cerrar());
+        calcularDia();
 
     }
 
@@ -254,6 +256,7 @@ public class controlador_Recep_Reserva {
             cargar.buscarCat().stream().forEach(h -> {
                 vistaRe.getCbHabitacion1().removeAllItems();
                 vistaRe.getCbHabitacion1().addItem(String.valueOf(h.getNro_Habitacion()));
+                vistaRe.getTxtPrecio().setText(String.valueOf(h.getPrecio_Habitacion()));
 
             });
 
@@ -273,28 +276,25 @@ public class controlador_Recep_Reserva {
         modeloPa.listarParqueadero().stream().forEach(p -> {
             vistaRe.getCbUbicacion().addItem(String.valueOf(p.getUbicacion()));
         });
-
     }
 
     public void cargarCliente() {
         if (vistaRe.getTxtusuario().getText().isEmpty()) {
-            System.out.println("ingrese datos");
+            JOptionPane.showMessageDialog(null, "! INGRESE EL NUMERO DE CEDULA !");
         } else {
-            modeloCliente.setUsuarioCliente(vistaRe.getTxtusuario().getText());
-            if (modeloCliente.cargarCliente1().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
+            modeloCliente.setCedulaCliente(vistaRe.getTxtusuario().getText());
+            if (modeloCliente.cargarClienteRes().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "CLIENTE NO REGISTRADO");
             } else {
-                modeloCliente.cargarCliente1().stream().forEach((p) -> {
+                modeloCliente.cargarClienteRes().stream().forEach((p) -> {
                     vistaRe.getLblNombre().setText(p.getNombrePersona());
-                    vistaRe.getLblApellido().setText(p.getNombrePersona1());
+                    vistaRe.getLblApellido().setText(p.getApellidoPersona());
                 });
             }
-            
-            
         }
     }
-    
-        public void cerrar() {
+
+    public void cerrar() {
 
         try {
             vistaRe.setClosed(true);
