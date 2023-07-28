@@ -62,8 +62,10 @@ public class cliente_ventana extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
 
+        btnVerDatos.setBackground(new java.awt.Color(0, 102, 255));
         btnVerDatos.setText("VER MIS DATOS");
 
+        btnModificar.setBackground(new java.awt.Color(0, 102, 255));
         btnModificar.setText("MODIFICAR MIS DATOS");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,7 +158,6 @@ public class cliente_ventana extends javax.swing.JFrame {
         btnCerrarSesión.setText("Cerrar Sesión");
         btnCerrarSesión.setContentAreaFilled(false);
 
-        btnPerfil.setBackground(new java.awt.Color(255, 255, 255));
         btnPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/icons8-usuario-25.png"))); // NOI18N
         btnPerfil.setBorder(null);
         btnPerfil.setFocusPainted(false);

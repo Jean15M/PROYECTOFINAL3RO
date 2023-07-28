@@ -107,13 +107,13 @@ public class modeloRecepcionista extends Recepcionista {
     public List<Recepcionista> buscarRecepcionista() {
         List<Recepcionista> listaBuscar = new ArrayList<Recepcionista>();
         String sql;
-        sql="select * from recepcionista where cedula_persona='"+super.getCedula_Recep()+"'";
+        sql="select * from vistarecepcionista where usuario='"+super.getUsuario_Recep()+"'";
         ResultSet rs=cpg.resultBD(sql);
         Recepcionista per=new Recepcionista();
         try {
             
             while(rs.next()){
-                per.setCedula_Recep(rs.getString("cedula_persona"));
+                per.setCedula_Recep(rs.getString("cedula"));
                 per.setUsuario_Recep(rs.getString("usuario"));
                 per.setContra_Recep(rs.getString("contrasena"));
                 per.setNombrePersona(rs.getString("nombre1"));
@@ -124,7 +124,6 @@ public class modeloRecepcionista extends Recepcionista {
                 per.setCorreoPersona(rs.getString("correo"));
                 per.setTelefonoPersona(rs.getString("telefono"));
                 per.setDireccionPersona(rs.getString("direccion"));
-                per.setSueldo_Recep(rs.getDouble("sueldo"));
                 listaBuscar.add(per);
             } 
             rs.close();
@@ -137,7 +136,7 @@ public class modeloRecepcionista extends Recepcionista {
     
     public boolean modificarRecepcionistaBD() {
         String sql = "UPDATE recepcionista SET usuario='" + getUsuario_Recep() + "', contrasena='" + getContra_Recep() + "', sueldo=" + getSueldo_Recep() + "";
-        sql += "where usuario='" + getUsuario_Recep() + "'";
+        sql += "where cedula_persona='" + getCedula_Recep()+ "'";
         return cpg.accionBd(sql);
     }
 

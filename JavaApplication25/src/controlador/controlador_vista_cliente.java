@@ -65,8 +65,8 @@ public class controlador_vista_cliente {
     }
 
     public void abrirDialogo() {
-        ventaCliente.getjDialogDatos().setLocationRelativeTo(null);
-        ventaCliente.getjDialogDatos().setSize(384,212);
+        ventaCliente.getjDialogDatos().setSize(384,268);
+        ventaCliente.getjDialogDatos().setLocationRelativeTo(null);        
         ventaCliente.getjDialogDatos().setVisible(true);
     }
 

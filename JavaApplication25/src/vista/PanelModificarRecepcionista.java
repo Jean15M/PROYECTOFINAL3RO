@@ -5,6 +5,7 @@
  */
 package vista;
 
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import org.edisoncor.gui.button.ButtonRound;
 
@@ -19,6 +20,38 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
      */
     public PanelModificarRecepcionista() {
         initComponents();
+    }
+
+    public ButtonRound getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public void setBtnCancelar(ButtonRound btnCancelar) {
+        this.btnCancelar = btnCancelar;
+    }
+
+    public ButtonRound getBtnModificar() {
+        return btnModificar;
+    }
+
+    public void setBtnModificar(ButtonRound btnModificar) {
+        this.btnModificar = btnModificar;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JTextField getTxtUsuario() {
+        return txtUsuario;
+    }
+
+    public void setTxtUsuario(JTextField txtUsuario) {
+        this.txtUsuario = txtUsuario;
     }
 
     public JTextField getTxtape1() {
@@ -45,6 +78,22 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
         this.txtcedula = txtcedula;
     }
 
+    public JTextField getTxtcontrasena() {
+        return txtcontrasena;
+    }
+
+    public void setTxtcontrasena(JTextField txtcontrasena) {
+        this.txtcontrasena = txtcontrasena;
+    }
+
+    public JTextField getTxtcorreo() {
+        return txtcorreo;
+    }
+
+    public void setTxtcorreo(JTextField txtcorreo) {
+        this.txtcorreo = txtcorreo;
+    }
+
     public JTextField getTxtdireccion() {
         return txtdireccion;
     }
@@ -54,11 +103,11 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
     }
 
     public JTextField getTxtnom1() {
-        return txtUsuario;
+        return txtnom1;
     }
 
     public void setTxtnom1(JTextField txtnom1) {
-        this.txtUsuario = txtnom1;
+        this.txtnom1 = txtnom1;
     }
 
     public JTextField getTxtnom2() {
@@ -76,62 +125,7 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
     public void setTxttelefono(JTextField txttelefono) {
         this.txttelefono = txttelefono;
     }
-
-    public ButtonRound getBtnCancelar() {
-        return btnCancelar;
-    }
-
-    public void setBtnCancelar(ButtonRound btnCancelar) {
-        this.btnCancelar = btnCancelar;
-    }
-
-    public JTextField getTxtcorreo() {
-        return txtcorreo;
-    }
-
-    public void setTxtcorreo(JTextField txtcorreo) {
-        this.txtcorreo = txtcorreo;
-    }
-
-    public JTextField getTxtUsuario() {
-        return txtUsuario;
-    }
-
-    public void setTxtUsuario(JTextField txtUsuario) {
-        this.txtUsuario = txtUsuario;
-    }
-
-    public JTextField getTxtcontrasena() {
-        return txtcontrasena;
-    }
-
-    public void setTxtcontrasena(JTextField txtcontrasena) {
-        this.txtcontrasena = txtcontrasena;
-    }
-
-    public JTextField getTxtsalario() {
-        return txtsalario;
-    }
-
-    public void setTxtsalario(JTextField txtsalario) {
-        this.txtsalario = txtsalario;
-    }
-
-    public ButtonRound getBtnModificar() {
-        return btnBuscar;
-    }
-
-    public void setBtnModificar(ButtonRound btnModificar) {
-        this.btnBuscar = btnModificar;
-    }
-
-    public ButtonRound getBtnBuscar() {
-        return btnBuscar;
-    }
-
-    public void setBtnBuscar(ButtonRound btnBuscar) {
-        this.btnBuscar = btnBuscar;
-    }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -157,13 +151,9 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
         txtcontrasena = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         txtcorreo = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        txtsalario = new javax.swing.JTextField();
-        btnBuscar = new org.edisoncor.gui.button.ButtonRound();
         btnCancelar = new org.edisoncor.gui.button.ButtonRound();
-        btnModificar1 = new org.edisoncor.gui.button.ButtonRound();
+        btnModificar = new org.edisoncor.gui.button.ButtonRound();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -219,19 +209,11 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel18.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        jLabel18.setText("SALARIO:");
-
-        txtsalario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-
-        btnBuscar.setBackground(new java.awt.Color(0, 102, 255));
-        btnBuscar.setText("BUSCAR");
-
         btnCancelar.setBackground(new java.awt.Color(0, 102, 255));
         btnCancelar.setText("CANCELAR");
 
-        btnModificar1.setBackground(new java.awt.Color(0, 102, 255));
-        btnModificar1.setText("MODIFICAR");
+        btnModificar.setBackground(new java.awt.Color(0, 102, 255));
+        btnModificar.setText("MODIFICAR");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -242,10 +224,6 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel18)
-                                .addGap(10, 10, 10)
-                                .addComponent(txtsalario, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -287,15 +265,13 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtnom2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtnom2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addGap(17, 17, 17))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(210, 210, 210)
-                .addComponent(btnModificar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -308,12 +284,10 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
+                                .addGap(33, 33, 33)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtcedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel15)
@@ -335,10 +309,6 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
                         .addComponent(jLabel9)
                         .addGap(2, 2, 2))
                     .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
-                    .addComponent(txtsalario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
@@ -351,9 +321,9 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnModificar1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42))
         );
@@ -362,7 +332,10 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -377,15 +350,13 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtcorreoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private org.edisoncor.gui.button.ButtonRound btnBuscar;
     private org.edisoncor.gui.button.ButtonRound btnCancelar;
-    private org.edisoncor.gui.button.ButtonRound btnModificar1;
+    private org.edisoncor.gui.button.ButtonRound btnModificar;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -400,7 +371,6 @@ public class PanelModificarRecepcionista extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtdireccion;
     private javax.swing.JTextField txtnom1;
     private javax.swing.JTextField txtnom2;
-    private javax.swing.JTextField txtsalario;
     private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
 }
