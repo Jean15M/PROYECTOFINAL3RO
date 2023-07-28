@@ -53,7 +53,8 @@ public class controladorVistaServicios {
         bui.setNorthPane(null);
         vistaS.setSize(cliente.getjDesktopPane1().getWidth(), cliente.getjDesktopPane1().getHeight());
         modeloServicio modeloServ = new modeloServicio();
-        controladorAsignarServicio iniciar = new controladorAsignarServicio(vistaS, modeloServ, cliente);
+        modeloTipoServicio modeloTipoS = new modeloTipoServicio();
+        controladorAsignarServicio iniciar = new controladorAsignarServicio(vistaS, modeloServ, cliente, modeloTipoS);
         iniciar.iniciarControlador();
     }
     public void cerrar() {

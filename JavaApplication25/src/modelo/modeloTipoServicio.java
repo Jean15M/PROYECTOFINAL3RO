@@ -84,7 +84,7 @@ public class modeloTipoServicio extends Tipo_Servicio {
     public String buscarServicios1(){
        
         String sql;
-        sql = "select * from tipo_servicios where id_tipo_servicio='" + super.getId_tipo_servicio()+ "'";
+        sql = "select descripcion from tipo_servicios where id_tipo_servicio='" + super.getId_tipo_servicio()+ "'";
         ResultSet rs = cpg.resultBD(sql);
         Tipo_Servicio Tipo_Servicio1 = new Tipo_Servicio();
         try {

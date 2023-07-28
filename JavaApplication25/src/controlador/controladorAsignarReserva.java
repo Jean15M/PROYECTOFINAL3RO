@@ -76,7 +76,7 @@ public class controladorAsignarReserva {
     }
 
     public void ingresarReserva() {
-        if (vistaReservas.getjCalendarioIni().getDate().equals(null) || vistaReservas.getjCalendarioIni().getDate().equals(null) || vistaReservas.getLblCliente().getText().isEmpty() || vistaReservas.getCbHabitacion().getSelectedIndex() == 0 || vistaReservas.getCbPago().getSelectedIndex() == 0 || vistaReservas.getCbPersonas().getSelectedIndex() == 0) {
+        if (vistaReservas.getjCalendarioIni().getDate()==null || vistaReservas.getjCalendarioIni().getDate()==null || vistaReservas.getCbHabitacion().getSelectedIndex() == 0 || vistaReservas.getCbPago().getSelectedIndex() == 0 || vistaReservas.getCbPersonas().getSelectedIndex() == 0 || (!vistaReservas.getRdOpcionSi().isSelected() && !vistaReservas.getRdOpcionNo().isSelected())) {
             JOptionPane.showMessageDialog(null, "Llene todo los campos por favor...");
         } else {
             java.util.Date fechaCalendar = vistaReservas.getjCalendarioIni().getDate();

@@ -24,14 +24,17 @@ public class controladorAsignarServicio {
     private vista_Pedir_Servicio vistaS;
     private modeloServicio modeloServ;
     private cliente_ventana cliente;
+    private modeloTipoServicio modeloTipoS;
 
-    public controladorAsignarServicio(vista_Pedir_Servicio vistaS, modeloServicio modeloServ, cliente_ventana cliente) {
+    public controladorAsignarServicio(vista_Pedir_Servicio vistaS, modeloServicio modeloServ, cliente_ventana cliente, modeloTipoServicio modeloTipoS) {
         this.vistaS = vistaS;
         this.modeloServ = modeloServ;
         this.cliente = cliente;
+        this.modeloTipoS = modeloTipoS;
+        modeloTipoS.setId_tipo_servicio(tipo_serv);
         vistaS.setVisible(true);
-        vistaS.getLblServicio().setText(tipo_serv);
-        vistaS.getLblTipoServ().setText(tipo_serv);
+        vistaS.getLblServicio().setText(modeloTipoS.buscarServicios1());
+        vistaS.getLblTipoServ().setText(modeloTipoS.buscarServicios1());
     }
     
     public void iniciarControlador(){
@@ -47,13 +50,10 @@ public class controladorAsignarServicio {
         }else{
             int opc = JOptionPane.showConfirmDialog(null, "¿ESTA SEGURO DEL SERVICIO?", "CONFIRMAR", JOptionPane.YES_NO_CANCEL_OPTION);
             if(opc==0){
-                modeloTipoServicio tipo = new modeloTipoServicio();
                 modeloHabitaciones modeloH = new modeloHabitaciones();
                 modeloH.setNro_Habitacion(Integer.valueOf(vistaS.getCbHabitacion().getSelectedItem().toString()));
-                tipo.setDesc_tipo(tipo_serv);
-                modeloServ.setDescp_Servicio(vistaS.getTxtDescripcion().getText());
                 modeloServ.setEstado("En espera");
-                modeloServ.setId_tipo_servicio(tipo.ObtenerCodigo());
+                modeloServ.setId_tipo_servicio(tipo_serv);
                 modeloServ.setId_Habitacion(modeloH.ObtenerCodigo());
                 if(modeloServ.grabarServicio()==true){
                     JOptionPane.showMessageDialog(null, "SERVICIO PEDIDO CORRECTAMENTE, POR FAVOR ESPERE...");
