@@ -10,7 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-<<<<<<< Updated upstream
 import modelo.modeloCliente;
 import modelo.modeloDetalle_fac;
 import modelo.modeloEncabez_fac;
@@ -22,10 +21,9 @@ import vista.PanelControlServ;
 import vista.v_recep_reserva;
 import vista.vistaPanelControl;
 import vista.vistaPanelControlPrincipal;
-=======
 import modelo.*;
 import vista.*;
->>>>>>> Stashed changes
+
 
 public class controladorPanelconRecep {
 
@@ -39,19 +37,19 @@ public class controladorPanelconRecep {
     }
 
     public void iniciarControlador() {
-        vistaRecepcionista.getBtnPerfil().setText(Controlador_Login.usuario);
-        vistaRecepcionista.getBtnPerfil().addActionListener(l -> abrirDialogo());
+        //vistaRecepcionista.getBtnPerfil().setText(Controlador_Login.usuario);
+//        vistaRecepcionista.getBtnPerfil().addActionListener(l -> abrirDialogo());
         System.out.println("hola: " + Controlador_Login.usuario);
         vistaRecepcionista.getBtnInicioRe().addActionListener(l -> cerrar());
         vistapanel.getBtHabitaciones().addActionListener(l -> llamarPanelHp());
-<<<<<<< Updated upstream
+
         vistapanel.getBtReservas().addActionListener(l -> llamarPanelReser());
         vistapanel.getBtServicios().addActionListener(l -> llamarPanelServi());
-=======
-        vistapanel.getBtReservas().addActionListener(l -> llamarpa());
-        vistaRecepcionista.getBtnModificar().addActionListener(l -> llamarPanleModificar());
-        vistaRecepcionista.getBtnVerDatos().addActionListener(l -> verDatos());
->>>>>>> Stashed changes
+
+        //vistapanel.getBtReservas().addActionListener(l -> llamarpa());
+        //vistaRecepcionista.getBtnModificar().addActionListener(l -> llamarPanleModificar());
+        //vistaRecepcionista.getBtnVerDatos().addActionListener(l -> verDatos());
+
     }
 
     private void cerrar() {
@@ -89,7 +87,7 @@ public class controladorPanelconRecep {
         iniciar.iniciarControlador();
         vistapanel.dispose();
     }
-<<<<<<< Updated upstream
+
 
     public void llamarPanelReser() {
         modeloCliente modeloC = new modeloCliente();
@@ -105,13 +103,11 @@ public class controladorPanelconRecep {
         iniciar.iniciarControlador();
         vistapanel.dispose();
     }
-}
-=======
     
     public void abrirDialogo(){
-        vistaRecepcionista.getjDialogDatos().setLocationRelativeTo(null);
-        vistaRecepcionista.getjDialogDatos().setSize(384,212);
-        vistaRecepcionista.getjDialogDatos().setVisible(true);
+        //vistaRecepcionista.getjDialogDatos().setLocationRelativeTo(null);
+        //vistaRecepcionista.getjDialogDatos().setSize(384,212);
+        //vistaRecepcionista.getjDialogDatos().setVisible(true);
     }
     
     public void llamarPanleModificar(){
@@ -165,6 +161,10 @@ public class controladorPanelconRecep {
            vistaMod.getTxtcontrasena().setEditable(false);
            });
         }
-    }     
+    } 
 }
->>>>>>> Stashed changes
+
+    
+        
+
+

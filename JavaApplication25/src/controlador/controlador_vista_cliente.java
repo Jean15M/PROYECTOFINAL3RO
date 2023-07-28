@@ -50,11 +50,9 @@ public class controlador_vista_cliente {
         inicio.iniciarControlador();
     }
 
-<<<<<<< Updated upstream
-    public void llamarPanleModificar() {
-=======
+
     public void llamarPanleModificar(){
->>>>>>> Stashed changes
+
         modeloCliente modelo = new modeloCliente();
         Panel_Modificar_User vista = new Panel_Modificar_User();
         ventaCliente.getjDesktopPane1().add(vista);
@@ -87,7 +85,7 @@ public class controlador_vista_cliente {
         controlador.iniciarControl();
         vistaMod.getBtnModificar().setVisible(false);
         vistaMod.getBtnCancelar().setText("Regresar");
-<<<<<<< Updated upstream
+
         if (modeloCliente.cargarCliente1().isEmpty()) {
             JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
         } else {
@@ -111,7 +109,7 @@ public class controlador_vista_cliente {
                 vistaMod.getTxtcontrasena().setText(p.getContraCliente());
                 vistaMod.getTxtcontrasena().setEditable(false);
             });
-=======
+
         if(modeloCliente.cargarCliente1().isEmpty()){
           JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
         }else{
@@ -135,7 +133,8 @@ public class controlador_vista_cliente {
            vistaMod.getTxtcontrasena().setText(p.getContraCliente());
            vistaMod.getTxtcontrasena().setEditable(false);
            });
->>>>>>> Stashed changes
+
+        }
         }
     }
 
@@ -160,3 +159,4 @@ public class controlador_vista_cliente {
         ventaCliente.dispose();
     }
 }
+

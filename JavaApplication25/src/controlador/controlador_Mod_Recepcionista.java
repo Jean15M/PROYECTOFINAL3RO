@@ -15,7 +15,6 @@ public class controlador_Mod_Recepcionista {
     public controlador_Mod_Recepcionista(modeloRecepcionista modeloRecepcionista, PanelModificarRecepcionista vistaMod) {
         this.modeloRecepcionista = modeloRecepcionista;
         this.vistaMod = vistaMod;
-        vistaMod.setLocationRelativeTo(null);
         vistaMod.setVisible(true);
     }
     

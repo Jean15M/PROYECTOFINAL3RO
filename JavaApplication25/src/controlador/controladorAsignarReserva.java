@@ -182,7 +182,7 @@ public class controladorAsignarReserva {
         });
         
         modeloHabitaciones modeloH = new modeloHabitaciones();
-        modeloH.setId_Categoria(Integer.parseInt(tipo));
+        modeloH.setId_Categoria(tipo);
         modeloH.buscarCat().stream().forEach(p->{
             vistaReservas.getCbHabitacion().addItem(String.valueOf(p.getNro_Habitacion()));
             vistaReservas.getTxtPrecio().setText(String.valueOf(p.getPrecio_Habitacion()));

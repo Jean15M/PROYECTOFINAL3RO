@@ -7,10 +7,8 @@ package vista;
 
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
-import javax.swing.JDialog;
 import javax.swing.JLabel;
 import necesario.RSLabelImage;
-import org.edisoncor.gui.button.ButtonNice;
 import org.edisoncor.gui.button.ButtonRound;
 
 /**
@@ -35,46 +33,16 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialogDatos = new javax.swing.JDialog();
-        btnVerDatos = new org.edisoncor.gui.button.ButtonNice();
-        btnModificar = new org.edisoncor.gui.button.ButtonNice();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnInicioRe = new javax.swing.JButton();
+        btnReservarRe = new javax.swing.JButton();
+        btnServiciosRe = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        btnPerfil = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         rSLabelImage1 = new necesario.RSLabelImage();
-
-        btnVerDatos.setText("VER MIS DATOS");
-
-        btnModificar.setText("MODIFICAR MIS DATOS");
-        btnModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jDialogDatosLayout = new javax.swing.GroupLayout(jDialogDatos.getContentPane());
-        jDialogDatos.getContentPane().setLayout(jDialogDatosLayout);
-        jDialogDatosLayout.setHorizontalGroup(
-            jDialogDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialogDatosLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addGroup(jDialogDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVerDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(100, Short.MAX_VALUE))
-        );
-        jDialogDatosLayout.setVerticalGroup(
-            jDialogDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialogDatosLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(btnVerDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -90,25 +58,43 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         btnInicioRe.setBorderPainted(false);
         btnInicioRe.setPreferredSize(new java.awt.Dimension(88, 27));
 
+        btnReservarRe.setBackground(new java.awt.Color(37, 113, 156));
+        btnReservarRe.setForeground(new java.awt.Color(255, 255, 255));
+        btnReservarRe.setText("RESERVAR");
+        btnReservarRe.setBorderPainted(false);
+        btnReservarRe.setPreferredSize(new java.awt.Dimension(88, 27));
+
+        btnServiciosRe.setBackground(new java.awt.Color(37, 113, 156));
+        btnServiciosRe.setForeground(new java.awt.Color(255, 255, 255));
+        btnServiciosRe.setText("SERVICIOS");
+        btnServiciosRe.setBorderPainted(false);
+        btnServiciosRe.setPreferredSize(new java.awt.Dimension(88, 27));
+
         jButton4.setBackground(new java.awt.Color(37, 113, 156));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("PANEL");
         jButton4.setBorderPainted(false);
         jButton4.setPreferredSize(new java.awt.Dimension(88, 27));
 
-        btnPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/icons8-usuario-25.png"))); // NOI18N
-        btnPerfil.setText("jButton1");
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/icons8-usuario-25.png"))); // NOI18N
+
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblUsuario.setText("-");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-<<<<<<< Updated upstream
-                .addContainerGap(834, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(btnInicioRe, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnReservarRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnServiciosRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
@@ -117,37 +103,19 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)
                         .addGap(30, 30, 30))))
-=======
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnInicioRe, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnReservarRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnServiciosRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnPerfil, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
->>>>>>> Stashed changes
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-<<<<<<< Updated upstream
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-=======
-                .addGap(16, 16, 16)
-                .addComponent(btnPerfil)
-                .addGap(18, 18, 18)
->>>>>>> Stashed changes
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInicioRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReservarRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnServiciosRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
@@ -163,11 +131,7 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGap(428, 428, 428)
-<<<<<<< Updated upstream
                 .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
-=======
-                .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
->>>>>>> Stashed changes
                 .addGap(287, 287, 287))
         );
         jDesktopPane1Layout.setVerticalGroup(
@@ -207,10 +171,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnModificarActionPerformed
-
     public JButton getBtnInicioRe() {
         return btnInicioRe;
     }
@@ -219,14 +179,6 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         this.btnInicioRe = btnInicioRe;
     }
 
-<<<<<<< Updated upstream
-    public JLabel getLblUsuario() {
-        return lblUsuario;
-    }
-
-    public void setLblUsuario(JLabel lblUsuario) {
-        this.lblUsuario = lblUsuario;
-=======
     public JButton getBtnReservarRe() {
         return btnReservarRe;
     }
@@ -241,7 +193,14 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
 
     public void setBtnServiciosRe(JButton btnServiciosRe) {
         this.btnServiciosRe = btnServiciosRe;
->>>>>>> Stashed changes
+    }
+
+    public JLabel getLblUsuario() {
+        return lblUsuario;
+    }
+
+    public void setLblUsuario(JLabel lblUsuario) {
+        this.lblUsuario = lblUsuario;
     }
 
     public JButton getjButton4() {
@@ -268,56 +227,17 @@ public class vistaPanelControlPrincipal extends javax.swing.JFrame {
         this.rSLabelImage1 = rSLabelImage1;
     }
 
-<<<<<<< Updated upstream
-
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInicioRe;
-=======
-    public ButtonNice getBtnModificar() {
-        return btnModificar;
-    }
-
-    public void setBtnModificar(ButtonNice btnModificar) {
-        this.btnModificar = btnModificar;
-    }
-
-    public ButtonNice getBtnVerDatos() {
-        return btnVerDatos;
-    }
-
-    public void setBtnVerDatos(ButtonNice btnVerDatos) {
-        this.btnVerDatos = btnVerDatos;
-    }
-
-    public JDialog getjDialogDatos() {
-        return jDialogDatos;
-    }
-
-    public void setjDialogDatos(JDialog jDialogDatos) {
-        this.jDialogDatos = jDialogDatos;
-    }
-
-    public JButton getBtnPerfil() {
-        return btnPerfil;
-    }
-
-    public void setBtnPerfil(JButton btnPerfil) {
-        this.btnPerfil = btnPerfil;
-    }
-     
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnInicioRe;
-    private org.edisoncor.gui.button.ButtonNice btnModificar;
-    private javax.swing.JButton btnPerfil;
     private javax.swing.JButton btnReservarRe;
     private javax.swing.JButton btnServiciosRe;
-    private org.edisoncor.gui.button.ButtonNice btnVerDatos;
->>>>>>> Stashed changes
     private javax.swing.JButton jButton4;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JDialog jDialogDatos;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblUsuario;
     private necesario.RSLabelImage rSLabelImage1;
     // End of variables declaration//GEN-END:variables
 }
