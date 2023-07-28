@@ -15,7 +15,7 @@ public class Habitaciones {
     private double precio_Habitacion;
     private int nro_Habitacion;
     private int nro_Piso;
-    private int id_Categoria;
+    private String id_Categoria;
     private String num_plazas;
     private String estado;
     //PRIVATE
@@ -23,7 +23,7 @@ public class Habitaciones {
     public Habitaciones() {
     }
 
-    public Habitaciones(String id_Habitacion, double precio_Habitacion, int nro_Habitacion, int nro_Piso, int id_Categoria, String num_plazas, String estado) {
+    public Habitaciones(String id_Habitacion, double precio_Habitacion, int nro_Habitacion, int nro_Piso, String id_Categoria, String num_plazas, String estado) {
         this.id_Habitacion = id_Habitacion;
         this.precio_Habitacion = precio_Habitacion;
         this.nro_Habitacion = nro_Habitacion;
@@ -65,11 +65,11 @@ public class Habitaciones {
         this.nro_Piso = nro_Piso;
     }
 
-    public int getId_Categoria() {
+    public String getId_Categoria() {
         return id_Categoria;
     }
 
-    public void setId_Categoria(int id_Categoria) {
+    public void setId_Categoria(String id_Categoria) {
         this.id_Categoria = id_Categoria;
     }
 

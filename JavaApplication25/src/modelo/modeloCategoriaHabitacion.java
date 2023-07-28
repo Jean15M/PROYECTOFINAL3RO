@@ -101,13 +101,13 @@ public class modeloCategoriaHabitacion extends CategoriaHabitacion {
         }
         return null;
     }
-  public int resultadoEstado() {
-         int resultado = 0;
-        String sql1 = "select sum(estado) from habitacion_cate where id_categoria='"+getId_Categoria()+"'";
+  public String resultadoEstado() {
+          String resultado = "";
+        String sql1 = "select estado from habitacion_cate where id_categoria='"+getId_Categoria()+"'";
         ResultSet rs = cpg.resultBD(sql1);
         try {
             while (rs.next()) {
-                resultado= rs.getInt("sum(estado)");
+                resultado= rs.getString("estado");
                 return resultado;
             }
         } catch (SQLException ex) {

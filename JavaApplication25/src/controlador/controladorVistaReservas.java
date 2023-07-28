@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import java.awt.Color;
 import java.beans.PropertyVetoException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -23,6 +24,7 @@ public class controladorVistaReservas {
     private modeloCategoriaHabitacion habitacionesCate;
     private Pantalla_Principal inicio;
     private cliente_ventana cliente;
+     modeloHabitaciones comprobar=new modeloHabitaciones();
 
     public controladorVistaReservas(vistaReservas reservas, modeloCategoriaHabitacion habitacionesCate, Pantalla_Principal inicio, cliente_ventana cliente) {
         this.reservas = reservas;
@@ -37,14 +39,14 @@ public class controladorVistaReservas {
         cliente.getBtnInicioRe().addActionListener(l -> cerrar());
         reservas.getBtnReservarVIP().addActionListener(l -> asignarReserva("1"));
         reservas.getBtnReservarDel().addActionListener(l -> asignarReserva("2"));
-        reservas.getBtnReservarVIP().addActionListener(l -> asignarReserva("3"));
+        reservas.getBtnReservarEs().addActionListener(l -> asignarReserva("3"));
         cargarInformacion();
         carrgarDukex();
         cargarStandar();
     }
 
     private void cargarInformacion() {
-
+        
         try {
             habitacionesCate.setId_Categoria("1");
             if (habitacionesCate.resultado().getString("id_categoria").equals("1")) {
@@ -52,12 +54,18 @@ public class controladorVistaReservas {
                 reservas.getTamaño_vip().setText(habitacionesCate.resultado().getString("tamano"));
                 reservas.getPrecio_vip().setText(String.valueOf(habitacionesCate.resultado().getDouble("precio_cate")));
 
-                if (habitacionesCate.resultadoEstado() >= 1) {
-                    reservas.getEstado_vip().setText("Disponible");
-                } else {
-                    reservas.getEstado_vip().setText("No Disponible");
-                    reservas.getBtnReservarVIP().setEnabled(false);
-
+                for (int i = 0; i < comprobar.listarHabitaciones().size(); i++) {
+                    if (comprobar.listarHabitaciones().get(i).getId_Categoria().equals("1")) {
+                        if (comprobar.listarHabitaciones().get(i).getEstado().equals("Disponible")) {
+                            reservas.getEstado_vip().setText("Disponible");
+                        }else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
+                            reservas.getEstado_vip().setText("NoDisponible");
+                            reservas.getBtnReservarVIP().setEnabled(false);
+                            reservas.getBtnReservarVIP().setBackground(Color.red);
+                        }
+                        
+                    }
+                    
                 }
 
             }
@@ -69,6 +77,7 @@ public class controladorVistaReservas {
     }
 
     public void carrgarDukex() {
+       
         try {
             habitacionesCate.setId_Categoria("2");
             if (habitacionesCate.resultado().getString("id_categoria").equals("2")) {
@@ -76,12 +85,20 @@ public class controladorVistaReservas {
                 reservas.getTamaño_dulexe().setText(habitacionesCate.resultado().getString("tamano"));
                 reservas.getPrecio_dulex().setText(String.valueOf(habitacionesCate.resultado().getDouble("precio_cate")));
                 habitacionesCate.resultado().close();
-                if (habitacionesCate.resultadoEstado() >= 1) {
-                    reservas.getEstado_dulex().setText("Disponible");
-                } else {
-                    reservas.getEstado_dulex().setText("No Disponible");
-                    reservas.getBtnReservarDel().setEnabled(false);
+                   for (int i = 0; i < comprobar.listarHabitaciones().size(); i++) {
+                    if (comprobar.listarHabitaciones().get(i).getId_Categoria().equals("2")) {
+                        if (comprobar.listarHabitaciones().get(i).getEstado().equals("Disponible")) {
+                            reservas.getEstado_dulex().setText("Disponible");
+                        }else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
+                            reservas.getEstado_dulex().setText("No Disponible");
+                            reservas.getBtnReservarDel().setEnabled(false);
+                            reservas.getBtnReservarDel().setBackground(Color.red);
+                        }
+                        
+                    }
+                    
                 }
+                
             }
         } catch (SQLException ex) {
             Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
@@ -96,12 +113,20 @@ public class controladorVistaReservas {
                 reservas.getTamaño_standar().setText(habitacionesCate.resultado().getString("tamano"));
                 reservas.getPrecio_standar().setText(String.valueOf(habitacionesCate.resultado().getDouble("precio_cate")));
                 habitacionesCate.resultado().close();
-                if (habitacionesCate.resultadoEstado() >= 1) {
-                    reservas.getEstado_standar().setText("Disponible");
-                } else {
-                    reservas.getEstado_standar().setText("No Disponible");
-                    reservas.getBtnReservarEs().setEnabled(false);
+                   for (int i = 0; i < comprobar.listarHabitaciones().size(); i++) {
+                    if (comprobar.listarHabitaciones().get(i).getId_Categoria().equals("3")) {
+                        if (comprobar.listarHabitaciones().get(i).getEstado().equals("Disponible")) {
+                            reservas.getEstado_standar().setText("Disponible");
+                        }else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
+                            reservas.getEstado_standar().setText("No Disponible");
+                            reservas.getBtnReservarEs().setEnabled(false);
+                            reservas.getBtnReservarEs().setBackground(Color.red);
+                        }
+                        
+                    }
+                    
                 }
+               
             }
         } catch (SQLException ex) {
             Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);

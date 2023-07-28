@@ -72,26 +72,7 @@ public class controlador_PanelControlHP {
     }
 
     private void llenarPaqueaderos() {
-        boolean mensaje = false;
-        if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Seleccionar")) {
-            JOptionPane.showMessageDialog(null, "SELECCIONE UNA OPCION PORFAVOR");
-
-        } else {
-
-            if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Ocupado")) {
-                modeloP.setPlaca("");
-                modeloP.modificar = true;
-                
-                parqueadero();
-
-            } else if (vistaPanel.getCbParqueadero().getSelectedItem().equals("Disponibles")) {
-                modeloP.setPlaca(null);
-                modeloP.modificar = true;
-                parqueadero();
-               
-
-            }
-        }
+        
       
 
     }
@@ -106,15 +87,7 @@ public class controlador_PanelControlHP {
         vistaPanel.getTbHabitacion().setModel(mTabla);
     }
 
-    public void parqueadero() {
-        mTabla1 = (DefaultTableModel) vistaPanel.getTbParqueadero().getModel();
-        mTabla1.setNumRows(0);
-        modeloP.listarParqueadero().stream().forEach(lista -> {
-            String[] fila = {lista.getId_Parqueadero(), lista.getPlaca(), lista.getUbicacion()};
-            mTabla1.addRow(fila);
-        });
-        vistaPanel.getTbParqueadero().setModel(mTabla1);
-    }
+
 
     private void cerrar() {
 

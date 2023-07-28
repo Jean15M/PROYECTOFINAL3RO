@@ -15,9 +15,7 @@ public class CategoriaHabitacion {
     private String nombre_Categoria;
     private Double precio_cate;
     private String cama_Muestra;
-
-    public CategoriaHabitacion() {
-    }
+    private String estado;
 
     public String getId_Categoria() {
         return id_Categoria;
@@ -51,6 +49,14 @@ public class CategoriaHabitacion {
         this.cama_Muestra = cama_Muestra;
     }
 
- 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+  
 
 }

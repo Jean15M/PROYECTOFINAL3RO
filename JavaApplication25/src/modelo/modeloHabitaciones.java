@@ -40,7 +40,7 @@ public class modeloHabitaciones extends Habitaciones {
             while (rs.next()) {
                 Habitaciones Habitaciones1 = new Habitaciones();
                 Habitaciones1.setId_Habitacion(rs.getString("id_habitacion"));
-                Habitaciones1.setId_Categoria(rs.getInt("id_categoria"));
+                Habitaciones1.setId_Categoria(rs.getString("id_categoria"));
                 Habitaciones1.setNro_Habitacion(rs.getInt("n_habitacion"));
                 Habitaciones1.setNro_Piso(rs.getInt("nro_piso"));
                 Habitaciones1.setPrecio_Habitacion(rs.getDouble("precio"));
@@ -112,14 +112,14 @@ public class modeloHabitaciones extends Habitaciones {
     public List<Habitaciones> buscarCat() {
         List<Habitaciones> listaBuscar = new ArrayList<Habitaciones>();
         String sql;
-        sql = "select * from habitaciones where id_categoria='" + super.getId_Categoria() + "' AND estado=1";
+        sql = "select * from habitaciones where id_categoria='" + super.getId_Categoria() + "' AND estado='Disponible'";
         ResultSet rs = cpg.resultBD(sql);
         Habitaciones hab = new Habitaciones();
         try {
 
             while (rs.next()) {
                 hab.setId_Habitacion(rs.getString("id_habitacion"));
-                hab.setId_Categoria(rs.getInt("id_categoria"));
+                hab.setId_Categoria(rs.getString("id_categoria"));
                 hab.setNro_Habitacion(rs.getInt("n_habitacion"));
                 hab.setNro_Piso(rs.getInt("nro_piso"));
                 hab.setPrecio_Habitacion(rs.getDouble("precio"));

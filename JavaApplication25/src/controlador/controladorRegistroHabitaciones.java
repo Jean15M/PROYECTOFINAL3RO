@@ -52,15 +52,15 @@ public class controladorRegistroHabitaciones {
                 modeloHabitaciones hab = new modeloHabitaciones();
                 String opcionSeleccionada = vistahabi.getComcategoria().getSelectedItem().toString();
                 if (opcionSeleccionada.equals("Vip")) {
-                    hab.setId_Categoria(1);
+                    hab.setId_Categoria("1");
                     hab.setNum_plazas("3 Plazas");
                     System.out.println("Se seleccionó la Opción 1");
                 } else if (opcionSeleccionada.equals("deluxe")) {
-                    hab.setId_Categoria(2);
+                    hab.setId_Categoria("2");
                     hab.setNum_plazas("2 Plazas");
                 } else if (opcionSeleccionada.equals("estandar")) {
                     hab.setNum_plazas("1 Plazas");
-                    hab.setId_Categoria(3);
+                    hab.setId_Categoria("3");
                     System.out.println("prueba");
                 }
                 hab.setId_Habitacion(vistahabi.getTxtIdhabi().getText());
