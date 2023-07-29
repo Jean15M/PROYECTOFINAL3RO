@@ -28,12 +28,13 @@ public class controlador_vista_cliente {
         ventaCliente.getBtnPerfil().setText(Controlador_Login.usuario);
         ventaCliente.setExtendedState(JFrame.MAXIMIZED_BOTH);
         ventaCliente.getBtnReservarRe().addActionListener(l -> llamarReserva());
-        ventaCliente.getBtnServiciosRe().addActionListener(l->llamarServicio());
+        ventaCliente.getBtnServiciosRe().addActionListener(l -> llamarServicio());
         System.out.println("hola: " + Controlador_Login.usuario);
         ventaCliente.getBtnPerfil().addActionListener(l -> abrirDialogo());
         ventaCliente.getBtnModificar().addActionListener(l -> llamarPanleModificar());
         ventaCliente.getBtnVerDatos().addActionListener(l -> verDatos());
-        ventaCliente.getBtnCerrarSesión().addActionListener(l->cerrarSesion());
+        ventaCliente.getBtnCerrarSesión().addActionListener(l -> cerrarSesion());
+        ventaCliente.getBtnFacturas().addActionListener(l->llamarFacturas());
     }
 
     private void llamarReserva() {
@@ -50,8 +51,7 @@ public class controlador_vista_cliente {
         inicio.iniciarControlador();
     }
 
-
-    public void llamarPanleModificar(){
+    public void llamarPanleModificar() {
 
         modeloCliente modelo = new modeloCliente();
         Panel_Modificar_User vista = new Panel_Modificar_User();
@@ -65,8 +65,8 @@ public class controlador_vista_cliente {
     }
 
     public void abrirDialogo() {
-        ventaCliente.getjDialogDatos().setSize(384,268);
-        ventaCliente.getjDialogDatos().setLocationRelativeTo(null);        
+        ventaCliente.getjDialogDatos().setSize(384, 268);
+        ventaCliente.getjDialogDatos().setLocationRelativeTo(null);
         ventaCliente.getjDialogDatos().setVisible(true);
     }
 
@@ -110,31 +110,31 @@ public class controlador_vista_cliente {
                 vistaMod.getTxtcontrasena().setEditable(false);
             });
 
-        if(modeloCliente.cargarCliente1().isEmpty()){
-          JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
-        }else{
-           modeloCliente.cargarCliente1().stream().forEach((p)->{
-           vistaMod.getTxtcedula().setText(p.getCedulaPersona());
-           vistaMod.getTxtcedula().setEditable(false);           
-           vistaMod.getTxtnom1().setText(p.getNombrePersona());
-           vistaMod.getTxtnom1().setEditable(false);
-           vistaMod.getTxtnom2().setText(p.getNombrePersona1());
-           vistaMod.getTxtnom2().setEditable(false);
-           vistaMod.getTxtape1().setText(p.getApellidoPersona());
-           vistaMod.getTxtape1().setEditable(false);
-           vistaMod.getTxtape2().setText(p.getApellidoPersona1());
-           vistaMod.getTxtape2().setEditable(false);
-           vistaMod.getTxttelefono().setText(p.getTelefonoPersona());
-           vistaMod.getTxttelefono().setEditable(false);
-           vistaMod.getTxtdireccion().setText(p.getDireccionPersona());
-           vistaMod.getTxtdireccion().setEditable(false);
-           vistaMod.getTxtcorreo().setText(p.getCorreoPersona());
-           vistaMod.getTxtcorreo().setEditable(false);
-           vistaMod.getTxtcontrasena().setText(p.getContraCliente());
-           vistaMod.getTxtcontrasena().setEditable(false);
-           });
+            if (modeloCliente.cargarCliente1().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
+            } else {
+                modeloCliente.cargarCliente1().stream().forEach((p) -> {
+                    vistaMod.getTxtcedula().setText(p.getCedulaPersona());
+                    vistaMod.getTxtcedula().setEditable(false);
+                    vistaMod.getTxtnom1().setText(p.getNombrePersona());
+                    vistaMod.getTxtnom1().setEditable(false);
+                    vistaMod.getTxtnom2().setText(p.getNombrePersona1());
+                    vistaMod.getTxtnom2().setEditable(false);
+                    vistaMod.getTxtape1().setText(p.getApellidoPersona());
+                    vistaMod.getTxtape1().setEditable(false);
+                    vistaMod.getTxtape2().setText(p.getApellidoPersona1());
+                    vistaMod.getTxtape2().setEditable(false);
+                    vistaMod.getTxttelefono().setText(p.getTelefonoPersona());
+                    vistaMod.getTxttelefono().setEditable(false);
+                    vistaMod.getTxtdireccion().setText(p.getDireccionPersona());
+                    vistaMod.getTxtdireccion().setEditable(false);
+                    vistaMod.getTxtcorreo().setText(p.getCorreoPersona());
+                    vistaMod.getTxtcorreo().setEditable(false);
+                    vistaMod.getTxtcontrasena().setText(p.getContraCliente());
+                    vistaMod.getTxtcontrasena().setEditable(false);
+                });
 
-        }
+            }
         }
     }
 
@@ -148,16 +148,25 @@ public class controlador_vista_cliente {
         vista1.setSize(ventaCliente.getjDesktopPane1().getWidth(), ventaCliente.getjDesktopPane1().getHeight());
         modeloTipoServicio nuevo1 = new modeloTipoServicio();
         cliente_ventana cliente1 = new cliente_ventana();
-        Pantalla_Principal principal=new Pantalla_Principal();
-        controladorVistaServicios inicio = new controladorVistaServicios(vista1,principal,ventaCliente);
+        Pantalla_Principal principal = new Pantalla_Principal();
+        controladorVistaServicios inicio = new controladorVistaServicios(vista1, principal, ventaCliente);
         inicio.iniciarControlador();
     }
-    
-    public void cerrarSesion(){
+
+    private void llamarFacturas() {
+        vistaFacturas vista1 = new vistaFacturas();
+        ventaCliente.getjDesktopPane1().add(vista1);
+        vista1.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) vista1.getUI();
+        bui.setNorthPane(null);
+        vista1.setSize(ventaCliente.getjDesktopPane1().getWidth(), ventaCliente.getjDesktopPane1().getHeight());
+        controladorFacturas nuevo=new controladorFacturas(vista1);
+    }
+
+    public void cerrarSesion() {
         Pantalla_Principal vistaPrincipal = new Pantalla_Principal();
         controladorPrincipal inicio = new controladorPrincipal(vistaPrincipal);
         inicio.iniciarControlador();
         ventaCliente.dispose();
     }
 }
-

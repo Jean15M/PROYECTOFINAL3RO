@@ -61,8 +61,8 @@ public class modeloEncabez_fac extends Encabez_fac {
     }
 
     public String Consultar() {
-        String sql = "select id_encabezado_fac,cedula_cliente,fecha,total from encabezado_fac";
-        sql += "where id_encabezado_fac='" + getId_encabez() + "'";
+        String sql = "select * from encabezado_fac";
+        sql += " where cedula_cliente='" + getCedula_cli() + "'";
         return sql;
 
     }
