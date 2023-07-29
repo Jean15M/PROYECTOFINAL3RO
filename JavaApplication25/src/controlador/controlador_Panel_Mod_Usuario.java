@@ -28,10 +28,10 @@ public class controlador_Panel_Mod_Usuario {
     public void cargarCliente(){
         vistaMod.getTxtUsuario().setText(Controlador_Login.usuario);
         modeloCliente.setUsuarioCliente(Controlador_Login.usuario);
-        if(modeloCliente.cargarCliente1().isEmpty()){
+        if(modeloCliente.cargarCliente().isEmpty()){
           JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
         }else{
-           modeloCliente.cargarCliente1().stream().forEach((p)->{
+           modeloCliente.cargarCliente().stream().forEach((p)->{
            vistaMod.getTxtcedula().setText(p.getCedulaPersona());
            vistaMod.getTxtnom1().setText(p.getNombrePersona());
            vistaMod.getTxtnom2().setText(p.getNombrePersona1());

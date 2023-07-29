@@ -151,35 +151,6 @@ public class modeloCliente extends Cliente {
                 per.setDireccionPersona(rs.getString("direccion"));
                 per.setTelefonoPersona(rs.getString("telefono"));
                 per.setCorreoPersona(rs.getString("correo"));
-                listaBuscar.add(per);
-            }
-            rs.close();
-            return listaBuscar;
-        } catch (SQLException ex) {
-            Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
-    }
-
-    public List<Cliente> cargarCliente1() {
-        List<Cliente> listaBuscar = new ArrayList<Cliente>();
-        String sql;
-        sql = "select * from vistacliente where usuario='" + super.getUsuarioCliente() + "'";
-        ResultSet rs = cpg.resultBD(sql);
-        Cliente per = new Cliente();
-        try {
-
-            while (rs.next()) {
-                per.setCedulaPersona(rs.getString("cedula_persona"));
-                per.setUsuarioCliente(rs.getString("usuario"));
-                per.setNombrePersona(rs.getString("nombre1"));
-                per.setNombrePersona1(rs.getString("nombre2"));
-                per.setApellidoPersona(rs.getString("apellido1"));
-                per.setApellidoPersona1(rs.getString("apellido2"));
-                per.setGeneroPersona(rs.getString("genero"));
-                per.setCorreoPersona(rs.getString("correo"));
-                per.setTelefonoPersona(rs.getString("telefono"));
-                per.setDireccionPersona(rs.getString("direccion"));
                 per.setContraCliente(rs.getString("contrasena"));
                 listaBuscar.add(per);
             }
@@ -190,8 +161,7 @@ public class modeloCliente extends Cliente {
             return null;
         }
     }
-    
-    
+
 
     public List<Cliente> cargarClienteRes() {
         List<Cliente> listaBuscar = new ArrayList<Cliente>();

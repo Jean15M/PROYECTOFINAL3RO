@@ -86,10 +86,10 @@ public class controlador_vista_cliente {
         vistaMod.getBtnModificar().setVisible(false);
         vistaMod.getBtnCancelar().setText("Regresar");
 
-        if (modeloCliente.cargarCliente1().isEmpty()) {
+        if (modeloCliente.cargarCliente().isEmpty()) {
             JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
         } else {
-            modeloCliente.cargarCliente1().stream().forEach((p) -> {
+            modeloCliente.cargarCliente().stream().forEach((p) -> {
                 vistaMod.getTxtcedula().setText(p.getCedulaPersona());
                 vistaMod.getTxtcedula().setEnabled(false);
                 vistaMod.getTxtnom1().setText(p.getNombrePersona());
@@ -110,10 +110,10 @@ public class controlador_vista_cliente {
                 vistaMod.getTxtcontrasena().setEditable(false);
             });
 
-            if (modeloCliente.cargarCliente1().isEmpty()) {
+            if (modeloCliente.cargarCliente().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "El cliente no se encuentra en la base de datos");
             } else {
-                modeloCliente.cargarCliente1().stream().forEach((p) -> {
+                modeloCliente.cargarCliente().stream().forEach((p) -> {
                     vistaMod.getTxtcedula().setText(p.getCedulaPersona());
                     vistaMod.getTxtcedula().setEditable(false);
                     vistaMod.getTxtnom1().setText(p.getNombrePersona());
