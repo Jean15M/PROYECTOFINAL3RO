@@ -36,9 +36,9 @@ public class modeloDetalle_fac extends Detalle_fac {
         try {
             while (rs.next()) {
                 Detalle_fac Detalle_fac1 = new Detalle_fac();
-                Detalle_fac1.setId_Detalle(rs.getString("id_categoria"));
-                Detalle_fac1.setId_encab_deta(rs.getString("nombre"));
-                Detalle_fac1.setId_reserva_detalle(rs.getString("nombre"));
+                Detalle_fac1.setId_Detalle(rs.getString("id_detalle_fac"));
+                Detalle_fac1.setId_encab_deta(rs.getString("id_encabezado_fac"));
+                Detalle_fac1.setId_reserva_detalle(rs.getString("id_reserva"));
                 Detalle_fac1.setSubtotal_detalle(rs.getDouble("subtotal"));
                 listaDetalle_fac.add(Detalle_fac1);
             }
@@ -61,8 +61,8 @@ public class modeloDetalle_fac extends Detalle_fac {
     }
 
     public String Consultar() {
-        String sql = "select id_detalle_fac,id_encabezado_fac, id_reserva,subtotal from detalle_fac";
-        sql += "where id_detalle_fac='" + getId_Detalle() + "'";
+        String sql = "select * from detalle_fac";
+        sql += " where id_encabezado_fac='" + getId_encab_deta() + "'";
         return sql;
 
     }

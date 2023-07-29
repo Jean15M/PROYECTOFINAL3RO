@@ -45,10 +45,14 @@ public class modeloReserva extends Reservas {
                 Reservas1.setCedula_Cliente(rs.getString("cedula_persona"));
                 Reservas1.setFecha_entrada(rs.getDate("fecha_entrada"));
                 Reservas1.setFecha_salida(rs.getDate("fecha_salida"));
+                Reservas1.setDiasReservas(rs.getString("dias"));
+           
+                Reservas1.setPersonasReserva(rs.getString("persona"));
+
                 listaReservas.add(Reservas1);
             }
             if (listaReservas.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "NO SE ECONTRO NINGUN RESULTADO");
+                JOptionPane.showMessageDialog(null, "NO SE ECONTRO NINGUN RESULTADO EN RESERVAS");
             }
             rs.close();
             return listaReservas;
@@ -61,13 +65,13 @@ public class modeloReserva extends Reservas {
 
     public boolean grabarReservas() {
         String sql = "insert into  reserva(id_reserva,id_pago,id_habitacion,id_parqueadero,id_recepcionista, cedula_persona,fecha_entrada,fecha_salida)";
-        sql += "values('0','" + getId_pago() + "','" + getId_Habitacion() + "','" + getId_Parqueadero() + "','" + getId_Recepcionista() + "','" + getCedula_Cliente() + "',to_date('" + getFecha_entrada() + "','YYYY-MM-DD'),to_date('" + getFecha_salida()+ "','YYYY-MM-DD'))";
+        sql += "values('0','" + getId_pago() + "','" + getId_Habitacion() + "','" + getId_Parqueadero() + "','" + getId_Recepcionista() + "','" + getCedula_Cliente() + "',to_date('" + getFecha_entrada() + "','YYYY-MM-DD'),to_date('" + getFecha_salida() + "','YYYY-MM-DD'))";
         return cpg.accionBd(sql);
     }
 
     public String Consultar() {
-        String sql = "select id_reserva,id_pago,id_habitacion,id_parqueadero,id_recepcionista, cedula_persona,fecha_entrada,fecha_salida from reserva";
-        sql += "where id_reserva='" + getId_Reserva() + "'";
+        String sql = "select * from reserva";
+        sql += " where id_reserva='" + getId_Reserva() + "'";
         return sql;
     }
 
@@ -81,9 +85,9 @@ public class modeloReserva extends Reservas {
         sql += "where id_reserva='" + getId_Reserva() + "'";
         return cpg.accionBd(sql);
     }
-    
+
     public boolean modificarEstado() {
-        String sql = "UPDATE reserva SET estado_reserva='" + getEstado_reser()+ "'";
+        String sql = "UPDATE reserva SET estado_reserva='" + getEstado_reser() + "'";
         sql += "where id_reserva='" + getId_Reserva() + "'";
         return cpg.accionBd(sql);
     }
@@ -93,7 +97,7 @@ public class modeloReserva extends Reservas {
         sql += " WHERE id_reserva='" + getId_Reserva() + "'";
         return cpg.accionBd(sql);
     }
-    
+
     public String ObtenerCodigoRes() {
         try {
             String sql = "select MAX(id_reserva) from reserva";
@@ -110,11 +114,11 @@ public class modeloReserva extends Reservas {
             return null;
         }
     }
-    
-    public List<Reservas> buscarReservas(){
+
+    public List<Reservas> buscarReservas() {
         List<Reservas> listaBuscar = new ArrayList<Reservas>();
         String sql;
-        sql = "select * from reserva where estado_reserva='" + super.getEstado_reser()+ "'";
+        sql = "select * from reserva where estado_reserva='" + super.getEstado_reser() + "'";
         ResultSet rs = cpg.resultBD(sql);
         Reservas res = new Reservas();
         try {
@@ -138,16 +142,16 @@ public class modeloReserva extends Reservas {
             return null;
         }
     }
-    
-    public Date obtenerFechafin(){
-        String sql = "select fecha_salida from reserva where id_reserva='" + super.getId_Reserva()+ "'";
+
+    public Date obtenerFechafin() {
+        String sql = "select fecha_salida from reserva where id_reserva='" + super.getId_Reserva() + "'";
         ResultSet rs = cpg.resultBD(sql);
         Reservas res = new Reservas();
         try {
 
             while (rs.next()) {
                 res.setFecha_salida(rs.getDate("fecha_salida"));
-                
+
             }
             rs.close();
             return res.getFecha_salida();
@@ -156,8 +160,7 @@ public class modeloReserva extends Reservas {
             return null;
         }
     }
-    
-    
+
     public ResultSet resultado() {
         String sql1 = Consultar();
         ResultSet rs = cpg.resultBD(sql1);

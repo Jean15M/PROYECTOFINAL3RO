@@ -40,10 +40,11 @@ public class modeloEncabez_fac extends Encabez_fac {
                 Encabez_fac1.setCedula_cli(rs.getString("cedula_cliente"));
                 Encabez_fac1.setFecha_fac(rs.getDate("fecha"));
                 Encabez_fac1.setTotal_fac(rs.getDouble("total"));
+                Encabez_fac1.setId_reserva(rs.getString("id_reserva"));
                 listaEncabez_fac.add(Encabez_fac1);
             }
             if (listaEncabez_fac.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "NO SE ECONTRO NINGUN RESULTADO");
+                JOptionPane.showMessageDialog(null, "NO SE ECONTRO NINGUN RESULTADO ENCAB");
             }
             rs.close();
             return listaEncabez_fac;
@@ -56,7 +57,7 @@ public class modeloEncabez_fac extends Encabez_fac {
 
     public boolean grabarEncabez_fac() {
         String sql = "insert into  encabezado_fac(id_encabezado_fac,cedula_cliente,fecha,total,id_reserva)";
-        sql += "values('0','" + getCedula_cli() + "',to_date('" + getFecha_fac() + "','YYYY-MM-DD')," + getTotal_fac() +","+getId_reserva()+ ")";
+        sql += "values('0','" + getCedula_cli() + "',to_date('" + getFecha_fac() + "','YYYY-MM-DD')," + getTotal_fac() + "," + getId_reserva() + ")";
         return cpg.accionBd(sql);
     }
 
@@ -68,10 +69,10 @@ public class modeloEncabez_fac extends Encabez_fac {
     }
 
     public String mostrarEncabez_fac() {
-        String sql = "select id_encabezado_fac,cedula_cliente,fecha,total from encabezado_fac";
+        String sql = "select * from encabezado_fac";
         return sql;
     }
-    
+
     public String ObtenerCodigo() {
         try {
             String sql = "select MAX(id_encabezado_fac) from encabezado_fac";
@@ -88,7 +89,32 @@ public class modeloEncabez_fac extends Encabez_fac {
             return null;
         }
     }
-    
-    
+
+    public List<Encabez_fac> listarDetalle_fac1() {
+        List<Encabez_fac> listaEncabez_fac = new ArrayList<Encabez_fac>();
+        String sql1 = "select * from encabezado_fac where id_reserva ='"+getId_reserva()+"'";
+        ResultSet rs = cpg.resultBD(sql1);
+
+        try {
+            while (rs.next()) {
+                Encabez_fac Encabez_fac1 = new Encabez_fac();
+                Encabez_fac1.setId_encabez(rs.getString("id_encabezado_fac"));
+                Encabez_fac1.setCedula_cli(rs.getString("cedula_cliente"));
+                Encabez_fac1.setFecha_fac(rs.getDate("fecha"));
+                Encabez_fac1.setTotal_fac(rs.getDouble("total"));
+                Encabez_fac1.setId_reserva(rs.getString("id_reserva"));
+                listaEncabez_fac.add(Encabez_fac1);
+            }
+            if (listaEncabez_fac.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "NO SE ECONTRO NINGUN RESULTADO ENCAB");
+            }
+            rs.close();
+            return listaEncabez_fac;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
 
 }

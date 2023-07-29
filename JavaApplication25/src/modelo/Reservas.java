@@ -24,11 +24,13 @@ public class Reservas {
     private String id_Recepcionista;
     private String cedula_Cliente;
     private String estado_reser;
+    private String diasReservas;
+    private String personasReserva;
 
     public Reservas() {
     }
 
-    public Reservas(String id_Reserva, String pago_Reserva, Date fecha_entrada, Date fecha_salida, double total_Reserva, String id_Habitacion, String id_pago, String id_Parqueadero, String id_Recepcionista, String cedula_Cliente, String estado_reser) {
+    public Reservas(String id_Reserva, String pago_Reserva, Date fecha_entrada, Date fecha_salida, double total_Reserva, String id_Habitacion, String id_pago, String id_Parqueadero, String id_Recepcionista, String cedula_Cliente, String estado_reser, String diasReservas, String personasReserva) {
         this.id_Reserva = id_Reserva;
         this.pago_Reserva = pago_Reserva;
         this.fecha_entrada = fecha_entrada;
@@ -40,6 +42,8 @@ public class Reservas {
         this.id_Recepcionista = id_Recepcionista;
         this.cedula_Cliente = cedula_Cliente;
         this.estado_reser = estado_reser;
+        this.diasReservas = diasReservas;
+        this.personasReserva = personasReserva;
     }
 
     public String getId_Reserva() {
@@ -130,8 +134,21 @@ public class Reservas {
         this.estado_reser = estado_reser;
     }
 
-    @Override
-    public String toString() {
-        return "Reservas{" + "id_Reserva=" + id_Reserva + ", pago_Reserva=" + pago_Reserva + ", fecha_entrada=" + fecha_entrada + ", fecha_salida=" + fecha_salida + ", total_Reserva=" + total_Reserva + ", id_Habitacion=" + id_Habitacion + ", id_pago=" + id_pago + ", id_Parqueadero=" + id_Parqueadero + ", id_Recepcionista=" + id_Recepcionista + ", cedula_Cliente=" + cedula_Cliente + ", estado_reser=" + estado_reser + '}';
+    public String getDiasReservas() {
+        return diasReservas;
     }
+
+    public void setDiasReservas(String diasReservas) {
+        this.diasReservas = diasReservas;
+    }
+
+    public String getPersonasReserva() {
+        return personasReserva;
+    }
+
+    public void setPersonasReserva(String personasReserva) {
+        this.personasReserva = personasReserva;
+    }
+
+    
 }

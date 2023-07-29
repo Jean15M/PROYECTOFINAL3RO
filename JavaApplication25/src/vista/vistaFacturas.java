@@ -104,13 +104,13 @@ public class vistaFacturas extends javax.swing.JInternalFrame {
 
         Tabla_Fac.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Cedula", "Nombre", "Fecha", "Total", "Codigo Reserva"
             }
         ));
         jScrollPane1.setViewportView(Tabla_Fac);
