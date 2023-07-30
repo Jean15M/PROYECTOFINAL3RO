@@ -277,7 +277,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="rSLabelImage9" max="32767" attributes="0"/>
                           <Component id="rSLabelImage10" max="32767" attributes="0"/>
-                          <Component id="btRegiscli3" alignment="0" pref="213" max="32767" attributes="0"/>
+                          <Component id="btnParqueadero" alignment="0" pref="213" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                               <Component id="btnhabitaciones" pref="0" max="32767" attributes="0"/>
@@ -297,7 +297,7 @@
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="rSLabelImage9" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="btRegiscli3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnParqueadero" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -326,7 +326,7 @@
                 <Property name="text" type="java.lang.String" value="REGISTRO HABITACIONES"/>
               </Properties>
             </Component>
-            <Component class="org.edisoncor.gui.button.ButtonRound" name="btRegiscli3">
+            <Component class="org.edisoncor.gui.button.ButtonRound" name="btnParqueadero">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="0" type="rgb"/>

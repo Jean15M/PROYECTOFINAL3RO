@@ -44,7 +44,7 @@ public class modeloParqueadero extends Parqueadero {
                 listaParqueadero.add(Parqueadero1);
             }
             if (listaParqueadero.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "NO SE ECONTRO NINGUN RESULTADO");
+                JOptionPane.showMessageDialog(null, "NO SE ENCONTRO NINGUN RESULTADO");
             }
             rs.close();
             return listaParqueadero;
@@ -169,6 +169,30 @@ public class modeloParqueadero extends Parqueadero {
             return listaBuscar;
         } catch (SQLException ex) {
             Logger.getLogger(modeloPersona.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+
+        
+    }
+    
+    public List<Parqueadero> obtenerCoincidencia() {
+        List<Parqueadero> listaBuscar = new ArrayList<>();
+        String sql = "SELECT * FROM parqueadero where id_parqueadero='"+getId_Parqueadero()+"'";
+        ResultSet rs = cpg.resultBD(sql);
+
+        try {
+            while (rs.next()) {
+                Parqueadero parqueadero = new Parqueadero();
+                parqueadero.setId_Parqueadero(rs.getString("id_parqueadero"));
+                parqueadero.setPlaca(rs.getString("placa"));
+                parqueadero.setTiempo(rs.getInt("tiempo"));
+                parqueadero.setUbicacion(rs.getString("ubicacion"));
+                listaBuscar.add(parqueadero);
+            }
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloParqueadero.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
 

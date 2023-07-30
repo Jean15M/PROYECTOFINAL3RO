@@ -46,7 +46,7 @@ public class PanelAdmin extends javax.swing.JInternalFrame {
         rSLabelImage9 = new necesario.RSLabelImage();
         rSLabelImage10 = new necesario.RSLabelImage();
         btnhabitaciones = new org.edisoncor.gui.button.ButtonRound();
-        btRegiscli3 = new org.edisoncor.gui.button.ButtonRound();
+        btnParqueadero = new org.edisoncor.gui.button.ButtonRound();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -162,8 +162,8 @@ public class PanelAdmin extends javax.swing.JInternalFrame {
         btnhabitaciones.setBackground(new java.awt.Color(0, 102, 255));
         btnhabitaciones.setText("REGISTRO HABITACIONES");
 
-        btRegiscli3.setBackground(new java.awt.Color(0, 102, 255));
-        btRegiscli3.setText("PARQUEADEROS");
+        btnParqueadero.setBackground(new java.awt.Color(0, 102, 255));
+        btnParqueadero.setText("PARQUEADEROS");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -174,7 +174,7 @@ public class PanelAdmin extends javax.swing.JInternalFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(rSLabelImage9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(rSLabelImage10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btRegiscli3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                    .addComponent(btnParqueadero, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(btnhabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
@@ -190,7 +190,7 @@ public class PanelAdmin extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20)
                 .addComponent(rSLabelImage9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btRegiscli3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnParqueadero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
         );
 
@@ -254,12 +254,12 @@ public class PanelAdmin extends javax.swing.JInternalFrame {
         this.btRegiscli = btRegiscli;
     }
 
-    public ButtonRound getBtRegiscli3() {
-        return btRegiscli3;
+    public ButtonRound getBtnParqueadero() {
+        return btnParqueadero;
     }
 
-    public void setBtRegiscli3(ButtonRound btRegiscli3) {
-        this.btRegiscli3 = btRegiscli3;
+    public void setBtnParqueadero(ButtonRound btnParqueadero) {
+        this.btnParqueadero = btnParqueadero;
     }
 
     public ButtonRound getBtRegisem() {
@@ -289,9 +289,9 @@ public class PanelAdmin extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btRegisadmin;
     private org.edisoncor.gui.button.ButtonRound btRegiscli;
-    private org.edisoncor.gui.button.ButtonRound btRegiscli3;
     private org.edisoncor.gui.button.ButtonRound btRegisem;
     private org.edisoncor.gui.button.ButtonRound btReporte;
+    private org.edisoncor.gui.button.ButtonRound btnParqueadero;
     private org.edisoncor.gui.button.ButtonRound btnhabitaciones;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
