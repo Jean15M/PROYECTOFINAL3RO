@@ -80,7 +80,7 @@ public class modeloParqueadero extends Parqueadero {
     }
     
     public boolean modificarEstado() {
-        String sql = "UPDATE parqueadero SET estado='" + getEstado()+ "'";
+        String sql = "UPDATE parqueadero SET estado='" + getEstado()+ "',placa='',tiempo=0";
         sql += "where id_parqueadero='" + getId_Parqueadero()+ "'";
         return cpg.accionBd(sql);
     }

@@ -76,7 +76,7 @@ public class modeloReserva extends Reservas {
     }
 
     public String mostrarReservas() {
-        String sql = "select * from reserva";
+        String sql = "select * from reserva order by id_reserva";
         return sql;
     }
 
@@ -118,7 +118,7 @@ public class modeloReserva extends Reservas {
     public List<Reservas> buscarReservas() {
         List<Reservas> listaBuscar = new ArrayList<Reservas>();
         String sql;
-        sql = "select * from reserva where estado_reserva='" + super.getEstado_reser() + "'";
+        sql = "select * from reserva where estado_reserva='" + super.getEstado_reser() + "' order by id_reserva";
         ResultSet rs = cpg.resultBD(sql);
         Reservas res = new Reservas();
         try {
