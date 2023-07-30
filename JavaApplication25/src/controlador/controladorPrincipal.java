@@ -37,6 +37,7 @@ public class controladorPrincipal {
     private void registroUsuario() {
         modeloCliente modeloC = new modeloCliente();
         vistaRegistro vistaC = new vistaRegistro();
+        vistaC.setTitle("PANTALLA_PRINCIPAL");
         controladorRegistroUsuario inicio = new controladorRegistroUsuario(modeloC, vistaC);
         vistaPrincipal.dispose();
         inicio.iniciarControlador();

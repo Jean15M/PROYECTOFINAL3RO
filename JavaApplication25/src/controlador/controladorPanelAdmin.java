@@ -46,8 +46,8 @@ public class controladorPanelAdmin {
     private void registroUsuario() {
         modeloCliente modeloC = new modeloCliente();
         vistaRegistro vistaC = new vistaRegistro();
+        vistaC.setTitle("ADMIN");
         controladorRegistroUsuario inicio = new controladorRegistroUsuario(modeloC, vistaC);
-        admin.dispose();
         inicio.iniciarControlador();
     }
 
@@ -55,7 +55,6 @@ public class controladorPanelAdmin {
         modeloRecepcionista modeloR = new modeloRecepcionista();
         vistaRegistroRecepcionista vistaR = new vistaRegistroRecepcionista();
         controladorRegistroRecepcionista inicio2 = new controladorRegistroRecepcionista(vistaR, modeloR);
-        admin.dispose();
         inicio2.iniciarControlador();
     }
 
@@ -64,7 +63,6 @@ public class controladorPanelAdmin {
         modeloAdministrador modeloA = new modeloAdministrador();
         vistaRegistroAdmin vistaA = new vistaRegistroAdmin();
         controladorRegistroAdmin inicio = new controladorRegistroAdmin(vistaA, modeloA);
-        admin.dispose();
         inicio.controlador();
     }
     
@@ -72,7 +70,6 @@ public class controladorPanelAdmin {
         modeloHabitaciones modeloA = new modeloHabitaciones();
         vistaRegistroHabitacion vistaA = new vistaRegistroHabitacion();
         controladorRegistroHabitaciones inicio = new controladorRegistroHabitaciones(vistaA, modeloA);
-        admin.dispose();
         inicio.iniciarControlador();
     }
 

@@ -39,6 +39,7 @@ public class modeloServicio extends Servicio {
                 Servicio1.setId_tipo_servicio(rs.getString("id_tipo_servicio"));
                 Servicio1.setId_Habitacion(rs.getString("id_habitacion"));
                 Servicio1.setDescp_Servicio(rs.getString("descripcion"));
+                Servicio1.setEstado(rs.getString("estado"));
                 listaServicio.add(Servicio1);
             }
             if (listaServicio.isEmpty()) {
@@ -59,9 +60,8 @@ public class modeloServicio extends Servicio {
 //        return cpg.accionBd(sql);
 //    }
      public boolean grabarServicio() {
-        String sql = "INSERT INTO servicios (id_tipo_servicio, id_habitacion, descripcion, estado) ";
-        sql += "VALUES ('0', '" + getId_tipo_servicio() + "', '" + getId_Habitacion() + "', '" + getDescp_Servicio() +",'"+super.getEstado()+"')";
-
+        String sql = "INSERT INTO servicios(id_tipo_servicio, id_habitacion, descripcion, estado) ";
+        sql += "VALUES('" + getId_tipo_servicio() + "', '" + getId_Habitacion() + "', '" + getDescp_Servicio() +"','"+super.getEstado()+"')";
         return cpg.accionBd(sql);
     }
     
@@ -74,7 +74,7 @@ public class modeloServicio extends Servicio {
     }
 
     public String mostrarServicio() {
-        String sql = "select id_servicio,id_tipo_servicio,id_habitacion,descripcion from servicios";
+        String sql = "select id_servicio,id_tipo_servicio,id_habitacion,descripcion,estado from servicios";
         return sql;
     }
 

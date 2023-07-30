@@ -70,7 +70,7 @@ public class controladorRegistroAdmin {
     public void RegistrarAdmin() {
         boolean esValido1 = false, esValido2, esValido3;
         boolean fechavalida;
-        if (vistaAdmin.getTxtusuario().getText().isEmpty() || vistaAdmin.getTxtadminid().getText().isEmpty() || vistaAdmin.getTxtcedula().getText().isEmpty() || vistaAdmin.getTxtcedula().getText().isEmpty() || vistaAdmin.getTxtnom2().getText().isEmpty() || vistaAdmin.getTxtnom1().getText().isEmpty() || vistaAdmin.getTxtape1().getText().isEmpty() || vistaAdmin.getTxtape2().getText().isEmpty() || vistaAdmin.getTxttelefono().getText().isEmpty() || vistaAdmin.getTxtdireccion().getText().isEmpty() || vistaAdmin.getTxtcorreo().getText().isEmpty() || vistaAdmin.getTxtcontrasena().getText().isEmpty()) {
+        if (vistaAdmin.getTxtusuario().getText().isEmpty() || vistaAdmin.getTxtcedula().getText().isEmpty() || vistaAdmin.getTxtcedula().getText().isEmpty() || vistaAdmin.getTxtnom2().getText().isEmpty() || vistaAdmin.getTxtnom1().getText().isEmpty() || vistaAdmin.getTxtape1().getText().isEmpty() || vistaAdmin.getTxtape2().getText().isEmpty() || vistaAdmin.getTxttelefono().getText().isEmpty() || vistaAdmin.getTxtdireccion().getText().isEmpty() || vistaAdmin.getTxtcorreo().getText().isEmpty() || vistaAdmin.getTxtcontrasena().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "CAMPOS VACIOS LLENE TODOS LOS campos");
         }
         if (Validaciones.validarCedula(vistaAdmin.getTxtcedula().getText())) {
@@ -115,7 +115,7 @@ public class controladorRegistroAdmin {
                 canton.setNombreCan(vistaAdmin.getComcanto().getSelectedItem().toString());
                 per1.setCod_canton(canton.ObtenerCodigo());
                 per1.setCorreoPersona(vistaAdmin.getTxtcorreo().getText());
-                administrador.setId_Admin(vistaAdmin.getTxtadminid().getText());
+               
                 administrador.setUsuarioAdmin(vistaAdmin.getTxtusuario().getText());
                 administrador.setContraAdmin(vistaAdmin.getTxtcontrasena().getText());
                 administrador.setCedulaAdmin(vistaAdmin.getTxtcedula().getText());
@@ -138,10 +138,6 @@ public class controladorRegistroAdmin {
     }
     
     private void Cancelar() {
-     
-        vistaPanelControlAdministrador pat = new vistaPanelControlAdministrador();
-        Controlador_Paneladmin inicio=new Controlador_Paneladmin(pat);
-        inicio.iniciarControlador();
         vistaAdmin.dispose();
     }
 }

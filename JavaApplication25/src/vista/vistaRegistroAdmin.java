@@ -63,13 +63,7 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
         this.jfecha = jfecha;
     }
 
-    public JTextField getTxtadminid() {
-        return txtadminid;
-    }
-
-    public void setTxtadminid(JTextField txtadminid) {
-        this.txtadminid = txtadminid;
-    }
+  
 
     public JTextField getTxtape1() {
         return txtape1;
@@ -198,7 +192,6 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
         txtcorreo = new javax.swing.JTextField();
         txtusuario = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        txtadminid = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         txtcontrasena = new javax.swing.JTextField();
 
@@ -298,8 +291,6 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel15.setText("USUARIO:");
 
-        txtadminid.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-
         jLabel16.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel16.setText("CONTRASEÑA:");
 
@@ -333,9 +324,7 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
                         .addComponent(jLabel16)
                         .addGap(18, 18, 18)
                         .addComponent(txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(txtadminid, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(145, 145, 145))
+                        .addGap(417, 417, 417))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -445,7 +434,6 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(txtadminid, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -491,7 +479,6 @@ public class vistaRegistroAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private com.toedter.calendar.JDateChooser jfecha;
-    private javax.swing.JTextField txtadminid;
     private javax.swing.JTextField txtape1;
     private javax.swing.JTextField txtape2;
     private javax.swing.JTextField txtcedula;

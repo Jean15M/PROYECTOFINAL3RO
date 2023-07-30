@@ -68,8 +68,8 @@ public class modeloCliente extends Cliente {
     }
 
     public boolean grabarCliente() {
-        String sql = "insert into cliente(id_cliente, usuario, contrasena, cedula_persona)";
-        sql += "values('" + super.getId_Cliente() + "','" + getUsuarioCliente() + "','" + getContraCliente() + "','" + getCedulaCliente() + "')";
+        String sql = "insert into cliente(usuario, contrasena, cedula_persona)";
+        sql += "values('"+ getUsuarioCliente() + "','" + getContraCliente() + "','" + getCedulaCliente() + "')";
         return cpg.accionBd(sql);
     }
 

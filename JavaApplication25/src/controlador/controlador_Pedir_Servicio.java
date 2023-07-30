@@ -42,7 +42,4 @@ public class controlador_Pedir_Servicio {
         contador = 0;
         codigosGenerados = new HashSet<>();
     }
-    
-
-
 }

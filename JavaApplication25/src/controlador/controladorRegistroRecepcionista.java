@@ -41,7 +41,7 @@ public class controladorRegistroRecepcionista {
     public void RegistrarRecep() {
         boolean esValido1, esValido2, esValido3;
         boolean fechavalida;
-        if (vistarecepcionista.getTxtIdUsuario().getText().isEmpty() || vistarecepcionista.getTxtUsuario().getText().isEmpty() || vistarecepcionista.getTxtcedula().getText().isEmpty() || vistarecepcionista.getTxtnom2().getText().isEmpty() || vistarecepcionista.getTxtnom1().getText().isEmpty() || vistarecepcionista.getTxtape1().getText().isEmpty() || vistarecepcionista.getTxtape2().getText().isEmpty() || vistarecepcionista.getTxttelefono().getText().isEmpty() || vistarecepcionista.getTxtsalario().getText().isEmpty() || vistarecepcionista.getTxtdireccion().getText().isEmpty() || vistarecepcionista.getTxtcorreo().getText().isEmpty() || vistarecepcionista.getTxtcontrasena().getText().isEmpty()) {
+        if (vistarecepcionista.getTxtUsuario().getText().isEmpty() || vistarecepcionista.getTxtcedula().getText().isEmpty() || vistarecepcionista.getTxtnom2().getText().isEmpty() || vistarecepcionista.getTxtnom1().getText().isEmpty() || vistarecepcionista.getTxtape1().getText().isEmpty() || vistarecepcionista.getTxtape2().getText().isEmpty() || vistarecepcionista.getTxttelefono().getText().isEmpty() || vistarecepcionista.getTxtsalario().getText().isEmpty() || vistarecepcionista.getTxtdireccion().getText().isEmpty() || vistarecepcionista.getTxtcorreo().getText().isEmpty() || vistarecepcionista.getTxtcontrasena().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "CAMPOS VACIOS LLENE TODOS LOS campos");
         }
         if (Validaciones.validarCedula(vistarecepcionista.getTxtcedula().getText())) {
@@ -89,7 +89,6 @@ public class controladorRegistroRecepcionista {
                 canton.setNombreCan(vistarecepcionista.getComcanto().getSelectedItem().toString());
                 per1.setCod_canton(canton.ObtenerCodigo());
                 per1.setCorreoPersona(vistarecepcionista.getTxtcorreo().getText());
-                recepcionista.setId_Recep(vistarecepcionista.getTxtIdUsuario().getText());
                 recepcionista.setUsuario_Recep(vistarecepcionista.getTxtUsuario().getText());
                 recepcionista.setContra_Recep(vistarecepcionista.getTxtcontrasena().getText());
                 recepcionista.setCedula_Recep(vistarecepcionista.getTxtcedula().getText());
@@ -135,10 +134,9 @@ public class controladorRegistroRecepcionista {
     }
 
     private void Cancelar() {
-        Pantalla_Principal pat = new Pantalla_Principal();
+
         vistarecepcionista.dispose();
-        pat.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        pat.setVisible(true);
+
     }
 
 }

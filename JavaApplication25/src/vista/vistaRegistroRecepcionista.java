@@ -119,19 +119,6 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
         this.btnCancelar = btnCancelar;
     }
 
-
-    public JTextField getTxIdUsuario() {
-        return txtIdUsuario;
-    }
-
-    public JTextField getTxtIdUsuario() {
-        return txtIdUsuario;
-    }
-
-    public void setTxtIdUsuario(JTextField txtIdUsuario) {
-        this.txtIdUsuario = txtIdUsuario;
-    }
-
     public JTextField getTxtcorreo() {
         return txtcorreo;
     }
@@ -180,7 +167,6 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -203,7 +189,6 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
         txtnom1 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        txtIdUsuario = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         txtcontrasena = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -238,9 +223,6 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
         );
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/log.png"))); // NOI18N
-
-        jLabel5.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        jLabel5.setText("ID:");
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel6.setText("GENERO:");
@@ -296,8 +278,6 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel15.setText("USUARIO:");
-
-        txtIdUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel16.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel16.setText("CONTRASEÑA:");
@@ -358,10 +338,6 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(55, 55, 55)
-                                .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -413,11 +389,7 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(66, 66, 66)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtcedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -517,14 +489,12 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtIdUsuario;
     private javax.swing.JTextField txtUsuario;
     private javax.swing.JTextField txtape1;
     private javax.swing.JTextField txtape2;

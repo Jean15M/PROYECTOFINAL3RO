@@ -49,7 +49,7 @@ public class controladorRegistroUsuario {
 
     private void registrarUsuario() {
         String ced = vistaUsuario.getTxtcedula().getText();
-        if (vistaUsuario.getTxtcedula().getText().isEmpty() || vistaUsuario.getTxtnom1().getText().isEmpty() || vistaUsuario.getTxtnom2().getText().isEmpty() || vistaUsuario.getTxtape1().getText().isEmpty() || vistaUsuario.getTxtape2().getText().isEmpty() || vistaUsuario.getTxtcorreo().getText().isEmpty() || vistaUsuario.getTxttelefono().getText().isEmpty() || vistaUsuario.getTxtcontrasena().getText().isEmpty() || vistaUsuario.getTxtdireccion().getText().isEmpty() || vistaUsuario.getTxtIdUsuario().getText().isEmpty() || vistaUsuario.getTxtUsuario().getText().isEmpty() || vistaUsuario.getComgenero().getSelectedIndex() == 0 || vistaUsuario.getComcanto().getSelectedIndex() == 0 || vistaUsuario.getComprovin().getSelectedIndex() == 0) {
+        if (vistaUsuario.getTxtcedula().getText().isEmpty() || vistaUsuario.getTxtnom1().getText().isEmpty() || vistaUsuario.getTxtnom2().getText().isEmpty() || vistaUsuario.getTxtape1().getText().isEmpty() || vistaUsuario.getTxtape2().getText().isEmpty() || vistaUsuario.getTxtcorreo().getText().isEmpty() || vistaUsuario.getTxttelefono().getText().isEmpty() || vistaUsuario.getTxtcontrasena().getText().isEmpty() || vistaUsuario.getTxtdireccion().getText().isEmpty() || vistaUsuario.getTxtUsuario().getText().isEmpty() || vistaUsuario.getComgenero().getSelectedIndex() == 0 || vistaUsuario.getComcanto().getSelectedIndex() == 0 || vistaUsuario.getComprovin().getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "LLENE LOS CAMPOS POR FAVOR");
         } else {
             if (Validaciones.validarCedula(ced)) {
@@ -80,7 +80,6 @@ public class controladorRegistroUsuario {
                     canton.setNombreCan(vistaUsuario.getComcanto().getSelectedItem().toString());
                     per1.setCod_canton(canton.ObtenerCodigo());
                     per1.setCorreoPersona(vistaUsuario.getTxtcorreo().getText());
-                    modeloUsuario.setId_Cliente(vistaUsuario.getTxtIdUsuario().getText());
                     modeloUsuario.setUsuarioCliente(vistaUsuario.getTxtUsuario().getText());
                     modeloUsuario.setContraCliente(vistaUsuario.getTxtcontrasena().getText());
                     modeloUsuario.setCedulaCliente(vistaUsuario.getTxtcedula().getText());
@@ -147,11 +146,16 @@ public class controladorRegistroUsuario {
     }
 
     public void regresar() {
-        Pantalla_Principal nuevo1 = new Pantalla_Principal();
-        controladorPrincipal nuevo = new controladorPrincipal(nuevo1);
-        nuevo.abrir();
-        nuevo.iniciarControlador();
-        vistaUsuario.dispose();
+        if (vistaUsuario.getTitle().equals("PANTALLA_PRINCIPAL")) {
+            Pantalla_Principal nuevo1 = new Pantalla_Principal();
+            controladorPrincipal nuevo = new controladorPrincipal(nuevo1);
+            nuevo.abrir();
+            nuevo.iniciarControlador();
+            vistaUsuario.dispose();
+        }else if (vistaUsuario.getTitle().equals("ADMIN")) {
+            vistaUsuario.dispose();
+        }
+
     }
 
 }

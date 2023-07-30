@@ -65,8 +65,8 @@ public class modeloRecepcionista extends Recepcionista {
     }
 
     public boolean grabarRecepcionista() {
-        String sql = "insert into  recepcionista(id_recepcionista, usuario, contrasena,sueldo, cedula_persona)";
-        sql += "values('" + super.getId_Recep() + "','" + getUsuario_Recep() + "','" + getContra_Recep() + "'," + getSueldo_Recep() + ",'" + getCedula_Recep() + "')";
+        String sql = "insert into  recepcionista( usuario, contrasena,sueldo, cedula_persona)";
+        sql += "values('" + getUsuario_Recep() + "','" + getContra_Recep() + "'," + getSueldo_Recep() + ",'" + getCedula_Recep() + "')";
         return cpg.accionBd(sql);
     }
 

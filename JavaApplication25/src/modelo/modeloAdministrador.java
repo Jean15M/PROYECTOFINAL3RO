@@ -69,8 +69,8 @@ public class modeloAdministrador extends Administrador {
     }
 
     public boolean grabarAdministrador() {
-        String sql = "insert into  administrador(id_admin, usuario, contrasena, cedula_persona)";
-        sql += "values('" + super.getId_Admin() + "','" + getUsuarioAdmin() + "','" + getContraAdmin() + "','" + getCedulaAdmin() + "')";
+        String sql = "insert into  administrador(usuario, contrasena, cedula_persona)";
+        sql += "values('" + getUsuarioAdmin() + "','" + getContraAdmin() + "','" + getCedulaAdmin() + "')";
         return cpg.accionBd(sql);
     }
 
