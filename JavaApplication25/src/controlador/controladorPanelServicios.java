@@ -6,10 +6,15 @@
 package controlador;
 
 import java.awt.event.KeyEvent;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.modeloServicio;
 import vista.PanelControlServ;
+import vista.vistaPanelControl;
+import vista.vistaPanelControlPrincipal;
 
 /**
  *
@@ -19,10 +24,12 @@ public class controladorPanelServicios {
     private modeloServicio modeloS;
     private PanelControlServ vistaR;
     private DefaultTableModel mTabla;
+   private vistaPanelControlPrincipal recep;
 
-    public controladorPanelServicios(modeloServicio modeloS, PanelControlServ vistaR) {
+    public controladorPanelServicios(modeloServicio modeloS, PanelControlServ vistaR,vistaPanelControlPrincipal recep) {
         this.modeloS = modeloS;
         this.vistaR = vistaR;
+        this.recep=recep;
         vistaR.setVisible(true);
         cargarTabla();
     }
@@ -31,6 +38,7 @@ public class controladorPanelServicios {
     
     public void iniciarControlador(){
         vistaR.getBtnBuscar2().addActionListener(l->filtro());
+        recep.getBtnInicioRe().addActionListener(l->cerrar());
     }
     
     public void cargarTabla(){
@@ -61,6 +69,15 @@ public class controladorPanelServicios {
                 vistaR.getTxtBuscar().setText("");
             }
         }
+    }
+        public void cerrar() {
+
+        try {
+            vistaR.setClosed(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
     
 }

@@ -64,7 +64,7 @@ public class controladorPanelconRecep {
         BasicInternalFrameUI bui = (BasicInternalFrameUI) vistaR.getUI();
         bui.setNorthPane(null);
         vistaR.setSize(vistaRecepcionista.getjDesktopPane1().getWidth(), vistaRecepcionista.getjDesktopPane1().getHeight());
-        controladorPanelServicios iniciar = new controladorPanelServicios(modeloS, vistaR);
+        controladorPanelServicios iniciar = new controladorPanelServicios(modeloS, vistaR,vistaRecepcionista);
         iniciar.iniciarControlador();
         vistapanel.dispose();
     }
