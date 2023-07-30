@@ -16,6 +16,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelo.modeloHabitaciones;
+import modelo.modeloParqueadero;
 import modelo.modeloReserva;
 import vista.vistaControlarReservas;
 import vista.vistaPanelControlPrincipal;
@@ -93,6 +95,7 @@ public class controladorEstadoReserv {
                 modeloRes.setId_Reserva(vistaCon.getLblIdreser().getText());
                 modeloRes.setEstado_reser("Finalizado");
                 if(modeloRes.modificarEstado()==true){
+                    modificarEstados();
                     JOptionPane.showMessageDialog(null, "SE HA ACTUALIZADO EL ESTADO DE LA RESERVA");
                 }else{
                     System.out.println("ERROR AL MODIFICAR");
@@ -120,6 +123,28 @@ public class controladorEstadoReserv {
                 vistaCon.getTbReservas().setModel(mTabla);
             }
         }
+    }
+    
+    public void modificarEstados(){
+        int s = vistaCon.getTbReservas().getSelectedRow();
+        modeloHabitaciones modeloH = new modeloHabitaciones();
+        modeloH.setId_Habitacion(String.valueOf(vistaCon.getTbReservas().getValueAt(s, 3)));
+        modeloH.setEstado("Disponible");
+        if(modeloH.modificarEstadoID()==true){
+            System.out.println("Actualizado");
+        }
+        
+        String parq = String.valueOf(vistaCon.getTbReservas().getValueAt(s, 2));
+        if(parq!=null){
+            modeloParqueadero modeloPa = new modeloParqueadero();
+            modeloPa.setId_Parqueadero(parq);
+            modeloPa.setEstado("Disponible");
+            if(modeloPa.modificarEstado()==true){
+                System.out.println("Actualizado");
+            }
+        }
+        
+        
     }
     
     public void cerrar() {

@@ -89,6 +89,12 @@ public class modeloHabitaciones extends Habitaciones {
         sql += "where n_habitacion='" + getNro_Habitacion()+ "'";
         return cpg.accionBd(sql);
     }
+    
+    public boolean modificarEstadoID() {
+        String sql = "UPDATE habitaciones SET estado='" + getEstado()+ "'";
+        sql += "where id_habitacion='" + getId_Habitacion()+ "'";
+        return cpg.accionBd(sql);
+    }
 
     public boolean eliminarAutos() {
         String sql = "DELETE FROM habitaciones";
