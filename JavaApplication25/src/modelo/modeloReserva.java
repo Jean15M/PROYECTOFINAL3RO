@@ -46,7 +46,7 @@ public class modeloReserva extends Reservas {
                 Reservas1.setFecha_entrada(rs.getDate("fecha_entrada"));
                 Reservas1.setFecha_salida(rs.getDate("fecha_salida"));
                 Reservas1.setDiasReservas(rs.getString("dias"));
-           
+                Reservas1.setEstado_reser("estado_reserva");
                 Reservas1.setPersonasReserva(rs.getString("persona"));
 
                 listaReservas.add(Reservas1);

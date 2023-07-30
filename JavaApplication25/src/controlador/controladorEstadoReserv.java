@@ -104,8 +104,7 @@ public class controladorEstadoReserv {
             JOptionPane.showMessageDialog(null, "SELECCIONE UNA OPCIÓN");
         }else{
             String fechafin = vistaCon.getLblFechFin().getText();
-            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            LocalDate fecha = LocalDate.parse(fechafin, formato);
+            LocalDate fecha = LocalDate.parse(fechafin);
             LocalDate actual = LocalDate.now();
             if(fecha.isAfter(actual)){
                 modeloRes.setId_Reserva(vistaCon.getLblIdreser().getText());
