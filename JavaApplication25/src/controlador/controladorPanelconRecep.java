@@ -94,5 +94,6 @@ public class controladorPanelconRecep {
         bui.setNorthPane(null);
         vistaCon.setSize(vistaRecepcionista.getjDesktopPane1().getWidth(), vistaRecepcionista.getjDesktopPane1().getHeight());
         controladorEstadoReserv inicio = new controladorEstadoReserv(modeloRes, vistaCon, vistaRecepcionista);
+        inicio.iniciarControlador();
     }
 }

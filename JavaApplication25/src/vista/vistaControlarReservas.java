@@ -42,7 +42,7 @@ public class vistaControlarReservas extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         cbControlRes = new org.edisoncor.gui.comboBox.ComboBoxRound();
-        btnBuscarRes = new org.edisoncor.gui.button.ButtonRound();
+        btnBuscarRes1 = new org.edisoncor.gui.button.ButtonRound();
         btnAceptarRes = new org.edisoncor.gui.button.ButtonRound();
         btnCancelarRes = new org.edisoncor.gui.button.ButtonRound();
         lblIdreser = new javax.swing.JLabel();
@@ -93,8 +93,8 @@ public class vistaControlarReservas extends javax.swing.JInternalFrame {
 
         cbControlRes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar", "Pendiente", "Finalizado" }));
 
-        btnBuscarRes.setBackground(new java.awt.Color(0, 102, 255));
-        btnBuscarRes.setText("Buscar");
+        btnBuscarRes1.setBackground(new java.awt.Color(0, 102, 255));
+        btnBuscarRes1.setText("Buscar");
 
         btnAceptarRes.setBackground(new java.awt.Color(0, 102, 255));
         btnAceptarRes.setText("Cambiar estado");
@@ -146,7 +146,7 @@ public class vistaControlarReservas extends javax.swing.JInternalFrame {
                         .addGap(24, 24, 24)
                         .addComponent(cbControlRes, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnBuscarRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscarRes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -182,7 +182,7 @@ public class vistaControlarReservas extends javax.swing.JInternalFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbControlRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscarRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarRes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtFiltrar)
                     .addComponent(btnFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -216,14 +216,15 @@ public class vistaControlarReservas extends javax.swing.JInternalFrame {
         this.btnAceptarRes = btnAceptarRes;
     }
 
-    public ButtonRound getBtnBuscarRes() {
-        return btnBuscarRes;
+    public ButtonRound getBtnBuscarRes1() {
+        return btnBuscarRes1;
     }
 
-    public void setBtnBuscarRes(ButtonRound btnBuscarRes) {
-        this.btnBuscarRes = btnBuscarRes;
+    public void setBtnBuscarRes1(ButtonRound btnBuscarRes1) {
+        this.btnBuscarRes1 = btnBuscarRes1;
     }
 
+   
     public ButtonRound getBtnCancelarRes() {
         return btnCancelarRes;
     }
@@ -299,7 +300,7 @@ public class vistaControlarReservas extends javax.swing.JInternalFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound btnAceptarRes;
-    private org.edisoncor.gui.button.ButtonRound btnBuscarRes;
+    private org.edisoncor.gui.button.ButtonRound btnBuscarRes1;
     private org.edisoncor.gui.button.ButtonRound btnCancelarRes;
     private org.edisoncor.gui.button.ButtonRound btnFiltrar;
     private org.edisoncor.gui.comboBox.ComboBoxRound cbControlRes;

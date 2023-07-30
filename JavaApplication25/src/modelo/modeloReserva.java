@@ -76,7 +76,7 @@ public class modeloReserva extends Reservas {
     }
 
     public String mostrarReservas() {
-        String sql = "select id_reserva,id_pago,id_habitacion,id_parqueadero,id_recepcionista, cedula_persona,fecha_entrada,fecha_salida from reserva";
+        String sql = "select * from reserva";
         return sql;
     }
 

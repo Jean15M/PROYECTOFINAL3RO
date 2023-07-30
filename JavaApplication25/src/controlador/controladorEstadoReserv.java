@@ -38,23 +38,28 @@ public class controladorEstadoReserv {
     
     public void iniciarControlador(){
        vistaCon.getBtnAceptarRes().addActionListener(l->cambiarEstado());
-       vistaCon.getBtnBuscarRes().addActionListener(l->cargarTabla());
+       vistaCon.getBtnBuscarRes1().addActionListener(l->cargarTabla());
        vistaCon.getBtnFiltrar().addActionListener(l->filtrar());
        vistaCon.getBtnCancelarRes().addActionListener(l->cerrar());
        vistaRecepcionista.getBtnInicioRe().addActionListener(l->cerrar());
        cargarDatos();
     }
     
-    public void cargarTabla(){
+    private void cargarTabla(){
+        System.out.println("aquiF");
         if(vistaCon.getCbControlRes().getSelectedIndex()==0){
+            System.out.println("aqui");
             mTabla = (DefaultTableModel) vistaCon.getTbReservas().getModel();
             mTabla.setNumRows(0);
+            modeloRes.modificar=false;
             modeloRes.reservas().stream().forEach((p)->{
+                System.out.println("aqui1");
                 Object[] fila={p.getId_Reserva(),p.getCedula_Cliente(),p.getId_Habitacion(),p.getId_Parqueadero(),p.getEstado_reser(),p.getFecha_entrada(),p.getFecha_salida()};
                 mTabla.addRow(fila);
             });
             vistaCon.getTbReservas().setModel(mTabla);
         }else {
+            System.out.println("aqui2");
             modeloRes.setEstado_reser(String.valueOf(vistaCon.getCbControlRes().getSelectedItem()));
             mTabla = (DefaultTableModel) vistaCon.getTbReservas().getModel();
             mTabla.setNumRows(0);
