@@ -54,11 +54,11 @@ public class PanelControlServ extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Descripción", "Habitación", "Estado"
+                "ID", "Descripción", "Tipo Servicio", "Habitación", "Estado"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, true, false
+                false, false, true, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -67,6 +67,7 @@ public class PanelControlServ extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tbServicios);
 
+        btnBuscar2.setBackground(new java.awt.Color(0, 102, 255));
         btnBuscar2.setText("Filtrar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

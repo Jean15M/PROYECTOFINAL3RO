@@ -37,7 +37,7 @@ public class controladorPanelServicios {
         mTabla = (DefaultTableModel) vistaR.getTbServicios().getModel();
         mTabla.setNumRows(0);
         modeloS.listarServicio().stream().forEach(lista -> {
-           String[] fila = {lista.getId_Servicio(), lista.getId_tipo_servicio(), lista.getId_Habitacion(), lista.getEstado()};
+           String[] fila = {lista.getId_Servicio(), lista.getId_tipo_servicio(),lista.getDescp_Servicio(), lista.getId_Habitacion(), lista.getEstado()};
            mTabla.addRow(fila);
         });
         vistaR.getTbServicios().setModel(mTabla);

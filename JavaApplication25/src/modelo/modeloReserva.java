@@ -142,6 +142,34 @@ public class modeloReserva extends Reservas {
             return null;
         }
     }
+    
+    public List<Reservas> buscarCliente() {
+        List<Reservas> listaBuscar = new ArrayList<Reservas>();
+        String sql;
+        sql = "select * from reserva where cedula_persona='" + super.getCedula_Cliente()+ "'";
+        ResultSet rs = cpg.resultBD(sql);
+        Reservas res = new Reservas();
+        try {
+
+            while (rs.next()) {
+                res.setId_Reserva(rs.getString("id_reserva"));
+                res.setId_pago(rs.getString("id_pago"));
+                res.setId_Habitacion(rs.getString("id_habitacion"));
+                res.setId_Parqueadero(rs.getString("id_parqueadero"));
+                res.setId_Recepcionista(rs.getString("id_recepcionista"));
+                res.setCedula_Cliente(rs.getString("cedula_persona"));
+                res.setFecha_entrada(rs.getDate("fecha_entrada"));
+                res.setFecha_salida(rs.getDate("fecha_salida"));
+                res.setEstado_reser("estado_reserva");
+                listaBuscar.add(res);
+            }
+            rs.close();
+            return listaBuscar;
+        } catch (SQLException ex) {
+            Logger.getLogger(modeloCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
 
     public Date obtenerFechafin() {
         String sql = "select fecha_salida from reserva where id_reserva='" + super.getId_Reserva() + "'";

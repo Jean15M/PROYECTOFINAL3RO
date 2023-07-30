@@ -55,6 +55,7 @@ public class controladorAsignarServicio {
                 modeloServ.setEstado("En espera");
                 modeloServ.setId_tipo_servicio(tipo_serv);
                 modeloServ.setId_Habitacion(modeloH.ObtenerCodigo());
+                modeloServ.setDescp_Servicio(vistaS.getTxtDescripcion().getText());
                 if(modeloServ.grabarServicio()==true){
                     JOptionPane.showMessageDialog(null, "SERVICIO PEDIDO CORRECTAMENTE, POR FAVOR ESPERE...");
                     limpiar();
