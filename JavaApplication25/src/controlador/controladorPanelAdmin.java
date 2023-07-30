@@ -8,6 +8,7 @@ package controlador;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import modelo.modeloAdministrador;
 import modelo.modeloCliente;
 import modelo.modeloHabitaciones;
@@ -20,6 +21,7 @@ import vista.vistaRegistroAdmin;
 import vista.vistaRegistroHabitacion;
 import vista.vistaRegistroParqueaderos;
 import vista.vistaRegistroRecepcionista;
+import vista.vistaReportes;
 
 /**
  *
@@ -41,8 +43,9 @@ public class controladorPanelAdmin {
         admin.getBtRegisem().addActionListener(l -> registroRecepcionista());
         admin.getBtRegiscli().addActionListener(l -> registroUsuario());
         admin.getBtnhabitaciones().addActionListener(l -> registrohabitaciones());
-        admin.getBtnParqueadero().addActionListener(l->registroParqueadero());
+        admin.getBtnParqueadero().addActionListener(l -> registroParqueadero());
         adminp.getBtnInicioRe1().addActionListener(l -> cerrar());
+        admin.getBtReporte().addActionListener(l->reportesGenerales());
 
     }
 
@@ -68,19 +71,31 @@ public class controladorPanelAdmin {
         controladorRegistroAdmin inicio = new controladorRegistroAdmin(vistaA, modeloA);
         inicio.controlador();
     }
-    
+
     private void registrohabitaciones() {
         modeloHabitaciones modeloA = new modeloHabitaciones();
         vistaRegistroHabitacion vistaA = new vistaRegistroHabitacion();
         controladorRegistroHabitaciones inicio = new controladorRegistroHabitaciones(vistaA, modeloA);
         inicio.iniciarControlador();
     }
-    
-    private void registroParqueadero(){
+
+    private void registroParqueadero() {
         vistaRegistroParqueaderos vistaPar = new vistaRegistroParqueaderos();
         modeloParqueadero modeloPar = new modeloParqueadero();
         controladorRegistroParqueadero iniciar = new controladorRegistroParqueadero(vistaPar, modeloPar);
         iniciar.iniciarControlador();
+    }
+
+    private void reportesGenerales() {
+        modeloCliente modelo = new modeloCliente();
+        vistaReportes vista = new vistaReportes();
+        adminp.getEscritorioAdmin().add(vista);
+        vista.setBorder(null);
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) vista.getUI();
+        bui.setNorthPane(null);
+        vista.setSize(adminp.getEscritorioAdmin().getWidth(), adminp.getEscritorioAdmin().getHeight());
+        controladorReportes controlador = new controladorReportes(vista);
+        controlador.iniciarControlador();
     }
 
     public void cerrar() {

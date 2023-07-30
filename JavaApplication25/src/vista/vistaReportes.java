@@ -175,7 +175,7 @@ public class vistaReportes extends javax.swing.JInternalFrame {
                 .addGap(116, 116, 116))
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
