@@ -161,7 +161,7 @@ public class controlador_vista_cliente {
         bui.setNorthPane(null);
         vista1.setSize(ventaCliente.getjDesktopPane1().getWidth(), ventaCliente.getjDesktopPane1().getHeight());
         modeloCliente nuevo1=new  modeloCliente();
-        controladorFacturas nuevo=new controladorFacturas(vista1,nuevo1);
+        controladorFacturas nuevo=new controladorFacturas(vista1,nuevo1,ventaCliente);
         nuevo.iniciarControlador();
     }
 

@@ -60,7 +60,7 @@ public class modeloServicio extends Servicio {
 //    }
      public boolean grabarServicio() {
         String sql = "INSERT INTO servicios (id_tipo_servicio, id_habitacion, descripcion) ";
-        sql += "VALUES ('0', '" + getId_tipo_servicio() + "', '" + getId_Habitacion() + "', '" + getDescp_Servicio() + "')";
+        sql += "VALUES ('" + getId_tipo_servicio() + "', '" + getId_Habitacion() + "', '" + getDescp_Servicio() + "')";
 
         return cpg.accionBd(sql);
     }

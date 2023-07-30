@@ -7,6 +7,7 @@ package controlador;
 
 import static controlador.controladorAsignarReserva.tipo;
 import java.beans.PropertyChangeEvent;
+import java.beans.PropertyVetoException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -30,6 +31,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
+import vista.cliente_ventana;
 import vista.vistaFacturas;
 
 /**
@@ -41,18 +43,21 @@ public class controladorFacturas {
     DefaultTableModel mTabla;
     private vistaFacturas facturas;
     private modeloCliente modeloCliente;
+    private cliente_ventana vistacliente;
 
-    public controladorFacturas(vistaFacturas facturas, modeloCliente modeloCliente) {
+    public controladorFacturas(vistaFacturas facturas, modeloCliente modeloCliente, cliente_ventana vistacliente) {
         this.facturas = facturas;
         this.modeloCliente = modeloCliente;
+        this.vistacliente = vistacliente;
         facturas.setVisible(true);
         lenarFacturas();
 
     }
 
     public void iniciarControlador() {
-    
+        facturas.getBtnBuscar().addActionListener(l -> Probar());
         facturas.getBtnImprimir().addActionListener(l -> facturasSolas());
+        vistacliente.getBtnInicioRe().addActionListener(l->cerrar());
     }
 
     private void lenarFacturas() {
@@ -78,7 +83,7 @@ public class controladorFacturas {
     private void facturasSolas() {
         Conexion cpg = new Conexion();
         int seleccionado = facturas.getTabla_Fac().getSelectedRow();
-        if (seleccionado >= 1) {
+        if (seleccionado >= 0) {
             try {
                 JasperReport jr = (JasperReport) JRLoader.loadObject(
                         getClass().getResource("/vista/Reportes/Reporte_cliente.jasper")
@@ -111,24 +116,25 @@ public class controladorFacturas {
                             habitacion.buscarHabi3().stream().forEach(p2 -> {
                                 System.out.println("habitacion");
                                 parametros.put("n_habitacion", String.valueOf(p2.getNro_Habitacion()));
-                            });
-                            modeloDetalle_fac deta = new modeloDetalle_fac();
-                            deta.modificar = true;
-                            deta.setId_encab_deta(p4.getId_encabez());
-                            deta.listarDetalle_fac().stream().forEach(p5 -> {
-                                System.out.println("entrocdeta");
-                                parametros.put("subtotal", String.valueOf(p5.getSubtotal_detalle()));
+
+                                modeloDetalle_fac deta = new modeloDetalle_fac();
+                                deta.modificar = true;
+                                deta.setId_encab_deta(p4.getId_encabez());
+                                deta.listarDetalle_fac().stream().forEach(p5 -> {
+                                    System.out.println("entrocdeta");
+                                    parametros.put("subtotal", String.valueOf(p5.getSubtotal_detalle()));
+                                    modeloCategoriaHabitacion modeloH = new modeloCategoriaHabitacion();
+                                    modeloH.modificar = true;
+                                    modeloH.setId_Categoria(p2.getId_Categoria());
+                                    modeloH.listarCategoriaHabitacion().stream().forEach(p6 -> {
+                                        parametros.put("tipo", p6.getNombre_Categoria());
+                                    });
+                                });
 
                             });
                         });
                     });
                     parametros.put("imagen", this.getClass().getResourceAsStream("/vista/imagenes/logo2.png"));
-                });
-                modeloCategoriaHabitacion modeloH = new modeloCategoriaHabitacion();
-                modeloH.modificar = true;
-                modeloH.setId_Categoria(tipo);
-                modeloH.listarCategoriaHabitacion().stream().forEach(p -> {
-                    parametros.put("tipo", p.getNombre_Categoria());
                 });
 
                 JasperPrint jp = JasperFillManager.fillReport(jr, parametros, cpg.getCon());
@@ -144,47 +150,60 @@ public class controladorFacturas {
     }
 
     public void Probar() {
-        java.util.Date fechaCalendar = facturas.getFechaInicio().getDate();
-        SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
-        String d1 = date.format(fechaCalendar);
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        LocalDate fechaInicio = LocalDate.parse(d1, formato);
-        System.out.println(fechaInicio);
-        java.util.Date fechaCalendarF = facturas.getFechaFin().getDate();
-        SimpleDateFormat datef = new SimpleDateFormat("dd-MM-yyyy");
-        String df = date.format(fechaCalendarF);
-        DateTimeFormatter formatof = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        LocalDate fechaFinal = LocalDate.parse(df, formato);
-        System.out.println(fechaInicio);
-        modeloEncabez_fac fac = new modeloEncabez_fac();
         if (facturas.getFechaInicio().getDate() == null || facturas.getFechaFin().getDate() == null) {
-        } else if (fechaFinal.isAfter(LocalDate.now())) {
-            JOptionPane.showMessageDialog(null, "NO INGRESE FECHAS MAYORES A LA ACTUAL");
+            JOptionPane.showMessageDialog(null, "CAMPOS VACIOS");
         } else {
-            mTabla = (DefaultTableModel) facturas.getTabla_Fac().getModel();
-            mTabla.setNumRows(0);
-            fac.listarDetalle_fac().stream().forEach((p) -> {
-                SimpleDateFormat date1 = new SimpleDateFormat("dd-MM-yyyy");
-                String d = date.format(p.getFecha_fac());
-                DateTimeFormatter formato1 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-                LocalDate fechaInicio1 = LocalDate.parse(d, formato);
-                modeloCliente nuevo = new modeloCliente();
-                nuevo.setUsuarioCliente(Controlador_Login.usuario);
-                System.out.println(Controlador_Login.usuario);
-                nuevo.modificar = true;
-                if (fechaInicio1.isAfter(fechaInicio) && fechaInicio1.isBefore(fechaFinal)) {
-                    nuevo.cargarCliente().stream().forEach((p1) -> {
-                        String[] fila = {p.getCedula_cli(), p1.getNombrePersona(), String.valueOf(p.getFecha_fac()), String.valueOf(p.getTotal_fac()), p.getId_reserva()};
-                        mTabla.addRow(fila);
-                    });
+            java.util.Date fechaCalendar = facturas.getFechaInicio().getDate();
+            SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
+            String d1 = date.format(fechaCalendar);
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            LocalDate fechaInicio = LocalDate.parse(d1, formato);
+            System.out.println(fechaInicio);
+            java.util.Date fechaCalendarF = facturas.getFechaFin().getDate();
+            SimpleDateFormat datef = new SimpleDateFormat("dd-MM-yyyy");
+            String df = date.format(fechaCalendarF);
+            DateTimeFormatter formatof = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            LocalDate fechaFinal = LocalDate.parse(df, formato);
+            System.out.println(fechaInicio);
+            modeloEncabez_fac fac = new modeloEncabez_fac();
+            if (fechaFinal.isAfter(LocalDate.now())) {
+                JOptionPane.showMessageDialog(null, "NO INGRESE FECHAS MAYORES A LA ACTUAL");
+            } else {
+                mTabla = (DefaultTableModel) facturas.getTabla_Fac().getModel();
+                mTabla.setNumRows(0);
+                fac.listarDetalle_fac().stream().forEach((p) -> {
+                    SimpleDateFormat date1 = new SimpleDateFormat("dd-MM-yyyy");
+                    String d = date.format(p.getFecha_fac());
+                    DateTimeFormatter formato1 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                    LocalDate fechaInicio1 = LocalDate.parse(d, formato);
+                    modeloCliente nuevo = new modeloCliente();
+                    nuevo.setUsuarioCliente(Controlador_Login.usuario);
+                    System.out.println(Controlador_Login.usuario);
+                    nuevo.modificar = true;
+                    if (fechaInicio1.isAfter(fechaInicio) && fechaInicio1.isBefore(fechaFinal)) {
+                        nuevo.cargarCliente().stream().forEach((p1) -> {
+                            String[] fila = {p.getCedula_cli(), p1.getNombrePersona(), String.valueOf(p.getFecha_fac()), String.valueOf(p.getTotal_fac()), p.getId_reserva()};
+                            mTabla.addRow(fila);
+                        });
 
-                } else if (fechaInicio1.isEqual(fechaInicio) && fechaInicio1.isEqual(fechaFinal)) {
-                    nuevo.cargarCliente().stream().forEach((p1) -> {
-                        String[] fila = {p.getCedula_cli(), p1.getNombrePersona(), String.valueOf(p.getFecha_fac()), String.valueOf(p.getTotal_fac()), p.getId_reserva()};
-                        mTabla.addRow(fila);
-                    });
-                }
-            });
+                    } else if (fechaInicio1.isEqual(fechaInicio) || fechaInicio1.isEqual(fechaFinal)) {
+                        nuevo.cargarCliente().stream().forEach((p1) -> {
+                            String[] fila = {p.getCedula_cli(), p1.getNombrePersona(), String.valueOf(p.getFecha_fac()), String.valueOf(p.getTotal_fac()), p.getId_reserva()};
+                            mTabla.addRow(fila);
+                        });
+                    }
+                });
+            }
+
+        }
+    }
+    
+        public void cerrar() {
+
+        try {
+            facturas.setClosed(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
