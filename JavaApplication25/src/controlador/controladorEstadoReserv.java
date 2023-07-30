@@ -5,6 +5,8 @@
  */
 package controlador;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyVetoException;
 import java.text.ParseException;
@@ -52,29 +54,37 @@ public class controladorEstadoReserv {
             mTabla = (DefaultTableModel) vistaCon.getTbReservas().getModel();
             mTabla.setNumRows(0);
             modeloRes.modificar=false;
-            modeloRes.reservas().stream().forEach((p)->{
-                System.out.println("aqui1");
-                Object[] fila={p.getId_Reserva(),p.getCedula_Cliente(),p.getId_Habitacion(),p.getId_Parqueadero(),p.getEstado_reser(),p.getFecha_entrada(),p.getFecha_salida()};
-                mTabla.addRow(fila);
-            });
-            vistaCon.getTbReservas().setModel(mTabla);
+            if(modeloRes.reservas().isEmpty()){
+                JOptionPane.showMessageDialog(null, "NO SE ENCUENTRAN DATOS EN LA BASE DE DATOS");
+            }else{
+                modeloRes.reservas().stream().forEach((p)->{
+                    System.out.println("aqui1");
+                    Object[] fila={p.getId_Reserva(),p.getCedula_Cliente(),p.getId_Parqueadero(),p.getId_Habitacion(),p.getFecha_entrada(),p.getFecha_salida(),p.getEstado_reser()};
+                    mTabla.addRow(fila);
+                });
+                vistaCon.getTbReservas().setModel(mTabla);
+            }
         }else {
             System.out.println("aqui2");
             modeloRes.setEstado_reser(String.valueOf(vistaCon.getCbControlRes().getSelectedItem()));
             mTabla = (DefaultTableModel) vistaCon.getTbReservas().getModel();
             mTabla.setNumRows(0);
-            modeloRes.buscarReservas().stream().forEach((p)->{
-                Object[] fila={p.getId_Reserva(),p.getCedula_Cliente(),p.getId_Habitacion(),p.getId_Parqueadero(),p.getEstado_reser(),p.getFecha_entrada(),p.getFecha_salida()};
-                mTabla.addRow(fila);
-            });
-            vistaCon.getTbReservas().setModel(mTabla);
+            if(modeloRes.buscarReservas().isEmpty()){
+                JOptionPane.showMessageDialog(null, "NO SE ENCUENTRAN DATOS EN LA BASE DE DATOS");
+            }else{
+                modeloRes.buscarReservas().stream().forEach((p)->{
+                    Object[] fila={p.getId_Reserva(),p.getCedula_Cliente(),p.getId_Parqueadero(),p.getId_Habitacion(),p.getFecha_entrada(),p.getFecha_salida(),p.getEstado_reser()};
+                    mTabla.addRow(fila);
+                });
+                vistaCon.getTbReservas().setModel(mTabla);
+            }
         }
     }
     
     public void cargarDatos(){
-        vistaCon.getTbReservas().addPropertyChangeListener(new java.beans.PropertyChangeListener(){
+        vistaCon.getTbReservas().addMouseListener(new MouseAdapter() {
             @Override
-            public void propertyChange(PropertyChangeEvent evt) {
+            public void mouseClicked(MouseEvent e) {
                 int s = vistaCon.getTbReservas().getSelectedRow();
                 if(s>=0){
                     vistaCon.getLblIdreser().setText(String.valueOf(vistaCon.getTbReservas().getValueAt(s, 0)));
@@ -82,8 +92,9 @@ public class controladorEstadoReserv {
                     vistaCon.getLblFechIn().setText(String.valueOf(vistaCon.getTbReservas().getValueAt(s, 4)));
                     vistaCon.getLblFechFin().setText(String.valueOf(vistaCon.getTbReservas().getValueAt(s, 5)));
                     
-                }  
-            }
+                } 
+            }        
+            
         });
         
     }
@@ -122,7 +133,7 @@ public class controladorEstadoReserv {
             }else{
                 mTabla.setNumRows(0);
                 modeloRes.buscarCliente().stream().forEach((p)->{
-                    Object[] fila={p.getId_Reserva(),p.getCedula_Cliente(),p.getId_Habitacion(),p.getId_Parqueadero(),p.getEstado_reser(),p.getFecha_entrada(),p.getFecha_salida()};
+                    Object[] fila={p.getId_Reserva(),p.getCedula_Cliente(),p.getId_Parqueadero(),p.getId_Habitacion(),p.getFecha_entrada(),p.getFecha_salida(),p.getEstado_reser()};
                     mTabla.addRow(fila);
                 });
                 vistaCon.getTbReservas().setModel(mTabla);
