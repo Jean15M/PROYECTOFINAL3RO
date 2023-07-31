@@ -80,9 +80,6 @@ public class controladorRegistroHabitaciones {
     }
 
     private void Cancelar() {
-        vistaPanelControlAdministrador pat = new vistaPanelControlAdministrador();
-        Controlador_Paneladmin inicio=new Controlador_Paneladmin(pat);
-        inicio.iniciarControlador();
         vistahabi.dispose();
     }
 }
