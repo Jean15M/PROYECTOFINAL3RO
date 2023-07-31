@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import java.beans.PropertyVetoException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -16,6 +17,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
+import vista.vistaPanelControlAdministrador;
 import vista.vistaReportes;
 
 /**
@@ -25,17 +27,22 @@ import vista.vistaReportes;
 public class controladorReportes {
 
     private vistaReportes vistaReservas;
+    private vistaPanelControlAdministrador admin;
 
-    public controladorReportes(vistaReportes vistaReservas) {
+    public controladorReportes(vistaReportes vistaReservas, vistaPanelControlAdministrador admin) {
         this.vistaReservas = vistaReservas;
+        this.admin = admin;
         vistaReservas.setVisible(true);
     }
+
+   
 
     public void iniciarControlador() {
         vistaReservas.getBtnClientes().addActionListener(l -> imPrimirPersonas());
         vistaReservas.getBtnEmpleados().addActionListener(l -> imprimirEmpleados());
         vistaReservas.getBtnHabitaciones().addActionListener(l->imprimirHabitacion());
         vistaReservas.getBtnFacturas().addActionListener(l->imprimirFacturas());
+        admin.getBtnInicioRe1().addActionListener(l->cerrar());
     }
 
     private void imPrimirPersonas() {
@@ -111,5 +118,15 @@ public class controladorReportes {
         } catch (JRException ex) {
             Logger.getLogger(controladorReportes.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+     
+        public void cerrar() {
+
+        try {
+            vistaReservas.setClosed(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(controladorVistaReservas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 }

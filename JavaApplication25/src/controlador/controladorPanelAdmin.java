@@ -94,7 +94,7 @@ public class controladorPanelAdmin {
         BasicInternalFrameUI bui = (BasicInternalFrameUI) vista.getUI();
         bui.setNorthPane(null);
         vista.setSize(adminp.getEscritorioAdmin().getWidth(), adminp.getEscritorioAdmin().getHeight());
-        controladorReportes controlador = new controladorReportes(vista);
+        controladorReportes controlador = new controladorReportes(vista,adminp);
         controlador.iniciarControlador();
     }
 

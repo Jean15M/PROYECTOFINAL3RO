@@ -104,6 +104,7 @@ public class Controlador_Login {
 
         modeloCliente modeloC = new modeloCliente();
         vistaRegistro vistaC = new vistaRegistro();
+        vistaC.setTitle("PANTALLA_PRINCIPAL");
         controladorRegistroUsuario inicio = new controladorRegistroUsuario(modeloC, vistaC);
         inicio.iniciarControlador();
         vistaLogin.dispose();

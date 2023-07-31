@@ -80,7 +80,6 @@ public class controladorPrincipal {
         bui.setNorthPane(null);
         vista1.setSize(vistaPrincipal.getPaginaPrincipal().getWidth(), vistaPrincipal.getPaginaPrincipal().getHeight());
         cliente_ventana  cliente1=new cliente_ventana();
-        
         controladorVistaServicios inicio = new controladorVistaServicios(vista1,vistaPrincipal,cliente1);
         inicio.iniciarControlador();
     }
