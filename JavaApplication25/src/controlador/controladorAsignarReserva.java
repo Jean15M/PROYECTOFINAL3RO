@@ -65,12 +65,12 @@ public class controladorAsignarReserva {
     public void iniciarControlador() {
         vistaReservas.getBtnFactura().setEnabled(false);
         cargarCombo();
-        cargarPagos();
         cargarCliente();
         vistaReservas.getRdOpcionSi().addActionListener(l -> mostrarParq(2));
         vistaReservas.getRdOpcionNo().addActionListener(l -> mostrarParq(1));
         vistaReservas.getBtnReservar().addActionListener(l -> ingresarReserva());
         vistaReservas.getBtnCancelar().addActionListener(l -> cerrarInternal());
+        vistaReservas.getCbParque().addActionListener(l->cargarUbicacion());
         cliente.getBtnInicioRe().addActionListener(l -> cerrarInternal());
         calcularDia();
         vistaReservas.getBtnFactura().addActionListener(l -> imPrimirFactura());
@@ -160,7 +160,6 @@ public class controladorAsignarReserva {
         modeloAutos modeloA = new modeloAutos();
         modeloP.setPlaca(vistaReservas.getTxtPlaca().getText());
         modeloP.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedItem()));
-        modeloP.setUbicacion(String.valueOf(vistaReservas.getCbUbicacion().getSelectedItem()));
         modeloP.setTiempo(Integer.parseInt(vistaReservas.getTxtDias().getText()));
         modeloA.setMarca(vistaReservas.getTxtMarca().getText());
         modeloA.setModelo(vistaReservas.getTxtMarca().getText());
@@ -194,10 +193,6 @@ public class controladorAsignarReserva {
 
     }
 
-    public void cargarPagos() {
-
-    }
-
     public void cargarCombo() {
         modeloMetodoPago modeloP = new modeloMetodoPago();
         vistaReservas.getCbPago().removeAllItems();
@@ -207,10 +202,9 @@ public class controladorAsignarReserva {
         });
 
         modeloHabitaciones modeloH = new modeloHabitaciones();
-       
         vistaReservas.getCbHabitacion().removeAllItems();
         vistaReservas.getCbHabitacion().addItem("Seleccionar");
-         modeloH.setId_Categoria(tipo);
+        modeloH.setId_Categoria(tipo);
         modeloH.buscarCat().stream().forEach(p -> {
             vistaReservas.getCbHabitacion().addItem(String.valueOf(p.getNro_Habitacion()));
             vistaReservas.getTxtPrecio().setText(String.valueOf(p.getPrecio_Habitacion()));
@@ -222,10 +216,18 @@ public class controladorAsignarReserva {
             vistaReservas.getCbParque().addItem(String.valueOf(p.getId_Parqueadero()));
         });
 
-        modeloPa.obtenerParqueadero().stream().forEach(p -> {
-            vistaReservas.getCbUbicacion().addItem(String.valueOf(p.getUbicacion()));
-        });
-
+    }
+    
+    private void cargarUbicacion() {
+        if (vistaReservas.getCbParque().getSelectedIndex() == 0) {
+            vistaReservas.getTxtUbicacion().setText("");
+        } else {
+            modeloParqueadero modeloPa = new modeloParqueadero();
+            modeloPa.setId_Parqueadero(vistaReservas.getCbParque().getSelectedItem().toString());
+            modeloPa.obtenerCoincidencia().stream().forEach(c -> {
+                vistaReservas.getTxtUbicacion().setText(c.getUbicacion());
+            });
+        }
     }
 
     public void calcularDia() {
@@ -288,7 +290,7 @@ public class controladorAsignarReserva {
             vistaReservas.getTxtModelo().setVisible(false);
             vistaReservas.getTxtPlaca().setVisible(false);
             vistaReservas.getCbParque().setVisible(false);
-            vistaReservas.getCbUbicacion().setVisible(false);
+            vistaReservas.getTxtUbicacion().setVisible(false);
         } else if (bandera == 2) {
             vistaReservas.getLblParque().setVisible(true);
             vistaReservas.getLblMarca().setVisible(true);
@@ -299,7 +301,7 @@ public class controladorAsignarReserva {
             vistaReservas.getTxtModelo().setVisible(true);
             vistaReservas.getTxtPlaca().setVisible(true);
             vistaReservas.getCbParque().setVisible(true);
-            vistaReservas.getCbUbicacion().setVisible(true);
+            vistaReservas.getTxtUbicacion().setVisible(true);
         }
     }
 

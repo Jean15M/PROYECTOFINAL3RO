@@ -157,67 +157,83 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                       <Component id="jSeparator1" min="-2" pref="24" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="66" pref="66" max="-2" attributes="0"/>
-                                              <Component id="jLabel12" min="-2" pref="70" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                                              <Component id="jLabel14" min="-2" pref="80" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-                                              <Component id="jLabel15" min="-2" pref="90" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                              <Component id="jLabel17" min="-2" pref="109" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="lblParque" min="-2" pref="138" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                                              <Component id="lblUbi" min="-2" pref="119" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="70" pref="70" max="-2" attributes="0"/>
-                                              <Component id="lblPlaca" min="-2" pref="70" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-                                              <Component id="lblModelo" min="-2" pref="87" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                                              <Component id="lblMarca" min="-2" pref="75" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtPlaca" min="-2" pref="77" max="-2" attributes="0"/>
-                                          <Component id="txtMarca" min="-2" pref="76" max="-2" attributes="0"/>
-                                          <Component id="txtModelo" min="-2" pref="77" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnCancelar" min="-2" pref="170" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="lblNombre" min="-2" pref="79" max="-2" attributes="0"/>
-                                                  <Component id="lblApellido" min="-2" pref="78" max="-2" attributes="0"/>
                                                   <Group type="102" attributes="0">
-                                                      <Component id="rdOpcionSi" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-                                                      <Component id="rdOpcionNo" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="66" pref="66" max="-2" attributes="0"/>
+                                                      <Component id="jLabel12" min="-2" pref="70" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="lblCliente" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
+                                                      <Component id="jLabel14" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
+                                                      <Component id="jLabel15" min="-2" pref="90" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                                                      <Component id="jLabel17" min="-2" pref="109" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="lblParque" min="-2" pref="138" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                                                      <Component id="lblUbi" min="-2" pref="119" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
+                                                      <Component id="lblMarca" min="-2" pref="75" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                                      <Component id="lblModelo" min="-2" pref="87" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="btnCancelar" min="-2" pref="170" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="lblNombre" min="-2" pref="79" max="-2" attributes="0"/>
+                                                          <Component id="lblApellido" min="-2" pref="78" max="-2" attributes="0"/>
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="rdOpcionSi" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                                              <Component id="rdOpcionNo" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Component id="lblCliente" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Component id="cbParque" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="txtUbicacion" min="-2" pref="77" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="103" groupAlignment="1" attributes="0">
+                                                              <Component id="txtPlaca" min="-2" pref="77" max="-2" attributes="0"/>
+                                                              <Component id="txtMarca" min="-2" pref="76" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                                              <Component id="txtModelo" min="-2" pref="77" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                  </Group>
                                               </Group>
                                           </Group>
-                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="cbUbicacion" alignment="0" pref="149" max="32767" attributes="0"/>
-                                              <Component id="cbParque" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="lblPlaca" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -251,13 +267,17 @@
                               <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
                               <Component id="lblParque" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
-                              <Component id="lblUbi" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
-                              <Component id="lblPlaca" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblUbi" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtUbicacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                               <Component id="lblModelo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
-                              <Component id="lblMarca" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblMarca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtModelo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
@@ -274,14 +294,13 @@
                               </Group>
                               <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                               <Component id="cbParque" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                              <Component id="cbUbicacion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                              <Component id="txtPlaca" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="txtMarca" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                              <Component id="txtModelo" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -334,7 +353,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnReservar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BtnFactura" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -744,21 +763,22 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="org.edisoncor.gui.comboBox.ComboBoxRound" name="cbUbicacion">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="1">
-                    <StringItem index="0" value="Seleccionar"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="org.edisoncor.gui.button.ButtonRound" name="BtnFactura">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Factura"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtUbicacion">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                    <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
+                  </Border>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
