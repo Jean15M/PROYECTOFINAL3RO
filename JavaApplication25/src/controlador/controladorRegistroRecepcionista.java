@@ -133,9 +133,7 @@ public class controladorRegistroRecepcionista {
     }
 
     private void Cancelar() {
-
         vistarecepcionista.dispose();
-
     }
 
 }
