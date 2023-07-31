@@ -113,6 +113,12 @@ public class modeloCliente extends Cliente {
         sql += "where cedula_persona='" + getCedulaCliente() + "'";
         return cpg.accionBd(sql);
     }
+    
+    public boolean modificarContraBD() {
+        String sql = "UPDATE cliente SET usuario='" + getUsuarioCliente() + "', contrasena='" + getContraCliente() + "'";
+        sql += "where usuario='" + getUsuarioCliente()+ "'";
+        return cpg.accionBd(sql);
+    }
 
     public boolean eliminarCliente() {
         String sql = "DELETE FROM public.cliente";

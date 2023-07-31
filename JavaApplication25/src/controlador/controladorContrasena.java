@@ -27,10 +27,12 @@ public class controladorContrasena {
         this.modeloRecep = modeloRecep;
         this.vistaCon = vistaCon;
         vistaCon.setVisible(true);
+        vistaCon.setLocationRelativeTo(null);
     }
     
     public void iniciarControlador(){
         vistaCon.getBtnGuardar().addActionListener(l->cambiarContrasena());
+        vistaCon.getBtnCancelar().addActionListener(l->vistaCon.dispose());
     }
     
     private void cambiarContrasena(){
@@ -42,8 +44,8 @@ public class controladorContrasena {
            if(vistaCon.getTxtcontra().getText().equals(vistaCon.getTxtcontra1().getText())){
                modeloCliente.setContraCliente(contra);
                int opc = JOptionPane.showConfirmDialog(null, "Confirmación","¿Desea modificar la contraseña?",JOptionPane.YES_NO_CANCEL_OPTION);
-               if(opc==1){
-                if(modeloCliente.modificarClienteBD()==true){
+               if(opc==0){
+                if(modeloCliente.modificarContraBD()==true){
                     JOptionPane.showMessageDialog(null, "Contraseña modificada correctamente");
                     limpiar();
                     vistaCon.dispose();
@@ -58,7 +60,7 @@ public class controladorContrasena {
                modeloRecep.setContra_Recep(contra);
                int opc = JOptionPane.showConfirmDialog(null, "Confirmación","¿Desea modificar la contraseña?",JOptionPane.YES_NO_CANCEL_OPTION);
                if(opc==0){
-                if(modeloRecep.modificarRecepcionistaBD()==true){
+                if(modeloRecep.modificarContra()==true){
                     JOptionPane.showMessageDialog(null, "Contraseña modificada correctamente");
                     limpiar();
                     vistaCon.dispose();

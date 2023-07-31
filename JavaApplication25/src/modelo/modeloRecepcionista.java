@@ -139,6 +139,12 @@ public class modeloRecepcionista extends Recepcionista {
         sql += "where cedula_persona='" + getCedula_Recep()+ "'";
         return cpg.accionBd(sql);
     }
+    
+    public boolean modificarContra() {
+        String sql = "UPDATE recepcionista SET contrasena='" + getContra_Recep()+"'";
+        sql += "where usuario='" + getUsuario_Recep()+ "'";
+        return cpg.accionBd(sql);
+    }
 
     public boolean eliminarRecepcionista() {
         String sql = "DELETE FROM recepcionista";
