@@ -90,7 +90,7 @@ public class vistaReportes extends javax.swing.JInternalFrame {
         btnEmpleados.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
         btnFacturas.setBackground(new java.awt.Color(0, 102, 255));
-        btnFacturas.setText("FACTUAS");
+        btnFacturas.setText("FACTURAS");
 
         btnClientes.setBackground(new java.awt.Color(0, 102, 255));
         btnClientes.setText("CLIENTES");
