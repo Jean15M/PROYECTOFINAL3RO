@@ -87,13 +87,15 @@ public class vistaRegistro extends javax.swing.JFrame {
         this.txtdireccion = txtdireccion;
     }
 
-    public JTextField getTxtnom1() {
-        return txtUsuario;
+    public JTextField getTxtnombre1() {
+        return txtnombre1;
     }
 
-    public void setTxtnom1(JTextField txtnom1) {
-        this.txtUsuario = txtnom1;
+    public void setTxtnombre1(JTextField txtnombre1) {
+        this.txtnombre1 = txtnombre1;
     }
+
+
 
     public JTextField getTxtnom2() {
         return txtnom2;
@@ -183,7 +185,7 @@ public class vistaRegistro extends javax.swing.JFrame {
         jCalendario = new com.toedter.calendar.JDateChooser();
         btnAceptar = new org.edisoncor.gui.button.ButtonRound();
         btnCancelar = new org.edisoncor.gui.button.ButtonRound();
-        txtnom1 = new javax.swing.JTextField();
+        txtnombre1 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -272,7 +274,7 @@ public class vistaRegistro extends javax.swing.JFrame {
         btnCancelar.setBackground(new java.awt.Color(0, 102, 255));
         btnCancelar.setText("Cancelar");
 
-        txtnom1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtnombre1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel14.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel14.setText("CEDULA:");
@@ -317,7 +319,7 @@ public class vistaRegistro extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addComponent(jLabel7)
                             .addGap(20, 20, 20)
-                            .addComponent(txtnom1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtnombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(10, 10, 10)
                             .addComponent(txtnom2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel3Layout.createSequentialGroup()
@@ -386,7 +388,7 @@ public class vistaRegistro extends javax.swing.JFrame {
                     .addGap(18, 18, 18)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel7)
-                        .addComponent(txtnom1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtnombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtnom2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -499,8 +501,8 @@ public class vistaRegistro extends javax.swing.JFrame {
     private javax.swing.JTextField txtcontrasena;
     private javax.swing.JTextField txtcorreo;
     private javax.swing.JTextField txtdireccion;
-    private javax.swing.JTextField txtnom1;
     private javax.swing.JTextField txtnom2;
+    private javax.swing.JTextField txtnombre1;
     private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
 }

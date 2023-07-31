@@ -49,11 +49,11 @@ public class controladorRegistroUsuario {
 
     private void registrarUsuario() {
         String ced = vistaUsuario.getTxtcedula().getText();
-        if (vistaUsuario.getTxtcedula().getText().isEmpty() || vistaUsuario.getTxtnom1().getText().isEmpty() || vistaUsuario.getTxtnom2().getText().isEmpty() || vistaUsuario.getTxtape1().getText().isEmpty() || vistaUsuario.getTxtape2().getText().isEmpty() || vistaUsuario.getTxtcorreo().getText().isEmpty() || vistaUsuario.getTxttelefono().getText().isEmpty() || vistaUsuario.getTxtcontrasena().getText().isEmpty() || vistaUsuario.getTxtdireccion().getText().isEmpty() || vistaUsuario.getTxtUsuario().getText().isEmpty() || vistaUsuario.getComgenero().getSelectedIndex() == 0 || vistaUsuario.getComcanto().getSelectedIndex() == 0 || vistaUsuario.getComprovin().getSelectedIndex() == 0) {
+        if (vistaUsuario.getTxtcedula().getText().isEmpty() || vistaUsuario.getTxtnombre1().getText().isEmpty() || vistaUsuario.getTxtnom2().getText().isEmpty() || vistaUsuario.getTxtape1().getText().isEmpty() || vistaUsuario.getTxtape2().getText().isEmpty() || vistaUsuario.getTxtcorreo().getText().isEmpty() || vistaUsuario.getTxttelefono().getText().isEmpty() || vistaUsuario.getTxtcontrasena().getText().isEmpty() || vistaUsuario.getTxtdireccion().getText().isEmpty() || vistaUsuario.getTxtUsuario().getText().isEmpty() || vistaUsuario.getComgenero().getSelectedIndex() == 0 || vistaUsuario.getComcanto().getSelectedIndex() == 0 || vistaUsuario.getComprovin().getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "LLENE LOS CAMPOS POR FAVOR");
         } else {
             if (Validaciones.validarCedula(ced)) {
-                if (!Validaciones.NombreValido(vistaUsuario.getTxtnom1().getText()) || !Validaciones.NombreValido(vistaUsuario.getTxtnom2().getText())) {
+                if (!Validaciones.NombreValido(vistaUsuario.getTxtnombre1().getText()) || !Validaciones.NombreValido(vistaUsuario.getTxtnom2().getText())) {
                     JOptionPane.showMessageDialog(null, "Ingrese un nombre correcto");
                 } else if (!Validaciones.NombreValido(vistaUsuario.getTxtape1().getText()) || !Validaciones.NombreValido(vistaUsuario.getTxtape2().getText())) {
                     JOptionPane.showMessageDialog(null, "Ingrese un apellido correcto");
@@ -69,7 +69,7 @@ public class controladorRegistroUsuario {
                     modeloPersona per1 = new modeloPersona();
                     modeloCantones canton = new modeloCantones();
                     per1.setCedulaPersona(vistaUsuario.getTxtcedula().getText());
-                    per1.setNombrePersona(vistaUsuario.getTxtnom1().getText());
+                    per1.setNombrePersona(vistaUsuario.getTxtnombre1().getText());
                     per1.setNombrePersona1(vistaUsuario.getTxtnom2().getText());
                     per1.setApellidoPersona(vistaUsuario.getTxtape1().getText());
                     per1.setApellidoPersona1(vistaUsuario.getTxtape2().getText());
