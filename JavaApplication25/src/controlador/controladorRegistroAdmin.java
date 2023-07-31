@@ -16,10 +16,6 @@ import modelo.modeloAdministrador;
 import modelo.modeloCantones;
 import modelo.modeloPersona;
 import modelo.modeloProvincia;
-import vista.PanelAdmin;
-import vista.Pantalla_Principal;
-import vista.vistaPanelControl;
-import vista.vistaPanelControlAdministrador;
 import vista.vistaRegistroAdmin;
 
 /**

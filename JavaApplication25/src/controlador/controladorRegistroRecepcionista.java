@@ -59,13 +59,13 @@ public class controladorRegistroRecepcionista {
                 JOptionPane.showMessageDialog(null, "INGRESE UN VALOR DE SALARIO CORRECTO");
             } else if (!Validaciones.validarCorreoElectronico(vistarecepcionista.getTxtcorreo().getText())) {
                 JOptionPane.showMessageDialog(null, "INGRESE UN CORREO ELECTRONICO VALIDO");
-            } else if (esValido1 = Validaciones.validarSeleccionComboBox(vistarecepcionista.getComgenero())) {
+            } else if (vistarecepcionista.getComgenero().getSelectedIndex()==0) {
                 JOptionPane.showMessageDialog(null, "SELECCIONE UN GENERO VALIDO");
-            } else if (esValido2 = Validaciones.validarSeleccionComboBox(vistarecepcionista.getComprovin())) {
+            } else if (!Validaciones.validarSeleccionComboBox(vistarecepcionista.getComprovin())) {
                 JOptionPane.showMessageDialog(null, "SELECCIONE UNA PROVINCIA VALIDA");
-            } else if (esValido3 = Validaciones.validarSeleccionComboBox(vistarecepcionista.getComcanto())) {
+            } else if (!Validaciones.validarSeleccionComboBox(vistarecepcionista.getComcanto())) {
                 JOptionPane.showMessageDialog(null, "SELECCIONE UN CANTON VALIDO");
-            } else if (fechavalida = Validaciones.validarFecha(vistarecepcionista.getjCalendario())) {
+            } else if (!Validaciones.validarFecha(vistarecepcionista.getjCalendario())) {
                 JOptionPane.showMessageDialog(null, "INGRESE UNA FECHA VALIDA");
             } else {
                 Date fechaCalendar = vistarecepcionista.getjCalendario().getDate();
@@ -83,8 +83,7 @@ public class controladorRegistroRecepcionista {
                 per1.setApellidoPersona1(vistarecepcionista.getTxtape2().getText());
                 per1.setGeneroPersona(vistarecepcionista.getComgenero().getSelectedItem().toString());
                 per1.setTelefonoPersona(vistarecepcionista.getTxttelefono().getText());
-                per1.setNombrePersona1(vistarecepcionista.getTxtcedula().getText());
-                per1.setDireccionPersona(vistarecepcionista.getTxtcedula().getText());
+                per1.setDireccionPersona(vistarecepcionista.getTxtdireccion().getText());
                 per1.setEdadPersona(dias);
                 canton.setNombreCan(vistarecepcionista.getComcanto().getSelectedItem().toString());
                 per1.setCod_canton(canton.ObtenerCodigo());
