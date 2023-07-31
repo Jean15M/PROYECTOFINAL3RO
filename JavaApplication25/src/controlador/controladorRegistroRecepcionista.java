@@ -77,7 +77,7 @@ public class controladorRegistroRecepcionista {
                 modeloPersona per1 = new modeloPersona();
                 modeloCantones canton = new modeloCantones();
                 per1.setCedulaPersona(vistarecepcionista.getTxtcedula().getText());
-                per1.setNombrePersona(vistarecepcionista.getTxtnom1().getText());
+                per1.setNombrePersona(vistarecepcionista.getTxtnom1().getText());   
                 per1.setNombrePersona1(vistarecepcionista.getTxtnom2().getText());
                 per1.setApellidoPersona(vistarecepcionista.getTxtape1().getText());
                 per1.setApellidoPersona1(vistarecepcionista.getTxtape2().getText());
