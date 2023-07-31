@@ -196,6 +196,8 @@ public class controladorAsignarReserva {
     public void cargarCombo() {
         modeloMetodoPago modeloP = new modeloMetodoPago();
         modeloP.listarPago().stream().forEach(p -> {
+            vistaReservas.getCbPago().removeAllItems();
+            vistaReservas.getCbPago().addItem("Seleccionar");
             vistaReservas.getCbPago().addItem(p.getNombrePago());
         });
 
