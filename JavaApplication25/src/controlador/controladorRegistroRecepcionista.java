@@ -41,11 +41,11 @@ public class controladorRegistroRecepcionista {
     public void RegistrarRecep() {
         boolean esValido1, esValido2, esValido3;
         boolean fechavalida;
-        if (vistarecepcionista.getTxtUsuario().getText().isEmpty() || vistarecepcionista.getTxtcedula().getText().isEmpty() || vistarecepcionista.getTxtnom2().getText().isEmpty() || vistarecepcionista.getTxtnom1().getText().isEmpty() || vistarecepcionista.getTxtape1().getText().isEmpty() || vistarecepcionista.getTxtape2().getText().isEmpty() || vistarecepcionista.getTxttelefono().getText().isEmpty() || vistarecepcionista.getTxtsalario().getText().isEmpty() || vistarecepcionista.getTxtdireccion().getText().isEmpty() || vistarecepcionista.getTxtcorreo().getText().isEmpty() || vistarecepcionista.getTxtcontrasena().getText().isEmpty()) {
+        if (vistarecepcionista.getTxtUsuario().getText().isEmpty() || vistarecepcionista.getTxtcedula().getText().isEmpty() || vistarecepcionista.getTxtnom2().getText().isEmpty() || vistarecepcionista.getTxtnombre1().getText().isEmpty() || vistarecepcionista.getTxtape1().getText().isEmpty() || vistarecepcionista.getTxtape2().getText().isEmpty() || vistarecepcionista.getTxttelefono().getText().isEmpty() || vistarecepcionista.getTxtsalario().getText().isEmpty() || vistarecepcionista.getTxtdireccion().getText().isEmpty() || vistarecepcionista.getTxtcorreo().getText().isEmpty() || vistarecepcionista.getTxtcontrasena().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "CAMPOS VACIOS LLENE TODOS LOS campos");
         }
         if (Validaciones.validarCedula(vistarecepcionista.getTxtcedula().getText())) {
-            if (!Validaciones.NombreValido(vistarecepcionista.getTxtnom1().getText())) {
+            if (!Validaciones.NombreValido(vistarecepcionista.getTxtnombre1().getText())) {
                 JOptionPane.showMessageDialog(null, "INGRESE EL NOMBRE CORRECTAMENTE SOLO LETRAS");
             } else if (!Validaciones.NombreValido(vistarecepcionista.getTxtnom2().getText())) {
                 JOptionPane.showMessageDialog(null, "INGRESE EL NOMBRE CORRECTAMENTE SOLO LETRAS");
@@ -77,7 +77,7 @@ public class controladorRegistroRecepcionista {
                 modeloPersona per1 = new modeloPersona();
                 modeloCantones canton = new modeloCantones();
                 per1.setCedulaPersona(vistarecepcionista.getTxtcedula().getText());
-                per1.setNombrePersona(vistarecepcionista.getTxtnom1().getText());   
+                per1.setNombrePersona(vistarecepcionista.getTxtnombre1().getText());   
                 per1.setNombrePersona1(vistarecepcionista.getTxtnom2().getText());
                 per1.setApellidoPersona(vistarecepcionista.getTxtape1().getText());
                 per1.setApellidoPersona1(vistarecepcionista.getTxtape2().getText());

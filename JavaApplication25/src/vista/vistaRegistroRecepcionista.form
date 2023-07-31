@@ -93,7 +93,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtnom1" min="-2" pref="125" max="-2" attributes="0"/>
+                                  <Component id="txtnombre1" min="-2" pref="125" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtnom2" min="-2" pref="125" max="-2" attributes="0"/>
                               </Group>
@@ -160,7 +160,7 @@
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                          <Component id="txtnom1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                          <Component id="txtnombre1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                                           <Component id="txtnom2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -452,7 +452,7 @@
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="jCalendario">
         </Component>
-        <Component class="javax.swing.JTextField" name="txtnom1">
+        <Component class="javax.swing.JTextField" name="txtnombre1">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">

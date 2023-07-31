@@ -87,13 +87,14 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
         this.txtdireccion = txtdireccion;
     }
 
-    public JTextField getTxtnom1() {
-        return txtUsuario;
+    public JTextField getTxtnombre1() {
+        return txtnombre1;
     }
 
-    public void setTxtnom1(JTextField txtnom1) {
-        this.txtUsuario = txtnom1;
+    public void setTxtnombre1(JTextField txtnombre1) {
+        this.txtnombre1 = txtnombre1;
     }
+
 
     public JTextField getTxtnom2() {
         return txtnom2;
@@ -186,7 +187,7 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
         comprovin = new javax.swing.JComboBox<>();
         comcanto = new javax.swing.JComboBox<>();
         jCalendario = new com.toedter.calendar.JDateChooser();
-        txtnom1 = new javax.swing.JTextField();
+        txtnombre1 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -273,7 +274,7 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
         comcanto.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         comcanto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR" }));
 
-        txtnom1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtnombre1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel14.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel14.setText("CEDULA:");
@@ -350,7 +351,7 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtnom1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtnombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtnom2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(100, 100, 100)
@@ -403,7 +404,7 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel7)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtnom1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtnombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtnom2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -504,8 +505,8 @@ public class vistaRegistroRecepcionista extends javax.swing.JFrame {
     private javax.swing.JTextField txtcontrasena;
     private javax.swing.JTextField txtcorreo;
     private javax.swing.JTextField txtdireccion;
-    private javax.swing.JTextField txtnom1;
     private javax.swing.JTextField txtnom2;
+    private javax.swing.JTextField txtnombre1;
     private javax.swing.JTextField txtsalario;
     private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables

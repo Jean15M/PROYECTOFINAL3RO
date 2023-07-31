@@ -87,13 +87,19 @@ public class controladorRegistroUsuario {
                         if (modeloUsuario.grabarCliente()) {
                             JOptionPane.showMessageDialog(null, "GUARDADO EXITOSAMENTE");
                             vistaUsuario.dispose();
-                            modeloRecepcionista modeloL = new modeloRecepcionista();
-                            modeloCliente modeloC = new modeloCliente();
-                            modeloAdministrador modeloA = new modeloAdministrador();
-                            vistaLogin vistaR = new vistaLogin();
-                            Controlador_Login inicio2 = new Controlador_Login(modeloL, modeloA, modeloC, vistaR);
+                            if (vistaUsuario.getTitle().equals("PANTALLA_PRINCIPAL")) {
+                                 modeloRecepcionista modeloL = new modeloRecepcionista();
+                                modeloCliente modeloC = new modeloCliente();
+                                modeloAdministrador modeloA = new modeloAdministrador();
+                                vistaLogin vistaR = new vistaLogin();
+                                Controlador_Login inicio2 = new Controlador_Login(modeloL, modeloA, modeloC, vistaR);
+                                inicio2.iniciarControlador();
+                                vistaUsuario.dispose();
+                            } else {
+                                vistaUsuario.dispose();
+                               
 
-                            inicio2.iniciarControlador();
+                            }
                         } else {
                             per1.eliminarPersona();
                             modeloUsuario.eliminarCliente();
@@ -152,7 +158,7 @@ public class controladorRegistroUsuario {
             nuevo.abrir();
             nuevo.iniciarControlador();
             vistaUsuario.dispose();
-        }else if (vistaUsuario.getTitle().equals("ADMIN")) {
+        } else if (vistaUsuario.getTitle().equals("ADMIN")) {
             vistaUsuario.dispose();
         }
 
