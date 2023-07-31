@@ -76,7 +76,7 @@ public class controladorAsignarReserva {
     }
 
     public void ingresarReserva() {
-        if (vistaReservas.getjCalendarioIni().getDate()==null || vistaReservas.getjCalendarioIni().getDate()==null || vistaReservas.getCbHabitacion().getSelectedIndex() == 0 || vistaReservas.getCbPago().getSelectedIndex() == 0 || vistaReservas.getCbPersonas().getSelectedIndex() == 0 || (!vistaReservas.getRdOpcionSi().isSelected() && !vistaReservas.getRdOpcionNo().isSelected())) {
+        if (vistaReservas.getjCalendarioIni().getDate() == null || vistaReservas.getjCalendarioIni().getDate() == null || vistaReservas.getCbHabitacion().getSelectedIndex() == 0 || vistaReservas.getCbPago().getSelectedIndex() == 0 || vistaReservas.getCbPersonas().getSelectedIndex() == 0 || (!vistaReservas.getRdOpcionSi().isSelected() && !vistaReservas.getRdOpcionNo().isSelected())) {
             JOptionPane.showMessageDialog(null, "Llene todo los campos por favor...");
         } else {
             java.util.Date fechaCalendar = vistaReservas.getjCalendarioIni().getDate();
@@ -110,7 +110,9 @@ public class controladorAsignarReserva {
             res.setId_pago(modeloP.ObtenerCodigo());
             res.setId_Parqueadero("");
             res.setId_Recepcionista("");
-
+            res.setDiasReservas(vistaReservas.getTxtDias().getText());
+            res.setPersonasReserva(vistaReservas.getCbPersonas().getSelectedItem().toString());
+            res.setEstado_reser("Pendiente");
             if (vistaReservas.getRdOpcionSi().isSelected()) {
                 if (vistaReservas.getCbParque().getSelectedIndex() != 0 || !vistaReservas.getTxtDias().getText().isEmpty() || !vistaReservas.getTxtPlaca().getText().isEmpty() || !vistaReservas.getTxtMarca().getText().isEmpty() || !vistaReservas.getTxtModelo().getText().isEmpty()) {
                     res.setId_Parqueadero(String.valueOf(vistaReservas.getCbParque().getSelectedItem()));
@@ -321,8 +323,7 @@ public class controladorAsignarReserva {
                 parametros.put("telefono", p.getTelefonoPersona());
                 parametros.put("correo", p.getCorreoPersona());
                 parametros.put("direccion", p.getDireccionPersona());
-                parametros.put("n_habitacio", vistaReservas.getCbHabitacion().getSelectedItem().toString());
-
+                parametros.put("n_habitacion", vistaReservas.getCbHabitacion().getSelectedItem().toString());
                 parametros.put("subtotal", vistaReservas.getTxtPrecio().getText());
                 parametros.put("total", vistaReservas.getTxtPrecioHabi().getText());
                 parametros.put("dias", vistaReservas.getTxtDias().getText());

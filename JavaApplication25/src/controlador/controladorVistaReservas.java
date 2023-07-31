@@ -35,18 +35,19 @@ public class controladorVistaReservas {
     }
 
     public void iniciarControlador() {
+        cargarInformacion();
+        carrgarDukex();
+        cargarStandar();
         inicio.getBtnInicioRe().addActionListener(l -> cerrar());
         cliente.getBtnInicioRe().addActionListener(l -> cerrar());
         reservas.getBtnReservarVIP().addActionListener(l -> asignarReserva("1"));
         reservas.getBtnReservarDel().addActionListener(l -> asignarReserva("2"));
         reservas.getBtnReservarEs().addActionListener(l -> asignarReserva("3"));
-        cargarInformacion();
-        carrgarDukex();
-        cargarStandar();
+
     }
 
     private void cargarInformacion() {
-
+        boolean entra = false;
         try {
             habitacionesCate.setId_Categoria("1");
             if (habitacionesCate.resultado().getString("id_categoria").equals("1")) {
@@ -57,13 +58,16 @@ public class controladorVistaReservas {
                 for (int i = 0; i < comprobar.listarHabitaciones().size(); i++) {
                     if (comprobar.listarHabitaciones().get(i).getId_Categoria().equals("1")) {
                         if (comprobar.listarHabitaciones().get(i).getEstado().equals("Disponible")) {
+                            entra = true;
                             reservas.getEstado_vip().setText("Disponible");
                             reservas.getBtnReservarVIP().setEnabled(true);
                             reservas.getBtnReservarVIP().setBackground(Color.BLUE);
-                        } else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
-                            reservas.getEstado_vip().setText("No Disponible");
-                            reservas.getBtnReservarVIP().setEnabled(false);
-                            reservas.getBtnReservarVIP().setBackground(Color.red);
+                        } else if (entra == false) {
+                            if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
+                                reservas.getEstado_vip().setText("No Disponible");
+                                reservas.getBtnReservarVIP().setEnabled(false);
+                                reservas.getBtnReservarVIP().setBackground(Color.red);
+                            }
                         }
 
                     }
@@ -79,7 +83,7 @@ public class controladorVistaReservas {
     }
 
     public void carrgarDukex() {
-
+        boolean entra = false;
         try {
             habitacionesCate.setId_Categoria("2");
             if (habitacionesCate.resultado().getString("id_categoria").equals("2")) {
@@ -90,15 +94,18 @@ public class controladorVistaReservas {
                 for (int i = 0; i < comprobar.listarHabitaciones().size(); i++) {
                     if (comprobar.listarHabitaciones().get(i).getId_Categoria().equals("2")) {
                         if (comprobar.listarHabitaciones().get(i).getEstado().equals("Disponible")) {
+                             entra = true;
                             reservas.getEstado_dulex().setText("Disponible");
                             reservas.getBtnReservarDel().setEnabled(true);
                             reservas.getBtnReservarDel().setBackground(Color.BLUE);
-                        } else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
-                            reservas.getEstado_dulex().setText("No Disponible");
-                            reservas.getBtnReservarDel().setEnabled(false);
-                            reservas.getBtnReservarDel().setBackground(Color.red);
-                        }
+                        } else if (entra == false) {
+                            if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
+                                reservas.getEstado_dulex().setText("No Disponible");
+                                reservas.getBtnReservarDel().setEnabled(false);
+                                reservas.getBtnReservarDel().setBackground(Color.red);
+                            }
 
+                        }
                     }
 
                 }
@@ -110,6 +117,7 @@ public class controladorVistaReservas {
     }
 
     public void cargarStandar() {
+        boolean entra = false;
         try {
             habitacionesCate.setId_Categoria("3");
             if (habitacionesCate.resultado().getString("id_categoria").equals("3")) {
@@ -120,15 +128,18 @@ public class controladorVistaReservas {
                 for (int i = 0; i < comprobar.listarHabitaciones().size(); i++) {
                     if (comprobar.listarHabitaciones().get(i).getId_Categoria().equals("3")) {
                         if (comprobar.listarHabitaciones().get(i).getEstado().equals("Disponible")) {
+                             entra = true;
                             reservas.getEstado_standar().setText("Disponible");
                             reservas.getBtnReservarEs().setEnabled(true);
                             reservas.getBtnReservarEs().setBackground(Color.BLUE);
-                        } else if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
-                            reservas.getEstado_standar().setText("No Disponible");
-                            reservas.getBtnReservarEs().setEnabled(false);
-                            reservas.getBtnReservarEs().setBackground(Color.red);
-                        }
+                        } else if (entra == false) {
+                            if (comprobar.listarHabitaciones().get(i).getEstado().equals("Ocupado")) {
+                                reservas.getEstado_standar().setText("No Disponible");
+                                reservas.getBtnReservarEs().setEnabled(false);
+                                reservas.getBtnReservarEs().setBackground(Color.red);
+                            }
 
+                        }
                     }
 
                 }

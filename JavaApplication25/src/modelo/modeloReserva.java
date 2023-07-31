@@ -64,8 +64,8 @@ public class modeloReserva extends Reservas {
     }
 
     public boolean grabarReservas() {
-        String sql = "insert into  reserva(id_reserva,id_pago,id_habitacion,id_parqueadero,id_recepcionista, cedula_persona,fecha_entrada,fecha_salida)";
-        sql += "values('0','" + getId_pago() + "','" + getId_Habitacion() + "','" + getId_Parqueadero() + "','" + getId_Recepcionista() + "','" + getCedula_Cliente() + "',to_date('" + getFecha_entrada() + "','YYYY-MM-DD'),to_date('" + getFecha_salida() + "','YYYY-MM-DD'))";
+        String sql = "insert into  reserva(id_reserva,id_pago,id_habitacion,id_parqueadero,id_recepcionista, cedula_persona,fecha_entrada,fecha_salida,dias,persona,estado_reserva)";
+        sql += "values('0','" + getId_pago() + "','" + getId_Habitacion() + "','" + getId_Parqueadero() + "','" + getId_Recepcionista() + "','" + getCedula_Cliente() + "',to_date('" + getFecha_entrada() + "','YYYY-MM-DD'),to_date('" + getFecha_salida() + "','YYYY-MM-DD'),'"+getDiasReservas()+"','"+getPersonasReserva()+"','"+getEstado_reser()+"')";
         return cpg.accionBd(sql);
     }
 

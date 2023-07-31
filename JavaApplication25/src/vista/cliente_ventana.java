@@ -170,6 +170,7 @@ public class cliente_ventana extends javax.swing.JFrame {
 
         btnPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/icons8-usuario-25.png"))); // NOI18N
         btnPerfil.setBorder(null);
+        btnPerfil.setContentAreaFilled(false);
         btnPerfil.setFocusPainted(false);
 
         jDesktopPane1.setLayer(rSLabelImage1, javax.swing.JLayeredPane.DEFAULT_LAYER);

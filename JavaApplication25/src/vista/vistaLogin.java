@@ -62,6 +62,14 @@ public class vistaLogin extends javax.swing.JFrame {
     public void setBtnOlvidar(JButton btnOlvidar) {
         this.btnOlvidar = btnOlvidar;
     }
+
+    public JButton getBtnregresar() {
+        return Btnregresar;
+    }
+
+    public void setBtnregresar(JButton Btnregresar) {
+        this.Btnregresar = Btnregresar;
+    }
     
     
 
@@ -78,6 +86,7 @@ public class vistaLogin extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        Btnregresar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         txtcontra = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
@@ -110,18 +119,29 @@ public class vistaLogin extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/logoproyecto-removebg-preview__2_-removebg-preview (1).png"))); // NOI18N
 
+        Btnregresar.setBackground(new java.awt.Color(0, 102, 255));
+        Btnregresar.setForeground(new java.awt.Color(255, 255, 255));
+        Btnregresar.setText("REGRESAR");
+        Btnregresar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Btnregresar.setBorderPainted(false);
+        Btnregresar.setPreferredSize(new java.awt.Dimension(88, 27));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addContainerGap(465, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Btnregresar, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Btnregresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -244,6 +264,7 @@ public class vistaLogin extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btnregresar;
     private javax.swing.JButton btnOlvidar;
     private org.edisoncor.gui.button.ButtonRound btniniciarse;
     private org.edisoncor.gui.button.ButtonRound btnregistro;

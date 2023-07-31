@@ -50,6 +50,7 @@ public class Controlador_Login {
         vistaLogin.getBtniniciarse().addActionListener(l -> login());
         vistaLogin.getBtnregistro().addActionListener(l -> regresar());
         vistaLogin.getBtnOlvidar().addActionListener(l -> cambiarContra());
+        vistaLogin.getBtnregresar().addActionListener(l->pantallaPrincipal());
 
     }
 
@@ -109,5 +110,13 @@ public class Controlador_Login {
         inicio.iniciarControlador();
         vistaLogin.dispose();
 
+    }
+
+    private void pantallaPrincipal() {
+        Pantalla_Principal nuevo1 = new Pantalla_Principal();
+        controladorPrincipal nuevo = new controladorPrincipal(nuevo1);
+        nuevo.abrir();
+        nuevo.iniciarControlador();
+        vistaLogin.dispose();
     }
 }
