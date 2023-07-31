@@ -95,6 +95,7 @@ public class controladorRegistroRecepcionista {
                 if (per1.grabarPersona() == true) {
                     if (recepcionista.grabarRecepcionista() == true) {
                         JOptionPane.showMessageDialog(null, "GUARDADO EXITOSAMENTE");
+                        vistarecepcionista.dispose();
                     } else {
                         per1.setCedulaPersona(vistarecepcionista.getTxtcedula().getText());
                         per1.eliminarPersona();
@@ -135,5 +136,4 @@ public class controladorRegistroRecepcionista {
     private void Cancelar() {
         vistarecepcionista.dispose();
     }
-
 }
