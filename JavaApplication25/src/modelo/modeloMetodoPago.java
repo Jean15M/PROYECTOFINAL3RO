@@ -42,10 +42,11 @@ public class modeloMetodoPago extends MetodoPago {
         String sql;
         sql="select * from metodo_pago ";
         ResultSet rs=cpg.resultBD(sql);
-        MetodoPago m = new MetodoPago();
+       
         try {
             
             while(rs.next()){
+                 MetodoPago m = new MetodoPago();
                 m.setNombrePago(rs.getString("nombre"));
                 m.setId_Pago(rs.getString("id_pago"));
                 listaPago.add(m);

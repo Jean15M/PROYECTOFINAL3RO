@@ -65,6 +65,7 @@ public class controladorAsignarReserva {
     public void iniciarControlador() {
         vistaReservas.getBtnFactura().setEnabled(false);
         cargarCombo();
+        cargarPagos();
         cargarCliente();
         vistaReservas.getRdOpcionSi().addActionListener(l -> mostrarParq(2));
         vistaReservas.getRdOpcionNo().addActionListener(l -> mostrarParq(1));
@@ -193,19 +194,24 @@ public class controladorAsignarReserva {
 
     }
 
+    public void cargarPagos() {
+
+    }
+
     public void cargarCombo() {
         modeloMetodoPago modeloP = new modeloMetodoPago();
+        vistaReservas.getCbPago().removeAllItems();
+        vistaReservas.getCbPago().addItem("Seleccionar");
         modeloP.listarPago().stream().forEach(p -> {
-            vistaReservas.getCbPago().removeAllItems();
-            vistaReservas.getCbPago().addItem("Seleccionar");
             vistaReservas.getCbPago().addItem(p.getNombrePago());
         });
 
         modeloHabitaciones modeloH = new modeloHabitaciones();
-        modeloH.setId_Categoria(tipo);
+       
+        vistaReservas.getCbHabitacion().removeAllItems();
+        vistaReservas.getCbHabitacion().addItem("Seleccionar");
+         modeloH.setId_Categoria(tipo);
         modeloH.buscarCat().stream().forEach(p -> {
-            vistaReservas.getCbHabitacion().removeAllItems();
-            vistaReservas.getCbHabitacion().addItem("Seleccionar");
             vistaReservas.getCbHabitacion().addItem(String.valueOf(p.getNro_Habitacion()));
             vistaReservas.getTxtPrecio().setText(String.valueOf(p.getPrecio_Habitacion()));
         });

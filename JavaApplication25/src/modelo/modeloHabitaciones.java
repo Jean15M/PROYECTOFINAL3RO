@@ -120,10 +120,11 @@ public class modeloHabitaciones extends Habitaciones {
         String sql;
         sql = "select * from habitaciones where id_categoria='" + super.getId_Categoria() + "' AND estado='Disponible'";
         ResultSet rs = cpg.resultBD(sql);
-        Habitaciones hab = new Habitaciones();
+        
         try {
 
             while (rs.next()) {
+                Habitaciones hab = new Habitaciones();
                 hab.setId_Habitacion(rs.getString("id_habitacion"));
                 hab.setId_Categoria(rs.getString("id_categoria"));
                 hab.setNro_Habitacion(rs.getInt("n_habitacion"));
@@ -132,6 +133,7 @@ public class modeloHabitaciones extends Habitaciones {
                 hab.setEstado(rs.getString("estado"));
                 hab.setNum_plazas(rs.getString("camas"));
                 listaBuscar.add(hab);
+                System.out.println(listaBuscar);
             }
             rs.close();
             return listaBuscar;
@@ -146,10 +148,11 @@ public class modeloHabitaciones extends Habitaciones {
         String sql;
         sql = "select * from habitaciones where estado='Disponible'";
         ResultSet rs = cpg.resultBD(sql);
-        Habitaciones hab = new Habitaciones();
+        
         try {
 
             while (rs.next()) {
+                Habitaciones hab = new Habitaciones();
                 hab.setId_Habitacion(rs.getString("id_habitacion"));
                 hab.setId_Categoria(rs.getString("id_categoria"));
                 hab.setNro_Habitacion(rs.getInt("n_habitacion"));
