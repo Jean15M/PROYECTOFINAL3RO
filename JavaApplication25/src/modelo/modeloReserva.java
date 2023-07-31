@@ -46,7 +46,7 @@ public class modeloReserva extends Reservas {
                 Reservas1.setFecha_entrada(rs.getDate("fecha_entrada"));
                 Reservas1.setFecha_salida(rs.getDate("fecha_salida"));
                 Reservas1.setDiasReservas(rs.getString("dias"));
-                Reservas1.setEstado_reser("estado_reserva");
+                Reservas1.setEstado_reser(rs.getString("estado_reserva"));
                 Reservas1.setPersonasReserva(rs.getString("persona"));
 
                 listaReservas.add(Reservas1);
@@ -120,10 +120,11 @@ public class modeloReserva extends Reservas {
         String sql;
         sql = "select * from reserva where estado_reserva='" + super.getEstado_reser() + "' order by id_reserva";
         ResultSet rs = cpg.resultBD(sql);
-        Reservas res = new Reservas();
+        
         try {
 
             while (rs.next()) {
+                Reservas res = new Reservas();
                 res.setId_Reserva(rs.getString("id_reserva"));
                 res.setId_pago(rs.getString("id_pago"));
                 res.setId_Habitacion(rs.getString("id_habitacion"));
@@ -132,7 +133,7 @@ public class modeloReserva extends Reservas {
                 res.setCedula_Cliente(rs.getString("cedula_persona"));
                 res.setFecha_entrada(rs.getDate("fecha_entrada"));
                 res.setFecha_salida(rs.getDate("fecha_salida"));
-                res.setEstado_reser("estado_reserva");
+                res.setEstado_reser(rs.getString("estado_reserva"));
                 listaBuscar.add(res);
             }
             rs.close();
@@ -148,10 +149,10 @@ public class modeloReserva extends Reservas {
         String sql;
         sql = "select * from reserva where cedula_persona='" + super.getCedula_Cliente()+ "'";
         ResultSet rs = cpg.resultBD(sql);
-        Reservas res = new Reservas();
         try {
 
             while (rs.next()) {
+                Reservas res = new Reservas();
                 res.setId_Reserva(rs.getString("id_reserva"));
                 res.setId_pago(rs.getString("id_pago"));
                 res.setId_Habitacion(rs.getString("id_habitacion"));
@@ -160,7 +161,7 @@ public class modeloReserva extends Reservas {
                 res.setCedula_Cliente(rs.getString("cedula_persona"));
                 res.setFecha_entrada(rs.getDate("fecha_entrada"));
                 res.setFecha_salida(rs.getDate("fecha_salida"));
-                res.setEstado_reser("estado_reserva");
+                res.setEstado_reser(rs.getString("estado_reserva"));
                 listaBuscar.add(res);
             }
             rs.close();

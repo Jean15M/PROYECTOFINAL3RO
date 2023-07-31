@@ -59,12 +59,13 @@ public class controlador_Recep_Reserva {
         vistaRe.getCbcategoria().addActionListener(l -> cargarHabitaciones());
         vistaRe.getBntbuscar().addActionListener(l -> cargarCliente());
         vistaRecep1.getBtnInicioRe().addActionListener(l -> cerrar());
+        vistaRe.getCbParque().addActionListener(l -> cargarUbicacion());
         calcularDia();
 
     }
 
     public void ingresarReserva() {
-        if (vistaRe.getjCalendarioIni().getDate().equals(null) || vistaRe.getjCalendarioIni().getDate().equals(null) || vistaRe.getTxtusuario().getText().isEmpty() || vistaRe.getCbHabitacion1().getSelectedIndex() == 0 || vistaRe.getCbPago().getSelectedIndex() == 0 || vistaRe.getCbPersonas().getSelectedIndex() == 0) {
+        if (vistaRe.getjCalendarioIni().getDate() == null || vistaRe.getjCalendarioIni().getDate() == null || vistaRe.getTxtusuario().getText().isEmpty() || vistaRe.getCbHabitacion1().getSelectedIndex() == 0 || vistaRe.getCbPago().getSelectedIndex() == 0 || vistaRe.getCbPersonas().getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Llene todo los campos por favor...");
         } else {
             java.util.Date fechaCalendar = vistaRe.getjCalendarioIni().getDate();
@@ -98,11 +99,14 @@ public class controlador_Recep_Reserva {
             res.setId_pago(modeloP.ObtenerCodigo());
             res.setId_Parqueadero("");
             res.setId_Recepcionista("");
-
+             res.setDiasReservas(vistaRe.getTxtDias().getText());
+            res.setPersonasReserva(vistaRe.getCbPersonas().getSelectedItem().toString());
+            res.setEstado_reser("Pendiente");
             if (vistaRe.getRdOpcionSi().isSelected()) {
                 if (vistaRe.getCbParque().getSelectedIndex() != 0 || !vistaRe.getTxtDias().getText().isEmpty() || !vistaRe.getTxtPlaca().getText().isEmpty() || !vistaRe.getTxtMarca().getText().isEmpty() || !vistaRe.getTxtModelo().getText().isEmpty()) {
                     res.setId_Parqueadero(String.valueOf(vistaRe.getCbParque().getSelectedItem()));
                     guardarParqueadero();
+                    cambiarEstadoParq();
                 } else {
                     JOptionPane.showMessageDialog(null, "LLENE LOS CAMPOS POR FAVOR");
                 }
@@ -143,12 +147,13 @@ public class controlador_Recep_Reserva {
         modeloAutos modeloA = new modeloAutos();
         modeloP.setPlaca(vistaRe.getTxtPlaca().getText());
         modeloP.setId_Parqueadero(String.valueOf(vistaRe.getCbParque().getSelectedItem()));
-        modeloP.setUbicacion(String.valueOf(vistaRe.getCbUbicacion().getSelectedItem()));
+        modeloP.setTiempo(Integer.parseInt(vistaRe.getTxtDias().getText()));
+        modeloP.setUbicacion(vistaRe.getTxt_ubi().getText());
         modeloA.setMarca(vistaRe.getTxtMarca().getText());
-        modeloA.setModelo(vistaRe.getTxtMarca().getText());
+        modeloA.setModelo(vistaRe.getTxtModelo().getText());
         modeloA.setPlaca(vistaRe.getTxtPlaca().getText());
-        if (modeloP.modificarParqueaderoBD() == true) {
-            if (modeloA.grabarAutos()) {
+        if (modeloA.grabarAutos() == true) {
+            if (modeloP.modificarParqueaderoBD()==true) {
                 System.out.println("GUARDADO");
             }
         } else {
@@ -202,7 +207,7 @@ public class controlador_Recep_Reserva {
         modeloParqueadero modeloP = new modeloParqueadero();
         modeloP.setEstado("Ocupado");
         modeloP.setId_Parqueadero(String.valueOf(vistaRe.getCbParque().getSelectedItem()));
-        if (modeloP.modificarEstado() == true) {
+        if (modeloP.modificarEstado1() == true) {
             System.out.println("ESTADO MODIFICADO");
         } else {
             System.out.println("ERROR AL MODIFICAR");
@@ -221,7 +226,7 @@ public class controlador_Recep_Reserva {
             vistaRe.getTxtModelo().setVisible(false);
             vistaRe.getTxtPlaca().setVisible(false);
             vistaRe.getCbParque().setVisible(false);
-            vistaRe.getCbUbicacion().setVisible(false);
+            vistaRe.getTxt_ubi().setVisible(false);
         } else if (bandera == 2) {
             vistaRe.getLblParque().setVisible(true);
             vistaRe.getLblMarca().setVisible(true);
@@ -232,7 +237,7 @@ public class controlador_Recep_Reserva {
             vistaRe.getTxtModelo().setVisible(true);
             vistaRe.getTxtPlaca().setVisible(true);
             vistaRe.getCbParque().setVisible(true);
-            vistaRe.getCbUbicacion().setVisible(true);
+            vistaRe.getTxt_ubi().setVisible(true);
         }
     }
 
@@ -253,8 +258,9 @@ public class controlador_Recep_Reserva {
             vistaRe.getCbHabitacion1().removeAllItems();
             vistaRe.getCbHabitacion1().addItem("OCUPADO");
         } else {
+            vistaRe.getCbHabitacion1().removeAllItems();
             cargar.buscarCat().stream().forEach(h -> {
-                vistaRe.getCbHabitacion1().removeAllItems();
+
                 vistaRe.getCbHabitacion1().addItem(String.valueOf(h.getNro_Habitacion()));
                 vistaRe.getTxtPrecio().setText(String.valueOf(h.getPrecio_Habitacion()));
 
@@ -269,13 +275,23 @@ public class controlador_Recep_Reserva {
             vistaRe.getCbPago().addItem(p.getNombrePago());
         });
         modeloParqueadero modeloPa = new modeloParqueadero();
-        modeloPa.listarParqueadero().stream().forEach(p -> {
+        modeloPa.setEstado("Disponible");
+        modeloPa.obtenerParqueadero().stream().forEach(p -> {
             vistaRe.getCbParque().addItem(String.valueOf(p.getId_Parqueadero()));
         });
 
-        modeloPa.listarParqueadero().stream().forEach(p -> {
-            vistaRe.getCbUbicacion().addItem(String.valueOf(p.getUbicacion()));
-        });
+    }
+
+    private void cargarUbicacion() {
+        if (vistaRe.getCbParque().getSelectedIndex() == 0) {
+            vistaRe.getTxt_ubi().setText("");
+        } else {
+            modeloParqueadero modeloPa = new modeloParqueadero();
+            modeloPa.setId_Parqueadero(vistaRe.getCbParque().getSelectedItem().toString());
+            modeloPa.obtenerCoincidencia().stream().forEach(c -> {
+                vistaRe.getTxt_ubi().setText(c.getUbicacion());
+            });
+        }
     }
 
     public void cargarCliente() {
