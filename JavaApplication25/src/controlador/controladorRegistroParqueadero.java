@@ -27,7 +27,7 @@ public class controladorRegistroParqueadero {
     
     public void iniciarControlador(){
         vistaPar.getBtnAceptar().addActionListener(l->ingresarParqueadero());
-        vistaPar.getBtnCancelar().addActionListener(l->cancelar());
+        vistaPar.getBtnCancelar().addActionListener(l->vistaPar.dispose());
     }
     
     public void ingresarParqueadero(){
@@ -54,11 +54,6 @@ public class controladorRegistroParqueadero {
         vistaPar.getTxtUbicacion().setText("");
     }
     
-    private void cancelar() {
-        vistaPanelControlAdministrador pat = new vistaPanelControlAdministrador();
-        Controlador_Paneladmin inicio=new Controlador_Paneladmin(pat);
-        inicio.iniciarControlador();
-        vistaPar.dispose();
-    }
+    
     
 }
