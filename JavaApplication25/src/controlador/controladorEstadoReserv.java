@@ -106,7 +106,7 @@ public class controladorEstadoReserv {
             String fechafin = vistaCon.getLblFechFin().getText();
             LocalDate fecha = LocalDate.parse(fechafin);
             LocalDate actual = LocalDate.now();
-            if(fecha.isAfter(actual)){
+            if(fecha.isEqual(actual)){
                 modeloRes.setId_Reserva(vistaCon.getLblIdreser().getText());
                 modeloRes.setEstado_reser("Finalizado");
                 if(modeloRes.modificarEstado()==true){
