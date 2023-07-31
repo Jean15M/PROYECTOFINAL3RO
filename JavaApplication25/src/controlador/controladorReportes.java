@@ -33,6 +33,9 @@ public class controladorReportes {
 
     public void iniciarControlador() {
         vistaReservas.getBtnClientes().addActionListener(l -> imPrimirPersonas());
+        vistaReservas.getBtnEmpleados().addActionListener(l -> imprimirEmpleados());
+        vistaReservas.getBtnHabitaciones().addActionListener(l->imprimirHabitacion());
+        vistaReservas.getBtnFacturas().addActionListener(l->imprimirFacturas());
     }
 
     private void imPrimirPersonas() {
@@ -53,4 +56,60 @@ public class controladorReportes {
         }
     }
 
+    private void imprimirEmpleados() {
+        Conexion cpg = new Conexion();
+        try {
+            JasperReport jr = (JasperReport) JRLoader.loadObject(
+                    getClass().getResource("/vista/Reportes/Reporte_recepcionista_total.jasper")
+            );
+
+            Map<String, Object> parametros = new HashMap<String, Object>();
+            parametros.put("imagen", this.getClass().getResourceAsStream("/vista/imagenes/logo2.png"));
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, cpg.getCon());
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setVisible(true);
+
+        } catch (JRException ex) {
+            Logger.getLogger(controladorReportes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void imprimirHabitacion() {
+        Conexion cpg = new Conexion();
+        try {
+            JasperReport jr = (JasperReport) JRLoader.loadObject(
+                    getClass().getResource("/vista/Reportes/Habitaciones.jasper")
+            );
+
+            Map<String, Object> parametros = new HashMap<String, Object>();
+            parametros.put("imagen", this.getClass().getResourceAsStream("/vista/imagenes/logo2.png"));
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, cpg.getCon());
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setVisible(true);
+
+        } catch (JRException ex) {
+            Logger.getLogger(controladorReportes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+     private void imprimirFacturas() {
+        Conexion cpg = new Conexion();
+        try {
+            JasperReport jr = (JasperReport) JRLoader.loadObject(
+                    getClass().getResource("/vista/Reportes/Facturas.jasper")
+            );
+             JasperReport jr1 = (JasperReport) JRLoader.loadObject(
+                    getClass().getResource("/vista/Reportes/SubreporteFactura.jasper")
+            );
+
+            Map<String, Object> parametros = new HashMap<String, Object>();
+            parametros.put("imagen", this.getClass().getResourceAsStream("/vista/imagenes/logo2.png"));
+            parametros.put("subreporte", jr1);
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, cpg.getCon());
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setVisible(true);
+
+        } catch (JRException ex) {
+            Logger.getLogger(controladorReportes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
