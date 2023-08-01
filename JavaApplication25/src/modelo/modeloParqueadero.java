@@ -56,14 +56,14 @@ public class modeloParqueadero extends Parqueadero {
     }
 
     public boolean grabarParqueadero() {
-        String sql = "insert into  parqueadero(id_parqueadero,placa,tiempo,ubicacion)";
-        sql += "values('" + getId_Parqueadero() + "','" + getPlaca() + "','" + getTiempo() + "','" + getUbicacion() + "')";
+        String sql = "insert into  parqueadero(id_parqueadero,placa,tiempo,ubicacion,estado)";
+        sql += "values('" + getId_Parqueadero() + "','" + getPlaca() + "','" + getTiempo() + "','" + getUbicacion() + "','" + getEstado() + "')";
         return cpg.accionBd(sql);
     }
 
     public String Consultar() {
         String sql = "select * from parqueadero";
-        sql += " where estado='" + getEstado()+"'";
+        sql += " where estado='" + getEstado() + "'";
         return sql;
 
     }
@@ -74,20 +74,20 @@ public class modeloParqueadero extends Parqueadero {
     }
 
     public boolean modificarParqueaderoBD() {
-        String sql = "UPDATE parqueadero SET  placa='" + getPlaca()+"',tiempo="+getTiempo();
+        String sql = "UPDATE parqueadero SET  placa='" + getPlaca() + "',tiempo=" + getTiempo();
         sql += "where id_parqueadero='" + getId_Parqueadero() + "'";
         return cpg.accionBd(sql);
     }
-    
+
     public boolean modificarEstado() {
-        String sql = "UPDATE parqueadero SET estado='" + getEstado()+ "',placa='',tiempo=0";
-        sql += "where id_parqueadero='" + getId_Parqueadero()+ "'";
+        String sql = "UPDATE parqueadero SET estado='" + getEstado() + "',placa='',tiempo=0";
+        sql += "where id_parqueadero='" + getId_Parqueadero() + "'";
         return cpg.accionBd(sql);
     }
-    
-     public boolean modificarEstado1() {
-        String sql = "UPDATE parqueadero SET estado='" + getEstado()+ "'";
-        sql += "where id_parqueadero='" + getId_Parqueadero()+ "'";
+
+    public boolean modificarEstado1() {
+        String sql = "UPDATE parqueadero SET estado='" + getEstado() + "'";
+        sql += "where id_parqueadero='" + getId_Parqueadero() + "'";
         return cpg.accionBd(sql);
     }
 
@@ -134,7 +134,7 @@ public class modeloParqueadero extends Parqueadero {
 
         return modelo;
     }
-    
+
     public List<Parqueadero> obtenerTodasLasPlazasParqueadero() {
         List<Parqueadero> listaPlazasParqueadero = new ArrayList<>();
         String sql = "SELECT id_parqueadero, placa, tiempo, ubicacion FROM parqueadero";
@@ -156,10 +156,10 @@ public class modeloParqueadero extends Parqueadero {
 
         return listaPlazasParqueadero;
     }
-    
+
     public List<Parqueadero> obtenerParqueadero() {
         List<Parqueadero> listaBuscar = new ArrayList<>();
-        String sql = "SELECT * FROM parqueadero where estado='"+getEstado()+"'";
+        String sql = "SELECT * FROM parqueadero where estado='" + getEstado() + "'";
         ResultSet rs = cpg.resultBD(sql);
 
         try {
@@ -178,12 +178,11 @@ public class modeloParqueadero extends Parqueadero {
             return null;
         }
 
-        
     }
-    
+
     public List<Parqueadero> obtenerCoincidencia() {
         List<Parqueadero> listaBuscar = new ArrayList<>();
-        String sql = "SELECT * FROM parqueadero where id_parqueadero='"+getId_Parqueadero()+"'";
+        String sql = "SELECT * FROM parqueadero where id_parqueadero='" + getId_Parqueadero() + "'";
         ResultSet rs = cpg.resultBD(sql);
 
         try {
@@ -202,6 +201,5 @@ public class modeloParqueadero extends Parqueadero {
             return null;
         }
 
-        
     }
 }

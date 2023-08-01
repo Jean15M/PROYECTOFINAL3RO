@@ -36,6 +36,9 @@ public class controladorRegistroParqueadero {
         }else{
             modeloPar.setId_Parqueadero(vistaPar.getTxtIdParq().getText());
             modeloPar.setUbicacion(vistaPar.getTxtUbicacion().getText());
+            modeloPar.setPlaca("");
+            modeloPar.setTiempo(0);
+            modeloPar.setEstado("Disponible");
             if(modeloPar.obtenerCoincidencia().isEmpty()){
                 if(modeloPar.grabarParqueadero()==true){
                     JOptionPane.showMessageDialog(null, "SE HA INGRESADO EL PARQUEADERO CORRECTAMENTE");
